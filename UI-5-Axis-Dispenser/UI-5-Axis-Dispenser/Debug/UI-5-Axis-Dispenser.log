@@ -1,0 +1,262 @@
+﻿生成启动时间为 2018/1/23 20:54:04。
+     1>项目“d:\USER\documents\visual studio 2013\Projects\UI-5-Axis-Dispenser\UI-5-Axis-Dispenser\UI-5-Axis-Dispenser.vcxproj”在节点 2 上(Build 个目标)。
+     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\Microsoft.CppBuild.targets(935,5): warning MSB8027: Two or more files with the name of moc_dispenser.cpp will produce outputs to the same location. This can lead to an incorrect build result.  The files involved are GeneratedFiles\Debug\moc_dispenser.cpp, GeneratedFiles\Release\moc_dispenser.cpp.
+     1>Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"d:\user\documents\visual studio 2013\Projects\UI-5-Axis-Dispenser\Win32\Debug\\UI-5-Axis-Dispenser.exe" /NOLOGO /LIBPATH:C:\Qt\Qt5.6.0\5.6\msvc2013\lib /LIBPATH:C:\portaudio\lib /LIBPATH:C:\OpenCV300\opencv\build\x86\vc12\lib /LIBPATH:"C:\Program Files\Microsoft SDKs\Kinect\v2.0_1409\\Lib\x86" qtmaind.lib Qt5Cored.lib Qt5Guid.lib Qt5OpenGLd.lib opengl32.lib glu32.lib Qt5Widgetsd.lib glut32.lib opencv_ts300d.lib opencv_world300d.lib kinect20.lib portaudio_x86.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"d:\user\documents\visual studio 2013\Projects\UI-5-Axis-Dispenser\Win32\Debug\UI-5-Axis-Dispenser.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /FIXED:NO /NXCOMPAT /MACHINE:X86 /SAFESEH Debug\dispenser.obj
+         Debug\dllmain.obj
+         Debug\moc_dispenser.obj
+         Debug\qrc_dispenser.obj
+         Debug\glm.obj
+         Debug\Kinect_v2.obj
+         Debug\main.obj
+         "Debug\.NETFramework,Version=v4.0.AssemblyAttributes.obj"
+     1>moc_dispenser.obj : error LNK2005: "void __cdecl sleep(int)" (?sleep@@YAXH@Z) 已经在 dispenser.obj 中定义
+     1>moc_dispenser.obj : error LNK2005: "long __cdecl EpcioCheckSum(char *)" (?EpcioCheckSum@@YAJPAD@Z) 已经在 dispenser.obj 中定义
+     1>moc_dispenser.obj : error LNK2005: "int __cdecl EpcioLen(void)" (?EpcioLen@@YAHXZ) 已经在 dispenser.obj 中定义
+     1>moc_dispenser.obj : error LNK2005: "int __cdecl Calc_CRC(char *)" (?Calc_CRC@@YAHPAD@Z) 已经在 dispenser.obj 中定义
+     1>moc_dispenser.obj : error LNK2005: "void __cdecl EpcioCmdFormat(char *,char *)" (?EpcioCmdFormat@@YAXPAD0@Z) 已经在 dispenser.obj 中定义
+     1>moc_dispenser.obj : error LNK2005: "int __cdecl ReadABuffer(char *,unsigned long)" (?ReadABuffer@@YAHPADK@Z) 已经在 dispenser.obj 中定义
+     1>moc_dispenser.obj : error LNK2005: "void __cdecl Read(void)" (?Read@@YAXXZ) 已经在 dispenser.obj 中定义
+     1>moc_dispenser.obj : error LNK2005: "int __cdecl WriteABufferD(char *,unsigned long)" (?WriteABufferD@@YAHPADK@Z) 已经在 dispenser.obj 中定义
+     1>moc_dispenser.obj : error LNK2005: "int __cdecl WriteABuffer(char *,unsigned long)" (?WriteABuffer@@YAHPADK@Z) 已经在 dispenser.obj 中定义
+     1>moc_dispenser.obj : error LNK2005: "void __cdecl CalCheckSum(unsigned char *)" (?CalCheckSum@@YAXPAE@Z) 已经在 dispenser.obj 中定义
+     1>moc_dispenser.obj : error LNK2005: "long __cdecl MotionComClose(void)" (?MotionComClose@@YAJXZ) 已经在 dispenser.obj 中定义
+     1>moc_dispenser.obj : error LNK2005: "long __cdecl MtClose(void)" (?MtClose@@YAJXZ) 已经在 dispenser.obj 中定义
+     1>moc_dispenser.obj : error LNK2005: "long __cdecl MotionComStatus(void)" (?MotionComStatus@@YAJXZ) 已经在 dispenser.obj 中定义
+     1>moc_dispenser.obj : error LNK2005: "long __cdecl MotionComSignal(long)" (?MotionComSignal@@YAJJ@Z) 已经在 dispenser.obj 中定义
+     1>moc_dispenser.obj : error LNK2005: "void __cdecl MtRs232Baud(long)" (?MtRs232Baud@@YAXJ@Z) 已经在 dispenser.obj 中定义
+     1>moc_dispenser.obj : error LNK2005: "long __cdecl MotionFlag(long)" (?MotionFlag@@YAJJ@Z) 已经在 dispenser.obj 中定义
+     1>moc_dispenser.obj : error LNK2005: "long __cdecl MotionInput(long)" (?MotionInput@@YAJJ@Z) 已经在 dispenser.obj 中定义
+     1>moc_dispenser.obj : error LNK2005: "long __cdecl MtFlag(long)" (?MtFlag@@YAJJ@Z) 已经在 dispenser.obj 中定义
+     1>moc_dispenser.obj : error LNK2005: "long __cdecl MtInput(long)" (?MtInput@@YAJJ@Z) 已经在 dispenser.obj 中定义
+     1>moc_dispenser.obj : error LNK2005: "long __cdecl MtSize(void)" (?MtSize@@YAJXZ) 已经在 dispenser.obj 中定义
+     1>moc_dispenser.obj : error LNK2005: "long __cdecl MtHead(void)" (?MtHead@@YAJXZ) 已经在 dispenser.obj 中定义
+     1>moc_dispenser.obj : error LNK2005: "long __cdecl MtTail(void)" (?MtTail@@YAJXZ) 已经在 dispenser.obj 中定义
+     1>moc_dispenser.obj : error LNK2005: "long __cdecl RemoteWDT(void)" (?RemoteWDT@@YAJXZ) 已经在 dispenser.obj 中定义
+     1>moc_dispenser.obj : error LNK2005: "long __cdecl MotionCmd(char *)" (?MotionCmd@@YAJPAD@Z) 已经在 dispenser.obj 中定义
+     1>moc_dispenser.obj : error LNK2005: "long __cdecl MtReflash(struct Rs232MotionData *)" (?MtReflash@@YAJPAURs232MotionData@@@Z) 已经在 dispenser.obj 中定义
+     1>moc_dispenser.obj : error LNK2005: "long __cdecl MtEmpty(void)" (?MtEmpty@@YAJXZ) 已经在 dispenser.obj 中定义
+     1>moc_dispenser.obj : error LNK2005: "long __cdecl MtThread(void)" (?MtThread@@YAJXZ) 已经在 dispenser.obj 中定义
+     1>moc_dispenser.obj : error LNK2005: "long __cdecl MtCmd(char *)" (?MtCmd@@YAJPAD@Z) 已经在 dispenser.obj 中定义
+     1>moc_dispenser.obj : error LNK2005: "unsigned long __cdecl MtCheckSum(void)" (?MtCheckSum@@YAKXZ) 已经在 dispenser.obj 中定义
+     1>moc_dispenser.obj : error LNK2005: "unsigned long __cdecl MtCheckWdt(void)" (?MtCheckWdt@@YAKXZ) 已经在 dispenser.obj 中定义
+     1>moc_dispenser.obj : error LNK2005: "unsigned long __cdecl MtError(void)" (?MtError@@YAKXZ) 已经在 dispenser.obj 中定义
+     1>moc_dispenser.obj : error LNK2005: "char * __cdecl MtLaserCmd(char *)" (?MtLaserCmd@@YAPADPAD@Z) 已经在 dispenser.obj 中定义
+     1>moc_dispenser.obj : error LNK2005: "char * __cdecl MtReceived(void)" (?MtReceived@@YAPADXZ) 已经在 dispenser.obj 中定义
+     1>moc_dispenser.obj : error LNK2005: "int __cdecl MtTestDebby(int,int)" (?MtTestDebby@@YAHHH@Z) 已经在 dispenser.obj 中定义
+     1>moc_dispenser.obj : error LNK2005: "unsigned long __stdcall MotionThreadProc(void *)" (?MotionThreadProc@@YGKPAX@Z) 已经在 dispenser.obj 中定义
+     1>moc_dispenser.obj : error LNK2005: "long __cdecl MtConnect(char *)" (?MtConnect@@YAJPAD@Z) 已经在 dispenser.obj 中定义
+     1>moc_dispenser.obj : error LNK2005: "long __cdecl MtStart(long)" (?MtStart@@YAJJ@Z) 已经在 dispenser.obj 中定义
+     1>moc_dispenser.obj : error LNK2005: "struct _OVERLAPPED oCOM" (?oCOM@@3U_OVERLAPPED@@A) 已经在 dispenser.obj 中定义
+     1>moc_dispenser.obj : error LNK2005: "char * SendString" (?SendString@@3PADA) 已经在 dispenser.obj 中定义
+     1>moc_dispenser.obj : error LNK2005: "int checksum" (?checksum@@3HA) 已经在 dispenser.obj 中定义
+     1>moc_dispenser.obj : error LNK2005: "void * hCom" (?hCom@@3PAXA) 已经在 dispenser.obj 中定义
+     1>moc_dispenser.obj : error LNK2005: "int dwError" (?dwError@@3HA) 已经在 dispenser.obj 中定义
+     1>moc_dispenser.obj : error LNK2005: "long * SendFlag" (?SendFlag@@3PAJA) 已经在 dispenser.obj 中定义
+     1>moc_dispenser.obj : error LNK2005: "char (* data)[30]" (?data@@3PAY0BO@DA) 已经在 dispenser.obj 中定义
+     1>moc_dispenser.obj : error LNK2005: "long flowNumber" (?flowNumber@@3JA) 已经在 dispenser.obj 中定义
+     1>moc_dispenser.obj : error LNK2005: "void * handle" (?handle@@3PAXA) 已经在 dispenser.obj 中定义
+     1>moc_dispenser.obj : error LNK2005: "long * ReadFlag" (?ReadFlag@@3PAJA) 已经在 dispenser.obj 中定义
+     1>moc_dispenser.obj : error LNK2005: "int stopflag" (?stopflag@@3HA) 已经在 dispenser.obj 中定义
+     1>moc_dispenser.obj : error LNK2005: "int emgflag" (?emgflag@@3HA) 已经在 dispenser.obj 中定义
+     1>moc_dispenser.obj : error LNK2005: "struct Rs232MotionData mdr1" (?mdr1@@3URs232MotionData@@A) 已经在 dispenser.obj 中定义
+     1>moc_dispenser.obj : error LNK2005: "int CreateFlag" (?CreateFlag@@3HA) 已经在 dispenser.obj 中定义
+     1>moc_dispenser.obj : error LNK2005: "struct Rs232MotionData mdr2" (?mdr2@@3URs232MotionData@@A) 已经在 dispenser.obj 中定义
+     1>moc_dispenser.obj : error LNK2005: "struct _DCB dcb" (?dcb@@3U_DCB@@A) 已经在 dispenser.obj 中定义
+     1>moc_dispenser.obj : error LNK2005: "char * ReadString" (?ReadString@@3PADA) 已经在 dispenser.obj 中定义
+     1>moc_dispenser.obj : error LNK2005: "char * buf" (?buf@@3PADA) 已经在 dispenser.obj 中定义
+     1>moc_dispenser.obj : error LNK2005: "char * LastString" (?LastString@@3PADA) 已经在 dispenser.obj 中定义
+     1>moc_dispenser.obj : error LNK2005: "char * temp" (?temp@@3PADA) 已经在 dispenser.obj 中定义
+     1>moc_dispenser.obj : error LNK2005: "char * ReadBuf" (?ReadBuf@@3PADA) 已经在 dispenser.obj 中定义
+     1>moc_dispenser.obj : error LNK2005: "char (* cmdbuf)[80]" (?cmdbuf@@3PAY0FA@DA) 已经在 dispenser.obj 中定义
+     1>moc_dispenser.obj : error LNK2005: "struct Rs232MotionData mdr" (?mdr@@3URs232MotionData@@A) 已经在 dispenser.obj 中定义
+     1>moc_dispenser.obj : error LNK2005: "char * sendbuf" (?sendbuf@@3PADA) 已经在 dispenser.obj 中定义
+     1>moc_dispenser.obj : error LNK2005: "int DTRFlag" (?DTRFlag@@3HA) 已经在 dispenser.obj 中定义
+     1>moc_dispenser.obj : error LNK2005: "unsigned long threadid" (?threadid@@3KA) 已经在 dispenser.obj 中定义
+     1>moc_dispenser.obj : error LNK2005: "char * ccmd" (?ccmd@@3PADA) 已经在 dispenser.obj 中定义
+     1>moc_dispenser.obj : error LNK2005: "char * laser_sendcmd" (?laser_sendcmd@@3PADA) 已经在 dispenser.obj 中定义
+     1>moc_dispenser.obj : error LNK2005: "char * laser_recvcmd" (?laser_recvcmd@@3PADA) 已经在 dispenser.obj 中定义
+     1>moc_dispenser.obj : error LNK2005: "int string_received" (?string_received@@3HA) 已经在 dispenser.obj 中定义
+     1>moc_dispenser.obj : error LNK2005: "int ErrCnt" (?ErrCnt@@3HA) 已经在 dispenser.obj 中定义
+     1>moc_dispenser.obj : error LNK2005: "char * ack" (?ack@@3PADA) 已经在 dispenser.obj 中定义
+     1>moc_dispenser.obj : error LNK2005: "int volatile head" (?head@@3HC) 已经在 dispenser.obj 中定义
+     1>moc_dispenser.obj : error LNK2005: "int volatile tail" (?tail@@3HC) 已经在 dispenser.obj 中定义
+     1>moc_dispenser.obj : error LNK2005: "int thread_loop" (?thread_loop@@3HA) 已经在 dispenser.obj 中定义
+     1>moc_dispenser.obj : error LNK2005: "unsigned int thread_flag" (?thread_flag@@3IA) 已经在 dispenser.obj 中定义
+     1>moc_dispenser.obj : error LNK2005: "int thread_wdt" (?thread_wdt@@3HA) 已经在 dispenser.obj 中定义
+     1>moc_dispenser.obj : error LNK2005: "int wait_time" (?wait_time@@3HA) 已经在 dispenser.obj 中定义
+     1>moc_dispenser.obj : error LNK2005: "int pause_thread" (?pause_thread@@3HA) 已经在 dispenser.obj 中定义
+     1>moc_dispenser.obj : error LNK2005: "int RemoteFlag" (?RemoteFlag@@3HA) 已经在 dispenser.obj 中定义
+     1>moc_dispenser.obj : error LNK2005: "int head1" (?head1@@3HA) 已经在 dispenser.obj 中定义
+     1>moc_dispenser.obj : error LNK2005: "int CommErr" (?CommErr@@3HA) 已经在 dispenser.obj 中定义
+     1>moc_dispenser.obj : error LNK2005: "int CommWdt" (?CommWdt@@3HA) 已经在 dispenser.obj 中定义
+     1>moc_dispenser.obj : error LNK2005: "long cmd_in_buffer" (?cmd_in_buffer@@3JA) 已经在 dispenser.obj 中定义
+     1>moc_dispenser.obj : error LNK2005: "long baud" (?baud@@3JA) 已经在 dispenser.obj 中定义
+     1>moc_dispenser.obj : error LNK2005: "char * recvbuf" (?recvbuf@@3PADA) 已经在 dispenser.obj 中定义
+     1>moc_dispenser.obj : error LNK2005: "unsigned int _checksum" (?_checksum@@3IA) 已经在 dispenser.obj 中定义
+     1>moc_dispenser.obj : error LNK2005: "int pause_thred" (?pause_thred@@3HA) 已经在 dispenser.obj 中定义
+     1>moc_dispenser.obj : error LNK2005: "void __cdecl sleep(int)" (?sleep@@$$FYAXH@Z) 已经在 dispenser.obj 中定义
+     1>moc_dispenser.obj : error LNK2005: "long __cdecl EpcioCheckSum(char *)" (?EpcioCheckSum@@$$FYAJPAD@Z) 已经在 dispenser.obj 中定义
+     1>moc_dispenser.obj : error LNK2005: "int __cdecl EpcioLen(void)" (?EpcioLen@@$$FYAHXZ) 已经在 dispenser.obj 中定义
+     1>moc_dispenser.obj : error LNK2005: "int __cdecl Calc_CRC(char *)" (?Calc_CRC@@$$FYAHPAD@Z) 已经在 dispenser.obj 中定义
+     1>moc_dispenser.obj : error LNK2005: "void __cdecl EpcioCmdFormat(char *,char *)" (?EpcioCmdFormat@@$$FYAXPAD0@Z) 已经在 dispenser.obj 中定义
+     1>moc_dispenser.obj : error LNK2005: "int __cdecl ReadABuffer(char *,unsigned long)" (?ReadABuffer@@$$FYAHPADK@Z) 已经在 dispenser.obj 中定义
+     1>moc_dispenser.obj : error LNK2005: "void __cdecl Read(void)" (?Read@@$$FYAXXZ) 已经在 dispenser.obj 中定义
+     1>moc_dispenser.obj : error LNK2005: "int __cdecl WriteABufferD(char *,unsigned long)" (?WriteABufferD@@$$FYAHPADK@Z) 已经在 dispenser.obj 中定义
+     1>moc_dispenser.obj : error LNK2005: "int __cdecl WriteABuffer(char *,unsigned long)" (?WriteABuffer@@$$FYAHPADK@Z) 已经在 dispenser.obj 中定义
+     1>moc_dispenser.obj : error LNK2005: "void __cdecl CalCheckSum(unsigned char *)" (?CalCheckSum@@$$FYAXPAE@Z) 已经在 dispenser.obj 中定义
+     1>moc_dispenser.obj : error LNK2005: "long __cdecl MotionComClose(void)" (?MotionComClose@@$$FYAJXZ) 已经在 dispenser.obj 中定义
+     1>moc_dispenser.obj : error LNK2005: "long __cdecl MtClose(void)" (?MtClose@@$$FYAJXZ) 已经在 dispenser.obj 中定义
+     1>moc_dispenser.obj : error LNK2005: "long __cdecl MotionComStatus(void)" (?MotionComStatus@@$$FYAJXZ) 已经在 dispenser.obj 中定义
+     1>moc_dispenser.obj : error LNK2005: "long __cdecl MotionComSignal(long)" (?MotionComSignal@@$$FYAJJ@Z) 已经在 dispenser.obj 中定义
+     1>moc_dispenser.obj : error LNK2005: "void __cdecl MtRs232Baud(long)" (?MtRs232Baud@@$$FYAXJ@Z) 已经在 dispenser.obj 中定义
+     1>moc_dispenser.obj : error LNK2005: "long __cdecl MotionFlag(long)" (?MotionFlag@@$$FYAJJ@Z) 已经在 dispenser.obj 中定义
+     1>moc_dispenser.obj : error LNK2005: "long __cdecl MotionInput(long)" (?MotionInput@@$$FYAJJ@Z) 已经在 dispenser.obj 中定义
+     1>moc_dispenser.obj : error LNK2005: "long __cdecl MtFlag(long)" (?MtFlag@@$$FYAJJ@Z) 已经在 dispenser.obj 中定义
+     1>moc_dispenser.obj : error LNK2005: "long __cdecl MtInput(long)" (?MtInput@@$$FYAJJ@Z) 已经在 dispenser.obj 中定义
+     1>moc_dispenser.obj : error LNK2005: "long __cdecl MtSize(void)" (?MtSize@@$$FYAJXZ) 已经在 dispenser.obj 中定义
+     1>moc_dispenser.obj : error LNK2005: "long __cdecl MtHead(void)" (?MtHead@@$$FYAJXZ) 已经在 dispenser.obj 中定义
+     1>moc_dispenser.obj : error LNK2005: "long __cdecl MtTail(void)" (?MtTail@@$$FYAJXZ) 已经在 dispenser.obj 中定义
+     1>moc_dispenser.obj : error LNK2005: "long __cdecl RemoteWDT(void)" (?RemoteWDT@@$$FYAJXZ) 已经在 dispenser.obj 中定义
+     1>moc_dispenser.obj : error LNK2005: "long __cdecl MotionCmd(char *)" (?MotionCmd@@$$FYAJPAD@Z) 已经在 dispenser.obj 中定义
+     1>moc_dispenser.obj : error LNK2005: "long __cdecl MtReflash(struct Rs232MotionData *)" (?MtReflash@@$$FYAJPAURs232MotionData@@@Z) 已经在 dispenser.obj 中定义
+     1>moc_dispenser.obj : error LNK2005: "long __cdecl MtEmpty(void)" (?MtEmpty@@$$FYAJXZ) 已经在 dispenser.obj 中定义
+     1>moc_dispenser.obj : error LNK2005: "long __cdecl MtThread(void)" (?MtThread@@$$FYAJXZ) 已经在 dispenser.obj 中定义
+     1>moc_dispenser.obj : error LNK2005: "long __cdecl MtCmd(char *)" (?MtCmd@@$$FYAJPAD@Z) 已经在 dispenser.obj 中定义
+     1>moc_dispenser.obj : error LNK2005: "unsigned long __cdecl MtCheckSum(void)" (?MtCheckSum@@$$FYAKXZ) 已经在 dispenser.obj 中定义
+     1>moc_dispenser.obj : error LNK2005: "unsigned long __cdecl MtCheckWdt(void)" (?MtCheckWdt@@$$FYAKXZ) 已经在 dispenser.obj 中定义
+     1>moc_dispenser.obj : error LNK2005: "unsigned long __cdecl MtError(void)" (?MtError@@$$FYAKXZ) 已经在 dispenser.obj 中定义
+     1>moc_dispenser.obj : error LNK2005: "char * __cdecl MtLaserCmd(char *)" (?MtLaserCmd@@$$FYAPADPAD@Z) 已经在 dispenser.obj 中定义
+     1>moc_dispenser.obj : error LNK2005: "char * __cdecl MtReceived(void)" (?MtReceived@@$$FYAPADXZ) 已经在 dispenser.obj 中定义
+     1>moc_dispenser.obj : error LNK2005: "int __cdecl MtTestDebby(int,int)" (?MtTestDebby@@$$FYAHHH@Z) 已经在 dispenser.obj 中定义
+     1>moc_dispenser.obj : error LNK2005: "unsigned long __stdcall MotionThreadProc(void *)" (?MotionThreadProc@@$$FYGKPAX@Z) 已经在 dispenser.obj 中定义
+     1>moc_dispenser.obj : error LNK2005: "long __cdecl MtConnect(char *)" (?MtConnect@@$$FYAJPAD@Z) 已经在 dispenser.obj 中定义
+     1>moc_dispenser.obj : error LNK2005: "long __cdecl MtStart(long)" (?MtStart@@$$FYAJJ@Z) 已经在 dispenser.obj 中定义
+     1>main.obj : error LNK2005: "void __cdecl sleep(int)" (?sleep@@YAXH@Z) 已经在 dispenser.obj 中定义
+     1>main.obj : error LNK2005: "long __cdecl EpcioCheckSum(char *)" (?EpcioCheckSum@@YAJPAD@Z) 已经在 dispenser.obj 中定义
+     1>main.obj : error LNK2005: "int __cdecl EpcioLen(void)" (?EpcioLen@@YAHXZ) 已经在 dispenser.obj 中定义
+     1>main.obj : error LNK2005: "int __cdecl Calc_CRC(char *)" (?Calc_CRC@@YAHPAD@Z) 已经在 dispenser.obj 中定义
+     1>main.obj : error LNK2005: "void __cdecl EpcioCmdFormat(char *,char *)" (?EpcioCmdFormat@@YAXPAD0@Z) 已经在 dispenser.obj 中定义
+     1>main.obj : error LNK2005: "int __cdecl ReadABuffer(char *,unsigned long)" (?ReadABuffer@@YAHPADK@Z) 已经在 dispenser.obj 中定义
+     1>main.obj : error LNK2005: "void __cdecl Read(void)" (?Read@@YAXXZ) 已经在 dispenser.obj 中定义
+     1>main.obj : error LNK2005: "int __cdecl WriteABufferD(char *,unsigned long)" (?WriteABufferD@@YAHPADK@Z) 已经在 dispenser.obj 中定义
+     1>main.obj : error LNK2005: "int __cdecl WriteABuffer(char *,unsigned long)" (?WriteABuffer@@YAHPADK@Z) 已经在 dispenser.obj 中定义
+     1>main.obj : error LNK2005: "void __cdecl CalCheckSum(unsigned char *)" (?CalCheckSum@@YAXPAE@Z) 已经在 dispenser.obj 中定义
+     1>main.obj : error LNK2005: "long __cdecl MotionComClose(void)" (?MotionComClose@@YAJXZ) 已经在 dispenser.obj 中定义
+     1>main.obj : error LNK2005: "long __cdecl MtClose(void)" (?MtClose@@YAJXZ) 已经在 dispenser.obj 中定义
+     1>main.obj : error LNK2005: "long __cdecl MotionComStatus(void)" (?MotionComStatus@@YAJXZ) 已经在 dispenser.obj 中定义
+     1>main.obj : error LNK2005: "long __cdecl MotionComSignal(long)" (?MotionComSignal@@YAJJ@Z) 已经在 dispenser.obj 中定义
+     1>main.obj : error LNK2005: "void __cdecl MtRs232Baud(long)" (?MtRs232Baud@@YAXJ@Z) 已经在 dispenser.obj 中定义
+     1>main.obj : error LNK2005: "long __cdecl MotionFlag(long)" (?MotionFlag@@YAJJ@Z) 已经在 dispenser.obj 中定义
+     1>main.obj : error LNK2005: "long __cdecl MotionInput(long)" (?MotionInput@@YAJJ@Z) 已经在 dispenser.obj 中定义
+     1>main.obj : error LNK2005: "long __cdecl MtFlag(long)" (?MtFlag@@YAJJ@Z) 已经在 dispenser.obj 中定义
+     1>main.obj : error LNK2005: "long __cdecl MtInput(long)" (?MtInput@@YAJJ@Z) 已经在 dispenser.obj 中定义
+     1>main.obj : error LNK2005: "long __cdecl MtSize(void)" (?MtSize@@YAJXZ) 已经在 dispenser.obj 中定义
+     1>main.obj : error LNK2005: "long __cdecl MtHead(void)" (?MtHead@@YAJXZ) 已经在 dispenser.obj 中定义
+     1>main.obj : error LNK2005: "long __cdecl MtTail(void)" (?MtTail@@YAJXZ) 已经在 dispenser.obj 中定义
+     1>main.obj : error LNK2005: "long __cdecl RemoteWDT(void)" (?RemoteWDT@@YAJXZ) 已经在 dispenser.obj 中定义
+     1>main.obj : error LNK2005: "long __cdecl MotionCmd(char *)" (?MotionCmd@@YAJPAD@Z) 已经在 dispenser.obj 中定义
+     1>main.obj : error LNK2005: "long __cdecl MtReflash(struct Rs232MotionData *)" (?MtReflash@@YAJPAURs232MotionData@@@Z) 已经在 dispenser.obj 中定义
+     1>main.obj : error LNK2005: "long __cdecl MtEmpty(void)" (?MtEmpty@@YAJXZ) 已经在 dispenser.obj 中定义
+     1>main.obj : error LNK2005: "long __cdecl MtThread(void)" (?MtThread@@YAJXZ) 已经在 dispenser.obj 中定义
+     1>main.obj : error LNK2005: "long __cdecl MtCmd(char *)" (?MtCmd@@YAJPAD@Z) 已经在 dispenser.obj 中定义
+     1>main.obj : error LNK2005: "unsigned long __cdecl MtCheckSum(void)" (?MtCheckSum@@YAKXZ) 已经在 dispenser.obj 中定义
+     1>main.obj : error LNK2005: "unsigned long __cdecl MtCheckWdt(void)" (?MtCheckWdt@@YAKXZ) 已经在 dispenser.obj 中定义
+     1>main.obj : error LNK2005: "unsigned long __cdecl MtError(void)" (?MtError@@YAKXZ) 已经在 dispenser.obj 中定义
+     1>main.obj : error LNK2005: "char * __cdecl MtLaserCmd(char *)" (?MtLaserCmd@@YAPADPAD@Z) 已经在 dispenser.obj 中定义
+     1>main.obj : error LNK2005: "char * __cdecl MtReceived(void)" (?MtReceived@@YAPADXZ) 已经在 dispenser.obj 中定义
+     1>main.obj : error LNK2005: "int __cdecl MtTestDebby(int,int)" (?MtTestDebby@@YAHHH@Z) 已经在 dispenser.obj 中定义
+     1>main.obj : error LNK2005: "unsigned long __stdcall MotionThreadProc(void *)" (?MotionThreadProc@@YGKPAX@Z) 已经在 dispenser.obj 中定义
+     1>main.obj : error LNK2005: "long __cdecl MtConnect(char *)" (?MtConnect@@YAJPAD@Z) 已经在 dispenser.obj 中定义
+     1>main.obj : error LNK2005: "long __cdecl MtStart(long)" (?MtStart@@YAJJ@Z) 已经在 dispenser.obj 中定义
+     1>main.obj : error LNK2005: "struct _OVERLAPPED oCOM" (?oCOM@@3U_OVERLAPPED@@A) 已经在 dispenser.obj 中定义
+     1>main.obj : error LNK2005: "char * SendString" (?SendString@@3PADA) 已经在 dispenser.obj 中定义
+     1>main.obj : error LNK2005: "int checksum" (?checksum@@3HA) 已经在 dispenser.obj 中定义
+     1>main.obj : error LNK2005: "void * hCom" (?hCom@@3PAXA) 已经在 dispenser.obj 中定义
+     1>main.obj : error LNK2005: "int dwError" (?dwError@@3HA) 已经在 dispenser.obj 中定义
+     1>main.obj : error LNK2005: "long * SendFlag" (?SendFlag@@3PAJA) 已经在 dispenser.obj 中定义
+     1>main.obj : error LNK2005: "char (* data)[30]" (?data@@3PAY0BO@DA) 已经在 dispenser.obj 中定义
+     1>main.obj : error LNK2005: "long flowNumber" (?flowNumber@@3JA) 已经在 dispenser.obj 中定义
+     1>main.obj : error LNK2005: "void * handle" (?handle@@3PAXA) 已经在 dispenser.obj 中定义
+     1>main.obj : error LNK2005: "long * ReadFlag" (?ReadFlag@@3PAJA) 已经在 dispenser.obj 中定义
+     1>main.obj : error LNK2005: "int stopflag" (?stopflag@@3HA) 已经在 dispenser.obj 中定义
+     1>main.obj : error LNK2005: "int emgflag" (?emgflag@@3HA) 已经在 dispenser.obj 中定义
+     1>main.obj : error LNK2005: "struct Rs232MotionData mdr1" (?mdr1@@3URs232MotionData@@A) 已经在 dispenser.obj 中定义
+     1>main.obj : error LNK2005: "int CreateFlag" (?CreateFlag@@3HA) 已经在 dispenser.obj 中定义
+     1>main.obj : error LNK2005: "struct Rs232MotionData mdr2" (?mdr2@@3URs232MotionData@@A) 已经在 dispenser.obj 中定义
+     1>main.obj : error LNK2005: "struct _DCB dcb" (?dcb@@3U_DCB@@A) 已经在 dispenser.obj 中定义
+     1>main.obj : error LNK2005: "char * ReadString" (?ReadString@@3PADA) 已经在 dispenser.obj 中定义
+     1>main.obj : error LNK2005: "char * buf" (?buf@@3PADA) 已经在 dispenser.obj 中定义
+     1>main.obj : error LNK2005: "char * LastString" (?LastString@@3PADA) 已经在 dispenser.obj 中定义
+     1>main.obj : error LNK2005: "char * temp" (?temp@@3PADA) 已经在 dispenser.obj 中定义
+     1>main.obj : error LNK2005: "char * ReadBuf" (?ReadBuf@@3PADA) 已经在 dispenser.obj 中定义
+     1>main.obj : error LNK2005: "char (* cmdbuf)[80]" (?cmdbuf@@3PAY0FA@DA) 已经在 dispenser.obj 中定义
+     1>main.obj : error LNK2005: "struct Rs232MotionData mdr" (?mdr@@3URs232MotionData@@A) 已经在 dispenser.obj 中定义
+     1>main.obj : error LNK2005: "char * sendbuf" (?sendbuf@@3PADA) 已经在 dispenser.obj 中定义
+     1>main.obj : error LNK2005: "int DTRFlag" (?DTRFlag@@3HA) 已经在 dispenser.obj 中定义
+     1>main.obj : error LNK2005: "unsigned long threadid" (?threadid@@3KA) 已经在 dispenser.obj 中定义
+     1>main.obj : error LNK2005: "char * ccmd" (?ccmd@@3PADA) 已经在 dispenser.obj 中定义
+     1>main.obj : error LNK2005: "char * laser_sendcmd" (?laser_sendcmd@@3PADA) 已经在 dispenser.obj 中定义
+     1>main.obj : error LNK2005: "char * laser_recvcmd" (?laser_recvcmd@@3PADA) 已经在 dispenser.obj 中定义
+     1>main.obj : error LNK2005: "int string_received" (?string_received@@3HA) 已经在 dispenser.obj 中定义
+     1>main.obj : error LNK2005: "int ErrCnt" (?ErrCnt@@3HA) 已经在 dispenser.obj 中定义
+     1>main.obj : error LNK2005: "char * ack" (?ack@@3PADA) 已经在 dispenser.obj 中定义
+     1>main.obj : error LNK2005: "int volatile head" (?head@@3HC) 已经在 dispenser.obj 中定义
+     1>main.obj : error LNK2005: "int volatile tail" (?tail@@3HC) 已经在 dispenser.obj 中定义
+     1>main.obj : error LNK2005: "int thread_loop" (?thread_loop@@3HA) 已经在 dispenser.obj 中定义
+     1>main.obj : error LNK2005: "unsigned int thread_flag" (?thread_flag@@3IA) 已经在 dispenser.obj 中定义
+     1>main.obj : error LNK2005: "int thread_wdt" (?thread_wdt@@3HA) 已经在 dispenser.obj 中定义
+     1>main.obj : error LNK2005: "int wait_time" (?wait_time@@3HA) 已经在 dispenser.obj 中定义
+     1>main.obj : error LNK2005: "int pause_thread" (?pause_thread@@3HA) 已经在 dispenser.obj 中定义
+     1>main.obj : error LNK2005: "int RemoteFlag" (?RemoteFlag@@3HA) 已经在 dispenser.obj 中定义
+     1>main.obj : error LNK2005: "int head1" (?head1@@3HA) 已经在 dispenser.obj 中定义
+     1>main.obj : error LNK2005: "int CommErr" (?CommErr@@3HA) 已经在 dispenser.obj 中定义
+     1>main.obj : error LNK2005: "int CommWdt" (?CommWdt@@3HA) 已经在 dispenser.obj 中定义
+     1>main.obj : error LNK2005: "long cmd_in_buffer" (?cmd_in_buffer@@3JA) 已经在 dispenser.obj 中定义
+     1>main.obj : error LNK2005: "long baud" (?baud@@3JA) 已经在 dispenser.obj 中定义
+     1>main.obj : error LNK2005: "char * recvbuf" (?recvbuf@@3PADA) 已经在 dispenser.obj 中定义
+     1>main.obj : error LNK2005: "unsigned int _checksum" (?_checksum@@3IA) 已经在 dispenser.obj 中定义
+     1>main.obj : error LNK2005: "int pause_thred" (?pause_thred@@3HA) 已经在 dispenser.obj 中定义
+     1>main.obj : error LNK2005: "void __cdecl sleep(int)" (?sleep@@$$FYAXH@Z) 已经在 dispenser.obj 中定义
+     1>main.obj : error LNK2005: "long __cdecl EpcioCheckSum(char *)" (?EpcioCheckSum@@$$FYAJPAD@Z) 已经在 dispenser.obj 中定义
+     1>main.obj : error LNK2005: "int __cdecl EpcioLen(void)" (?EpcioLen@@$$FYAHXZ) 已经在 dispenser.obj 中定义
+     1>main.obj : error LNK2005: "int __cdecl Calc_CRC(char *)" (?Calc_CRC@@$$FYAHPAD@Z) 已经在 dispenser.obj 中定义
+     1>main.obj : error LNK2005: "void __cdecl EpcioCmdFormat(char *,char *)" (?EpcioCmdFormat@@$$FYAXPAD0@Z) 已经在 dispenser.obj 中定义
+     1>main.obj : error LNK2005: "int __cdecl ReadABuffer(char *,unsigned long)" (?ReadABuffer@@$$FYAHPADK@Z) 已经在 dispenser.obj 中定义
+     1>main.obj : error LNK2005: "void __cdecl Read(void)" (?Read@@$$FYAXXZ) 已经在 dispenser.obj 中定义
+     1>main.obj : error LNK2005: "int __cdecl WriteABufferD(char *,unsigned long)" (?WriteABufferD@@$$FYAHPADK@Z) 已经在 dispenser.obj 中定义
+     1>main.obj : error LNK2005: "int __cdecl WriteABuffer(char *,unsigned long)" (?WriteABuffer@@$$FYAHPADK@Z) 已经在 dispenser.obj 中定义
+     1>main.obj : error LNK2005: "void __cdecl CalCheckSum(unsigned char *)" (?CalCheckSum@@$$FYAXPAE@Z) 已经在 dispenser.obj 中定义
+     1>main.obj : error LNK2005: "long __cdecl MotionComClose(void)" (?MotionComClose@@$$FYAJXZ) 已经在 dispenser.obj 中定义
+     1>main.obj : error LNK2005: "long __cdecl MtClose(void)" (?MtClose@@$$FYAJXZ) 已经在 dispenser.obj 中定义
+     1>main.obj : error LNK2005: "long __cdecl MotionComStatus(void)" (?MotionComStatus@@$$FYAJXZ) 已经在 dispenser.obj 中定义
+     1>main.obj : error LNK2005: "long __cdecl MotionComSignal(long)" (?MotionComSignal@@$$FYAJJ@Z) 已经在 dispenser.obj 中定义
+     1>main.obj : error LNK2005: "void __cdecl MtRs232Baud(long)" (?MtRs232Baud@@$$FYAXJ@Z) 已经在 dispenser.obj 中定义
+     1>main.obj : error LNK2005: "long __cdecl MotionFlag(long)" (?MotionFlag@@$$FYAJJ@Z) 已经在 dispenser.obj 中定义
+     1>main.obj : error LNK2005: "long __cdecl MotionInput(long)" (?MotionInput@@$$FYAJJ@Z) 已经在 dispenser.obj 中定义
+     1>main.obj : error LNK2005: "long __cdecl MtFlag(long)" (?MtFlag@@$$FYAJJ@Z) 已经在 dispenser.obj 中定义
+     1>main.obj : error LNK2005: "long __cdecl MtInput(long)" (?MtInput@@$$FYAJJ@Z) 已经在 dispenser.obj 中定义
+     1>main.obj : error LNK2005: "long __cdecl MtSize(void)" (?MtSize@@$$FYAJXZ) 已经在 dispenser.obj 中定义
+     1>main.obj : error LNK2005: "long __cdecl MtHead(void)" (?MtHead@@$$FYAJXZ) 已经在 dispenser.obj 中定义
+     1>main.obj : error LNK2005: "long __cdecl MtTail(void)" (?MtTail@@$$FYAJXZ) 已经在 dispenser.obj 中定义
+     1>main.obj : error LNK2005: "long __cdecl RemoteWDT(void)" (?RemoteWDT@@$$FYAJXZ) 已经在 dispenser.obj 中定义
+     1>main.obj : error LNK2005: "long __cdecl MotionCmd(char *)" (?MotionCmd@@$$FYAJPAD@Z) 已经在 dispenser.obj 中定义
+     1>main.obj : error LNK2005: "long __cdecl MtReflash(struct Rs232MotionData *)" (?MtReflash@@$$FYAJPAURs232MotionData@@@Z) 已经在 dispenser.obj 中定义
+     1>main.obj : error LNK2005: "long __cdecl MtEmpty(void)" (?MtEmpty@@$$FYAJXZ) 已经在 dispenser.obj 中定义
+     1>main.obj : error LNK2005: "long __cdecl MtThread(void)" (?MtThread@@$$FYAJXZ) 已经在 dispenser.obj 中定义
+     1>main.obj : error LNK2005: "long __cdecl MtCmd(char *)" (?MtCmd@@$$FYAJPAD@Z) 已经在 dispenser.obj 中定义
+     1>main.obj : error LNK2005: "unsigned long __cdecl MtCheckSum(void)" (?MtCheckSum@@$$FYAKXZ) 已经在 dispenser.obj 中定义
+     1>main.obj : error LNK2005: "unsigned long __cdecl MtCheckWdt(void)" (?MtCheckWdt@@$$FYAKXZ) 已经在 dispenser.obj 中定义
+     1>main.obj : error LNK2005: "unsigned long __cdecl MtError(void)" (?MtError@@$$FYAKXZ) 已经在 dispenser.obj 中定义
+     1>main.obj : error LNK2005: "char * __cdecl MtLaserCmd(char *)" (?MtLaserCmd@@$$FYAPADPAD@Z) 已经在 dispenser.obj 中定义
+     1>main.obj : error LNK2005: "char * __cdecl MtReceived(void)" (?MtReceived@@$$FYAPADXZ) 已经在 dispenser.obj 中定义
+     1>main.obj : error LNK2005: "int __cdecl MtTestDebby(int,int)" (?MtTestDebby@@$$FYAHHH@Z) 已经在 dispenser.obj 中定义
+     1>main.obj : error LNK2005: "unsigned long __stdcall MotionThreadProc(void *)" (?MotionThreadProc@@$$FYGKPAX@Z) 已经在 dispenser.obj 中定义
+     1>main.obj : error LNK2005: "long __cdecl MtConnect(char *)" (?MtConnect@@$$FYAJPAD@Z) 已经在 dispenser.obj 中定义
+     1>main.obj : error LNK2005: "long __cdecl MtStart(long)" (?MtStart@@$$FYAJJ@Z) 已经在 dispenser.obj 中定义
+     1>d:\user\documents\visual studio 2013\Projects\UI-5-Axis-Dispenser\Win32\Debug\\UI-5-Axis-Dispenser.exe : fatal error LNK1169: 找到一个或多个多重定义的符号
+     1>已完成生成项目“d:\USER\documents\visual studio 2013\Projects\UI-5-Axis-Dispenser\UI-5-Axis-Dispenser\UI-5-Axis-Dispenser.vcxproj”(Build 个目标)的操作 - 失败。
+
+生成失败。
+
+已用时间 00:00:00.73

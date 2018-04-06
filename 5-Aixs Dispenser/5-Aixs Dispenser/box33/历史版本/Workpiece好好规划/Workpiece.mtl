@@ -1,0 +1,24 @@
+#
+## Alias OBJ Material File
+# Exported from SketchUp, (c) 2000-2012 Trimble Navigation Limited
+
+newmtl Terrazzo_Tile_Light
+Ka 0.000000 0.000000 0.000000
+Kd 0.858824 0.850980 0.823529
+Ks 0.330000 0.330000 0.330000
+
+newmtl ForegroundColor
+Ka 0.000000 0.000000 0.000000
+Kd 0.000000 0.000000 0.000000
+Ks 0.330000 0.330000 0.330000
+
+newmtl Formica_Beige
+Ka 0.000000 0.000000 0.000000
+Kd 0.827451 0.733333 0.584314
+Ks 0.330000 0.330000 0.330000
+
+newmtl Formica_Laminate_Light
+Ka 0.000000 0.000000 0.000000
+Kd 0.835294 0.741176 0.643137
+Ks 0.330000 0.330000 0.330000
+

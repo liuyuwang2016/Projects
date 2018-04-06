@@ -1,0 +1,88 @@
+﻿生成启动时间为 2017/12/19 15:33:14。
+     1>项目“D:\USER\Documents\Visual Studio 2013\Projects\KinectPhantom\KinectPhantom\KinectPhantom.vcxproj”在节点 2 上(Build 个目标)。
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /IC:\OpenHaptics\Developer\3.4.0\include /I"C:\Program Files\Microsoft SDKs\Kinect\v2.0_1409\\inc" /IC:\portaudio\include /IC:\OpenCV300\opencv\build\include /IC:\OpenCV300\opencv\build\include\opencv /IC:\OpenCV300\opencv\build\include\opencv2 /IC:\OpenHaptics\Developer\3.4.0\utilities\include /AI"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0" /AI"C:\Program Files (x86)\Windows Kits\8.1\References\CommonConfiguration\Neutral" /Zi /clr /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _MBCS /EHa /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /TP /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\mscorlib.dll" /analyze- /errorReport:prompt /clr:nostdlib TestPhantom.cpp
+         TestPhantom.cpp
+     1>C:\OpenCV300\opencv\build\include\opencv2/core/mat.hpp(1965): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+     1>C:\OpenCV300\opencv\build\include\opencv2/core/persistence.hpp : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+     1>C:\OpenCV300\opencv\build\include\opencv2/core/utility.hpp : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+     1>d:\user\documents\visual studio 2013\projects\kinectphantom\kinectphantom\dllmain.h(202): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : 参见“sprintf”的声明
+     1>d:\user\documents\visual studio 2013\projects\kinectphantom\kinectphantom\dllmain.h(204): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : 参见“sprintf”的声明
+     1>d:\user\documents\visual studio 2013\projects\kinectphantom\kinectphantom\dllmain.h(305): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(112) : 参见“strcpy”的声明
+     1>d:\user\documents\visual studio 2013\projects\kinectphantom\kinectphantom\dllmain.h(317): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(112) : 参见“strcpy”的声明
+     1>d:\user\documents\visual studio 2013\projects\kinectphantom\kinectphantom\dllmain.h(402): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(112) : 参见“strcpy”的声明
+     1>d:\user\documents\visual studio 2013\projects\kinectphantom\kinectphantom\dllmain.h(474): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(118) : 参见“strcat”的声明
+     1>d:\user\documents\visual studio 2013\projects\kinectphantom\kinectphantom\dllmain.h(475): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(118) : 参见“strcat”的声明
+     1>d:\user\documents\visual studio 2013\projects\kinectphantom\kinectphantom\dllmain.h(575): warning C4996: 'swprintf': swprintf has been changed to conform with the ISO C standard, adding an extra character count parameter. To use traditional Microsoft swprintf, set _CRT_NON_CONFORMING_SWPRINTFS.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\swprintf.inl(85) : 参见“swprintf”的声明
+     1>d:\user\documents\visual studio 2013\projects\kinectphantom\kinectphantom\dllmain.h(594): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : 参见“sprintf”的声明
+     1>d:\user\documents\visual studio 2013\projects\kinectphantom\kinectphantom\dllmain.h(765): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(112) : 参见“strcpy”的声明
+     1>d:\user\documents\visual studio 2013\projects\kinectphantom\kinectphantom\dllmain.h(793): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(112) : 参见“strcpy”的声明
+     1>d:\user\documents\visual studio 2013\projects\kinectphantom\kinectphantom\dllmain.h(795): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(112) : 参见“strcpy”的声明
+     1>d:\user\documents\visual studio 2013\projects\kinectphantom\kinectphantom\Declae.h(341): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : 参见“sprintf”的声明
+     1>d:\user\documents\visual studio 2013\projects\kinectphantom\kinectphantom\Declae.h(628): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : 参见“sprintf”的声明
+     1>d:\user\documents\visual studio 2013\projects\kinectphantom\kinectphantom\Declae.h(629): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : 参见“sprintf”的声明
+     1>d:\user\documents\visual studio 2013\projects\kinectphantom\kinectphantom\Declae.h(630): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : 参见“sprintf”的声明
+     1>d:\user\documents\visual studio 2013\projects\kinectphantom\kinectphantom\Declae.h(631): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(118) : 参见“strcat”的声明
+     1>d:\user\documents\visual studio 2013\projects\kinectphantom\kinectphantom\Declae.h(632): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(118) : 参见“strcat”的声明
+     1>d:\user\documents\visual studio 2013\projects\kinectphantom\kinectphantom\Declae.h(633): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(118) : 参见“strcat”的声明
+     1>d:\user\documents\visual studio 2013\projects\kinectphantom\kinectphantom\Declae.h(1135): warning C4018: “<”: 有符号/无符号不匹配
+     1>d:\user\documents\visual studio 2013\projects\kinectphantom\kinectphantom\Declae.h(1160): warning C4018: “<”: 有符号/无符号不匹配
+     1>d:\user\documents\visual studio 2013\projects\kinectphantom\kinectphantom\Declae.h(1184): warning C4018: “<”: 有符号/无符号不匹配
+     1>TestPhantom.cpp(204): warning C4018: “<”: 有符号/无符号不匹配
+     1>TestPhantom.cpp(2230): warning C4800: “BOOL”: 将值强制为布尔值“true”或“false”(性能警告)
+     1>c:\opencv300\opencv\build\include\opencv2\core\cvstd.hpp(592): warning C4793: “cv::String::String”: 编译为本机的函数:
+         	托管代码中发现一个不受支持的内部函数
+     1>c:\opencv300\opencv\build\include\opencv2\core\mat.inl.hpp(381): warning C4793: “cv::Mat::Mat”: 编译为本机的函数:
+         	托管代码中发现一个不受支持的内部函数
+     1>d:\user\documents\visual studio 2013\projects\kinectphantom\kinectphantom\declae.h(1245): warning C4793: “glPrintf”: 编译为本机的函数:
+         	/clr 下不支持 varargs
+     1>d:\user\documents\visual studio 2013\projects\kinectphantom\kinectphantom\declae.h(1251): warning C4793: “glPrintf”: 编译为本机的函数:
+         	托管代码中发现一个不受支持的内部函数
+     1>d:\user\documents\visual studio 2013\projects\kinectphantom\kinectphantom\declae.h(1253): warning C4793: “glPrintf”: 编译为本机的函数:
+         	托管代码中发现一个不受支持的内部函数
+     1>c:\opencv300\opencv\build\include\opencv2\core\mat.inl.hpp(666): warning C4793: “cv::Mat::release”: 编译为本机的函数:
+         	托管代码中发现一个不受支持的内部函数
+     1>c:\opencv300\opencv\build\include\opencv2\core\mat.inl.hpp(1703): warning C4793: “cv::SparseMat::addref”: 编译为本机的函数:
+         	托管代码中发现一个不受支持的内部函数
+     1>c:\opencv300\opencv\build\include\opencv2\core\mat.inl.hpp(3304): warning C4793: “cv::UMat::addref”: 编译为本机的函数:
+         	托管代码中发现一个不受支持的内部函数
+     1>c:\opencv300\opencv\build\include\opencv2\core\ptr.inl.hpp(67): warning C4793: “cv::detail::PtrOwner::incRef”: 编译为本机的函数:
+         	托管代码中发现一个不受支持的内部函数
+     1>c:\opencv300\opencv\build\include\opencv2\core\ptr.inl.hpp(72): warning C4793: “cv::detail::PtrOwner::decRef”: 编译为本机的函数:
+         	托管代码中发现一个不受支持的内部函数
+     1>c:\opencv300\opencv\build\include\opencv2\core\mat.inl.hpp(565): warning C4793: “cv::Mat::operator=”: 编译为本机的函数:
+         	托管代码中发现一个不受支持的内部函数
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\USER\Documents\Visual Studio 2013\Projects\KinectPhantom\Debug\KinectPhantom.exe" /INCREMENTAL /NOLOGO /LIBPATH:C:\OpenCV300\opencv\build\x86\vc12\lib /LIBPATH:C:\portaudio\lib /LIBPATH:"C:\Program Files\Microsoft SDKs\Kinect\v2.0_1409\\Lib\x86" /LIBPATH:C:\OpenHaptics\Developer\3.4.0\utilities\lib\Win32\Debug /LIBPATH:C:\OpenHaptics\Developer\3.4.0\lib\Win32\Debug hl.lib hlu.lib hd.lib hdu.lib glut32.lib opencv_ts300d.lib opencv_world300d.lib kinect20.lib portaudio_x86.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\USER\Documents\Visual Studio 2013\Projects\KinectPhantom\Debug\KinectPhantom.pdb" /ASSEMBLYDEBUG /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /FIXED:NO /NXCOMPAT /MACHINE:X86 Debug\glm.obj
+         Debug\TestPhantom.obj
+         "Debug\.NETFramework,Version=v4.0.AssemblyAttributes.obj"
+     1>hlu.lib(hlu.obj) : warning LNK4075: 忽略“/EDITANDCONTINUE”(由于“/OPT:LBR”规范)
+     1>opencv_ts300d.lib(ts.obj) : warning LNK4099: 未找到 PDB“opencv_ts300d.pdb”(使用“opencv_ts300d.lib(ts.obj)”或在“D:\USER\Documents\Visual Studio 2013\Projects\KinectPhantom\Debug\opencv_ts300d.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>opencv_ts300d.lib(ts_gtest.obj) : warning LNK4099: 未找到 PDB“opencv_ts300d.pdb”(使用“opencv_ts300d.lib(ts_gtest.obj)”或在“D:\USER\Documents\Visual Studio 2013\Projects\KinectPhantom\Debug\opencv_ts300d.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>opencv_ts300d.lib(ts_perf.obj) : warning LNK4099: 未找到 PDB“opencv_ts300d.pdb”(使用“opencv_ts300d.lib(ts_perf.obj)”或在“D:\USER\Documents\Visual Studio 2013\Projects\KinectPhantom\Debug\opencv_ts300d.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>opencv_ts300d.lib(opencv_ts_pch.obj) : warning LNK4099: 未找到 PDB“opencv_ts300d.pdb”(使用“opencv_ts300d.lib(opencv_ts_pch.obj)”或在“D:\USER\Documents\Visual Studio 2013\Projects\KinectPhantom\Debug\opencv_ts300d.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+         KinectPhantom.vcxproj -> D:\USER\Documents\Visual Studio 2013\Projects\KinectPhantom\Debug\KinectPhantom.exe
+     1>已完成生成项目“D:\USER\Documents\Visual Studio 2013\Projects\KinectPhantom\KinectPhantom\KinectPhantom.vcxproj”(Build 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:05.89

@@ -1,0 +1,23 @@
+﻿生成启动时间为 2018/2/3 11:37:16。
+     1>项目“D:\USER\Documents\Visual Studio 2013\Projects\RealSenseOpenCV\RealSenseOpenCV\RealSenseOpenCV.vcxproj”在节点 2 上(Build 个目标)。
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"C:\Program Files (x86)\Intel RealSense SDK 2.0\include" /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt main.cpp
+         main.cpp
+     1>c:\program files (x86)\intel realsense sdk 2.0\include\librealsense2\hpp\rs_types.hpp(113): error C3646: “noexcept”: 未知重写说明符
+     1>c:\program files (x86)\intel realsense sdk 2.0\include\librealsense2\hpp\rs_types.hpp(114): error C3646: “noexcept”: 未知重写说明符
+     1>c:\program files (x86)\intel realsense sdk 2.0\include\librealsense2\hpp\rs_types.hpp(115): error C3646: “noexcept”: 未知重写说明符
+     1>c:\program files (x86)\intel realsense sdk 2.0\include\librealsense2\hpp\rs_types.hpp(116): error C3646: “noexcept”: 未知重写说明符
+     1>c:\program files (x86)\intel realsense sdk 2.0\include\librealsense2\hpp\rs_types.hpp(117): error C3646: “noexcept”: 未知重写说明符
+     1>c:\program files (x86)\intel realsense sdk 2.0\include\librealsense2\hpp\rs_types.hpp(118): error C3646: “noexcept”: 未知重写说明符
+     1>c:\program files (x86)\intel realsense sdk 2.0\include\librealsense2\hpp\rs_types.hpp(119): error C3646: “noexcept”: 未知重写说明符
+     1>c:\program files (x86)\intel realsense sdk 2.0\include\librealsense2\hpp\rs_types.hpp(120): error C3646: “noexcept”: 未知重写说明符
+     1>c:\program files (x86)\intel realsense sdk 2.0\include\librealsense2\hpp\rs_frame.hpp(226): error C3646: “noexcept”: 未知重写说明符
+     1>d:\user\documents\visual studio 2013\projects\realsenseopencv\realsenseopencv\example.hpp(133): warning C4244: “参数”: 从“const float”转换到“int”，可能丢失数据
+     1>d:\user\documents\visual studio 2013\projects\realsenseopencv\realsenseopencv\example.hpp(180): error C2664: “HWND CreateWindowExW(DWORD,LPCWSTR,LPCWSTR,DWORD,int,int,int,int,HWND,HMENU,HINSTANCE,LPVOID)”: 无法将参数 3 从“const char *”转换为“LPCWSTR”
+                 与指向的类型无关；转换要求 reinterpret_cast、C 样式转换或函数样式转换
+     1>d:\user\documents\visual studio 2013\projects\realsenseopencv\realsenseopencv\example.hpp(328): warning C4018: “<”: 有符号/无符号不匹配
+     1>已完成生成项目“D:\USER\Documents\Visual Studio 2013\Projects\RealSenseOpenCV\RealSenseOpenCV\RealSenseOpenCV.vcxproj”(Build 个目标)的操作 - 失败。
+
+生成失败。
+
+已用时间 00:00:01.63

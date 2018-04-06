@@ -1,0 +1,20 @@
+﻿生成启动时间为 2018/1/20 15:11:16。
+     1>项目“d:\USER\documents\visual studio 2013\Projects\Text8_3A\Text8_3A\Text8_3A.vcxproj”在节点 2 上(Build 个目标)。
+     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\Microsoft.CppBuild.targets(935,5): warning MSB8027: Two or more files with the name of moc_SendDlg.cpp will produce outputs to the same location. This can lead to an incorrect build result.  The files involved are GeneratedFiles\Debug\moc_SendDlg.cpp, GeneratedFiles\Release\moc_SendDlg.cpp.
+     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\Microsoft.CppBuild.targets(935,5): warning MSB8027: Two or more files with the name of moc_text8_3a.cpp will produce outputs to the same location. This can lead to an incorrect build result.  The files involved are GeneratedFiles\Debug\moc_text8_3a.cpp, GeneratedFiles\Release\moc_text8_3a.cpp.
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I.\GeneratedFiles /I. /IC:\Qt\Qt5.6.0\5.6\msvc2013\include /I.\GeneratedFiles\Release /IC:\Qt\Qt5.6.0\5.6\msvc2013\include\QtCore /IC:\Qt\Qt5.6.0\5.6\msvc2013\include\QtGui /IC:\Qt\Qt5.6.0\5.6\msvc2013\include\QtWidgets /nologo /W1 /WX- /O2 /Oy- /D UNICODE /D WIN32 /D WIN64 /D QT_DLL /D QT_NO_DEBUG /D NDEBUG /D QT_CORE_LIB /D QT_GUI_LIB /D QT_WIDGETS_LIB /Gm- /EHsc /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt text8_3a.cpp
+         text8_3a.cpp
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"d:\USER\documents\visual studio 2013\Projects\Text8_3A\Win32\Release\\Text8_3A.exe" /NOLOGO /LIBPATH:C:\Qt\Qt5.6.0\5.6\msvc2013\lib qtmain.lib Qt5Core.lib Qt5Gui.lib Qt5Widgets.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:"d:\USER\documents\visual studio 2013\Projects\Text8_3A\Win32\Release\Text8_3A.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"d:\USER\documents\visual studio 2013\Projects\Text8_3A\Win32\Release\Text8_3A.lib" /MACHINE:X86 /SAFESEH Release\qrc_text8_3a.obj
+         Release\moc_SendDlg.obj
+         Release\moc_text8_3a.obj
+         Release\main.obj
+         Release\SendDlg.obj
+         Release\text8_3a.obj
+         Text8_3A.vcxproj -> d:\USER\documents\visual studio 2013\Projects\Text8_3A\Win32\Release\Text8_3A.exe
+     1>已完成生成项目“d:\USER\documents\visual studio 2013\Projects\Text8_3A\Text8_3A\Text8_3A.vcxproj”(Build 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:01.08

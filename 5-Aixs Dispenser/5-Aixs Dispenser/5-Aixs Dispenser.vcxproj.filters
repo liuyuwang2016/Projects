@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Header必须">
+      <UniqueIdentifier>{ce466a00-d689-4ad1-9ce2-74de5519c720}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="点胶机">
+      <UniqueIdentifier>{50636b74-50b7-4c21-a50e-2d8f129e3d72}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="三维模型">
+      <UniqueIdentifier>{52b9fb8a-b876-453e-802e-d40a1b7db197}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="声音提醒">
+      <UniqueIdentifier>{e764e432-dadc-4061-bf79-2ffc0a26e806}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="osapi">
+      <UniqueIdentifier>{f1e85edc-94e4-4bf8-9d76-3f1eb8a7dac9}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="glm.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="osapi\Mutex_Linux.cpp">
+      <Filter>osapi</Filter>
+    </ClCompile>
+    <ClCompile Include="osapi\Mutex_Win32.cpp">
+      <Filter>osapi</Filter>
+    </ClCompile>
+    <ClCompile Include="osapi\Semaphore_Linux.cpp">
+      <Filter>osapi</Filter>
+    </ClCompile>
+    <ClCompile Include="osapi\Semaphore_Win32.cpp">
+      <Filter>osapi</Filter>
+    </ClCompile>
+    <ClCompile Include="osapi\Socket.cpp">
+      <Filter>osapi</Filter>
+    </ClCompile>
+    <ClCompile Include="osapi\Thread_Linux.cpp">
+      <Filter>osapi</Filter>
+    </ClCompile>
+    <ClCompile Include="osapi\Thread_Win32.cpp">
+      <Filter>osapi</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\Kinect2.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Declae.h">
+      <Filter>Header必须</Filter>
+    </ClInclude>
+    <ClInclude Include="Function.h">
+      <Filter>Header必须</Filter>
+    </ClInclude>
+    <ClInclude Include="src\M232.h">
+      <Filter>点胶机</Filter>
+    </ClInclude>
+    <ClInclude Include="src\glm.h">
+      <Filter>三维模型</Filter>
+    </ClInclude>
+    <ClInclude Include="src\dllmain.h">
+      <Filter>点胶机</Filter>
+    </ClInclude>
+    <ClInclude Include="src\portaudio.h">
+      <Filter>声音提醒</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Scene.h">
+      <Filter>Header必须</Filter>
+    </ClInclude>
+    <ClInclude Include="osapi\Mutex.h">
+      <Filter>osapi</Filter>
+    </ClInclude>
+    <ClInclude Include="osapi\osapi.h">
+      <Filter>osapi</Filter>
+    </ClInclude>
+    <ClInclude Include="osapi\Semaphore.h">
+      <Filter>osapi</Filter>
+    </ClInclude>
+    <ClInclude Include="osapi\Socket.h">
+      <Filter>osapi</Filter>
+    </ClInclude>
+    <ClInclude Include="osapi\Thread.h">
+      <Filter>osapi</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RealScene.h">
+      <Filter>Header必须</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

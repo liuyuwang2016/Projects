@@ -1,0 +1,10 @@
+﻿生成启动时间为 2018/1/21 20:32:15。
+     1>项目“d:\USER\documents\visual studio 2013\Projects\SimpleTestARToolKit\SimpleTestARToolKit\SimpleTestARToolKit.vcxproj”在节点 2 上(Build 个目标)。
+     1>Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"d:\user\documents\visual studio 2013\Projects\SimpleTestARToolKit\Debug\SimpleTestARToolKit.exe" /INCREMENTAL /NOLOGO /LIBPATH:C:\ARToolKit5\lib /LIBPATH:"C:\ARToolKit5\lib\win32-i386" /LIBPATH:"D:\USER\Documents\Visual Studio 2013\Projects\SimpleTestARToolKit\SimpleTestARToolKit\src" AR.lib AR2.lib AR2d.lib ARd.lib ARgsub.lib ARgsub_lite.lib ARgsub_lited.lib ARgsubd.lib ARICP.lib ARICPd.lib ARMulti.lib ARMultid.lib ARosg.lib ARosgd.lib ARUtil.lib ARUtild.lib ARvideo.lib ARvideod.lib ARWrapper.lib ARWrapperd.lib Eden.lib glut32.lib KPM.lib KPMd.lib libjpeg.lib OpenThreads.lib osg.lib osgAnimation.lib osgDB.lib osgFX.lib osgGA.lib osgManipulator.lib osgParticle.lib osgPresentation.lib osgShadow.lib osgSim.lib osgTerrain.lib osgText.lib osgUtil.lib osgViewer.lib osgVolume.lib osgWidget.lib pthreadVC2.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"d:\user\documents\visual studio 2013\Projects\SimpleTestARToolKit\Debug\SimpleTestARToolKit.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"d:\user\documents\visual studio 2013\Projects\SimpleTestARToolKit\Debug\SimpleTestARToolKit.lib" /MACHINE:X86 Debug\source.obj
+         SimpleTestARToolKit.vcxproj -> d:\user\documents\visual studio 2013\Projects\SimpleTestARToolKit\Debug\SimpleTestARToolKit.exe
+     1>已完成生成项目“d:\USER\documents\visual studio 2013\Projects\SimpleTestARToolKit\SimpleTestARToolKit\SimpleTestARToolKit.vcxproj”(Build 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:00.20

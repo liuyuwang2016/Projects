@@ -1,0 +1,24 @@
+﻿生成启动时间为 2018/1/14 14:27:57。
+     1>项目“D:\USER\Documents\Visual Studio 2013\Projects\test7_2a\test7_2a\test7_2a.vcxproj”在节点 2 上(Build 个目标)。
+     1>CustomBuild:
+         Moc'ing test7_2a.h...
+         Uic'ing src\test7_2a.ui...
+     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\Microsoft.CppBuild.targets(935,5): warning MSB8027: Two or more files with the name of moc_test7_2a.cpp will produce outputs to the same location. This can lead to an incorrect build result.  The files involved are GeneratedFiles\Debug\moc_test7_2a.cpp, GeneratedFiles\Release\moc_test7_2a.cpp.
+       ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I.\GeneratedFiles /I. /IC:\Qt\Qt5.6.0\5.6\msvc2013\include /I.\GeneratedFiles\Debug /IC:\Qt\Qt5.6.0\5.6\msvc2013\include\QtCore /IC:\Qt\Qt5.6.0\5.6\msvc2013\include\QtGui /IC:\Qt\Qt5.6.0\5.6\msvc2013\include\QtOpenGL /IC:\Qt\Qt5.6.0\5.6\msvc2013\include\QtWidgets /Zi /nologo /W1 /WX- /Od /Oy- /D UNICODE /D WIN32 /D WIN64 /D QT_DLL /D QT_CORE_LIB /D QT_GUI_LIB /D QT_OPENGL_LIB /D QT_WIDGETS_LIB /Gm- /EHsc /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt GeneratedFiles\Debug\moc_test7_2a.cpp src\main.cpp src\test7_2a.cpp
+         moc_test7_2a.cpp
+         main.cpp
+         test7_2a.cpp
+         正在生成代码...
+     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\Microsoft.CppBuild.targets(1186,5): warning MSB8012: TargetPath(D:\USER\Documents\Visual Studio 2013\Projects\test7_2a\Win32\Debug\test7_2a.exe) does not match the Linker's OutputFile property value (D:\USER\Documents\Visual Studio 2013\Projects\test7_2a\test7_2a\bin\test7_2a.exe). This may cause your project to build incorrectly. To correct this, please make sure that $(OutDir), $(TargetName) and $(TargetExt) property values match the value specified in %(Link.OutputFile).
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"bin\test7_2a.exe" /NOLOGO /LIBPATH:C:\Qt\Qt5.6.0\5.6\msvc2013\lib qtmaind.lib Qt5Cored.lib Qt5Guid.lib Qt5OpenGLd.lib opengl32.lib glu32.lib Qt5Widgetsd.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\USER\Documents\Visual Studio 2013\Projects\test7_2a\Win32\Debug\test7_2a.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\USER\Documents\Visual Studio 2013\Projects\test7_2a\Win32\Debug\test7_2a.lib" /MACHINE:X86 /SAFESEH Debug\moc_test7_2a.obj
+         Debug\qrc_test7_2a.obj
+         Debug\main.obj
+         Debug\test7_2a.obj
+         test7_2a.vcxproj -> D:\USER\Documents\Visual Studio 2013\Projects\test7_2a\Win32\Debug\test7_2a.exe
+     1>已完成生成项目“D:\USER\Documents\Visual Studio 2013\Projects\test7_2a\test7_2a\test7_2a.vcxproj”(Build 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:03.17

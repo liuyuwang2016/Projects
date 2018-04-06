@@ -1,0 +1,14 @@
+﻿生成启动时间为 2018/1/21 21:39:14。
+     1>项目“D:\USER\Documents\Visual Studio 2013\Projects\Leap Motion Test\Leap Motion Test\Leap Motion Test.vcxproj”在节点 2 上(Build 个目标)。
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /IC:\LeapMotion\LeapDeveloperKit_3.2.1+45911_win\LeapSDK\include /IC:\OpenCV300\opencv\build\include /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt src\main.cpp
+         main.cpp
+     1>d:\user\documents\visual studio 2013\projects\leap motion test\leap motion test\src\main.cpp(178): warning C4244: “参数”: 从“int64_t”转换到“int32_t”，可能丢失数据
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\USER\Documents\Visual Studio 2013\Projects\Leap Motion Test\Debug\Leap Motion Test.exe" /INCREMENTAL /NOLOGO /LIBPATH:C:\LeapMotion\LeapDeveloperKit_3.2.1+45911_win\LeapSDK\lib\x86 /LIBPATH:C:\OpenCV300\opencv\build\x86\vc12\lib Leap.lib opencv_ts300d.lib opencv_world300d.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\USER\Documents\Visual Studio 2013\Projects\Leap Motion Test\Debug\Leap Motion Test.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\USER\Documents\Visual Studio 2013\Projects\Leap Motion Test\Debug\Leap Motion Test.lib" /MACHINE:X86 Debug\main.obj
+         Leap Motion Test.vcxproj -> D:\USER\Documents\Visual Studio 2013\Projects\Leap Motion Test\Debug\Leap Motion Test.exe
+     1>已完成生成项目“D:\USER\Documents\Visual Studio 2013\Projects\Leap Motion Test\Leap Motion Test\Leap Motion Test.vcxproj”(Build 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:00.73
