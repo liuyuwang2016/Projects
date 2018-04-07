@@ -7,7 +7,7 @@
 #pragma region Function
 
 #pragma region OpenCV&ROI Function 
-//模型换了之后没影响
+//将传入的点的坐标从Kinect的坐标转换到机器的坐标
 void ROITrans(CameraSpacePoint* Data, int DataNum, GLfloat* TransM, CameraSpacePoint* Result)
 {
 	for (int i = 0; i < DataNum; i++)
@@ -17,7 +17,7 @@ void ROITrans(CameraSpacePoint* Data, int DataNum, GLfloat* TransM, CameraSpaceP
 		m[12] = Data[i].X;
 		m[13] = Data[i].Y;
 		m[14] = Data[i].Z;
-
+		//PrintMatrix(m);
 		glMatrixMode(GL_MODELVIEW);
 		glPushMatrix();
 		glLoadIdentity();
@@ -25,16 +25,12 @@ void ROITrans(CameraSpacePoint* Data, int DataNum, GLfloat* TransM, CameraSpaceP
 		glMultMatrixf(m);
 		glGetFloatv(GL_MODELVIEW_MATRIX, m);
 		glPopMatrix();
-		//printf("正规化\n");
-
-		//printf("m[0]:% 7.5f m[4]:% 7.5f m[8] :% 7.5f m[12]:% 7.5f\n", m[0], m[4], m[8], m[12]);
-		//printf("m[1]:% 7.5f m[5]:% 7.5f m[9] :% 7.5f m[13]:% 7.5f\n", m[1], m[5], m[9], m[13]);
-		//printf("m[2]:% 7.5f m[6]:% 7.5f m[10]:% 7.5f m[14]:% 7.5f\n", m[2], m[6], m[10], m[14]);
-		//printf("m[3]:% 7.5f m[7]:% 7.5f m[11]:% 7.5f m[15]:% 7.5f\n", m[3], m[7], m[11], m[15]);
-		
+			
 		Result[i].X = m[12] / m[15];
 		Result[i].Y = m[13] / m[15];
 		Result[i].Z = m[14] / m[15];
+		PrintMatrix(m);
+
 	}
 }
 //模型换了之后没影响
@@ -1058,8 +1054,6 @@ void Draw3DPlane()
 	filteredBlue(d_srcImage, color_gray, d_dstImage);
 
 	imwrite("2d_plane_recognition.jpg", d_dstImage);
-	//imshow("2d plane recognition", d_dstImage);
-	//imshow("gray", color_gray);
 
 	int rows = d_dstImage.rows;
 	int cols = d_dstImage.cols;

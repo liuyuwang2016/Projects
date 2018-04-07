@@ -1,4 +1,4 @@
-﻿生成启动时间为 2018/4/6 14:14:40。
+﻿生成启动时间为 2018/4/7 17:34:05。
      1>项目“D:\USER\Documents\Visual Studio 2013\Projects\5-Aixs Dispenser\5-Aixs Dispenser\5-Aixs Dispenser.vcxproj”在节点 2 上(Build 个目标)。
      1>ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /IC:\portaudio\include /IC:\OpenCV300\opencv\build\include /IC:\OpenCV300\opencv\build\include\opencv /IC:\OpenCV300\opencv\build\include\opencv2 /I"C:\Program Files\Microsoft SDKs\Kinect\v2.0_1409\\inc" /AI"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0" /AI"C:\Program Files (x86)\Windows Kits\8.1\References\CommonConfiguration\Neutral" /Zi /clr /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _MBCS /EHa /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /TP /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\mscorlib.dll" /analyze- /errorReport:prompt /clr:nostdlib main.cpp
@@ -6,12 +6,12 @@
      1>C:\OpenCV300\opencv\build\include\opencv2/core/mat.hpp(1965): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
      1>C:\OpenCV300\opencv\build\include\opencv2/core/persistence.hpp : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
      1>C:\OpenCV300\opencv\build\include\opencv2/core/utility.hpp : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Scene.h(171): warning C4305: “初始化”: 从“double”到“float”截断
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Scene.h(194): warning C4305: “初始化”: 从“double”到“float”截断
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Scene.h(199): warning C4305: “初始化”: 从“double”到“float”截断
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Scene.h(296): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Scene.h(172): warning C4305: “初始化”: 从“double”到“float”截断
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Scene.h(195): warning C4305: “初始化”: 从“double”到“float”截断
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Scene.h(200): warning C4305: “初始化”: 从“double”到“float”截断
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Scene.h(297): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : 参见“sprintf”的声明
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Scene.h(385): warning C4244: “=”: 从“float”转换到“int”，可能丢失数据
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Scene.h(386): warning C4244: “=”: 从“float”转换到“int”，可能丢失数据
      1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/dllmain.h(234): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : 参见“sprintf”的声明
      1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/dllmain.h(237): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
@@ -36,72 +36,72 @@
                  C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(112) : 参见“strcpy”的声明
      1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/dllmain.h(944): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(112) : 参见“strcpy”的声明
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(72): warning C4244: “=”: 从“float”转换到“uchar”，可能丢失数据
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(68): warning C4244: “=”: 从“float”转换到“uchar”，可能丢失数据
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(420): warning C4305: “=”: 从“double”到“float”截断
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(421): warning C4305: “=”: 从“double”到“float”截断
      1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(424): warning C4305: “=”: 从“double”到“float”截断
      1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(425): warning C4305: “=”: 从“double”到“float”截断
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(428): warning C4305: “=”: 从“double”到“float”截断
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(426): warning C4305: “=”: 从“double”到“float”截断
      1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(429): warning C4305: “=”: 从“double”到“float”截断
      1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(430): warning C4305: “=”: 从“double”到“float”截断
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(433): warning C4305: “=”: 从“double”到“float”截断
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(434): warning C4305: “=”: 从“double”到“float”截断
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(701): warning C4018: “<”: 有符号/无符号不匹配
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(787): warning C4018: “<”: 有符号/无符号不匹配
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(789): warning C4018: “<”: 有符号/无符号不匹配
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1124): warning C4018: “<”: 有符号/无符号不匹配
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1148): warning C4018: “<”: 有符号/无符号不匹配
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1206): warning C4244: “参数”: 从“int”转换到“GLfloat”，可能丢失数据
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1207): warning C4244: “参数”: 从“int”转换到“GLfloat”，可能丢失数据
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1235): warning C4244: “参数”: 从“int”转换到“GLfloat”，可能丢失数据
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(697): warning C4018: “<”: 有符号/无符号不匹配
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(783): warning C4018: “<”: 有符号/无符号不匹配
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(785): warning C4018: “<”: 有符号/无符号不匹配
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1118): warning C4018: “<”: 有符号/无符号不匹配
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1142): warning C4018: “<”: 有符号/无符号不匹配
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1200): warning C4244: “参数”: 从“int”转换到“GLfloat”，可能丢失数据
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1201): warning C4244: “参数”: 从“int”转换到“GLfloat”，可能丢失数据
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1229): warning C4244: “参数”: 从“int”转换到“GLfloat”，可能丢失数据
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1283): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : 参见“sprintf”的声明
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1284): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : 参见“sprintf”的声明
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1285): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : 参见“sprintf”的声明
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1288): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : 参见“sprintf”的声明
      1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1289): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : 参见“sprintf”的声明
      1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1290): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : 参见“sprintf”的声明
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1291): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : 参见“sprintf”的声明
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1294): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : 参见“sprintf”的声明
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1295): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : 参见“sprintf”的声明
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1296): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : 参见“sprintf”的声明
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1300): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1294): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(118) : 参见“strcat”的声明
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1301): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1295): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(118) : 参见“strcat”的声明
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1302): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1296): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(118) : 参见“strcat”的声明
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1284): warning C4101: “mybuffv”: 未引用的局部变量
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1284): warning C4101: “mybuffu”: 未引用的局部变量
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1371): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1372): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1373): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1492): warning C4018: “<”: 有符号/无符号不匹配
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1278): warning C4101: “mybuffv”: 未引用的局部变量
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1278): warning C4101: “mybuffu”: 未引用的局部变量
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1365): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1366): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1367): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1486): warning C4018: “<”: 有符号/无符号不匹配
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1493): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1494): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1495): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1497): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1498): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
      1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1499): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1500): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
      1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1501): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1502): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
      1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1503): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1504): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1505): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1507): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1508): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1509): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1557): warning C4800: “BOOL”: 将值强制为布尔值“true”或“false”(性能警告)
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1929): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1930): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1931): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1942): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1943): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1944): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1950): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1951): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1952): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1551): warning C4800: “BOOL”: 将值强制为布尔值“true”或“false”(性能警告)
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1912): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1913): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1914): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1925): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1926): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1927): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1933): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1934): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1935): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
      1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\Function.h(19): warning C4551: 缺少参数列表的函数调用
      1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\Function.h(346): warning C4018: “<”: 有符号/无符号不匹配
      1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\Function.h(357): warning C4244: “初始化”: 从“double”转换到“float”，可能丢失数据
      1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\Function.h(358): warning C4244: “初始化”: 从“double”转换到“float”，可能丢失数据
      1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\Function.h(424): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
      1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\Function.h(446): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\Function.h(674): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\Function.h(683): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
      1>c:\opencv300\opencv\build\include\opencv2\core\cvstd.hpp(592): warning C4793: “cv::String::String”: 编译为本机的函数:
          	托管代码中发现一个不受支持的内部函数
      1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\function.h(240): warning C4700: 使用了未初始化的局部变量“sum_X”
@@ -109,11 +109,11 @@
      1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\function.h(242): warning C4700: 使用了未初始化的局部变量“sum_Z”
      1>c:\opencv300\opencv\build\include\opencv2\core\mat.inl.hpp(381): warning C4793: “cv::Mat::Mat”: 编译为本机的函数:
          	托管代码中发现一个不受支持的内部函数
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src\declae.h(1170): warning C4793: “glPrintf”: 编译为本机的函数:
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src\declae.h(1164): warning C4793: “glPrintf”: 编译为本机的函数:
          	/clr 下不支持 varargs
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src\declae.h(1173): warning C4793: “glPrintf”: 编译为本机的函数:
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src\declae.h(1167): warning C4793: “glPrintf”: 编译为本机的函数:
          	托管代码中发现一个不受支持的内部函数
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src\declae.h(1175): warning C4793: “glPrintf”: 编译为本机的函数:
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src\declae.h(1169): warning C4793: “glPrintf”: 编译为本机的函数:
          	托管代码中发现一个不受支持的内部函数
      1>c:\opencv300\opencv\build\include\opencv2\core\mat.inl.hpp(666): warning C4793: “cv::Mat::release”: 编译为本机的函数:
          	托管代码中发现一个不受支持的内部函数
@@ -147,4 +147,4 @@
 
 生成成功。
 
-已用时间 00:00:03.72
+已用时间 00:00:02.89

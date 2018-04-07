@@ -167,6 +167,7 @@ void SceneWithBackground(void);			//Background Func
 void SceneWithoutBackground(void);
 void DrawPointCloud(void);				//Drawing Type
 void DrawMeshes(void);
+void PrintMatrix(GLfloat* m);
 /*--------------------------------------*/
 float dev_theta = 5 * CV_PI / 180; //为什么dev_theta的值刚好是这么多
 CameraSpacePoint* DeviaDueToY = nullptr;

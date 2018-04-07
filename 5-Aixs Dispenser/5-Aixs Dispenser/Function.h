@@ -493,23 +493,16 @@ void CoordGLtoMachine()
 		
 		glTranslatef(TipPosi.x, TipPosi.y, TipPosi.z);
 		//http://cuiqingcai.com/1658.html 旋转示例
-		
-		glRotatef(-90, 1, 0, 0);//旋转后就Z值和机器的坐标系相反
-		
+		glTranslatef(Intersect.X, Intersect.Y, Intersect.Z);
+		glRotatef(-90, 1, 0, 0);//旋转后Z值和X值与机器的坐标系相反
+		glRotatef(-180, 0, 1, 0);
 		//glMultMatrixf(const GLfloat *m);//把m指定的16个值作为一个矩阵，与当前矩阵相乘，并把结果存储在当前矩阵中 
 		//glMultMatrix 假设当前矩阵是C那么用矩阵M 调用glMultMatrix 对顶点v的变换就从原来的C*v变成C * M * v
 		//http://blog.csdn.net/mathgeophysics/article/details/11434345
-		glMultMatrixf(M_Cubic_inv);//opengl坐标转换到机器
-		
-	    glTranslatef(-Intersect.X, -Intersect.Y, -Intersect.Z);
-		
+		glMultMatrixf(M_Cubic_inv);//opengl坐标转换到机器	
 		glGetFloatv(GL_MODELVIEW_MATRIX, TransM_toMechCoord);
 		glPopMatrix();
-		/*printf("转换矩阵\n");
-		printf("m[0]:% 7.5f m[4]:% 7.5f m[8] :% 7.5f m[12]:% 7.5f\n", TransM_toMechCoord[0], TransM_toMechCoord[4], TransM_toMechCoord[8], TransM_toMechCoord[12]);
-		printf("m[1]:% 7.5f m[5]:% 7.5f m[9] :% 7.5f m[13]:% 7.5f\n", TransM_toMechCoord[1], TransM_toMechCoord[5], TransM_toMechCoord[9], TransM_toMechCoord[13]);
-		printf("m[2]:% 7.5f m[6]:% 7.5f m[10]:% 7.5f m[14]:% 7.5f\n", TransM_toMechCoord[2], TransM_toMechCoord[6], TransM_toMechCoord[10], TransM_toMechCoord[14]);
-		printf("m[3]:% 7.5f m[7]:% 7.5f m[11]:% 7.5f m[16]:% 7.5f\n", TransM_toMechCoord[3], TransM_toMechCoord[7], TransM_toMechCoord[11], TransM_toMechCoord[15]);*/
+		
 		
 		if (ROICameraSP_MechCoord != nullptr)
 		{
@@ -532,6 +525,7 @@ void CoordGLtoMachine()
 
 		ROITrans(ROICameraSP_MechCoord, 1, TransM_toMechCoord, ROICameraSP_MechCoord);
 
+		PrintMatrix(TransM_toMechCoord);
 		ROITrans(ROICameraSP_Proj_MechCoord, 1, TransM_toMechCoord, ROICameraSP_Proj_MechCoord);
 
 		ROICameraSP_MechCoord->Y = -ROICameraSP_MechCoord->Y;
@@ -540,6 +534,21 @@ void CoordGLtoMachine()
 	}
 }
 
+//用来打印出Matrix便于查看
+void PrintMatrix(GLfloat* m)
+{
+	cout << "---------------------------------------------------------" << endl;
+	cout << "------------------打印出来的矩阵如下---------------------" << endl;
+	cout << "---------------------------------------------------------" << endl;
+	printf("m[0]:% 7.5f m[4]:% 7.5f m[8] :% 7.5f m[12]:% 7.5f\n", m[0], m[4], m[8], m[12]);
+	printf("m[1]:% 7.5f m[5]:% 7.5f m[9] :% 7.5f m[13]:% 7.5f\n", m[1], m[5], m[9], m[13]);
+	printf("m[2]:% 7.5f m[6]:% 7.5f m[10]:% 7.5f m[14]:% 7.5f\n", m[2], m[6], m[10], m[14]);
+	printf("m[3]:% 7.5f m[7]:% 7.5f m[11]:% 7.5f m[15]:% 7.5f\n", m[3], m[7], m[11], m[15]); 
+	cout << "---------------------------------------------------------" << endl;
+	cout << "---------------------------------------------------------" << endl;
+	cout << "---------------------------------------------------------" << endl;
+
+}
 void DrawStoragePoint()
 {
 	/* F1 button calls this */

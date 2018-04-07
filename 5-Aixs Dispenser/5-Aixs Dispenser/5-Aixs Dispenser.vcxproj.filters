@@ -59,9 +59,6 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\Kinect2.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
     <ClInclude Include="src\Declae.h">
       <Filter>Header必须</Filter>
     </ClInclude>
