@@ -490,16 +490,15 @@ void CoordGLtoMachine()
 		glMatrixMode(GL_MODELVIEW);
 		glPushMatrix();
 		glLoadIdentity();
-		
 		glTranslatef(TipPosi.x, TipPosi.y, TipPosi.z);
-		//http://cuiqingcai.com/1658.html 旋转示例
-		glTranslatef(Intersect.X, Intersect.Y, Intersect.Z);
-		glRotatef(-90, 1, 0, 0);//旋转后Z值和X值与机器的坐标系相反
-		glRotatef(-180, 0, 1, 0);
+		//glTranslatef(0, 0, 0);
+		//http://cuiqingcai.com/1658.html 旋转示例	
+		glRotatef(90, 1, 0, 0);//旋转后Z值和X值与机器的坐标系相反		
 		//glMultMatrixf(const GLfloat *m);//把m指定的16个值作为一个矩阵，与当前矩阵相乘，并把结果存储在当前矩阵中 
 		//glMultMatrix 假设当前矩阵是C那么用矩阵M 调用glMultMatrix 对顶点v的变换就从原来的C*v变成C * M * v
 		//http://blog.csdn.net/mathgeophysics/article/details/11434345
 		glMultMatrixf(M_Cubic_inv);//opengl坐标转换到机器	
+		glTranslatef(-Intersect.X, -Intersect.Y, -Intersect.Z);
 		glGetFloatv(GL_MODELVIEW_MATRIX, TransM_toMechCoord);
 		glPopMatrix();
 		
@@ -516,6 +515,7 @@ void CoordGLtoMachine()
 		ROICameraSP_Proj_MechCoord = new CameraSpacePoint[1];
 		/*normal GL coordinate在这里还是opengl的准确坐标系*/
 		ROICameraSP_MechCoord->X = ROICenterCameraS.x;
+
 		ROICameraSP_MechCoord->Y = ROICenterCameraS.y; 
 		ROICameraSP_MechCoord->Z = ROICenterCameraS.z;
 		/*After projection coordinate*/

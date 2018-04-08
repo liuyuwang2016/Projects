@@ -13,7 +13,7 @@ void display(void)
 {
 	glClear(GL_COLOR_BUFFER_BIT);
 	glPushMatrix();
-	//在这里的gltranslate可以理解为在旋转+平移的时候对于坐标轴的处理
+	////在这里的gltranslate可以理解为在旋转+平移的时候对于坐标轴的处理
 	glTranslatef(-1.0, 0.0, 0.0);
 	glRotatef((GLfloat)shoulder, 0.0, 0.0, 1.0);
 	glTranslatef(1.0, 0.0, 0.0);

@@ -29,6 +29,7 @@ void ROITrans(CameraSpacePoint* Data, int DataNum, GLfloat* TransM, CameraSpaceP
 		Result[i].X = m[12] / m[15];
 		Result[i].Y = m[13] / m[15];
 		Result[i].Z = m[14] / m[15];
+		
 		PrintMatrix(m);
 
 	}
