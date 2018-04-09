@@ -372,6 +372,10 @@ void FindROI()
 	//cout << "ROI dimenssion" << ROI_Image.cols << " " << ROI_Image.rows << endl;
 }
 
+void PrintMat(Mat H)
+{
+	cout << "H = " << endl << " " << H << endl << endl;
+}
 int main()
 {
  	MtInit();
@@ -702,6 +706,7 @@ int main()
 			Mat H = findHomography(objectCorners_H, imageCorners_H);
 			//从机器坐标系到像素坐标系的单应性矩阵
 			
+			PrintMat(H);
 			//cameraMatrix_ChessBoard Kinect 相机的内参数矩阵
 			Mat Rt = cameraMatrix_ChessBoard.inv()*H;
 

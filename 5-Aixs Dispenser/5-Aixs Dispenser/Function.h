@@ -287,7 +287,7 @@ void DrawPlaneInScene()
 	//glMultMatrix 假设当前矩阵是C那么用矩阵M 调用glMultMatrix 对顶点v的变换就从原来的C*v变成C * M * v
 	//http://blog.csdn.net/mathgeophysics/article/details/11434345
 	glMultMatrixf(M_Cubic_inv);//opengl坐标转换到机器
-	//glTranslatef(-Intersect.X, -Intersect.Y, -Intersect.Z);
+	glTranslatef(-Intersect.X, -Intersect.Y, -Intersect.Z);
 	glGetFloatv(GL_MODELVIEW_MATRIX, TransGLtoMach);
 	glPopMatrix();
 
