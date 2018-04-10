@@ -35,14 +35,12 @@ int main(int argc, char** argv)
 	glutKeyboardFunc(Keyboard);
 	glutDisplayFunc(RenderScene);
 	glutIdleFunc(KinectUpdate);
-	loadOBJModel();//Obj只load了一次
-	Texture();//texture也只load了一次 在加载实验的工件的时候不使用纹理贴图
+	loadOBJModel();
+	Texture();
 	/*--------------above this do not need check again--------------*/
-	//update
 	glutTimerFunc(1000, timer, 0);
 
 	BuildPopupMenu();
-	//MainLoop就是疯狂跑上面的东西永远不停下来
 	glutMainLoop();
 	return 0;
 }

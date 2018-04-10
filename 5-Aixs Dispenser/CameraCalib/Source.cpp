@@ -77,8 +77,8 @@ void MoveROI(void);
 /*-------------Cam Calibration----------*/
 /*-------------------------------------*/
 vector<Point2f> imageCorners_Machine;
-vector<Point3f> objectCorners_Machine;
-vector<vector<Point3f>> objectPoints_Machine;
+vector<Point2f> objectCorners_Machine;
+vector<vector<Point2f>> objectPoints_Machine;
 vector<vector<Point2f>> imagePoints_Machine;
 //why the size of machine is different from the size of chessboard
 Size boardSize_Machine(9, 5);//点胶机要跑的点的大小
@@ -257,7 +257,7 @@ void MtMove(void)
 		for (int j = 0; j<boardSize_Machine.width; j++)
 		{
 			//这里把机器坐标存进来，但是存进来的是X,Y的值
-			objectCorners_Machine.push_back(Point3f(j * cubeSize_Machine * 0.001, i * cubeSize_Machine*0.001, 0.0f));
+			objectCorners_Machine.push_back(Point2f(j * cubeSize_Machine * 0.001, i * cubeSize_Machine*0.001));
 		}
 	}
  	//Fill image and object point in bigger array (vector)
@@ -376,6 +376,16 @@ void PrintMat(Mat H)
 {
 	cout << "H = " << endl << " " << H << endl << endl;
 }
+
+template<typename T>
+void PrintVector(vector<T> a)
+{
+	vector<T>::iterator t;
+	for (t = a.begin(); t != a.end(); t++)
+		cout << *t << " ";
+}
+
+
 int main()
 {
  	MtInit();
@@ -678,19 +688,19 @@ int main()
 			// set options
 			//误差计算 https://blog.csdn.net/u011574296/article/details/73823569
  			//这个是为了能够得到像素坐标转换到机器坐标的矩阵
-			vector<Mat> rvecsM, tvecsM;
- 			calibrateCamera(objectPoints_Machine, // the 3D points 点胶机理想的跑出红色点的值相对于机器坐标系的坐标
-				imagePoints_Machine, // the image points 点胶机实际跑出来的红色点的值相对于像素坐标系的坐标
-				imageSize,   // image size
-				cameraMatrix_Machine,// output camera matrix
-				distCoeffs_Machine,  // output distortion matrix
-				rvecsM, tvecsM,// Rs, Ts
-				0);       
-
+			//vector<Mat> rvecsM, tvecsM;
+ 		//	calibrateCamera(objectPoints_Machine, // the 3D points 点胶机理想的跑出红色点的值相对于机器坐标系的坐标
+			//	imagePoints_Machine, // the image points 点胶机实际跑出来的红色点的值相对于像素坐标系的坐标
+			//	imageSize,   // image size
+			//	cameraMatrix_Machine,// output camera matrix
+			//	distCoeffs_Machine,  // output distortion matrix
+			//	rvecsM, tvecsM,// Rs, Ts
+			//	0);       
+			
 			// set options
 			//Fill all corners into corresponding array to increase accuracy
 			vector<Point2f> imageCorners_H;
-			vector<Point3f> objectCorners_H;
+			vector<Point2f> objectCorners_H;
 			for (int num = 0; num < objectPoints_Machine.size(); num++)
 			{
 				for (int arr_num = 0; arr_num < objectPoints_Machine.at(num).size(); arr_num++)
@@ -700,14 +710,19 @@ int main()
 					objectCorners_H.push_back(objectPoints_Machine.at(num).at(arr_num));//点胶机点在机器坐标系坐标,(0,0,0)
 				}
 			}
+			cout << "ImageCorners_H: " << endl;
+			//PrintVector(imageCorners_H);
+			cout << "objectCorners_H: " << endl;
+			//PrintVector(objectCorners_H);
 
 			//其中objectCorners_H为0，0.25这样的点，以第一个点为0，0，0，改变的是X,Y的值
 			//其中imageCorners_H在图像坐标系UV坐标系，是像素的坐标，findHomography(src,dst)
 			Mat H = findHomography(objectCorners_H, imageCorners_H);
 			//从机器坐标系到像素坐标系的单应性矩阵
 			
-			PrintMat(H);
+			//PrintMat(H);
 			//cameraMatrix_ChessBoard Kinect 相机的内参数矩阵
+
 			Mat Rt = cameraMatrix_ChessBoard.inv()*H;
 
  			Mat RR = Mat::zeros(3, 3, CV_32F);
@@ -731,20 +746,20 @@ int main()
 			fs2 << "R" << endl << Out_Rt << endl << endl;
 			fs2 << "R.inv()" << endl << Out_Rt.inv() << endl;
 			fs2.close();
- 			ofstream fs;
-			fs.open("test_Machine.txt");
-			fs << "intrinsic" << cameraMatrix_Machine << endl << endl;
-			fs << "dist-coeff" << distCoeffs_Machine << endl << endl;
- 			fs << "fx = " << cameraMatrix_Machine.at<double>(0) << endl;
-			fs << "fy = " << cameraMatrix_Machine.at<double>(4) << endl;
-			fs << "cx = " << cameraMatrix_Machine.at<double>(2) << endl;
-			fs << "cy = " << cameraMatrix_Machine.at<double>(5) << endl << endl;
- 			fs << "k1 = " << cameraMatrix_Machine.at<double>(0) << endl;
-			fs << "k2 = " << cameraMatrix_Machine.at<double>(1) << endl;
-			fs << "p1 = " << cameraMatrix_Machine.at<double>(2) << endl;
-			fs << "p2 = " << cameraMatrix_Machine.at<double>(3) << endl;
-			fs << "k3 = " << cameraMatrix_Machine.at<double>(4) << endl;
- 			fs.close();
+ 		//	ofstream fs;
+			//fs.open("test_Machine.txt");
+			//fs << "intrinsic" << cameraMatrix_Machine << endl << endl;
+			//fs << "dist-coeff" << distCoeffs_Machine << endl << endl;
+ 		//	fs << "fx = " << cameraMatrix_Machine.at<double>(0) << endl;
+			//fs << "fy = " << cameraMatrix_Machine.at<double>(4) << endl;
+			//fs << "cx = " << cameraMatrix_Machine.at<double>(2) << endl;
+			//fs << "cy = " << cameraMatrix_Machine.at<double>(5) << endl << endl;
+ 		//	fs << "k1 = " << cameraMatrix_Machine.at<double>(0) << endl;
+			//fs << "k2 = " << cameraMatrix_Machine.at<double>(1) << endl;
+			//fs << "p1 = " << cameraMatrix_Machine.at<double>(2) << endl;
+			//fs << "p2 = " << cameraMatrix_Machine.at<double>(3) << endl;
+			//fs << "k3 = " << cameraMatrix_Machine.at<double>(4) << endl;
+ 		//	fs.close();
  			ofstream fs3;
 			fs3.open("test.txt");
 			fs3 << "intrinsic" << cameraMatrix_ChessBoard << endl << endl;

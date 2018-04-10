@@ -493,7 +493,7 @@ void CoordGLtoMachine()
 		glTranslatef(TipPosi.x, TipPosi.y, TipPosi.z);
 		//glTranslatef(0, 0, 0);
 		//http://cuiqingcai.com/1658.html 旋转示例	
-		glRotatef(90, 1, 0, 0);//旋转后Z值和X值与机器的坐标系相反		
+		glRotatef(-90, 1, 0, 0);//旋转后Z值和X值与机器的坐标系相反		
 		//glMultMatrixf(const GLfloat *m);//把m指定的16个值作为一个矩阵，与当前矩阵相乘，并把结果存储在当前矩阵中 
 		//glMultMatrix 假设当前矩阵是C那么用矩阵M 调用glMultMatrix 对顶点v的变换就从原来的C*v变成C * M * v
 		//http://blog.csdn.net/mathgeophysics/article/details/11434345
@@ -525,7 +525,7 @@ void CoordGLtoMachine()
 
 		ROITrans(ROICameraSP_MechCoord, 1, TransM_toMechCoord, ROICameraSP_MechCoord);
 
-		PrintMatrix(TransM_toMechCoord);
+		//PrintMatrix(TransM_toMechCoord);
 		ROITrans(ROICameraSP_Proj_MechCoord, 1, TransM_toMechCoord, ROICameraSP_Proj_MechCoord);
 
 		ROICameraSP_MechCoord->Y = -ROICameraSP_MechCoord->Y;
@@ -719,6 +719,20 @@ void RenderScene()
 
 	ChangeLineColor();
 	ROI_IS_COLLIDE = FALSE;
+	glLineWidth(5.0f);
+	glBegin(GL_LINES);
+	glColor3ub(255, 0, 0);//红色的X轴
+	glVertex3f(0, 0, 0);
+	glVertex3f(1, 0, 0);
+
+	glColor3ub(0, 255, 0);//绿色的Y轴
+	glVertex3f(0, 0, 0);
+	glVertex3f(0, 1, 0);
+
+	glColor3ub(0, 0, 255);//蓝色的Z轴
+	glVertex3f(0, 0, 0);
+	glVertex3f(0, 0, 1);
+	glEnd();
 	if (Finish_Without_Update)
 		glFinish();
 	else

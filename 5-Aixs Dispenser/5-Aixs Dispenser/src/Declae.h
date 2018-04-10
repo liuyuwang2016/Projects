@@ -17,7 +17,7 @@ void ROITrans(CameraSpacePoint* Data, int DataNum, GLfloat* TransM, CameraSpaceP
 		m[12] = Data[i].X;
 		m[13] = Data[i].Y;
 		m[14] = Data[i].Z;
-		//PrintMatrix(m);
+		
 		glMatrixMode(GL_MODELVIEW);
 		glPushMatrix();
 		glLoadIdentity();
@@ -29,9 +29,6 @@ void ROITrans(CameraSpacePoint* Data, int DataNum, GLfloat* TransM, CameraSpaceP
 		Result[i].X = m[12] / m[15];
 		Result[i].Y = m[13] / m[15];
 		Result[i].Z = m[14] / m[15];
-		
-		PrintMatrix(m);
-
 	}
 }
 //模型换了之后没影响
@@ -418,8 +415,8 @@ void ROICameraSPStorage()
 //模型换了之后没影响
 void GLInit()
 {
-	Intersect.X = 0.3231560323275935;
-	Intersect.Y = -0.1395221352353661;
+	Intersect.X = 0.3221273277841458;
+	Intersect.Y = -0.1384631684450974;
 	Intersect.Z = -1;
 
 	ObjPosi.x = -0.311;
@@ -485,7 +482,7 @@ void Keyboard(unsigned char key, int x, int y)
 		break;
 	}
 }
-//模型换了之后没影响
+
 float g_fps(void(*func)(void), int n_frame)
 {
 	clock_t start, finish;
@@ -502,7 +499,6 @@ float g_fps(void(*func)(void), int n_frame)
 	fps = float(n_frame) / (finish - start)*CLOCKS_PER_SEC;
 	return fps;
 }
-//模型换了之后没影响
 
 void timer(int value)
 {
@@ -517,7 +513,7 @@ void timer(int value)
 	}
 }
 
-/*This part mean what?*/
+/*建立鼠标右键的小菜单*/
 void BuildPopupMenu()
 {
 	//3rd layer
@@ -615,7 +611,7 @@ void SceneWithBackground()
 	glRasterPos2f(0.0f, 0.0f);
 	//glDrawPixels(iWidthColor, iHeightColor, GL_RGBA, GL_UNSIGNED_BYTE, pBufferColor);
 	glEnable(GL_TEXTURE_2D);
-	//Without painting BG white the BG will turn orange and glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT) did not work. Don't know why
+	//如果不设置的话背景会变成红色，不知道原因
 	glColor3ub(255, 255, 255);
 	// tell OpenGL to use the generated texture name
 	glBindTexture(GL_TEXTURE_2D, textureid);
