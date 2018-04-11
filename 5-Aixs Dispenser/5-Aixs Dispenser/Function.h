@@ -3,7 +3,7 @@
 #pragma region Init
 void init()
 {
-	KinectInit();     //Kinect
+	KinectInit();
 	GLInit();         //OpenGL
 	InitPortAudio();  //audio
 	MtInit();         //dispenser machine
@@ -33,7 +33,7 @@ void SpecialKeys(int key, int x, int y)
 			Cubic_IS_BLEND = TRUE;
 			cout << endl << "Enable Transparent Mode..." << endl;
 		}
-	}
+	}//F2删除存储的点
 	else if (key == GLUT_KEY_F2)
 	{
 		if (ROICameraSP_Storage != nullptr)
@@ -146,6 +146,17 @@ void SpecialKeys(int key, int x, int y)
 	{
 		ObjPosi.y -= 0.001f;
 		cout << endl << "ObjPosi.y : " << ObjPosi.y << endl;
+	}
+	else if (key == GLUT_KEY_F5)//直接控制X轴的移动
+	{
+		md->x+= 1;
+		Mt_x = md->x;
+		Mt_XMove(Mt_x);
+		do
+		{
+			MtReflash(md);
+			//cout << "md->v : " << md->v << endl;
+		} while (md->x != Mt_x);
 	}
 	else if (key == GLUT_KEY_RIGHT)
 	{
@@ -491,14 +502,18 @@ void CoordGLtoMachine()
 		glPushMatrix();
 		glLoadIdentity();
 		glTranslatef(TipPosi.x, TipPosi.y, TipPosi.z);
+		
 		//glTranslatef(0, 0, 0);
 		//http://cuiqingcai.com/1658.html 旋转示例	
-		glRotatef(-90, 1, 0, 0);//旋转后Z值和X值与机器的坐标系相反		
+		glRotatef(-90, 1, 0, 0);
+		
+		//glRotatef(90, 0, 0, 1);//旋转后Z值和X值与机器的坐标系相反		
 		//glMultMatrixf(const GLfloat *m);//把m指定的16个值作为一个矩阵，与当前矩阵相乘，并把结果存储在当前矩阵中 
 		//glMultMatrix 假设当前矩阵是C那么用矩阵M 调用glMultMatrix 对顶点v的变换就从原来的C*v变成C * M * v
 		//http://blog.csdn.net/mathgeophysics/article/details/11434345
 		glMultMatrixf(M_Cubic_inv);//opengl坐标转换到机器	
 		glTranslatef(-Intersect.X, -Intersect.Y, -Intersect.Z);
+		
 		glGetFloatv(GL_MODELVIEW_MATRIX, TransM_toMechCoord);
 		glPopMatrix();
 		
@@ -713,7 +728,7 @@ void RenderScene()
 	if (ROICameraSP_MechCoord != nullptr)
 	{
 		glPrintf(">>glut(%i, %i)", ROICenterColorS_Old.x - 60, ROICenterColorS_Old.y - 35);
-		glPrintf("(%.3f, %.3f, %.3f)", ROICameraSP_MechCoord[0].X - 0.172, ROICameraSP_MechCoord[0].Y - 0.158, ROICameraSP_MechCoord[0].Z + 0.576);
+		glPrintf("(%.3f, %.3f, %.3f)", ROICameraSP_MechCoord[0].X , ROICameraSP_MechCoord[0].Y , ROICameraSP_MechCoord[0].Z );
 	}
 	glPopMatrix();
 

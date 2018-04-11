@@ -211,7 +211,7 @@ void FindROI()
 	{
 		ROICenterColorS_Old.x = ROICenterColorS_New.x = 0;
 		ROICenterColorS_Old.y = ROICenterColorS_New.y = 0;
-		Draw3DLine();
+		//Draw3DLine();
 	}
 }
 
@@ -424,9 +424,9 @@ void GLInit()
 	ObjPosi.z = 0.267;
 
 	TipPosi.x = 0;
-	TipPosi.y = -0.035;
-	TipPosi.z = 0.12;
-
+	TipPosi.y = -0.12;
+	TipPosi.z = -0.035;
+	
 	DeviaDueToY = new CameraSpacePoint[1];
 	DeviaDueToY->X = DeviaDueToY->Y = DeviaDueToY->Z = 0;
 	GLfloat  whiteLight[] = { 0.45f, 0.45f, 0.45f, 1.0f };
@@ -455,6 +455,8 @@ void Keyboard(unsigned char key, int x, int y)
 {
 	switch (key)
 	{
+	case VK_ESCAPE:
+		glutExit();
 	case 'F':
 	case 'f':
 		/*Use CPU to get the FPS of the machine*/
@@ -477,8 +479,9 @@ void Keyboard(unsigned char key, int x, int y)
 		break;
 	case 'H':
 	case 'h':
-		long MtEmpty();
-		bool IS_HOME = MtHome();
+		MtReflash(md);
+		//long MtEmpty();
+		MtHome();
 		break;
 	}
 }
@@ -654,7 +657,7 @@ void SceneWithBackground()
 
 	double nearDist, farDist, aspect;
 	nearDist = 0.01f / tan((kFovY / 2.0) * CV_PI / 180.0);
-	farDist = 20000;
+	farDist = 50;
 	aspect = (double)iWidthColor / iHeightColor;
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
@@ -671,7 +674,7 @@ void SceneWithoutBackground()
 	static const double kFovY = 53.3;
 	double nearDist, farDist, aspect;
 	nearDist = 0.01f / tan((kFovY / 2.0) * CV_PI / 180.0);
-	farDist = 20000;
+	farDist = 50;
 	aspect = (double)iWidthColor / iHeightColor;
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	glMatrixMode(GL_PROJECTION);
@@ -687,7 +690,7 @@ void SceneWithoutBackground()
 void DrawPointCloud()
 {
 	/**************/
-	/*************/
+	/**************/
 	glPushMatrix();
 	glPointSize(1.0f);
 	glBegin(GL_POINTS);
@@ -699,6 +702,19 @@ void DrawPointCloud()
 		GLfloat pZ = -pCSPoints[i].Z;
 		glVertex3f(pX, pY, pZ);
 	}
+	/*for (int y = 0; y < iHeightColor; ++y)
+	{
+		for (int x = 0; x < iWidthColor; ++x)
+		{
+			int idx = x + y * iWidthColor;
+			const CameraSpacePoint& rPt = pCSPoints[idx];
+			if (rPt.Z > 0)
+			{
+				glColor4ubv((const GLubyte*)(&pBufferColor[4 * idx]));
+				glVertex3f(rPt.X, rPt.Y, rPt.Z);
+			}
+		}
+	}*/
 	glEnd();
 	glPopMatrix();
 }
@@ -1255,7 +1271,7 @@ int glPrintf(const char *format, ...)
 #pragma region Mt232 Function
 void MtMove(void)
 {
-	bool IS_HOME = MtHome(); //保证在移动的时候一定已经重新回到原点
+	MtHome(); //保证在移动的时候一定已经重新回到原点
 	MtReflash(md);
 	cout << "md->x : " << md->x << endl;
 	cout << "md->y : " << md->y << endl;
@@ -1277,9 +1293,9 @@ void MtMove(void)
 		switch (STORAGE_TYPE)
 		{
 		case 0://在这里Z值为负值，不知道原因，需要进一步勘测
-			sprintf(mybuffx, "%f", ROICameraSP_MachineCoord_Storage[i].X * 1000 - 188);
-			sprintf(mybuffy, "%f", ROICameraSP_MachineCoord_Storage[i].Y * 1000 + 20 );//在这里调整Z的值的时候，一定要在MtCheck里面也对于存下来的点的值进行调整
-			sprintf(mybuffz, "%f", ROICameraSP_MachineCoord_Storage[i].Z * 1000 + 257 /*- (ROICameraSP_MachineCoord_Storage[i].Y * 1000 + 40)* tan(dev_theta)*/);
+			sprintf(mybuffx, "%f", ROICameraSP_MachineCoord_Storage[i].X * 1000 -81);
+			sprintf(mybuffy, "%f", ROICameraSP_MachineCoord_Storage[i].Y * 1000 -69);//在这里调整Z的值的时候，一定要在MtCheck里面也对于存下来的点的值进行调整
+			sprintf(mybuffz, "%f", ROICameraSP_MachineCoord_Storage[i].Z * 1000 +170/*- (ROICameraSP_MachineCoord_Storage[i].Y * 1000 + 40)* tan(dev_theta)*/);
 			break;
 		case 1://在这里Z值为负值，不知道原因，需要进一步勘测
 			sprintf(mybuffx, "%f", ROICameraSP_MachineCoord_Proj_Storage[i].X * 1000 - 172);
@@ -1301,7 +1317,18 @@ void MtMove(void)
 	Thread^ thread1 = gcnew Thread(gcnew ThreadStart(MtCheck));
 	thread1->Name = "thread1";
 	thread1->Start();
-	
+}
+
+void Mt_XMove(float mt_x)
+{
+	MtReflash(md);
+	MtCmd("mt_speed 40");
+	char mybuffx[60];
+	char commandx[60] = "mt_m_x ";
+	sprintf(mybuffx, "%f", mt_x);
+	strcat(commandx, mybuffx);
+	MtCmd(commandx);
+	Sleep(100);	
 }
 
 void MtCheck(void)
@@ -1313,7 +1340,7 @@ void MtCheck(void)
 		{
 		case 0:
 			//这里是怎么搞得？为什么需要用Z的值减去Y的值乘以一个tan值:因为Kinect 看物体的时候会有一个角度，这里的tan值是为了能够消除角度带来的误差:mtmove_step使用开控制谁先谁后
-			value = ROICameraSP_MachineCoord_Storage[mtmove_step].Z * 1000 + 257 /*- ROICameraSP_MachineCoord_Storage[mtmove_step].Y * 1000 * tan(dev_theta)*/;
+			value = ROICameraSP_MachineCoord_Storage[mtmove_step].Z * 1000  +170/*- ROICameraSP_MachineCoord_Storage[mtmove_step].Y * 1000 * tan(dev_theta)*/;
 			break;
 		case 1:
 			value = ROICameraSP_MachineCoord_Proj_Storage[mtmove_step].Z * 1000 /*- ROICameraSP_MachineCoord_Proj_Storage[mtmove_step].Y * 1000 * tan(dev_theta)*/;
@@ -1621,7 +1648,7 @@ void DrawCubic()//换了模型之后有影响
 /*--------------Kinect Function-------------*/
 /*------------------------------------------*/
 /*------------------------------------------ The first Step ------------------------------------------*/
-void KinectInit()
+int KinectInit()
 {
 	// 1. Sensor related code
 	cout << "Try to get default sensor" << endl;
@@ -1629,13 +1656,13 @@ void KinectInit()
 		if (GetDefaultKinectSensor(&pSensor) != S_OK)
 		{
 			cerr << "Get Sensor failed" << endl;
-			return;
+			return -1;
 		}
 		cout << "Try to open sensor" << endl;
 		if (pSensor->Open() != S_OK)
 		{
 			cerr << "Can't open sensor" << endl;
-			return;
+			return -1;
 		}
 	}
 	// 2. Color related code
@@ -1646,7 +1673,7 @@ void KinectInit()
 		if (pSensor->get_ColorFrameSource(&pFrameSource) != S_OK)
 		{
 			cerr << "Can't get color frame source" << endl;
-			return;
+			return -1;
 		}
 		// Get frame description
 		cout << "get color frame description\n" << endl;
@@ -1667,7 +1694,7 @@ void KinectInit()
 		if (pFrameSource->OpenReader(&pFrameReaderColor) != S_OK)
 		{
 			cerr << "Can't get color frame reader" << endl;
-			return;
+			return -1;
 		}
 		// release Frame source
 		cout << "Release frame source" << endl;
@@ -1682,7 +1709,7 @@ void KinectInit()
 		if (pSensor->get_DepthFrameSource(&pFrameSource) != S_OK)
 		{
 			cerr << "Can't get depth frame source" << endl;
-			return;
+			return -1;
 		}
 		if (pSensor->get_DepthFrameSource(&pFrameSource) == S_OK)
 		{
@@ -1706,7 +1733,7 @@ void KinectInit()
 		if (pFrameSource->OpenReader(&pFrameReaderDepth) != S_OK)
 		{
 			cerr << "Can't get depth frame reader" << endl;
-			return;
+			return -1;
 		}
 		// release Frame source
 		cout << "Release frame source" << endl;
@@ -1718,7 +1745,7 @@ void KinectInit()
 	if (pSensor->get_CoordinateMapper(&Mapper) != S_OK)
 	{
 		cerr << "get_CoordinateMapper failed" << endl;
-		return;
+		return -1;
 	}
 	mDepthImg = cv::Mat::zeros(iHeightDepth, iWidthDepth, CV_16UC1);
 	mImg8bit = cv::Mat::zeros(iHeightDepth, iWidthDepth, CV_8UC1);
@@ -1726,11 +1753,9 @@ void KinectInit()
 
 #pragma region pixelfiltering
 	/*
-	 * Another File
-	 */
+	* Another File
+	*/
 #pragma endregion pixelfiltering
-
-
 }
 
 /*------------------------------------------ The second Step ------------------------------------------*/

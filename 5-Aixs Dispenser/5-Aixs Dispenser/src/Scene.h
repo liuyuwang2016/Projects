@@ -126,7 +126,7 @@ IKinectSensor* pSensor = nullptr;
 ICoordinateMapper* Mapper = nullptr;
 IDepthFrameReader* pFrameReaderDepth = nullptr;
 IColorFrameReader* pFrameReaderColor = nullptr;
-void KinectInit(void);					//Kinect Initial
+int KinectInit(void);					//Kinect Initial
 void KinectUpdate(void);				//Kinect Update Frame
 //Depth Map--…Ó∂»ÕºœÒ
 int iWidthDepth = 0;

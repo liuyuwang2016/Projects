@@ -13,11 +13,18 @@ using namespace System::Threading;
 /*---------------------------------*/
 /*--------------M232---------------*/
 /*---------------------------------*/
-bool MtHome(void);
+void MtHome(void);
 void MtReflashWait(void);
 void MtInit(void);
 void MtMove(void);
+void Mt_XMove(float x);
+void Mt_YMove(float y);
+void Mt_ZMove(float z);
+void Mt_UMove(float u);
+void Mt_VMove(float v);
 void MtCheck(void);
+
+float Mt_x, Mt_y, Mt_z, Mt_u, Mt_v;
 //To adjust error due to calibration while .obj moves along the plates on y axis
 Rs232MotionData* md = new struct Rs232MotionData;	//Tracking machine status
 
@@ -34,7 +41,7 @@ void MtReflashWait()
 }
 
 /*add one MtHome button to the keyboard function*/
-bool MtHome()
+void MtHome()
 {
 	MtCmd("mt_emg 0");
 	Sleep(100);
@@ -54,7 +61,7 @@ bool MtHome()
 		if (MtFlag(MotionStatus::emg_signal))
 		{
 			MtCmd("mt_abort_home");
-			return false;
+			return;
 		}
 	} while (MtFlag(MotionStatus::home_x) || MtFlag(MotionStatus::home_y) || MtFlag(MotionStatus::home_z) || MtFlag(MotionStatus::home_u) || MtFlag(MotionStatus::home_v)); //home_x 回到原點的過程 = true
 	
@@ -70,7 +77,6 @@ bool MtHome()
 	MtCmd("mt_out 11,1"); //door switch
 	MtCmd("mt_m_acc 150");  //door switch
 	MtCmd("mt_v_acc 80");  //door switch
-	return true;
 }
 
 void MtInit(void)
@@ -104,6 +110,6 @@ void MtInit(void)
 	
 	Sleep(50);
 	long MtEmpty();
-	bool IS_HOME = MtHome();
+	MtHome();
 }
 #endif

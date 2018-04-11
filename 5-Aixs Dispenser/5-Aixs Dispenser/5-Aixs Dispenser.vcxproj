@@ -168,6 +168,7 @@
     <ClInclude Include="src\dllmain.h" />
     <ClInclude Include="src\glm.h" />
     <ClInclude Include="src\M232.h" />
+    <ClInclude Include="src\OpenGLCamera.h" />
     <ClInclude Include="src\portaudio.h" />
     <ClInclude Include="src\RealScene.h" />
     <ClInclude Include="src\Scene.h" />

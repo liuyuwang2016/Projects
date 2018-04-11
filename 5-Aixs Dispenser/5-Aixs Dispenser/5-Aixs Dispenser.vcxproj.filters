@@ -28,6 +28,9 @@
     <Filter Include="osapi">
       <UniqueIdentifier>{f1e85edc-94e4-4bf8-9d76-3f1eb8a7dac9}</UniqueIdentifier>
     </Filter>
+    <Filter Include="旋转相机">
+      <UniqueIdentifier>{3916269c-dea0-46ea-9d67-d8d408747f63}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="glm.cpp">
@@ -97,6 +100,9 @@
     </ClInclude>
     <ClInclude Include="src\RealScene.h">
       <Filter>Header必须</Filter>
+    </ClInclude>
+    <ClInclude Include="src\OpenGLCamera.h">
+      <Filter>旋转相机</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

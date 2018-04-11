@@ -31,10 +31,10 @@ int main(int argc, char** argv)
 	glutInitWindowSize(iWidthColor, iHeightColor);
 	glutCreateWindow("Perspective Projection");
 	glutFullScreen();
-	glutSpecialFunc(SpecialKeys);
-	glutKeyboardFunc(Keyboard);
 	glutDisplayFunc(RenderScene);
 	glutIdleFunc(KinectUpdate);
+	glutKeyboardFunc(Keyboard);
+	glutSpecialFunc(SpecialKeys);
 	loadOBJModel();
 	Texture();
 	/*--------------above this do not need check again--------------*/

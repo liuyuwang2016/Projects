@@ -31,13 +31,13 @@ CameraSpacePoint* pCSPoints = nullptr;
 SimpleCamera g_Camera;
 
 // glut display function(draw)
-void display()
+void RenderScene()
 {
 	// clear previous screen
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
 	// draw points
-	glPointSize(1.0f);
+	glPointSize(4.0f);
 	glBegin(GL_POINTS);
 
 	for (int y = 0; y < iColorHeight; ++y)
@@ -317,12 +317,12 @@ int main(int argc, char** argv)
 	glDisable(GL_LIGHTING);
 
 	// default camera
-	g_Camera.vCenter = Vector3(0.0, 0.0, 1);
 	g_Camera.vPosition = Vector3(0.0, 0.0, 0.0);
+	g_Camera.vCenter = Vector3(0.0, 0.0, 1);
 	g_Camera.vUpper = Vector3(0.0, 1.0, 0.0);
 
 	// register glut callback functions
-	glutDisplayFunc(display);
+	glutDisplayFunc(RenderScene);
 	glutIdleFunc(idle);
 	glutReshapeFunc(reshape);
 	glutKeyboardFunc(keyboard);
