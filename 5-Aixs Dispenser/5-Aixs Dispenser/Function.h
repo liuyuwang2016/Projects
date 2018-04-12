@@ -147,17 +147,6 @@ void SpecialKeys(int key, int x, int y)
 		ObjPosi.y -= 0.001f;
 		cout << endl << "ObjPosi.y : " << ObjPosi.y << endl;
 	}
-	else if (key == GLUT_KEY_F5)//直接控制X轴的移动
-	{
-		md->x+= 1;
-		Mt_x = md->x;
-		Mt_XMove(Mt_x);
-		do
-		{
-			MtReflash(md);
-			//cout << "md->v : " << md->v << endl;
-		} while (md->x != Mt_x);
-	}
 	else if (key == GLUT_KEY_RIGHT)
 	{
 		ObjPosi.x += 0.001f;
@@ -275,7 +264,7 @@ void DrawPlaneInScene()
 		glBegin(GL_POINTS);
 		for (int i = 0; i < PlaneDepthCount; i++)
 		{
-			glColor3ub(255, 255, 0);
+			glColor3ub(0, 255, 0);
 			glVertex3f(PlaneSP[i].X, PlaneSP[i].Y, PlaneSP[i].Z);
 			//cout << "画出来了" << index4 << "个" << endl;
 		}
@@ -283,25 +272,6 @@ void DrawPlaneInScene()
 		glEnd();
 		glPopMatrix();
 	}
-
-	GLfloat TransGLtoMach[16] = { 0 };
-	TransGLtoMach[0] = TransGLtoMach[5] = TransGLtoMach[10] = TransGLtoMach[15] = 1;
-	
-	glMatrixMode(GL_MODELVIEW);
-	glPushMatrix();
-	glLoadIdentity();
-
-	glTranslatef(TipPosi.x, TipPosi.y, TipPosi.z);
-	//http://cuiqingcai.com/1658.html 旋转示例
-	glRotatef(-90, 1, 0, 0);//旋转后就Z值和机器的坐标系相反
-	//glMultMatrixf(const GLfloat *m);//把m指定的16个值作为一个矩阵，与当前矩阵相乘，并把结果存储在当前矩阵中 
-	//glMultMatrix 假设当前矩阵是C那么用矩阵M 调用glMultMatrix 对顶点v的变换就从原来的C*v变成C * M * v
-	//http://blog.csdn.net/mathgeophysics/article/details/11434345
-	glMultMatrixf(M_Cubic_inv);//opengl坐标转换到机器
-	glTranslatef(-Intersect.X, -Intersect.Y, -Intersect.Z);
-	glGetFloatv(GL_MODELVIEW_MATRIX, TransGLtoMach);
-	glPopMatrix();
-
 }
 
 void RANSAC(CameraSpacePoint* spacePoints, int Iter)
@@ -540,12 +510,47 @@ void CoordGLtoMachine()
 
 		ROITrans(ROICameraSP_MechCoord, 1, TransM_toMechCoord, ROICameraSP_MechCoord);
 
-		//PrintMatrix(TransM_toMechCoord);
 		ROITrans(ROICameraSP_Proj_MechCoord, 1, TransM_toMechCoord, ROICameraSP_Proj_MechCoord);
 
 		ROICameraSP_MechCoord->Y = -ROICameraSP_MechCoord->Y;
 		
 		ROICameraSP_Proj_MechCoord->Y = -ROICameraSP_Proj_MechCoord->Y;
+	}
+	else if (1000 > PlaneDepthCount > 0 && PlaneSP != nullptr && !ROI_IS_COLLIDE)
+	{
+		GLfloat TransGLtoMach[16] = { 0 };
+		TransGLtoMach[0] = TransGLtoMach[5] = TransGLtoMach[10] = TransGLtoMach[15] = 1;
+
+		glMatrixMode(GL_MODELVIEW);
+		glPushMatrix();
+		glLoadIdentity();
+
+		glTranslatef(TipPosi.x, TipPosi.y, TipPosi.z);
+		//http://cuiqingcai.com/1658.html 旋转示例
+		glRotatef(-90, 1, 0, 0);//旋转后就Z值和机器的坐标系相反
+		//glMultMatrixf(const GLfloat *m);//把m指定的16个值作为一个矩阵，与当前矩阵相乘，并把结果存储在当前矩阵中 
+		//glMultMatrix 假设当前矩阵是C那么用矩阵M 调用glMultMatrix 对顶点v的变换就从原来的C*v变成C * M * v
+		//http://blog.csdn.net/mathgeophysics/article/details/11434345
+		glMultMatrixf(M_Cubic_inv);//opengl坐标转换到机器
+		glTranslatef(-Intersect.X, -Intersect.Y, -Intersect.Z);
+		glGetFloatv(GL_MODELVIEW_MATRIX, TransGLtoMach);
+		glPopMatrix();
+		if (PlaneSP_MachCoord != nullptr)
+		{
+			delete[] PlaneSP_MachCoord;
+		}
+		PlaneSP_MachCoord = new CameraSpacePoint[PlaneDepthCount];
+		for (int i = 0; i <= PlaneDepthCount; i++)
+		{
+			PlaneSP_MachCoord[i].X = PlaneSP[i].X;
+			PlaneSP_MachCoord[i].Y = PlaneSP[i].Y;
+			PlaneSP_MachCoord[i].Z = PlaneSP[i].Z;
+			ROITrans(PlaneSP_MachCoord, i, TransGLtoMach, PlaneSP_MachCoord);
+		}
+		for (int i = 0; i <= PlaneDepthCount; i++)
+		{
+			PlaneSP_MachCoord[i].Y = -PlaneSP_MachCoord[i].Y;
+		}
 	}
 }
 
@@ -659,7 +664,7 @@ void MoveCubicInY_Axis()//换了模型之后有影响
 	glTranslatef(DeviaDueToY->X, DeviaDueToY->Y, DeviaDueToY->Z);
 
 	//DrawCubic();
-	//ARFunc_IS_ON = FALSE;
+	ARFunc_IS_ON = FALSE;
 	if (Cubic_IS_BLEND)
 	{
 		glDepthMask(GL_TRUE);

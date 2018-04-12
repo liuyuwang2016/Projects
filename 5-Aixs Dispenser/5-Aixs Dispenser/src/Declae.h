@@ -211,7 +211,7 @@ void FindROI()
 	{
 		ROICenterColorS_Old.x = ROICenterColorS_New.x = 0;
 		ROICenterColorS_Old.y = ROICenterColorS_New.y = 0;
-		//Draw3DLine();
+		Draw3DLine();
 	}
 }
 
@@ -457,14 +457,14 @@ void Keyboard(unsigned char key, int x, int y)
 	{
 	case VK_ESCAPE:
 		glutExit();
-	case 'F':
-	case 'f':
-		/*Use CPU to get the FPS of the machine*/
-		Finish_Without_Update = TRUE;
-		printf("%f fps\n", g_fps(RenderScene, 100));
-		cout << "FPS_RS = " << FPS_RS << endl;
-		Finish_Without_Update = FALSE;
-		break;
+	//case 'F':
+	//case 'f':
+	//	/*Use CPU to get the FPS of the machine*/
+	//	Finish_Without_Update = TRUE;
+	//	printf("%f fps\n", g_fps(RenderScene, 100));
+	//	cout << "FPS_RS = " << FPS_RS << endl;
+	//	Finish_Without_Update = FALSE;
+	//	break;
 		/*A move */
 	case 'A':
 	case 'a':
@@ -477,11 +477,126 @@ void Keyboard(unsigned char key, int x, int y)
 	case 's':
 		ROICameraSPStorage();
 		break;
-	case 'H':
-	case 'h':
+	case 'B':
+	case 'b':
 		MtReflash(md);
 		//long MtEmpty();
 		MtHome();
+		break;
+	case 'L':
+	case 'l':
+		MtReflash(md);
+		Mt_Line_Move();
+		break;
+	case 'R': //控制X+++
+	case 'r': 
+		md->x += Mt_speed;
+		Mt_x = md->x;
+		Mt_XMove(Mt_x);
+		do
+		{
+			MtReflash(md);
+			//cout << "md->v : " << md->v << endl;
+		} while (md->x != Mt_x);
+		break;
+	case 'F'://控制X--
+	case 'f':
+		md->x -= Mt_speed;
+		Mt_x = md->x;
+		Mt_XMove(Mt_x);
+		do
+		{
+			MtReflash(md);
+			//cout << "md->v : " << md->v << endl;
+		} while (md->x != Mt_x);
+		break;
+	case 'T'://控制Y++
+	case 't':
+		md->y += Mt_speed;
+		Mt_y = md->y;
+		Mt_YMove(Mt_y);
+		do
+		{
+			MtReflash(md);
+			//cout << "md->v : " << md->v << endl;
+		} while (md->y != Mt_y);
+		break;
+	case 'G'://控制Y--
+	case 'g':
+		md->y -= Mt_speed;
+		Mt_y = md->y;
+		Mt_YMove(Mt_y);
+		do
+		{
+			MtReflash(md);
+			//cout << "md->v : " << md->v << endl;
+		} while (md->y != Mt_y);
+		break;
+	case 'Y'://控制Z++
+	case 'y':
+		md->z += Mt_speed;
+		Mt_z = md->z;
+		Mt_ZMove(Mt_z);
+		do
+		{
+			MtReflash(md);
+			//cout << "md->v : " << md->v << endl;
+		} while (md->z != Mt_z);
+		break;
+	case 'H'://控制Z--
+	case 'h':
+		md->z -= Mt_speed;
+		Mt_z = md->z;
+		Mt_ZMove(Mt_z);
+		do
+		{
+			MtReflash(md);
+			//cout << "md->v : " << md->v << endl;
+		} while (md->z != Mt_z);
+		break;
+	case 'U'://控制U++
+	case 'u':
+		md->u += Mt_speed;
+		Mt_u = md->u;
+		Mt_UMove(Mt_u);
+		do
+		{
+			MtReflash(md);
+			//cout << "md->v : " << md->v << endl;
+		} while (md->u != Mt_u);
+		break;
+	case 'J'://控制U--
+	case 'j':
+		md->u -= Mt_speed;
+		Mt_u = md->u;
+		Mt_UMove(Mt_u);
+		do
+		{
+			MtReflash(md);
+			//cout << "md->v : " << md->v << endl;
+		} while (md->u != Mt_u);
+		break;
+	case 'I'://控制V++
+	case 'i':
+		md->v += Mt_speed;
+		Mt_v = md->v;
+		Mt_VMove(Mt_v);
+		do
+		{
+			MtReflash(md);
+			//cout << "md->v : " << md->v << endl;
+		} while (md->v != Mt_v);
+		break;
+	case 'K'://控制V--
+	case 'k':
+		md->v -= Mt_speed;
+		Mt_v = md->v;
+		Mt_VMove(Mt_v);
+		do
+		{
+			MtReflash(md);
+			//cout << "md->v : " << md->v << endl;
+		} while (md->v != Mt_v);
 		break;
 	}
 }
@@ -892,7 +1007,7 @@ void Draw3DLine()
 			cout << "按键“9”被按下，进行三维平面的绘制并且导入三维模型\n";
 			destroyWindow("2D Extraction");
 			Draw3DPlane();
-			continue;
+			break;
 		}
 	}
 
@@ -1293,14 +1408,14 @@ void MtMove(void)
 		switch (STORAGE_TYPE)
 		{
 		case 0://在这里Z值为负值，不知道原因，需要进一步勘测
-			sprintf(mybuffx, "%f", ROICameraSP_MachineCoord_Storage[i].X * 1000 -81);
-			sprintf(mybuffy, "%f", ROICameraSP_MachineCoord_Storage[i].Y * 1000 -69);//在这里调整Z的值的时候，一定要在MtCheck里面也对于存下来的点的值进行调整
-			sprintf(mybuffz, "%f", ROICameraSP_MachineCoord_Storage[i].Z * 1000 +170/*- (ROICameraSP_MachineCoord_Storage[i].Y * 1000 + 40)* tan(dev_theta)*/);
+			sprintf(mybuffx, "%f", ROICameraSP_MachineCoord_Storage[i].X * 1000 - 81);
+			sprintf(mybuffy, "%f", ROICameraSP_MachineCoord_Storage[i].Y * 1000 - 69);//在这里调整Z的值的时候，一定要在MtCheck里面也对于存下来的点的值进行调整
+			sprintf(mybuffz, "%f", ROICameraSP_MachineCoord_Storage[i].Z * 1000 + 170/*- (ROICameraSP_MachineCoord_Storage[i].Y * 1000 + 40)* tan(dev_theta)*/);
 			break;
 		case 1://在这里Z值为负值，不知道原因，需要进一步勘测
-			sprintf(mybuffx, "%f", ROICameraSP_MachineCoord_Proj_Storage[i].X * 1000 - 172);
-			sprintf(mybuffy, "%f", ROICameraSP_MachineCoord_Proj_Storage[i].Y * 1000 - 158);
-			sprintf(mybuffz, "%f", ROICameraSP_MachineCoord_Proj_Storage[i].Z * 1000 + 400 - ROICameraSP_MachineCoord_Proj_Storage[i].Y * 1000 * tan(dev_theta));
+			sprintf(mybuffx, "%f", ROICameraSP_MachineCoord_Proj_Storage[i].X * 1000 - 81);
+			sprintf(mybuffy, "%f", ROICameraSP_MachineCoord_Proj_Storage[i].Y * 1000 - 69);
+			sprintf(mybuffz, "%f", ROICameraSP_MachineCoord_Proj_Storage[i].Z * 1000 + 170 /*- ROICameraSP_MachineCoord_Proj_Storage[i].Y * 1000 * tan(dev_theta)*/);
 			break;
 
 		}
@@ -1319,16 +1434,111 @@ void MtMove(void)
 	thread1->Start();
 }
 
+void Mt_Line_Move()
+{
+	MtHome(); //保证在移动的时候一定已经重新回到原点
+	MtReflash(md);
+	cout << "md->x : " << md->x << endl;
+	cout << "md->y : " << md->y << endl;
+	cout << "md->z : " << md->z << endl;
+	Sleep(100);
+	//开始的时候调用Machine的声音
+	for (int i = 0; i < 5; i++)
+	{
+		MtCmd("mt_out 12,1");
+		Sleep(100);
+		MtCmd("mt_out 12,0");
+		Sleep(100);
+	}
+	for (int i = 0; i <= PlaneDepthCount; i++)
+	{
+		char mybuffx[50], mybuffy[50], mybuffz[50], mybuffu[50], mybuffv[50];
+		char commandx[60] = "mt_m_x ", commandy[60] = "mt_m_y ", commandz[60] = "mt_m_z ", commandu[60] = "mt_m_u ", commandv[60] = "mt_m_v ";
+		float value = 0;
+		switch (0)
+		{
+		case 0://在这里Z值为负值，不知道原因，需要进一步勘测
+			sprintf(mybuffx, "%f", PlaneSP_MachCoord[i].X * 1000 - 81);
+			sprintf(mybuffy, "%f", PlaneSP_MachCoord[i].Y * 1000 - 69);//在这里调整Z的值的时候，一定要在MtCheck里面也对于存下来的点的值进行调整
+			sprintf(mybuffz, "%f", PlaneSP_MachCoord[i].Z * 1000 + 170/*- (ROICameraSP_MachineCoord_Storage[i].Y * 1000 + 40)* tan(dev_theta)*/);
+			value = PlaneSP_MachCoord[i].Z * 1000 + 170;
+			break;
+		}
+		strcat(commandx, mybuffx);
+		strcat(commandy, mybuffy);
+		strcat(commandz, mybuffz);
+
+		MtCmd(commandx);
+		MtCmd(commandy);
+		MtCmd(commandz);
+		do
+		{
+			MtReflash(md);
+			//cout << value << " " << md->z << endl;
+		} while (abs(md->z - value) > 0.01);
+	}
+
+}
+
 void Mt_XMove(float mt_x)
 {
 	MtReflash(md);
-	MtCmd("mt_speed 40");
+	MtCmd("mt_speed 50");
 	char mybuffx[60];
 	char commandx[60] = "mt_m_x ";
 	sprintf(mybuffx, "%f", mt_x);
 	strcat(commandx, mybuffx);
 	MtCmd(commandx);
-	Sleep(100);	
+	Sleep(1);	
+}
+
+void Mt_YMove(float mt_y)
+{
+	MtReflash(md);
+	MtCmd("mt_speed 50");
+	char mybuffy[60];
+	char commandy[60] = "mt_m_y ";
+	sprintf(mybuffy, "%f", mt_y);
+	strcat(commandy, mybuffy);
+	MtCmd(commandy);
+	Sleep(1);
+}
+
+void Mt_ZMove(float mt_z)
+{
+	MtReflash(md);
+	MtCmd("mt_speed 50");
+	char mybuffz[60];
+	char commandz[60] = "mt_m_z ";
+	sprintf(mybuffz, "%f", mt_z);
+	strcat(commandz, mybuffz);
+	MtCmd(commandz);
+	Sleep(1);
+}
+
+
+void Mt_UMove(float mt_u)
+{
+	MtReflash(md);
+	MtCmd("mt_speed 50");
+	char mybuffu[60];
+	char commandu[60] = "mt_m_u ";
+	sprintf(mybuffu, "%f", mt_u);
+	strcat(commandu, mybuffu);
+	MtCmd(commandu);
+	Sleep(1);
+}
+
+void Mt_VMove(float mt_v)
+{
+	MtReflash(md);
+	MtCmd("mt_speed 50");
+	char mybuffv[60];
+	char commandv[60] = "mt_m_v ";
+	sprintf(mybuffv, "%f", mt_v);
+	strcat(commandv, mybuffv);
+	MtCmd(commandv);
+	Sleep(1);
 }
 
 void MtCheck(void)

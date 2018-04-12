@@ -92,6 +92,7 @@ bool IS_KEY_F1_UP = FALSE;							//FLAG of data collecting, see SpecialKeys()
 CameraSpacePoint* ROICameraSP_TouchDetec = nullptr;
 CameraSpacePoint* ROICameraSP_MechCoord = nullptr;
 CameraSpacePoint* ROICameraSP_Proj_MechCoord = nullptr;
+CameraSpacePoint* PlaneSP_MachCoord = nullptr;
 
 void onMouseROI(int event, int x, int y, int flags, void* param);
 //DataType: 0 = unsigned char, 1 = float 这里是读取mat的数据
