@@ -31,6 +31,7 @@ void ROITrans(CameraSpacePoint* Data, int DataNum, GLfloat* TransM, CameraSpaceP
 		Result[i].Z = m[14] / m[15];
 	}
 }
+
 //模型换了之后没影响
 void ROITrans(float* Data, int DataNum, GLfloat* TransM, float* Result)
 {
@@ -1450,7 +1451,15 @@ void Mt_Line_Move()
 		MtCmd("mt_out 12,0");
 		Sleep(100);
 	}
-	for (int i = 0; i <= PlaneDepthCount; i++)
+	if (LineSP_MachCoord != nullptr)
+	{
+		delete[] LineSP_MachCoord;
+	}
+	LineSP_MachCoord = new CameraSpacePoint[2];
+	LineSP_MachCoord[0] = PlaneSP_MachCoord[Head];
+	LineSP_MachCoord[1] = PlaneSP_MachCoord[Tail];
+
+	for (int i = 0; i <= 1; i++)
 	{
 		char mybuffx[50], mybuffy[50], mybuffz[50], mybuffu[50], mybuffv[50];
 		char commandx[60] = "mt_m_x ", commandy[60] = "mt_m_y ", commandz[60] = "mt_m_z ", commandu[60] = "mt_m_u ", commandv[60] = "mt_m_v ";
@@ -1458,10 +1467,10 @@ void Mt_Line_Move()
 		switch (0)
 		{
 		case 0://在这里Z值为负值，不知道原因，需要进一步勘测
-			sprintf(mybuffx, "%f", PlaneSP_MachCoord[i].X * 1000 - 81);
-			sprintf(mybuffy, "%f", PlaneSP_MachCoord[i].Y * 1000 - 69);//在这里调整Z的值的时候，一定要在MtCheck里面也对于存下来的点的值进行调整
-			sprintf(mybuffz, "%f", PlaneSP_MachCoord[i].Z * 1000 + 170/*- (ROICameraSP_MachineCoord_Storage[i].Y * 1000 + 40)* tan(dev_theta)*/);
-			value = PlaneSP_MachCoord[i].Z * 1000 + 170;
+			sprintf(mybuffx, "%f", LineSP_MachCoord[i].X * 1000 - 81);
+			sprintf(mybuffy, "%f", LineSP_MachCoord[i].Y * 1000 - 69);//在这里调整Z的值的时候，一定要在MtCheck里面也对于存下来的点的值进行调整
+			sprintf(mybuffz, "%f", LineSP_MachCoord[i].Z * 1000 + 170/*- (ROICameraSP_MachineCoord_Storage[i].Y * 1000 + 40)* tan(dev_theta)*/);
+			value = LineSP_MachCoord[i].Z * 1000 + 170;
 			break;
 		}
 		strcat(commandx, mybuffx);
@@ -1477,7 +1486,6 @@ void Mt_Line_Move()
 			//cout << value << " " << md->z << endl;
 		} while (abs(md->z - value) > 0.01);
 	}
-
 }
 
 void Mt_XMove(float mt_x)

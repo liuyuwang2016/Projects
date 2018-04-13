@@ -43,6 +43,7 @@ void showHelpText();
 bool g_dDrawingBox = FALSE;
 bool ROI_S1 = FALSE;
 bool ROI_S2 = FALSE;
+int Head, Tail;
 Rect2i ROI_rect = Rect(-1, -1, 0, 0);
 Point ROI_p1, ROI_p2;
 Mat ROI;
@@ -92,6 +93,7 @@ bool IS_KEY_F1_UP = FALSE;							//FLAG of data collecting, see SpecialKeys()
 CameraSpacePoint* ROICameraSP_TouchDetec = nullptr;
 CameraSpacePoint* ROICameraSP_MechCoord = nullptr;
 CameraSpacePoint* ROICameraSP_Proj_MechCoord = nullptr;
+CameraSpacePoint* LineSP_MachCoord = nullptr;
 CameraSpacePoint* PlaneSP_MachCoord = nullptr;
 
 void onMouseROI(int event, int x, int y, int flags, void* param);
@@ -114,6 +116,12 @@ void ROICameraSPStorage(void);						//Storage ROI Func
 void ROITrans(CameraSpacePoint* Data, int DataNum, GLfloat* TransM, CameraSpacePoint* Result);
 void ROITrans(float* Data, int DataNum, GLfloat* TransM, float* Result);
 void DrawRectangle(cv::Mat& img, cv::Rect box);
+
+struct result {
+	float max;
+	float min;
+};
+result* Get_Min_Max(CameraSpacePoint* point, int start, int end);
 #pragma endregion OpenCV&ROI Initial
 
 #pragma region Kinect Initial

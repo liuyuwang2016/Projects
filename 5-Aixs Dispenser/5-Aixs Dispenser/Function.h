@@ -526,12 +526,8 @@ void CoordGLtoMachine()
 		glLoadIdentity();
 
 		glTranslatef(TipPosi.x, TipPosi.y, TipPosi.z);
-		//http://cuiqingcai.com/1658.html 旋转示例
-		glRotatef(-90, 1, 0, 0);//旋转后就Z值和机器的坐标系相反
-		//glMultMatrixf(const GLfloat *m);//把m指定的16个值作为一个矩阵，与当前矩阵相乘，并把结果存储在当前矩阵中 
-		//glMultMatrix 假设当前矩阵是C那么用矩阵M 调用glMultMatrix 对顶点v的变换就从原来的C*v变成C * M * v
-		//http://blog.csdn.net/mathgeophysics/article/details/11434345
-		glMultMatrixf(M_Cubic_inv);//opengl坐标转换到机器
+		glRotatef(-90, 1, 0, 0);
+		glMultMatrixf(M_Cubic_inv);
 		glTranslatef(-Intersect.X, -Intersect.Y, -Intersect.Z);
 		glGetFloatv(GL_MODELVIEW_MATRIX, TransGLtoMach);
 		glPopMatrix();
@@ -539,19 +535,92 @@ void CoordGLtoMachine()
 		{
 			delete[] PlaneSP_MachCoord;
 		}
+
 		PlaneSP_MachCoord = new CameraSpacePoint[PlaneDepthCount];
+		
 		for (int i = 0; i <= PlaneDepthCount; i++)
 		{
 			PlaneSP_MachCoord[i].X = PlaneSP[i].X;
 			PlaneSP_MachCoord[i].Y = PlaneSP[i].Y;
 			PlaneSP_MachCoord[i].Z = PlaneSP[i].Z;
-			ROITrans(PlaneSP_MachCoord, i, TransGLtoMach, PlaneSP_MachCoord);
+
+			GLfloat m[16] = { 0 };
+			m[3] = m[7] = m[11] = m[15] = 1;
+			m[12] = PlaneSP_MachCoord[i].X;
+			m[13] = PlaneSP_MachCoord[i].Y;
+			m[14] = PlaneSP_MachCoord[i].Z;
+
+			glMatrixMode(GL_MODELVIEW);
+			glPushMatrix();
+			glLoadIdentity();
+			glMultMatrixf(TransGLtoMach);
+			glMultMatrixf(m);
+			glGetFloatv(GL_MODELVIEW_MATRIX, m);
+			glPopMatrix();
+
+			PlaneSP_MachCoord[i].X = m[12] / m[15];
+			PlaneSP_MachCoord[i].Y = m[13] / m[15];
+			PlaneSP_MachCoord[i].Z = m[14] / m[15];
 		}
-		for (int i = 0; i <= PlaneDepthCount; i++)
+		for (int i = 0; i < PlaneDepthCount; i++)
 		{
-			PlaneSP_MachCoord[i].Y = -PlaneSP_MachCoord[i].Y;
+			if (PlaneSP_MachCoord[i].X > 0.1)
+			{
+				PlaneSP_MachCoord[i].Y = -PlaneSP_MachCoord[i].Y;
+				cout << "--------------------------------------------------------------" << endl;
+				cout << "PlaneSP_MachCoord[" << i << "].X = " << PlaneSP_MachCoord[i].X << endl;
+				cout << "PlaneSP_MachCoord[" << i << "].Y = " << PlaneSP_MachCoord[i].Y << endl;
+				cout << "PlaneSP_MachCoord[" << i << "].Z = " << PlaneSP_MachCoord[i].Z << endl;
+				cout << "--------------------------------------------------------------" << endl;
+			}
 		}
+		result* res = Get_Min_Max(PlaneSP_MachCoord, 0, PlaneDepthCount - 1);
+		cout << "{------------------------" << res->max << ", ------------------}" << res->min << endl;
 	}
+}
+//获取线段中的X最大值和最小值
+result* Get_Min_Max(CameraSpacePoint* point, int start, int end)
+{
+	int len = end - start + 1;
+
+	if (end < start) {
+		return NULL;
+	}
+
+	result* res = new result();
+
+	int max, min;
+
+	if (len % 2 == 0) {
+		//偶数的情况  
+		res->max =
+			point[start].X > point[start + 1].X ?
+			point[start].X : point[start + 1].X;
+		res->min =
+			point[start].X < point[start + 1].X ?
+			point[start].X : point[start + 1].X;
+
+		start = start + 2; //如果是偶数，则需要让i从第三个元素开始  
+	}
+	else {
+		//奇数的情况  
+		res->max = point[start].X;
+		res->min = point[start].X;
+
+		start = start + 1; //如果是奇数，则需要让i从第二个元素开始  
+	}
+
+	while (start <= end) {
+		max = point[start].X > point[start + 1].X ? point[start].X : point[start + 1].X;
+		min = point[start].X < point[start + 1].X ? point[start].X : point[start + 1].X;
+
+		res->max = res->max > max ? res->max : max;
+		res->min = res->min < min ? res->min : min;
+
+		start = start + 2;
+	}
+
+	return res;
 }
 
 //用来打印出Matrix便于查看

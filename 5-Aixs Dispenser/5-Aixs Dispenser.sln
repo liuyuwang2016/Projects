@@ -9,6 +9,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CameraCalib", "CameraCalib\
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "OpenGL-Test", "OpenGL-Test\OpenGL-Test.vcxproj", "{2C68ED23-93DC-48DA-973C-CF370858B623}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "C++ Function Test", "C++ Function Test\C++ Function Test.vcxproj", "{CCF90A3B-D2CD-4294-AB57-7DF18B008B1F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -37,6 +39,12 @@ Global
 		{2C68ED23-93DC-48DA-973C-CF370858B623}.Release|Win32.ActiveCfg = Release|Win32
 		{2C68ED23-93DC-48DA-973C-CF370858B623}.Release|Win32.Build.0 = Release|Win32
 		{2C68ED23-93DC-48DA-973C-CF370858B623}.Release|x64.ActiveCfg = Release|Win32
+		{CCF90A3B-D2CD-4294-AB57-7DF18B008B1F}.Debug|Win32.ActiveCfg = Debug|Win32
+		{CCF90A3B-D2CD-4294-AB57-7DF18B008B1F}.Debug|Win32.Build.0 = Debug|Win32
+		{CCF90A3B-D2CD-4294-AB57-7DF18B008B1F}.Debug|x64.ActiveCfg = Debug|Win32
+		{CCF90A3B-D2CD-4294-AB57-7DF18B008B1F}.Release|Win32.ActiveCfg = Release|Win32
+		{CCF90A3B-D2CD-4294-AB57-7DF18B008B1F}.Release|Win32.Build.0 = Release|Win32
+		{CCF90A3B-D2CD-4294-AB57-7DF18B008B1F}.Release|x64.ActiveCfg = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
