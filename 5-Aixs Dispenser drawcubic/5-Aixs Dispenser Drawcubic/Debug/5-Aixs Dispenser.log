@@ -1,0 +1,173 @@
+﻿生成启动时间为 2018/4/13 10:07:51。
+     1>项目“D:\USER\Desktop\5-Aixs Dispenser drawcubic\5-Aixs Dispenser Drawcubic\5-Aixs Dispenser.vcxproj”在节点 2 上(Build 个目标)。
+     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\Microsoft.CppBuild.targets(381,5): warning MSB8028: The intermediate directory (Debug\) contains files shared from another project (5-Aixs Dispenser.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /IC:\portaudio\include /IC:\OpenCV300\opencv\build\include /IC:\OpenCV300\opencv\build\include\opencv /IC:\OpenCV300\opencv\build\include\opencv2 /I"C:\Program Files\Microsoft SDKs\Kinect\v2.0_1409\\inc" /AI"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0" /AI"C:\Program Files (x86)\Windows Kits\8.1\References\CommonConfiguration\Neutral" /Zi /clr /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _MBCS /EHa /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /TP /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\mscorlib.dll" /analyze- /errorReport:prompt /clr:nostdlib main.cpp
+         main.cpp
+     1>C:\OpenCV300\opencv\build\include\opencv2/core/mat.hpp(1965): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+     1>C:\OpenCV300\opencv\build\include\opencv2/core/persistence.hpp : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+     1>C:\OpenCV300\opencv\build\include\opencv2/core/utility.hpp : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+     1>d:\user\desktop\5-aixs dispenser drawcubic\5-aixs dispenser drawcubic\src/Scene.h(172): warning C4305: “初始化”: 从“double”到“float”截断
+     1>d:\user\desktop\5-aixs dispenser drawcubic\5-aixs dispenser drawcubic\src/Scene.h(196): warning C4305: “初始化”: 从“double”到“float”截断
+     1>d:\user\desktop\5-aixs dispenser drawcubic\5-aixs dispenser drawcubic\src/Scene.h(201): warning C4305: “初始化”: 从“double”到“float”截断
+     1>d:\user\desktop\5-aixs dispenser drawcubic\5-aixs dispenser drawcubic\src/Scene.h(300): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : 参见“sprintf”的声明
+     1>d:\user\desktop\5-aixs dispenser drawcubic\5-aixs dispenser drawcubic\src/Scene.h(389): warning C4244: “=”: 从“float”转换到“int”，可能丢失数据
+     1>d:\user\desktop\5-aixs dispenser drawcubic\5-aixs dispenser drawcubic\src/dllmain.h(234): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : 参见“sprintf”的声明
+     1>d:\user\desktop\5-aixs dispenser drawcubic\5-aixs dispenser drawcubic\src/dllmain.h(237): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : 参见“sprintf”的声明
+     1>d:\user\desktop\5-aixs dispenser drawcubic\5-aixs dispenser drawcubic\src/dllmain.h(350): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(112) : 参见“strcpy”的声明
+     1>d:\user\desktop\5-aixs dispenser drawcubic\5-aixs dispenser drawcubic\src/dllmain.h(362): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(112) : 参见“strcpy”的声明
+     1>d:\user\desktop\5-aixs dispenser drawcubic\5-aixs dispenser drawcubic\src/dllmain.h(462): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(112) : 参见“strcpy”的声明
+     1>d:\user\desktop\5-aixs dispenser drawcubic\5-aixs dispenser drawcubic\src/dllmain.h(552): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(118) : 参见“strcat”的声明
+     1>d:\user\desktop\5-aixs dispenser drawcubic\5-aixs dispenser drawcubic\src/dllmain.h(554): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(118) : 参见“strcat”的声明
+     1>d:\user\desktop\5-aixs dispenser drawcubic\5-aixs dispenser drawcubic\src/dllmain.h(669): warning C4996: 'swprintf': swprintf has been changed to conform with the ISO C standard, adding an extra character count parameter. To use traditional Microsoft swprintf, set _CRT_NON_CONFORMING_SWPRINTFS.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\swprintf.inl(85) : 参见“swprintf”的声明
+     1>d:\user\desktop\5-aixs dispenser drawcubic\5-aixs dispenser drawcubic\src/dllmain.h(693): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : 参见“sprintf”的声明
+     1>d:\user\desktop\5-aixs dispenser drawcubic\5-aixs dispenser drawcubic\src/dllmain.h(904): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(112) : 参见“strcpy”的声明
+     1>d:\user\desktop\5-aixs dispenser drawcubic\5-aixs dispenser drawcubic\src/dllmain.h(942): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(112) : 参见“strcpy”的声明
+     1>d:\user\desktop\5-aixs dispenser drawcubic\5-aixs dispenser drawcubic\src/dllmain.h(944): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(112) : 参见“strcpy”的声明
+     1>d:\user\desktop\5-aixs dispenser drawcubic\5-aixs dispenser drawcubic\src/Declae.h(66): warning C4244: “=”: 从“float”转换到“uchar”，可能丢失数据
+     1>d:\user\desktop\5-aixs dispenser drawcubic\5-aixs dispenser drawcubic\src/Declae.h(418): warning C4305: “=”: 从“double”到“float”截断
+     1>d:\user\desktop\5-aixs dispenser drawcubic\5-aixs dispenser drawcubic\src/Declae.h(419): warning C4305: “=”: 从“double”到“float”截断
+     1>d:\user\desktop\5-aixs dispenser drawcubic\5-aixs dispenser drawcubic\src/Declae.h(422): warning C4305: “=”: 从“double”到“float”截断
+     1>d:\user\desktop\5-aixs dispenser drawcubic\5-aixs dispenser drawcubic\src/Declae.h(423): warning C4305: “=”: 从“double”到“float”截断
+     1>d:\user\desktop\5-aixs dispenser drawcubic\5-aixs dispenser drawcubic\src/Declae.h(424): warning C4305: “=”: 从“double”到“float”截断
+     1>d:\user\desktop\5-aixs dispenser drawcubic\5-aixs dispenser drawcubic\src/Declae.h(427): warning C4305: “=”: 从“double”到“float”截断
+     1>d:\user\desktop\5-aixs dispenser drawcubic\5-aixs dispenser drawcubic\src/Declae.h(428): warning C4305: “=”: 从“double”到“float”截断
+     1>d:\user\desktop\5-aixs dispenser drawcubic\5-aixs dispenser drawcubic\src/Declae.h(697): warning C4018: “<”: 有符号/无符号不匹配
+     1>d:\user\desktop\5-aixs dispenser drawcubic\5-aixs dispenser drawcubic\src/Declae.h(796): warning C4018: “<”: 有符号/无符号不匹配
+     1>d:\user\desktop\5-aixs dispenser drawcubic\5-aixs dispenser drawcubic\src/Declae.h(798): warning C4018: “<”: 有符号/无符号不匹配
+     1>d:\user\desktop\5-aixs dispenser drawcubic\5-aixs dispenser drawcubic\src/Declae.h(1131): warning C4018: “<”: 有符号/无符号不匹配
+     1>d:\user\desktop\5-aixs dispenser drawcubic\5-aixs dispenser drawcubic\src/Declae.h(1155): warning C4018: “<”: 有符号/无符号不匹配
+     1>d:\user\desktop\5-aixs dispenser drawcubic\5-aixs dispenser drawcubic\src/Declae.h(1213): warning C4244: “参数”: 从“int”转换到“GLfloat”，可能丢失数据
+     1>d:\user\desktop\5-aixs dispenser drawcubic\5-aixs dispenser drawcubic\src/Declae.h(1214): warning C4244: “参数”: 从“int”转换到“GLfloat”，可能丢失数据
+     1>d:\user\desktop\5-aixs dispenser drawcubic\5-aixs dispenser drawcubic\src/Declae.h(1242): warning C4244: “参数”: 从“int”转换到“GLfloat”，可能丢失数据
+     1>d:\user\desktop\5-aixs dispenser drawcubic\5-aixs dispenser drawcubic\src/Declae.h(1296): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : 参见“sprintf”的声明
+     1>d:\user\desktop\5-aixs dispenser drawcubic\5-aixs dispenser drawcubic\src/Declae.h(1297): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : 参见“sprintf”的声明
+     1>d:\user\desktop\5-aixs dispenser drawcubic\5-aixs dispenser drawcubic\src/Declae.h(1298): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : 参见“sprintf”的声明
+     1>d:\user\desktop\5-aixs dispenser drawcubic\5-aixs dispenser drawcubic\src/Declae.h(1301): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : 参见“sprintf”的声明
+     1>d:\user\desktop\5-aixs dispenser drawcubic\5-aixs dispenser drawcubic\src/Declae.h(1302): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : 参见“sprintf”的声明
+     1>d:\user\desktop\5-aixs dispenser drawcubic\5-aixs dispenser drawcubic\src/Declae.h(1303): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : 参见“sprintf”的声明
+     1>d:\user\desktop\5-aixs dispenser drawcubic\5-aixs dispenser drawcubic\src/Declae.h(1307): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(118) : 参见“strcat”的声明
+     1>d:\user\desktop\5-aixs dispenser drawcubic\5-aixs dispenser drawcubic\src/Declae.h(1308): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(118) : 参见“strcat”的声明
+     1>d:\user\desktop\5-aixs dispenser drawcubic\5-aixs dispenser drawcubic\src/Declae.h(1309): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(118) : 参见“strcat”的声明
+     1>d:\user\desktop\5-aixs dispenser drawcubic\5-aixs dispenser drawcubic\src/Declae.h(1291): warning C4101: “mybuffv”: 未引用的局部变量
+     1>d:\user\desktop\5-aixs dispenser drawcubic\5-aixs dispenser drawcubic\src/Declae.h(1291): warning C4101: “mybuffu”: 未引用的局部变量
+     1>d:\user\desktop\5-aixs dispenser drawcubic\5-aixs dispenser drawcubic\src/Declae.h(1328): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : 参见“sprintf”的声明
+     1>d:\user\desktop\5-aixs dispenser drawcubic\5-aixs dispenser drawcubic\src/Declae.h(1329): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(118) : 参见“strcat”的声明
+     1>d:\user\desktop\5-aixs dispenser drawcubic\5-aixs dispenser drawcubic\src/Declae.h(1389): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>d:\user\desktop\5-aixs dispenser drawcubic\5-aixs dispenser drawcubic\src/Declae.h(1390): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>d:\user\desktop\5-aixs dispenser drawcubic\5-aixs dispenser drawcubic\src/Declae.h(1391): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>d:\user\desktop\5-aixs dispenser drawcubic\5-aixs dispenser drawcubic\src/Declae.h(1416): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>d:\user\desktop\5-aixs dispenser drawcubic\5-aixs dispenser drawcubic\src/Declae.h(1417): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>d:\user\desktop\5-aixs dispenser drawcubic\5-aixs dispenser drawcubic\src/Declae.h(1418): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>d:\user\desktop\5-aixs dispenser drawcubic\5-aixs dispenser drawcubic\src/Declae.h(1420): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>d:\user\desktop\5-aixs dispenser drawcubic\5-aixs dispenser drawcubic\src/Declae.h(1421): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>d:\user\desktop\5-aixs dispenser drawcubic\5-aixs dispenser drawcubic\src/Declae.h(1422): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>d:\user\desktop\5-aixs dispenser drawcubic\5-aixs dispenser drawcubic\src/Declae.h(1424): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>d:\user\desktop\5-aixs dispenser drawcubic\5-aixs dispenser drawcubic\src/Declae.h(1425): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>d:\user\desktop\5-aixs dispenser drawcubic\5-aixs dispenser drawcubic\src/Declae.h(1426): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>d:\user\desktop\5-aixs dispenser drawcubic\5-aixs dispenser drawcubic\src/Declae.h(1428): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>d:\user\desktop\5-aixs dispenser drawcubic\5-aixs dispenser drawcubic\src/Declae.h(1429): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>d:\user\desktop\5-aixs dispenser drawcubic\5-aixs dispenser drawcubic\src/Declae.h(1430): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>d:\user\desktop\5-aixs dispenser drawcubic\5-aixs dispenser drawcubic\src/Declae.h(1485): warning C4018: “<”: 有符号/无符号不匹配
+     1>d:\user\desktop\5-aixs dispenser drawcubic\5-aixs dispenser drawcubic\src/Declae.h(1491): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>d:\user\desktop\5-aixs dispenser drawcubic\5-aixs dispenser drawcubic\src/Declae.h(1492): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>d:\user\desktop\5-aixs dispenser drawcubic\5-aixs dispenser drawcubic\src/Declae.h(1493): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>d:\user\desktop\5-aixs dispenser drawcubic\5-aixs dispenser drawcubic\src/Declae.h(1495): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>d:\user\desktop\5-aixs dispenser drawcubic\5-aixs dispenser drawcubic\src/Declae.h(1496): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>d:\user\desktop\5-aixs dispenser drawcubic\5-aixs dispenser drawcubic\src/Declae.h(1497): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>d:\user\desktop\5-aixs dispenser drawcubic\5-aixs dispenser drawcubic\src/Declae.h(1499): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>d:\user\desktop\5-aixs dispenser drawcubic\5-aixs dispenser drawcubic\src/Declae.h(1500): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>d:\user\desktop\5-aixs dispenser drawcubic\5-aixs dispenser drawcubic\src/Declae.h(1501): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>d:\user\desktop\5-aixs dispenser drawcubic\5-aixs dispenser drawcubic\src/Declae.h(1550): warning C4800: “BOOL”: 将值强制为布尔值“true”或“false”(性能警告)
+     1>d:\user\desktop\5-aixs dispenser drawcubic\5-aixs dispenser drawcubic\src/Declae.h(1906): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>d:\user\desktop\5-aixs dispenser drawcubic\5-aixs dispenser drawcubic\src/Declae.h(1907): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>d:\user\desktop\5-aixs dispenser drawcubic\5-aixs dispenser drawcubic\src/Declae.h(1908): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>d:\user\desktop\5-aixs dispenser drawcubic\5-aixs dispenser drawcubic\src/Declae.h(1919): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>d:\user\desktop\5-aixs dispenser drawcubic\5-aixs dispenser drawcubic\src/Declae.h(1920): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>d:\user\desktop\5-aixs dispenser drawcubic\5-aixs dispenser drawcubic\src/Declae.h(1921): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>d:\user\desktop\5-aixs dispenser drawcubic\5-aixs dispenser drawcubic\src/Declae.h(1927): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>d:\user\desktop\5-aixs dispenser drawcubic\5-aixs dispenser drawcubic\src/Declae.h(1928): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>d:\user\desktop\5-aixs dispenser drawcubic\5-aixs dispenser drawcubic\src/Declae.h(1929): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>d:\user\desktop\5-aixs dispenser drawcubic\5-aixs dispenser drawcubic\Function.h(19): warning C4551: 缺少参数列表的函数调用
+     1>d:\user\desktop\5-aixs dispenser drawcubic\5-aixs dispenser drawcubic\Function.h(153): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>d:\user\desktop\5-aixs dispenser drawcubic\5-aixs dispenser drawcubic\Function.h(164): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>d:\user\desktop\5-aixs dispenser drawcubic\5-aixs dispenser drawcubic\Function.h(373): warning C4018: “<”: 有符号/无符号不匹配
+     1>d:\user\desktop\5-aixs dispenser drawcubic\5-aixs dispenser drawcubic\Function.h(385): warning C4244: “初始化”: 从“double”转换到“float”，可能丢失数据
+     1>d:\user\desktop\5-aixs dispenser drawcubic\5-aixs dispenser drawcubic\Function.h(386): warning C4244: “初始化”: 从“double”转换到“float”，可能丢失数据
+     1>d:\user\desktop\5-aixs dispenser drawcubic\5-aixs dispenser drawcubic\Function.h(433): warning C4018: “>=”: 有符号/无符号不匹配
+     1>d:\user\desktop\5-aixs dispenser drawcubic\5-aixs dispenser drawcubic\Function.h(472): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>d:\user\desktop\5-aixs dispenser drawcubic\5-aixs dispenser drawcubic\Function.h(494): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>d:\user\desktop\5-aixs dispenser drawcubic\5-aixs dispenser drawcubic\Function.h(667): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>d:\user\desktop\5-aixs dispenser drawcubic\5-aixs dispenser drawcubic\Function.h(670): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>d:\user\desktop\5-aixs dispenser drawcubic\5-aixs dispenser drawcubic\Function.h(742): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>c:\opencv300\opencv\build\include\opencv2\core\cvstd.hpp(592): warning C4793: “cv::String::String”: 编译为本机的函数:
+         	托管代码中发现一个不受支持的内部函数
+     1>d:\user\desktop\5-aixs dispenser drawcubic\5-aixs dispenser drawcubic\function.h(262): warning C4700: 使用了未初始化的局部变量“sum_X”
+     1>d:\user\desktop\5-aixs dispenser drawcubic\5-aixs dispenser drawcubic\function.h(263): warning C4700: 使用了未初始化的局部变量“sum_Y”
+     1>d:\user\desktop\5-aixs dispenser drawcubic\5-aixs dispenser drawcubic\function.h(264): warning C4700: 使用了未初始化的局部变量“sum_Z”
+     1>c:\opencv300\opencv\build\include\opencv2\core\mat.inl.hpp(381): warning C4793: “cv::Mat::Mat”: 编译为本机的函数:
+         	托管代码中发现一个不受支持的内部函数
+     1>d:\user\desktop\5-aixs dispenser drawcubic\5-aixs dispenser drawcubic\src\declae.h(1177): warning C4793: “glPrintf”: 编译为本机的函数:
+         	/clr 下不支持 varargs
+     1>d:\user\desktop\5-aixs dispenser drawcubic\5-aixs dispenser drawcubic\src\declae.h(1180): warning C4793: “glPrintf”: 编译为本机的函数:
+         	托管代码中发现一个不受支持的内部函数
+     1>d:\user\desktop\5-aixs dispenser drawcubic\5-aixs dispenser drawcubic\src\declae.h(1182): warning C4793: “glPrintf”: 编译为本机的函数:
+         	托管代码中发现一个不受支持的内部函数
+     1>d:\user\desktop\5-aixs dispenser drawcubic\5-aixs dispenser drawcubic\src\declae.h(1734): warning C4715: “KinectInit”: 不是所有的控件路径都返回值
+     1>c:\opencv300\opencv\build\include\opencv2\core\mat.inl.hpp(666): warning C4793: “cv::Mat::release”: 编译为本机的函数:
+         	托管代码中发现一个不受支持的内部函数
+     1>c:\opencv300\opencv\build\include\opencv2\core\mat.inl.hpp(1703): warning C4793: “cv::SparseMat::addref”: 编译为本机的函数:
+         	托管代码中发现一个不受支持的内部函数
+     1>c:\opencv300\opencv\build\include\opencv2\core\mat.inl.hpp(3304): warning C4793: “cv::UMat::addref”: 编译为本机的函数:
+         	托管代码中发现一个不受支持的内部函数
+     1>c:\opencv300\opencv\build\include\opencv2\core\ptr.inl.hpp(67): warning C4793: “cv::detail::PtrOwner::incRef”: 编译为本机的函数:
+         	托管代码中发现一个不受支持的内部函数
+     1>c:\opencv300\opencv\build\include\opencv2\core\ptr.inl.hpp(72): warning C4793: “cv::detail::PtrOwner::decRef”: 编译为本机的函数:
+         	托管代码中发现一个不受支持的内部函数
+     1>c:\opencv300\opencv\build\include\opencv2\core\mat.inl.hpp(565): warning C4793: “cv::Mat::operator=”: 编译为本机的函数:
+         	托管代码中发现一个不受支持的内部函数
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\USER\Desktop\5-Aixs Dispenser drawcubic\Debug\5-Aixs Dispenser Drawcubic.exe" /INCREMENTAL /NOLOGO /LIBPATH:"C:\Program Files\Microsoft SDKs\Kinect\v2.0_1409\\Lib\x86" /LIBPATH:C:\OpenCV300\opencv\build\x86\vc12\lib /LIBPATH:C:\portaudio\lib glut32.lib opencv_ts300d.lib opencv_world300d.lib kinect20.lib portaudio_x86.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\USER\Desktop\5-Aixs Dispenser drawcubic\Debug\5-Aixs Dispenser Drawcubic.pdb" /ASSEMBLYDEBUG /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /FIXED:NO /NXCOMPAT /MACHINE:X86 Debug\glm.obj
+         Debug\main.obj
+         Debug\Mutex_Linux.obj
+         Debug\Mutex_Win32.obj
+         Debug\Semaphore_Linux.obj
+         Debug\Semaphore_Win32.obj
+         Debug\Socket.obj
+         Debug\Thread_Linux.obj
+         Debug\Thread_Win32.obj
+         "Debug\.NETFramework,Version=v4.0.AssemblyAttributes.obj"
+     1>opencv_ts300d.lib(ts.obj) : warning LNK4099: 未找到 PDB“opencv_ts300d.pdb”(使用“opencv_ts300d.lib(ts.obj)”或在“D:\USER\Desktop\5-Aixs Dispenser drawcubic\Debug\opencv_ts300d.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>opencv_ts300d.lib(ts_gtest.obj) : warning LNK4099: 未找到 PDB“opencv_ts300d.pdb”(使用“opencv_ts300d.lib(ts_gtest.obj)”或在“D:\USER\Desktop\5-Aixs Dispenser drawcubic\Debug\opencv_ts300d.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>opencv_ts300d.lib(ts_perf.obj) : warning LNK4099: 未找到 PDB“opencv_ts300d.pdb”(使用“opencv_ts300d.lib(ts_perf.obj)”或在“D:\USER\Desktop\5-Aixs Dispenser drawcubic\Debug\opencv_ts300d.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>opencv_ts300d.lib(opencv_ts_pch.obj) : warning LNK4099: 未找到 PDB“opencv_ts300d.pdb”(使用“opencv_ts300d.lib(opencv_ts_pch.obj)”或在“D:\USER\Desktop\5-Aixs Dispenser drawcubic\Debug\opencv_ts300d.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+         5-Aixs Dispenser.vcxproj -> D:\USER\Desktop\5-Aixs Dispenser drawcubic\Debug\5-Aixs Dispenser Drawcubic.exe
+     1>已完成生成项目“D:\USER\Desktop\5-Aixs Dispenser drawcubic\5-Aixs Dispenser Drawcubic\5-Aixs Dispenser.vcxproj”(Build 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:02.79

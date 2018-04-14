@@ -1,0 +1,46 @@
+#
+## Alias OBJ Material File
+# Exported from SketchUp, (c) 2000-2012 Trimble Navigation Limited
+
+newmtl Square_Glass_Tile_03
+Ka 0.000000 0.000000 0.000000
+Kd 0.627451 0.639216 0.552941
+Ks 0.330000 0.330000 0.330000
+map_Kd 123/Square_Glass_Tile_03.jpg
+
+newmtl Wood_OSB
+Ka 0.000000 0.000000 0.000000
+Kd 0.941176 0.764706 0.478431
+Ks 0.330000 0.330000 0.330000
+map_Kd 123/Wood_OSB.jpg
+
+newmtl Brick_Antique_01
+Ka 0.000000 0.000000 0.000000
+Kd 0.576471 0.411765 0.278431
+Ks 0.330000 0.330000 0.330000
+map_Kd 123/Brick_Antique_01.jpg
+
+newmtl Wood_Cherry_Original
+Ka 0.000000 0.000000 0.000000
+Kd 0.596078 0.337255 0.164706
+Ks 0.330000 0.330000 0.330000
+map_Kd 123/Wood_Cherry_Original.jpg
+
+newmtl Wallpaper_Dog_Bone
+Ka 0.000000 0.000000 0.000000
+Kd 0.835294 0.878431 0.878431
+Ks 0.330000 0.330000 0.330000
+map_Kd 123/Wallpaper_Dog_Bone.jpg
+
+newmtl Marble_Carrara_Floor_Tile
+Ka 0.000000 0.000000 0.000000
+Kd 0.800000 0.815686 0.858824
+Ks 0.330000 0.330000 0.330000
+map_Kd 123/Marble_Carrara_Floor_Tile.jpg
+
+newmtl Metal_Steel_Textured
+Ka 0.000000 0.000000 0.000000
+Kd 0.415686 0.431373 0.482353
+Ks 0.330000 0.330000 0.330000
+map_Kd 123/Metal_Steel_Textured.jpg
+
