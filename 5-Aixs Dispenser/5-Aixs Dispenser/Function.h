@@ -610,7 +610,7 @@ result* Get_Min_Max(CameraSpacePoint* point, int start, int end)
 		start = start + 1; //如果是奇数，则需要让i从第二个元素开始  
 	}
 
-	while (start <= end) {
+	while (start <= end&&point[start].X != 0) {
 		max = point[start].X > point[start + 1].X ? point[start].X : point[start + 1].X;
 		min = point[start].X < point[start + 1].X ? point[start].X : point[start + 1].X;
 
@@ -623,7 +623,7 @@ result* Get_Min_Max(CameraSpacePoint* point, int start, int end)
 	return res;
 }
 
-//用来打印出Matrix便于查看
+//用来打印出OpenGL 内部的Matrix便于查看
 void PrintMatrix(GLfloat* m)
 {
 	cout << "---------------------------------------------------------" << endl;
