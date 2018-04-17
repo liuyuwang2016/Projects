@@ -164,6 +164,10 @@
     <ClInclude Include="osapi\Semaphore.h" />
     <ClInclude Include="osapi\Socket.h" />
     <ClInclude Include="osapi\Thread.h" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="resource1.h" />
+    <ClInclude Include="resource2.h" />
+    <ClInclude Include="resource3.h" />
     <ClInclude Include="src\Declae.h" />
     <ClInclude Include="src\dllmain.h" />
     <ClInclude Include="src\glm.h" />
@@ -172,6 +176,12 @@
     <ClInclude Include="src\portaudio.h" />
     <ClInclude Include="src\RealScene.h" />
     <ClInclude Include="src\Scene.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="5-Aixs Dispenser.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="icon1.ico" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

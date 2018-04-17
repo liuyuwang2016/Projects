@@ -54,6 +54,7 @@ void SpecialKeys(int key, int x, int y)
 		}
 		ROIStorageCount = 0;
 	}
+
 #pragma region rotation
 	/*-------------Rotation------------*/
 	//else if (key == GLUT_KEY_DOWN && !IS_PathGenProcessing)
@@ -261,7 +262,7 @@ void DrawPlaneInScene()
 	{
 		glPushMatrix();
 		glPointSize(2.0f);
-		glBegin(GL_POINTS);
+		glBegin(GL_LINES);
 		for (int i = 0; i < PlaneDepthCount; i++)
 		{
 			glColor3ub(0, 255, 0);
@@ -538,7 +539,7 @@ void CoordGLtoMachine()
 
 		PlaneSP_MachCoord = new CameraSpacePoint[PlaneDepthCount];
 		
-		for (int i = 0; i <= PlaneDepthCount; i++)
+		for (int i = 0; i < PlaneDepthCount; i++)
 		{
 			PlaneSP_MachCoord[i].X = PlaneSP[i].X;
 			PlaneSP_MachCoord[i].Y = PlaneSP[i].Y;
@@ -567,15 +568,15 @@ void CoordGLtoMachine()
 			if (PlaneSP_MachCoord[i].X > 0.1)
 			{
 				PlaneSP_MachCoord[i].Y = -PlaneSP_MachCoord[i].Y;
-				cout << "--------------------------------------------------------------" << endl;
-				cout << "PlaneSP_MachCoord[" << i << "].X = " << PlaneSP_MachCoord[i].X << endl;
-				cout << "PlaneSP_MachCoord[" << i << "].Y = " << PlaneSP_MachCoord[i].Y << endl;
-				cout << "PlaneSP_MachCoord[" << i << "].Z = " << PlaneSP_MachCoord[i].Z << endl;
-				cout << "--------------------------------------------------------------" << endl;
+				//cout << "--------------------------------------------------------------" << endl;
+				//cout << "PlaneSP_MachCoord[" << i << "].X = " << PlaneSP_MachCoord[i].X << endl;
+				//cout << "PlaneSP_MachCoord[" << i << "].Y = " << PlaneSP_MachCoord[i].Y << endl;
+				//cout << "PlaneSP_MachCoord[" << i << "].Z = " << PlaneSP_MachCoord[i].Z << endl;
+				//cout << "--------------------------------------------------------------" << endl;
 			}
 		}
 		result* res = Get_Min_Max(PlaneSP_MachCoord, 0, PlaneDepthCount - 1);
-		cout << "{------------------------" << res->max << ", ------------------}" << res->min << endl;
+		//cout << "{------------------------" << res->max << ", ------------------}" << res->min << endl;
 	}
 }
 //获取线段中的X最大值和最小值
@@ -638,6 +639,7 @@ void PrintMatrix(GLfloat* m)
 	cout << "---------------------------------------------------------" << endl;
 
 }
+
 void DrawStoragePoint()
 {
 	/* F1 button calls this */

@@ -481,7 +481,7 @@ void Keyboard(unsigned char key, int x, int y)
 	case 'B':
 	case 'b':
 		MtReflash(md);
-		//long MtEmpty();
+		long MtEmpty();
 		MtHome();
 		break;
 	case 'L':
@@ -1451,41 +1451,56 @@ void Mt_Line_Move()
 		MtCmd("mt_out 12,0");
 		Sleep(100);
 	}
-	if (LineSP_MachCoord != nullptr)
-	{
-		delete[] LineSP_MachCoord;
-	}
-	LineSP_MachCoord = new CameraSpacePoint[2];
-	LineSP_MachCoord[0] = PlaneSP_MachCoord[Head];
-	LineSP_MachCoord[1] = PlaneSP_MachCoord[Tail];
+	//if (LineSP_MachCoord != nullptr)
+	//{
+	//	delete[] LineSP_MachCoord;
+	//}
+	//LineSP_MachCoord = new CameraSpacePoint[2];
+	//LineSP_MachCoord[0] = PlaneSP_MachCoord[Head];
+	//LineSP_MachCoord[1] = PlaneSP_MachCoord[Tail];
 
-	for (int i = 0; i <= 1; i++)
-	{
-		char mybuffx[50], mybuffy[50], mybuffz[50], mybuffu[50], mybuffv[50];
-		char commandx[60] = "mt_m_x ", commandy[60] = "mt_m_y ", commandz[60] = "mt_m_z ", commandu[60] = "mt_m_u ", commandv[60] = "mt_m_v ";
-		float value = 0;
-		switch (0)
-		{
-		case 0://在这里Z值为负值，不知道原因，需要进一步勘测
-			sprintf(mybuffx, "%f", LineSP_MachCoord[i].X * 1000 - 81);
-			sprintf(mybuffy, "%f", LineSP_MachCoord[i].Y * 1000 - 69);//在这里调整Z的值的时候，一定要在MtCheck里面也对于存下来的点的值进行调整
-			sprintf(mybuffz, "%f", LineSP_MachCoord[i].Z * 1000 + 170/*- (ROICameraSP_MachineCoord_Storage[i].Y * 1000 + 40)* tan(dev_theta)*/);
-			value = LineSP_MachCoord[i].Z * 1000 + 170;
-			break;
-		}
-		strcat(commandx, mybuffx);
-		strcat(commandy, mybuffy);
-		strcat(commandz, mybuffz);
+	//for (int i = 0; i <= 1; i++)
+	//{
+	//	char mybuffx[50], mybuffy[50], mybuffz[50], mybuffu[50], mybuffv[50];
+	//	char commandx[60] = "mt_m_x ", commandy[60] = "mt_m_y ", commandz[60] = "mt_m_z ", commandu[60] = "mt_m_u ", commandv[60] = "mt_m_v ";
+	//	float value = 0;
+	//
+	//	sprintf(mybuffx, "%f", LineSP_MachCoord[i].X * 1000 - 81);
+	//	sprintf(mybuffy, "%f", LineSP_MachCoord[i].Y * 1000 - 69);//在这里调整Z的值的时候，一定要在MtCheck里面也对于存下来的点的值进行调整
+	//	sprintf(mybuffz, "%f", LineSP_MachCoord[i].Z * 1000 + 170/*- (ROICameraSP_MachineCoord_Storage[i].Y * 1000 + 40)* tan(dev_theta)*/);
+	//	value = LineSP_MachCoord[i].Z * 1000 + 170;
+	//		
+	//	strcat(commandx, mybuffx);
+	//	strcat(commandy, mybuffy);
+	//	strcat(commandz, mybuffz);
 
-		MtCmd(commandx);
-		MtCmd(commandy);
-		MtCmd(commandz);
-		do
-		{
-			MtReflash(md);
-			//cout << value << " " << md->z << endl;
-		} while (abs(md->z - value) > 0.01);
-	}
+	//	MtCmd(commandx);
+	//	MtCmd(commandy);
+	//	MtCmd(commandz);
+	//	do
+	//	{
+	//		MtReflash(md);
+	//		//cout << value << " " << md->z << endl;
+	//	} while (abs(md->z - value) > 0.01);
+	//}
+	MtCmd("mt_m_x 210");
+	MtCmd("mt_m_y 275");
+	MtCmd("mt_m_z 50");
+	do
+	{
+		MtReflash(md);
+		//cout << value << " " << md->z << endl;
+	} while (abs(md->z - 50) > 0.01);
+	Sleep(100);
+	MtCmd("mt_m_x 280");
+	MtCmd("mt_m_y 275");
+	MtCmd("mt_m_z 50");
+	do
+	{
+		MtReflash(md);
+		//cout << value << " " << md->z << endl;
+	} while (abs(md->x - 265) > 0.01);
+	Sleep(100);
 }
 
 void Mt_XMove(float mt_x)
@@ -1523,7 +1538,6 @@ void Mt_ZMove(float mt_z)
 	MtCmd(commandz);
 	Sleep(1);
 }
-
 
 void Mt_UMove(float mt_u)
 {
