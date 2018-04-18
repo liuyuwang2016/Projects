@@ -262,14 +262,12 @@ void DrawPlaneInScene()
 	{
 		glPushMatrix();
 		glPointSize(2.0f);
-		glBegin(GL_LINES);
-		for (int i = 0; i < PlaneDepthCount; i++)
-		{
-			glColor3ub(0, 255, 0);
-			glVertex3f(PlaneSP[i].X, PlaneSP[i].Y, PlaneSP[i].Z);
-			//cout << "画出来了" << index4 << "个" << endl;
-		}
-		//RANSAC(temp[index4].X,temp[index4].Y,temp[index4].Z);
+		glColor4f(0.25, 0.25, 0.25, 0.4);
+		glBegin(GL_POLYGON);
+            glVertex3f(PlaneSP[0].X, PlaneSP[0].Y, PlaneSP[0].Z);
+			glVertex3f(PlaneSP[1].X, PlaneSP[1].Y, PlaneSP[1].Z);
+			glVertex3f(PlaneSP[2].X, PlaneSP[2].Y, PlaneSP[2].Z);
+			glVertex3f(PlaneSP[3].X, PlaneSP[3].Y, PlaneSP[3].Z);
 		glEnd();
 		glPopMatrix();
 	}
@@ -516,6 +514,8 @@ void CoordGLtoMachine()
 		ROICameraSP_MechCoord->Y = -ROICameraSP_MechCoord->Y;
 		
 		ROICameraSP_Proj_MechCoord->Y = -ROICameraSP_Proj_MechCoord->Y;
+		//result* res = Get_X_Min_Max(PlaneSP_MachCoord, 0, PlaneDepthCount - 1);
+		//result* res = Get_Y_Min_Max(PlaneSP_MachCoord, 0, PlaneDepthCount - 1);
 	}
 	else if (1000 > PlaneDepthCount > 0 && PlaneSP != nullptr && !ROI_IS_COLLIDE)
 	{
@@ -568,19 +568,21 @@ void CoordGLtoMachine()
 			if (PlaneSP_MachCoord[i].X > 0.1)
 			{
 				PlaneSP_MachCoord[i].Y = -PlaneSP_MachCoord[i].Y;
-				//cout << "--------------------------------------------------------------" << endl;
-				//cout << "PlaneSP_MachCoord[" << i << "].X = " << PlaneSP_MachCoord[i].X << endl;
-				//cout << "PlaneSP_MachCoord[" << i << "].Y = " << PlaneSP_MachCoord[i].Y << endl;
-				//cout << "PlaneSP_MachCoord[" << i << "].Z = " << PlaneSP_MachCoord[i].Z << endl;
-				//cout << "--------------------------------------------------------------" << endl;
+				/*cout << "--------------------------------------------------------------" << endl;
+				cout << "PlaneSP_MachCoord[" << i << "].X = " << PlaneSP_MachCoord[i].X << endl;
+				cout << "PlaneSP_MachCoord[" << i << "].Y = " << PlaneSP_MachCoord[i].Y << endl;
+				cout << "PlaneSP_MachCoord[" << i << "].Z = " << PlaneSP_MachCoord[i].Z << endl;
+				cout << "--------------------------------------------------------------" << endl;*/
 			}
-		}
-		result* res = Get_Min_Max(PlaneSP_MachCoord, 0, PlaneDepthCount - 1);
-		//cout << "{------------------------" << res->max << ", ------------------}" << res->min << endl;
+		}		
+		
 	}
 }
 //获取线段中的X最大值和最小值
-result* Get_Min_Max(CameraSpacePoint* point, int start, int end)
+/*
+ * 一开始的bug在与进行比较的max和min使用的是int值，而实际上需要使用double值，修改后就可以成功打印出其中的最大最小值
+ */
+result* Get_X_Min_Max(Point2i* point, int start, int end)
 {
 	int len = end - start + 1;
 
@@ -590,33 +592,42 @@ result* Get_Min_Max(CameraSpacePoint* point, int start, int end)
 
 	result* res = new result();
 
-	int max, min;
-
+	double max, min;
+	int headL, tailL;
 	if (len % 2 == 0) {
 		//偶数的情况  
-		res->max =
-			point[start].X > point[start + 1].X ?
-			point[start].X : point[start + 1].X;
 		res->min =
-			point[start].X < point[start + 1].X ?
-			point[start].X : point[start + 1].X;
-
+			((point[start].x) <= (point[start + 1].x)) ?
+			(point[start].x) : (point[start + 1].x);
+		res->max =
+			((point[start].x) >= (point[start + 1].x)) ?
+			(point[start].x) : (point[start + 1].x);
+		res->head =
+			((point[start].x) <= (point[start + 1].x)) ?
+			(start) : (start + 1);
+		res->tail =
+			((point[start].x) >= (point[start + 1].x)) ?
+			(start) : (start + 1);
 		start = start + 2; //如果是偶数，则需要让i从第三个元素开始  
 	}
 	else {
 		//奇数的情况  
-		res->max = point[start].X;
-		res->min = point[start].X;
-
+		res->min = point[start].x;
+		res->max = point[start].x;		
+		res->head = start;
+		res->tail = start;
 		start = start + 1; //如果是奇数，则需要让i从第二个元素开始  
 	}
 
-	while (start <= end&&point[start].X != 0) {
-		max = point[start].X > point[start + 1].X ? point[start].X : point[start + 1].X;
-		min = point[start].X < point[start + 1].X ? point[start].X : point[start + 1].X;
-
-		res->max = res->max > max ? res->max : max;
-		res->min = res->min < min ? res->min : min;
+	while (start <= end) {
+		min = ((point[start].x <= point[start + 1].x) ? (point[start].x) : (point[start + 1].x));
+		headL = (point[start].x <= point[start + 1].x) ? (start) : (start + 1);
+		max = ((point[start].x >= point[start + 1].x) ? (point[start].x) : (point[start + 1].x));
+		tailL = (point[start].x >= point[start + 1].x) ? (start) : (start + 1);
+		res->max = (res->max >= max) ? (res->max) : (max);
+		res->min = (res->min <= min) ? (res->min) : (min);
+		res->head = (res->min <= min) ? (res->head) : (headL);
+		res->tail = (res->max <= max) ? (res->tail) : (tailL);
 
 		start = start + 2;
 	}
@@ -624,6 +635,62 @@ result* Get_Min_Max(CameraSpacePoint* point, int start, int end)
 	return res;
 }
 
+result* Get_Y_Min_Max(Point2i* point, int start, int end)
+{
+	int len = end - start + 1;
+
+	if (end < start) {
+		return NULL;
+	}
+
+	result* res = new result();
+
+	double max, min;
+	int headL, tailL;
+
+	if (len % 2 == 0) {
+		//偶数的情况  
+		res->min =
+			((point[start].y) <= (point[start + 1].y)) ?
+			(point[start].y) : (point[start + 1].y);
+		res->max =
+			((point[start].y) >= (point[start + 1].y)) ?
+			(point[start].y) : (point[start + 1].y);
+		res->head =
+			((point[start].y) <= (point[start + 1].y)) ?
+			(start) : (start + 1);
+		res->tail =
+			((point[start].y) >= (point[start + 1].y)) ?
+			(start) : (start + 1);
+		start = start + 2; //如果是偶数，则需要让i从第三个元素开始  
+	}
+	else {
+		//奇数的情况  
+		res->min = point[start].y;
+		res->max = point[start].y;
+		res->head = start;
+		res->tail = start;
+		start = start + 1; //如果是奇数，则需要让i从第二个元素开始  
+	}
+
+	while (start <= end) {
+		
+		min = ((point[start].y <= point[start + 1].y) ? (point[start].y) : (point[start + 1].y));
+		headL = (point[start].y <= point[start + 1].y) ? (start) : (start + 1);
+		max = ((point[start].y >= point[start + 1].y) ? (point[start].y) : (point[start + 1].y));
+		tailL = (point[start].y >= point[start + 1].y) ? (start) : (start + 1);
+
+		res->max = (res->max >= max) ? (res->max) : (max);
+		res->min = (res->min <= min) ? (res->min) : (min);
+
+		res->head = (res->min <= min) ? (res->head) : (headL);
+		res->tail = (res->max <= max) ? (res->tail) : (tailL);
+
+		start = start + 2;
+	}
+
+	return res;
+}
 //用来打印出OpenGL 内部的Matrix便于查看
 void PrintMatrix(GLfloat* m)
 {
@@ -796,7 +863,7 @@ void RenderScene()
 	CoordGLtoMachine();
 	DrawStoragePoint();
 	MoveCubicInY_Axis();
-
+	
 	/*--------------Show Prob Tip Coordinate on Screen-------------*/
 	glPushMatrix();
 	glColor3ub(0, 255, 0);

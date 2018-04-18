@@ -874,7 +874,7 @@ static void onMouse3D(int event, int x, int y, int, void*)
 			Scalar(UpDifference, UpDifference, UpDifference), flags);
 	}
 	imshow("2D Extraction", dst);
-	imwrite("planeExtract.jpg", dst);
+	imwrite("src/planeExtract.jpg", dst);
 	cout << area << " 个像素被重绘\n";
 }
 
@@ -920,9 +920,9 @@ void Draw3DLine()
 	}
 	//imshow("2D Contour", drawing);
 	//waitKey(0);
-	imwrite("drawing.jpg", drawing);
+	imwrite("src/drawing.jpg", drawing);
 	//在这里不能够直接读取drawing的值，因为drawing是视频而不是图片，而floodfill只能读取图片，而且是RGB图片
-	g_srcImage = imread("drawing.jpg", 1);
+	g_srcImage = imread("src/drawing.jpg", 1);
 	g_srcImage.copyTo(g_dstImage);
 	cvtColor(g_srcImage, g_grayImage, COLOR_BGR2GRAY);
 	g_maskImage.create(g_srcImage.rows + 2, g_srcImage.cols + 2, CV_8UC1);
@@ -1172,7 +1172,7 @@ void Draw3DPlane()
 {
 	//颜色转换       http://blog.csdn.net/jianjian1992/article/details/51274834
 	//OpenCV像素操作 https://www.kancloud.cn/digest/usingopencv/145307
-	Mat d_srcImage = imread("planeExtract.jpg", 1);
+	Mat d_srcImage = imread("src/planeExtract.jpg", 1);
 	Mat d_dstImage;
 	Mat color_gray;
 
@@ -1182,13 +1182,13 @@ void Draw3DPlane()
 
 	filteredBlue(d_srcImage, color_gray, d_dstImage);
 
-	imwrite("2d_plane_recognition.jpg", d_dstImage);
+	imwrite("src/2d_plane_recognition.jpg", d_dstImage);
 
 	int rows = d_dstImage.rows;
 	int cols = d_dstImage.cols;
 
 	PlanePixel = new Point2i[100000];
-
+	//提取其中蓝色的点的位置
 	for (int i = 0; i < rows; i++)
 	{
 		for (int j = 0; j < cols; j++)
@@ -1205,6 +1205,9 @@ void Draw3DPlane()
 			}
 		}
 	}
+	result* res_X = Get_X_Min_Max(PlanePixel, 0, PlanePixelcount - 1);
+	result* res_Y = Get_Y_Min_Max(PlanePixel, 0, PlanePixelcount - 1);
+
 	//cout << "PlanePixelcount的值 = " << PlanePixelcount << endl;
 	for (int i = 0; i < PlanePixelcount; i++)
 	{	
@@ -1216,22 +1219,59 @@ void Draw3DPlane()
 		}
 	}
 
-	int indexP = 0;
-	PlaneSP = new CameraSpacePoint[PlaneDepthCount];
-	
-	for (int i = 0; i < PlanePixelcount; i++)
+	PlaneSP = new CameraSpacePoint[4];
+	int LeftUpPoint = PlanePixel[res_X->head].x + PlanePixel[res_Y->head].y * iWidthColor;
+	if (pCSPoints[LeftUpPoint].Z != -1 * numeric_limits<float>::infinity())
 	{
-		int index4 = PlanePixel[i].x + PlanePixel[i].y * iWidthColor;
-		//cout << "PlanePixel[i].x = " << PlanePixel[i].x << endl;
-		if (pCSPoints[index4].Z != -1 * numeric_limits<float>::infinity())
-		{
-			PlaneSP[indexP].X = pCSPoints[index4].X;
-			PlaneSP[indexP].Y = pCSPoints[index4].Y;
-			PlaneSP[indexP].Z = -pCSPoints[index4].Z;
-			indexP++;
-		}
+		PlaneSP[0].X = pCSPoints[LeftUpPoint].X;
+		PlaneSP[0].Y = pCSPoints[LeftUpPoint].Y;
+		PlaneSP[0].Z = -pCSPoints[LeftUpPoint].Z;
 	}
-	cout << "选择出来的平面中有意义的点（有x,y,z值）有 " << PlaneDepthCount << "个\n";
+	else if (pCSPoints[LeftUpPoint + 5].Z != -1 * numeric_limits<float>::infinity())
+	{
+		PlaneSP[0].X = pCSPoints[LeftUpPoint].X;
+		PlaneSP[0].Y = pCSPoints[LeftUpPoint].Y;
+		PlaneSP[0].Z = -pCSPoints[LeftUpPoint].Z;
+	}
+	int RightUpPoint = PlanePixel[res_X->tail].x + PlanePixel[res_Y->head].y * iWidthColor;
+	if (pCSPoints[RightUpPoint].Z != -1 * numeric_limits<float>::infinity())
+	{
+		PlaneSP[1].X = pCSPoints[RightUpPoint].X;
+		PlaneSP[1].Y = pCSPoints[RightUpPoint].Y;
+		PlaneSP[1].Z = -pCSPoints[RightUpPoint].Z;
+	}
+	else if (pCSPoints[RightUpPoint + 5].Z != -1 * numeric_limits<float>::infinity())
+	{
+		PlaneSP[1].X = pCSPoints[RightUpPoint].X;
+		PlaneSP[1].Y = pCSPoints[RightUpPoint].Y;
+		PlaneSP[1].Z = -pCSPoints[RightUpPoint].Z;
+	}
+	int LeftDownPoint = PlanePixel[res_X->head].x + PlanePixel[res_Y->tail].y * iWidthColor;
+	if (pCSPoints[LeftDownPoint].Z != -1 * numeric_limits<float>::infinity())
+	{
+		PlaneSP[2].X = pCSPoints[LeftDownPoint].X;
+		PlaneSP[2].Y = pCSPoints[LeftDownPoint].Y;
+		PlaneSP[2].Z = -pCSPoints[LeftDownPoint].Z;
+	}
+	else if (pCSPoints[LeftDownPoint + 5].Z != -1 * numeric_limits<float>::infinity())
+	{
+		PlaneSP[2].X = pCSPoints[LeftDownPoint].X;
+		PlaneSP[2].Y = pCSPoints[LeftDownPoint].Y;
+		PlaneSP[2].Z = -pCSPoints[LeftDownPoint].Z;
+	}
+	int RightDownPoint = PlanePixel[res_X->tail].x + PlanePixel[res_Y->tail].y * iWidthColor;
+	if (pCSPoints[LeftDownPoint].Z != -1 * numeric_limits<float>::infinity())
+	{
+		PlaneSP[3].X = pCSPoints[RightDownPoint].X;
+		PlaneSP[3].Y = pCSPoints[RightDownPoint].Y;
+		PlaneSP[3].Z = -pCSPoints[RightDownPoint].Z;
+	}
+	else if (pCSPoints[RightDownPoint + 5].Z != -1 * numeric_limits<float>::infinity())
+	{
+		PlaneSP[3].X = pCSPoints[RightDownPoint].X;
+		PlaneSP[3].Y = pCSPoints[RightDownPoint].Y;
+		PlaneSP[3].Z = -pCSPoints[RightDownPoint].Z;
+	}
 	delete[] PlanePixel;
 	ifGetPlane = true;
 }
@@ -1490,7 +1530,7 @@ void Mt_Line_Move()
 	{
 		MtReflash(md);
 		//cout << value << " " << md->z << endl;
-	} while (abs(md->z - 50) > 0.01);
+	} while (abs(md->z - 50) < 0.01);
 	Sleep(100);
 	MtCmd("mt_m_x 280");
 	MtCmd("mt_m_y 275");
@@ -1499,7 +1539,7 @@ void Mt_Line_Move()
 	{
 		MtReflash(md);
 		//cout << value << " " << md->z << endl;
-	} while (abs(md->x - 265) > 0.01);
+	} while (abs(md->x - 280) < 0.01);
 	Sleep(100);
 }
 
@@ -1513,6 +1553,11 @@ void Mt_XMove(float mt_x)
 	strcat(commandx, mybuffx);
 	MtCmd(commandx);
 	Sleep(1);	
+	do
+	{
+		MtReflash(md);
+		//cout << value << " " << md->z << endl;
+	} while (abs(md->x - mt_x) < 0.01);
 }
 
 void Mt_YMove(float mt_y)
@@ -1525,10 +1570,16 @@ void Mt_YMove(float mt_y)
 	strcat(commandy, mybuffy);
 	MtCmd(commandy);
 	Sleep(1);
+	do
+	{
+		MtReflash(md);
+		//cout << value << " " << md->z << endl;
+	} while (abs(md->y - mt_y) < 0.01);
 }
 
 void Mt_ZMove(float mt_z)
 {
+    
 	MtReflash(md);
 	MtCmd("mt_speed 50");
 	char mybuffz[60];
@@ -1537,6 +1588,11 @@ void Mt_ZMove(float mt_z)
 	strcat(commandz, mybuffz);
 	MtCmd(commandz);
 	Sleep(1);
+	do
+	{
+		MtReflash(md);
+		//cout << value << " " << md->z << endl;
+	} while (abs(md->z - mt_z) < 0.01);
 }
 
 void Mt_UMove(float mt_u)
@@ -1549,6 +1605,11 @@ void Mt_UMove(float mt_u)
 	strcat(commandu, mybuffu);
 	MtCmd(commandu);
 	Sleep(1);
+	do
+	{
+		MtReflash(md);
+		//cout << value << " " << md->z << endl;
+	} while (abs(md->u - mt_u) < 0.01);
 }
 
 void Mt_VMove(float mt_v)
@@ -1561,6 +1622,11 @@ void Mt_VMove(float mt_v)
 	strcat(commandv, mybuffv);
 	MtCmd(commandv);
 	Sleep(1);
+	do
+	{
+		MtReflash(md);
+		//cout << value << " " << md->z << endl;
+	} while (abs(md->v - mt_v) < 0.01);
 }
 
 void MtCheck(void)

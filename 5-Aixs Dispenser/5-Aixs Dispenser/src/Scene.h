@@ -26,8 +26,10 @@
 #pragma comment(lib,"GLUT32.LIB")
 /*-------------LoadOBJ-------------*/
 #include "src/glm.h"
-/*------------PortAduio------------*/
+/*------------PortAduio-------------*/
 #include "src/portaudio.h"
+/*----------输出最大最小值-----------*/
+#include <algorithm>
 
 using namespace std;
 using namespace cv;
@@ -118,10 +120,14 @@ void ROITrans(float* Data, int DataNum, GLfloat* TransM, float* Result);
 void DrawRectangle(cv::Mat& img, cv::Rect box);
 
 struct result {
-	float max;
-	float min;
+	double max;
+	double min;
+	int head;
+	int tail;
 };
-result* Get_Min_Max(CameraSpacePoint* point, int start, int end);
+result* res_X, res_Y;
+result* Get_X_Min_Max(Point2i* point, int start, int end);
+result* Get_Y_Min_Max(Point2i* point, int start, int end);
 #pragma endregion OpenCV&ROI Initial
 
 #pragma region Kinect Initial

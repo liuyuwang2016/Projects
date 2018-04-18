@@ -26,7 +26,7 @@ void MtCheck(void);
 void Mt_Line_Move(void);
 
 float Mt_x, Mt_y, Mt_z, Mt_u, Mt_v;
-float Mt_speed = 5;
+float Mt_speed = 1;
 //To adjust error due to calibration while .obj moves along the plates on y axis
 Rs232MotionData* md = new struct Rs232MotionData;	//Tracking machine status
 
