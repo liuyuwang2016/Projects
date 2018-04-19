@@ -1205,9 +1205,6 @@ void Draw3DPlane()
 			}
 		}
 	}
-	result* res_X = Get_X_Min_Max(PlanePixel, 0, PlanePixelcount - 1);
-	result* res_Y = Get_Y_Min_Max(PlanePixel, 0, PlanePixelcount - 1);
-
 	//cout << "PlanePixelcountµÄÖµ = " << PlanePixelcount << endl;
 	for (int i = 0; i < PlanePixelcount; i++)
 	{	
@@ -1218,59 +1215,20 @@ void Draw3DPlane()
 			PlaneDepthCount++;
 		}
 	}
+	int indexP = 0;
+	PlaneSP = new CameraSpacePoint[PlaneDepthCount];
 
-	PlaneSP = new CameraSpacePoint[4];
-	int LeftUpPoint = PlanePixel[res_X->head].x + PlanePixel[res_Y->head].y * iWidthColor;
-	if (pCSPoints[LeftUpPoint].Z != -1 * numeric_limits<float>::infinity())
+	for (int i = 0; i < PlanePixelcount; i++)
 	{
-		PlaneSP[0].X = pCSPoints[LeftUpPoint].X;
-		PlaneSP[0].Y = pCSPoints[LeftUpPoint].Y;
-		PlaneSP[0].Z = -pCSPoints[LeftUpPoint].Z;
-	}
-	else if (pCSPoints[LeftUpPoint + 5].Z != -1 * numeric_limits<float>::infinity())
-	{
-		PlaneSP[0].X = pCSPoints[LeftUpPoint].X;
-		PlaneSP[0].Y = pCSPoints[LeftUpPoint].Y;
-		PlaneSP[0].Z = -pCSPoints[LeftUpPoint].Z;
-	}
-	int RightUpPoint = PlanePixel[res_X->tail].x + PlanePixel[res_Y->head].y * iWidthColor;
-	if (pCSPoints[RightUpPoint].Z != -1 * numeric_limits<float>::infinity())
-	{
-		PlaneSP[1].X = pCSPoints[RightUpPoint].X;
-		PlaneSP[1].Y = pCSPoints[RightUpPoint].Y;
-		PlaneSP[1].Z = -pCSPoints[RightUpPoint].Z;
-	}
-	else if (pCSPoints[RightUpPoint + 5].Z != -1 * numeric_limits<float>::infinity())
-	{
-		PlaneSP[1].X = pCSPoints[RightUpPoint].X;
-		PlaneSP[1].Y = pCSPoints[RightUpPoint].Y;
-		PlaneSP[1].Z = -pCSPoints[RightUpPoint].Z;
-	}
-	int LeftDownPoint = PlanePixel[res_X->head].x + PlanePixel[res_Y->tail].y * iWidthColor;
-	if (pCSPoints[LeftDownPoint].Z != -1 * numeric_limits<float>::infinity())
-	{
-		PlaneSP[2].X = pCSPoints[LeftDownPoint].X;
-		PlaneSP[2].Y = pCSPoints[LeftDownPoint].Y;
-		PlaneSP[2].Z = -pCSPoints[LeftDownPoint].Z;
-	}
-	else if (pCSPoints[LeftDownPoint + 5].Z != -1 * numeric_limits<float>::infinity())
-	{
-		PlaneSP[2].X = pCSPoints[LeftDownPoint].X;
-		PlaneSP[2].Y = pCSPoints[LeftDownPoint].Y;
-		PlaneSP[2].Z = -pCSPoints[LeftDownPoint].Z;
-	}
-	int RightDownPoint = PlanePixel[res_X->tail].x + PlanePixel[res_Y->tail].y * iWidthColor;
-	if (pCSPoints[LeftDownPoint].Z != -1 * numeric_limits<float>::infinity())
-	{
-		PlaneSP[3].X = pCSPoints[RightDownPoint].X;
-		PlaneSP[3].Y = pCSPoints[RightDownPoint].Y;
-		PlaneSP[3].Z = -pCSPoints[RightDownPoint].Z;
-	}
-	else if (pCSPoints[RightDownPoint + 5].Z != -1 * numeric_limits<float>::infinity())
-	{
-		PlaneSP[3].X = pCSPoints[RightDownPoint].X;
-		PlaneSP[3].Y = pCSPoints[RightDownPoint].Y;
-		PlaneSP[3].Z = -pCSPoints[RightDownPoint].Z;
+		int index4 = PlanePixel[i].x + PlanePixel[i].y * iWidthColor;
+		//cout << "PlanePixel[i].x = " << PlanePixel[i].x << endl;
+		if (pCSPoints[index4].Z != -1 * numeric_limits<float>::infinity())
+		{
+			PlaneSP[indexP].X = pCSPoints[index4].X;
+			PlaneSP[indexP].Y = pCSPoints[index4].Y;
+			PlaneSP[indexP].Z = -pCSPoints[index4].Z;
+			indexP++;
+		}
 	}
 	delete[] PlanePixel;
 	ifGetPlane = true;

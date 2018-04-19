@@ -258,16 +258,26 @@ void DrawProbeTip()
 
 void DrawPlaneInScene()
 {
-	if (PlaneDepthCount != 0)
+	if (1000 > PlaneDepthCount > 0 && PlaneSP != nullptr)
+	{
+		glLineWidth(100.0f);
+		glColor3f(0.25, 0.25, 0.25);
+		glPushMatrix();
+		glBegin(GL_LINES);
+		    glVertex3f(PlaneSP[line_Res_X_head].X, PlaneSP[line_Res_X_head].Y, PlaneSP[line_Res_X_head].Z);
+		    glVertex3f(PlaneSP[line_Res_X_tail].X, PlaneSP[line_Res_X_tail].Y, PlaneSP[line_Res_X_tail].Z);
+		glEnd();
+		glPopMatrix();
+	}
+	else if (PlaneDepthCount >= 1000 && PlaneSP != nullptr)
 	{
 		glPushMatrix();
-		glPointSize(2.0f);
-		glColor4f(0.25, 0.25, 0.25, 0.4);
-		glBegin(GL_POLYGON);
-            glVertex3f(PlaneSP[0].X, PlaneSP[0].Y, PlaneSP[0].Z);
-			glVertex3f(PlaneSP[1].X, PlaneSP[1].Y, PlaneSP[1].Z);
-			glVertex3f(PlaneSP[2].X, PlaneSP[2].Y, PlaneSP[2].Z);
-			glVertex3f(PlaneSP[3].X, PlaneSP[3].Y, PlaneSP[3].Z);
+		glColor3ub(255, 255, 0);
+		glBegin(GL_QUADS);
+			glVertex4f(PlaneSP[plane_Res_X_head].X, PlaneSP[plane_Res_X_head].Y, PlaneSP[plane_Res_X_head].Z, 0);
+			glVertex4f(PlaneSP[plane_Res_X_tail].X, PlaneSP[plane_Res_X_tail].Y, PlaneSP[plane_Res_X_tail].Z, 0);
+			glVertex4f(PlaneSP[plane_Res_Y_head].X, PlaneSP[plane_Res_Y_head].Y, PlaneSP[plane_Res_Y_head].Z, 0);
+			glVertex4f(PlaneSP[plane_Res_Y_tail].X, PlaneSP[plane_Res_Y_tail].Y, PlaneSP[plane_Res_Y_tail].Z, 0);
 		glEnd();
 		glPopMatrix();
 	}
@@ -463,7 +473,7 @@ void ARFuncPackage()
 void CoordGLtoMachine()
 {
 	/*--------------Transfer Prob Tip from GL Coord. to Machine Coord.-------------*/
-	if (ROIDepthCount > 0 && ROICameraSP != nullptr && !ROI_IS_COLLIDE)
+	if (ROIDepthCount > 0 && ROICameraSP != nullptr && !ROI_IS_COLLIDE)//在这里是颜色追踪抓取的点
 	{
 		GLfloat TransM_toMechCoord[16] = { 0 };
 		TransM_toMechCoord[0] = TransM_toMechCoord[5] = TransM_toMechCoord[10] = TransM_toMechCoord[15] = 1;
@@ -514,14 +524,68 @@ void CoordGLtoMachine()
 		ROICameraSP_MechCoord->Y = -ROICameraSP_MechCoord->Y;
 		
 		ROICameraSP_Proj_MechCoord->Y = -ROICameraSP_Proj_MechCoord->Y;
-		//result* res = Get_X_Min_Max(PlaneSP_MachCoord, 0, PlaneDepthCount - 1);
-		//result* res = Get_Y_Min_Max(PlaneSP_MachCoord, 0, PlaneDepthCount - 1);
+		
 	}
-	else if (1000 > PlaneDepthCount > 0 && PlaneSP != nullptr && !ROI_IS_COLLIDE)
+	else if (1000 > PlaneDepthCount > 0 && PlaneSP != nullptr && !ROI_IS_COLLIDE)//在这里是抓取到的线的点的排序和抓取
 	{
 		GLfloat TransGLtoMach[16] = { 0 };
 		TransGLtoMach[0] = TransGLtoMach[5] = TransGLtoMach[10] = TransGLtoMach[15] = 1;
+		glMatrixMode(GL_MODELVIEW);
+		glPushMatrix();
+		glLoadIdentity();
 
+		glTranslatef(TipPosi.x, TipPosi.y, TipPosi.z);
+		glRotatef(-90, 1, 0, 0);
+		glMultMatrixf(M_Cubic_inv);
+		glTranslatef(-Intersect.X, -Intersect.Y, -Intersect.Z);
+		glGetFloatv(GL_MODELVIEW_MATRIX, TransGLtoMach);
+		glPopMatrix();
+		if (LineSP_MachCoord != nullptr)
+		{
+			delete[] LineSP_MachCoord;
+		}
+
+		LineSP_MachCoord = new CameraSpacePoint[PlaneDepthCount];
+		
+		for (int i = 0; i < PlaneDepthCount; i++)
+		{
+			LineSP_MachCoord[i].X = PlaneSP[i].X;
+			LineSP_MachCoord[i].Y = PlaneSP[i].Y;
+			LineSP_MachCoord[i].Z = PlaneSP[i].Z;
+
+			GLfloat m[16] = { 0 };
+			m[3] = m[7] = m[11] = m[15] = 1;
+			m[12] = LineSP_MachCoord[i].X;
+			m[13] = LineSP_MachCoord[i].Y;
+			m[14] = LineSP_MachCoord[i].Z;
+
+			glMatrixMode(GL_MODELVIEW);
+			glPushMatrix();
+			glLoadIdentity();
+			glMultMatrixf(TransGLtoMach);
+			glMultMatrixf(m);
+			glGetFloatv(GL_MODELVIEW_MATRIX, m);
+			glPopMatrix();
+
+			LineSP_MachCoord[i].X = m[12] / m[15];
+			LineSP_MachCoord[i].Y = m[13] / m[15];
+			LineSP_MachCoord[i].Z = m[14] / m[15];
+		}
+		for (int i = 0; i < PlaneDepthCount; i++)
+		{
+			if (LineSP_MachCoord[i].X > 0.1)
+			{
+				LineSP_MachCoord[i].Y = -LineSP_MachCoord[i].Y;
+			}
+		}		
+		result* Line_Res_X = Get_X_Min_Max(LineSP_MachCoord, 0, PlaneDepthCount - 1);
+		line_Res_X_head = Line_Res_X->head;
+		line_Res_X_tail = Line_Res_X->tail;
+	}
+	else if (PlaneDepthCount >= 1000 && PlaneSP != nullptr && !ROI_IS_COLLIDE)//在这里是抓取到的面的点的排序和抓取
+	{
+		GLfloat TransGLtoMach[16] = { 0 };
+		TransGLtoMach[0] = TransGLtoMach[5] = TransGLtoMach[10] = TransGLtoMach[15] = 1;
 		glMatrixMode(GL_MODELVIEW);
 		glPushMatrix();
 		glLoadIdentity();
@@ -536,9 +600,8 @@ void CoordGLtoMachine()
 		{
 			delete[] PlaneSP_MachCoord;
 		}
-
 		PlaneSP_MachCoord = new CameraSpacePoint[PlaneDepthCount];
-		
+
 		for (int i = 0; i < PlaneDepthCount; i++)
 		{
 			PlaneSP_MachCoord[i].X = PlaneSP[i].X;
@@ -568,21 +631,22 @@ void CoordGLtoMachine()
 			if (PlaneSP_MachCoord[i].X > 0.1)
 			{
 				PlaneSP_MachCoord[i].Y = -PlaneSP_MachCoord[i].Y;
-				/*cout << "--------------------------------------------------------------" << endl;
-				cout << "PlaneSP_MachCoord[" << i << "].X = " << PlaneSP_MachCoord[i].X << endl;
-				cout << "PlaneSP_MachCoord[" << i << "].Y = " << PlaneSP_MachCoord[i].Y << endl;
-				cout << "PlaneSP_MachCoord[" << i << "].Z = " << PlaneSP_MachCoord[i].Z << endl;
-				cout << "--------------------------------------------------------------" << endl;*/
 			}
-		}		
-		
+		}
+		result* Plane_Res_X = Get_X_Min_Max(PlaneSP_MachCoord, 0, PlaneDepthCount - 1);
+		result* Plane_Res_Y = Get_Y_Min_Max(PlaneSP_MachCoord, 0, PlaneDepthCount - 1);
+		plane_Res_X_head = Plane_Res_X->head;
+		plane_Res_X_tail = Plane_Res_X->tail;
+		plane_Res_Y_head = Plane_Res_Y->head;
+		plane_Res_Y_tail = Plane_Res_Y->tail;
+
 	}
 }
 //获取线段中的X最大值和最小值
 /*
  * 一开始的bug在与进行比较的max和min使用的是int值，而实际上需要使用double值，修改后就可以成功打印出其中的最大最小值
  */
-result* Get_X_Min_Max(Point2i* point, int start, int end)
+result* Get_X_Min_Max(CameraSpacePoint* point, int start, int end)
 {
 	int len = end - start + 1;
 
@@ -595,35 +659,35 @@ result* Get_X_Min_Max(Point2i* point, int start, int end)
 	double max, min;
 	int headL, tailL;
 	if (len % 2 == 0) {
-		//偶数的情况  
+		//偶数的 情况  
 		res->min =
-			((point[start].x) <= (point[start + 1].x)) ?
-			(point[start].x) : (point[start + 1].x);
-		res->max =
-			((point[start].x) >= (point[start + 1].x)) ?
-			(point[start].x) : (point[start + 1].x);
+			((point[start].X) <= (point[start + 1].X)) ?
+			(point[start].X) : (point[start + 1].X);
+		res->max = 
+			((point[start].X) >= (point[start + 1].X)) ?
+			(point[start].X) : (point[start + 1].X);
 		res->head =
-			((point[start].x) <= (point[start + 1].x)) ?
+			((point[start].X) <= (point[start + 1].X)) ?
 			(start) : (start + 1);
 		res->tail =
-			((point[start].x) >= (point[start + 1].x)) ?
+			((point[start].X) >= (point[start + 1].X)) ?
 			(start) : (start + 1);
 		start = start + 2; //如果是偶数，则需要让i从第三个元素开始  
 	}
 	else {
 		//奇数的情况  
-		res->min = point[start].x;
-		res->max = point[start].x;		
+		res->min = point[start].X;
+		res->max = point[start].X;		
 		res->head = start;
 		res->tail = start;
 		start = start + 1; //如果是奇数，则需要让i从第二个元素开始  
 	}
 
 	while (start <= end) {
-		min = ((point[start].x <= point[start + 1].x) ? (point[start].x) : (point[start + 1].x));
-		headL = (point[start].x <= point[start + 1].x) ? (start) : (start + 1);
-		max = ((point[start].x >= point[start + 1].x) ? (point[start].x) : (point[start + 1].x));
-		tailL = (point[start].x >= point[start + 1].x) ? (start) : (start + 1);
+		min = ((point[start].X <= point[start + 1].X) ? (point[start].X) : (point[start + 1].X));
+		headL = (point[start].X <= point[start + 1].X) ? (start) : (start + 1);
+		max = ((point[start].X >= point[start + 1].X) ? (point[start].X) : (point[start + 1].X));
+		tailL = (point[start].X >= point[start + 1].X) ? (start) : (start + 1);
 		res->max = (res->max >= max) ? (res->max) : (max);
 		res->min = (res->min <= min) ? (res->min) : (min);
 		res->head = (res->min <= min) ? (res->head) : (headL);
@@ -635,7 +699,7 @@ result* Get_X_Min_Max(Point2i* point, int start, int end)
 	return res;
 }
 
-result* Get_Y_Min_Max(Point2i* point, int start, int end)
+result* Get_Y_Min_Max(CameraSpacePoint* point, int start, int end)
 {
 	int len = end - start + 1;
 
@@ -651,23 +715,23 @@ result* Get_Y_Min_Max(Point2i* point, int start, int end)
 	if (len % 2 == 0) {
 		//偶数的情况  
 		res->min =
-			((point[start].y) <= (point[start + 1].y)) ?
-			(point[start].y) : (point[start + 1].y);
+			((point[start].Y) <= (point[start + 1].Y)) ?
+			(point[start].Y) : (point[start + 1].Y);
 		res->max =
-			((point[start].y) >= (point[start + 1].y)) ?
-			(point[start].y) : (point[start + 1].y);
+			((point[start].Y) >= (point[start + 1].Y)) ?
+			(point[start].Y) : (point[start + 1].Y);
 		res->head =
-			((point[start].y) <= (point[start + 1].y)) ?
+			((point[start].Y) <= (point[start + 1].Y)) ?
 			(start) : (start + 1);
 		res->tail =
-			((point[start].y) >= (point[start + 1].y)) ?
+			((point[start].Y) >= (point[start + 1].Y)) ?
 			(start) : (start + 1);
 		start = start + 2; //如果是偶数，则需要让i从第三个元素开始  
 	}
 	else {
 		//奇数的情况  
-		res->min = point[start].y;
-		res->max = point[start].y;
+		res->min = point[start].Y;
+		res->max = point[start].Y;
 		res->head = start;
 		res->tail = start;
 		start = start + 1; //如果是奇数，则需要让i从第二个元素开始  
@@ -675,10 +739,10 @@ result* Get_Y_Min_Max(Point2i* point, int start, int end)
 
 	while (start <= end) {
 		
-		min = ((point[start].y <= point[start + 1].y) ? (point[start].y) : (point[start + 1].y));
-		headL = (point[start].y <= point[start + 1].y) ? (start) : (start + 1);
-		max = ((point[start].y >= point[start + 1].y) ? (point[start].y) : (point[start + 1].y));
-		tailL = (point[start].y >= point[start + 1].y) ? (start) : (start + 1);
+		min = ((point[start].Y <= point[start + 1].Y) ? (point[start].Y) : (point[start + 1].Y));
+		headL = (point[start].Y <= point[start + 1].Y) ? (start) : (start + 1);
+		max = ((point[start].Y >= point[start + 1].Y) ? (point[start].Y) : (point[start + 1].Y));
+		tailL = (point[start].Y >= point[start + 1].Y) ? (start) : (start + 1);
 
 		res->max = (res->max >= max) ? (res->max) : (max);
 		res->min = (res->min <= min) ? (res->min) : (min);
@@ -704,7 +768,6 @@ void PrintMatrix(GLfloat* m)
 	cout << "---------------------------------------------------------" << endl;
 	cout << "---------------------------------------------------------" << endl;
 	cout << "---------------------------------------------------------" << endl;
-
 }
 
 void DrawStoragePoint()
@@ -856,11 +919,11 @@ void RenderScene()
 {
 
 	RenderSceneBackground();
-	DrawProbeTip();
-	DrawPlaneInScene();
+	DrawProbeTip();	
 	CollisionDetection(); //碰撞侦测需要改进
 	ARFuncPackage();
 	CoordGLtoMachine();
+	DrawPlaneInScene();
 	DrawStoragePoint();
 	MoveCubicInY_Axis();
 	

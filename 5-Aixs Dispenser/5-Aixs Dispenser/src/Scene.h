@@ -125,9 +125,12 @@ struct result {
 	int head;
 	int tail;
 };
-result* res_X, res_Y;
-result* Get_X_Min_Max(Point2i* point, int start, int end);
-result* Get_Y_Min_Max(Point2i* point, int start, int end);
+
+result* Get_X_Min_Max(CameraSpacePoint* point, int start, int end);
+result* Get_Y_Min_Max(CameraSpacePoint* point, int start, int end);
+int line_Res_X_head, line_Res_X_tail;
+int plane_Res_X_head, plane_Res_X_tail;
+int plane_Res_Y_head, plane_Res_Y_tail;
 #pragma endregion OpenCV&ROI Initial
 
 #pragma region Kinect Initial
