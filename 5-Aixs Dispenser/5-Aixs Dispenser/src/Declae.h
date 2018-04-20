@@ -431,7 +431,6 @@ void GLInit()
 	DeviaDueToY = new CameraSpacePoint[1];
 	DeviaDueToY->X = DeviaDueToY->Y = DeviaDueToY->Z = 0;
 	GLfloat  whiteLight[] = { 0.45f, 0.45f, 0.45f, 1.0f };
-
 	GLfloat  sourceLight[] = { 0.25f, 0.25f, 0.25f, 1.0f };
 	GLfloat	 lightPos[] = { -50.f, 25.0f, 250.0f, 0.0f };
 

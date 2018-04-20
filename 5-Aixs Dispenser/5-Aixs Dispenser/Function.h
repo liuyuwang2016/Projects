@@ -260,10 +260,10 @@ void DrawPlaneInScene()
 {
 	if (1000 > PlaneDepthCount > 0 && PlaneSP != nullptr)
 	{
-		glLineWidth(100.0f);
-		glColor3f(0.25, 0.25, 0.25);
 		glPushMatrix();
+		glLineWidth(5.0f);
 		glBegin(GL_LINES);
+		glColor3f(1, 0, 0);
 		    glVertex3f(PlaneSP[line_Res_X_head].X, PlaneSP[line_Res_X_head].Y, PlaneSP[line_Res_X_head].Z);
 		    glVertex3f(PlaneSP[line_Res_X_tail].X, PlaneSP[line_Res_X_tail].Y, PlaneSP[line_Res_X_tail].Z);
 		glEnd();
@@ -272,12 +272,16 @@ void DrawPlaneInScene()
 	else if (PlaneDepthCount >= 1000 && PlaneSP != nullptr)
 	{
 		glPushMatrix();
-		glColor3ub(255, 255, 0);
-		glBegin(GL_QUADS);
-			glVertex4f(PlaneSP[plane_Res_X_head].X, PlaneSP[plane_Res_X_head].Y, PlaneSP[plane_Res_X_head].Z, 0);
-			glVertex4f(PlaneSP[plane_Res_X_tail].X, PlaneSP[plane_Res_X_tail].Y, PlaneSP[plane_Res_X_tail].Z, 0);
-			glVertex4f(PlaneSP[plane_Res_Y_head].X, PlaneSP[plane_Res_Y_head].Y, PlaneSP[plane_Res_Y_head].Z, 0);
-			glVertex4f(PlaneSP[plane_Res_Y_tail].X, PlaneSP[plane_Res_Y_tail].Y, PlaneSP[plane_Res_Y_tail].Z, 0);
+		glPointSize(5.0f);
+		glBegin(GL_POINTS);
+			glColor3f(0, 255, 0);//这个点成功
+			glVertex3f(PlaneSP[plane_Res_X_head].X, PlaneSP[plane_Res_X_head].Y, PlaneSP[plane_Res_X_head].Z);
+			glColor3f(255, 255, 0);//这个点成功
+			glVertex3f(PlaneSP[plane_Res_X_tail].X, PlaneSP[plane_Res_X_tail].Y, PlaneSP[plane_Res_X_tail].Z);
+			glColor3f(0, 255, 255);
+			glVertex3f(PlaneSP[plane_Res_Y_head].X, PlaneSP[plane_Res_Y_head].Y, PlaneSP[plane_Res_Y_head].Z);
+			glColor3f(0, 0, 255);
+			glVertex3f(PlaneSP[plane_Res_Y_tail].X, PlaneSP[plane_Res_Y_tail].Y, PlaneSP[plane_Res_Y_tail].Z);
 		glEnd();
 		glPopMatrix();
 	}
@@ -287,7 +291,6 @@ void RANSAC(CameraSpacePoint* spacePoints, int Iter)
 {
 	//http://blog.csdn.net/fengdingha/article/details/22285147
 	//RANSAC code
-
 }
 /*
 *
@@ -479,24 +482,21 @@ void CoordGLtoMachine()
 		TransM_toMechCoord[0] = TransM_toMechCoord[5] = TransM_toMechCoord[10] = TransM_toMechCoord[15] = 1;
 		glMatrixMode(GL_MODELVIEW);
 		glPushMatrix();
-		glLoadIdentity();
-		glTranslatef(TipPosi.x, TipPosi.y, TipPosi.z);
-		
+		glLoadIdentity();	
 		//glTranslatef(0, 0, 0);
 		//http://cuiqingcai.com/1658.html 旋转示例	
-		glRotatef(-90, 1, 0, 0);
-		
+		glRotatef(90, 1, 0, 0);
+		glRotatef(180, 0, 0, 1);
+		glTranslatef(-Intersect.X, -Intersect.Y, -Intersect.Z);
+		glTranslatef(TipPosi.x, TipPosi.y, TipPosi.z);
 		//glRotatef(90, 0, 0, 1);//旋转后Z值和X值与机器的坐标系相反		
 		//glMultMatrixf(const GLfloat *m);//把m指定的16个值作为一个矩阵，与当前矩阵相乘，并把结果存储在当前矩阵中 
 		//glMultMatrix 假设当前矩阵是C那么用矩阵M 调用glMultMatrix 对顶点v的变换就从原来的C*v变成C * M * v
 		//http://blog.csdn.net/mathgeophysics/article/details/11434345
 		glMultMatrixf(M_Cubic_inv);//opengl坐标转换到机器	
-		glTranslatef(-Intersect.X, -Intersect.Y, -Intersect.Z);
-		
+			
 		glGetFloatv(GL_MODELVIEW_MATRIX, TransM_toMechCoord);
 		glPopMatrix();
-		
-		
 		if (ROICameraSP_MechCoord != nullptr)
 		{
 			delete[] ROICameraSP_MechCoord;
@@ -639,7 +639,6 @@ void CoordGLtoMachine()
 		plane_Res_X_tail = Plane_Res_X->tail;
 		plane_Res_Y_head = Plane_Res_Y->head;
 		plane_Res_Y_tail = Plane_Res_Y->tail;
-
 	}
 }
 //获取线段中的X最大值和最小值

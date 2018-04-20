@@ -1,4 +1,4 @@
-﻿生成启动时间为 2018/4/10 15:03:37。
+﻿生成启动时间为 2018/4/20 15:07:58。
      1>项目“D:\USER\Documents\Visual Studio 2013\Projects\5-Aixs Dispenser\CameraCalib\CameraCalib.vcxproj”在节点 2 上(Build 个目标)。
      1>ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"C:\Program Files\Microsoft SDKs\Kinect\v2.0_1409\\inc" /IC:\OpenCV300\opencv\build\include\opencv2 /IC:\OpenCV300\opencv\build\include\opencv /IC:\OpenCV300\opencv\build\include /AI"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0" /AI"C:\Program Files (x86)\Windows Kits\8.1\References\CommonConfiguration\Neutral" /Zi /clr /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _MBCS /EHa /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /TP /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\mscorlib.dll" /analyze- /errorReport:prompt /clr:nostdlib Source.cpp
@@ -100,4 +100,4 @@
 
 生成成功。
 
-已用时间 00:00:02.71
+已用时间 00:00:03.18

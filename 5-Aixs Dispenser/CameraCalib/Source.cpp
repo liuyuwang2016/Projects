@@ -715,7 +715,7 @@ int main()
 			cout << "objectCorners_H: " << endl;
 			//PrintVector(objectCorners_H);
 
-			//其中objectCorners_H为0，0.25这样的点，以第一个点为0，0，0，改变的是X,Y的值
+			//其中objectCorners_H为0，0.25这样的点，以第一个点为0，0, 改变的是X,Y的值
 			//其中imageCorners_H在图像坐标系UV坐标系，是像素的坐标，findHomography(src,dst)
 			Mat H = findHomography(objectCorners_H, imageCorners_H);
 			//从机器坐标系到像素坐标系的单应性矩阵
