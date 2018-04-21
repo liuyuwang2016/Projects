@@ -493,110 +493,70 @@ void Keyboard(unsigned char key, int x, int y)
 		md->x += Mt_speed;
 		Mt_x = md->x;
 		Mt_XMove(Mt_x);
-		do
-		{
-			MtReflash(md);
-			//cout << "md->v : " << md->v << endl;
-		} while (md->x != Mt_x);
+		cout << "Mt_x = " << Mt_x << endl;
 		break;
 	case 'F'://控制X--
 	case 'f':
 		md->x -= Mt_speed;
 		Mt_x = md->x;
 		Mt_XMove(Mt_x);
-		do
-		{
-			MtReflash(md);
-			//cout << "md->v : " << md->v << endl;
-		} while (md->x != Mt_x);
+		cout << "Mt_x = " << Mt_x << endl;
 		break;
 	case 'T'://控制Y++
 	case 't':
 		md->y += Mt_speed;
 		Mt_y = md->y;
 		Mt_YMove(Mt_y);
-		do
-		{
-			MtReflash(md);
-			//cout << "md->v : " << md->v << endl;
-		} while (md->y != Mt_y);
+		cout << "Mt_y = " << Mt_y << endl;
 		break;
 	case 'G'://控制Y--
 	case 'g':
 		md->y -= Mt_speed;
 		Mt_y = md->y;
 		Mt_YMove(Mt_y);
-		do
-		{
-			MtReflash(md);
-			//cout << "md->v : " << md->v << endl;
-		} while (md->y != Mt_y);
+		cout << "Mt_y = " << Mt_y << endl;
 		break;
 	case 'Y'://控制Z++
 	case 'y':
 		md->z += Mt_speed;
 		Mt_z = md->z;
 		Mt_ZMove(Mt_z);
-		do
-		{
-			MtReflash(md);
-			//cout << "md->v : " << md->v << endl;
-		} while (md->z != Mt_z);
+		cout << "Mt_z = " << Mt_z << endl;
 		break;
 	case 'H'://控制Z--
 	case 'h':
 		md->z -= Mt_speed;
 		Mt_z = md->z;
 		Mt_ZMove(Mt_z);
-		do
-		{
-			MtReflash(md);
-			//cout << "md->v : " << md->v << endl;
-		} while (md->z != Mt_z);
+		cout << "Mt_z = " << Mt_z << endl;
 		break;
 	case 'U'://控制U++
 	case 'u':
 		md->u += Mt_speed;
 		Mt_u = md->u;
 		Mt_UMove(Mt_u);
-		do
-		{
-			MtReflash(md);
-			//cout << "md->v : " << md->v << endl;
-		} while (md->u != Mt_u);
+		cout << "Mt_u = " << Mt_u << endl;
 		break;
 	case 'J'://控制U--
 	case 'j':
 		md->u -= Mt_speed;
 		Mt_u = md->u;
 		Mt_UMove(Mt_u);
-		do
-		{
-			MtReflash(md);
-			//cout << "md->v : " << md->v << endl;
-		} while (md->u != Mt_u);
+		cout << "Mt_u = " << Mt_u << endl;
 		break;
 	case 'I'://控制V++
 	case 'i':
 		md->v += Mt_speed;
 		Mt_v = md->v;
 		Mt_VMove(Mt_v);
-		do
-		{
-			MtReflash(md);
-			//cout << "md->v : " << md->v << endl;
-		} while (md->v != Mt_v);
+		cout << "Mt_v = " << Mt_v << endl;
 		break;
 	case 'K'://控制V--
 	case 'k':
 		md->v -= Mt_speed;
 		Mt_v = md->v;
 		Mt_VMove(Mt_v);
-		do
-		{
-			MtReflash(md);
-			//cout << "md->v : " << md->v << endl;
-		} while (md->v != Mt_v);
+		cout << "Mt_v = " << Mt_v << endl;
 		break;
 	}
 }
@@ -1487,7 +1447,7 @@ void Mt_Line_Move()
 	{
 		MtReflash(md);
 		//cout << value << " " << md->z << endl;
-	} while (abs(md->z - 50) < 0.01);
+	} while (abs(md->z - 50) > 0.01);
 	Sleep(100);
 	MtCmd("mt_m_x 280");
 	MtCmd("mt_m_y 275");
@@ -1496,7 +1456,7 @@ void Mt_Line_Move()
 	{
 		MtReflash(md);
 		//cout << value << " " << md->z << endl;
-	} while (abs(md->x - 280) < 0.01);
+	} while (abs(md->x - 280) > 0.01);
 	Sleep(100);
 }
 
@@ -1514,7 +1474,7 @@ void Mt_XMove(float mt_x)
 	{
 		MtReflash(md);
 		//cout << value << " " << md->z << endl;
-	} while (abs(md->x - mt_x) < 0.01);
+	} while (abs(md->x - mt_x) > 0.01);
 }
 
 void Mt_YMove(float mt_y)
@@ -1531,7 +1491,7 @@ void Mt_YMove(float mt_y)
 	{
 		MtReflash(md);
 		//cout << value << " " << md->z << endl;
-	} while (abs(md->y - mt_y) < 0.01);
+	} while (abs(md->y - mt_y) > 0.01);
 }
 
 void Mt_ZMove(float mt_z)
@@ -1549,7 +1509,7 @@ void Mt_ZMove(float mt_z)
 	{
 		MtReflash(md);
 		//cout << value << " " << md->z << endl;
-	} while (abs(md->z - mt_z) < 0.01);
+	} while (abs(md->z - mt_z) > 0.01);
 }
 
 void Mt_UMove(float mt_u)
@@ -1566,7 +1526,7 @@ void Mt_UMove(float mt_u)
 	{
 		MtReflash(md);
 		//cout << value << " " << md->z << endl;
-	} while (abs(md->u - mt_u) < 0.01);
+	} while (abs(md->u - mt_u) > 0.01);
 }
 
 void Mt_VMove(float mt_v)
@@ -1583,7 +1543,7 @@ void Mt_VMove(float mt_v)
 	{
 		MtReflash(md);
 		//cout << value << " " << md->z << endl;
-	} while (abs(md->v - mt_v) < 0.01);
+	} while (abs(md->v - mt_v) > 0.01);
 }
 
 void MtCheck(void)

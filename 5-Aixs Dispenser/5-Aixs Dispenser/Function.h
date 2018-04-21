@@ -279,9 +279,9 @@ void DrawPlaneInScene()
 			glColor3f(255, 255, 0);//这个点成功
 			glVertex3f(PlaneSP[plane_Res_X_tail].X, PlaneSP[plane_Res_X_tail].Y, PlaneSP[plane_Res_X_tail].Z);
 			glColor3f(0, 255, 255);
-			glVertex3f(PlaneSP[plane_Res_Y_head].X, PlaneSP[plane_Res_Y_head].Y, PlaneSP[plane_Res_Y_head].Z);
+			glVertex3f(PlaneSP[plane_Res_X_head].X, PlaneSP[plane_Res_Y_head].Y, PlaneSP[plane_Res_Y_head].Z);
 			glColor3f(0, 0, 255);
-			glVertex3f(PlaneSP[plane_Res_Y_tail].X, PlaneSP[plane_Res_Y_tail].Y, PlaneSP[plane_Res_Y_tail].Z);
+			glVertex3f(PlaneSP[plane_Res_X_tail].X, PlaneSP[plane_Res_Y_tail].Y, PlaneSP[plane_Res_Y_tail].Z);
 		glEnd();
 		glPopMatrix();
 	}
