@@ -5,6 +5,7 @@
 #include <fstream>
 #include <math.h>
 #include <iomanip>
+#include <stdio.h>
 /*--------------OpenCV-------------*/
 #include <opencv2/core.hpp>
 #include <opencv2/imgproc.hpp>
@@ -30,6 +31,8 @@
 #include "src/portaudio.h"
 /*----------输出最大最小值-----------*/
 #include <algorithm>
+/*--------使用工作线程控制移动--------*/
+#include "osapi/Thread.h"
 
 using namespace std;
 using namespace cv;
@@ -480,6 +483,5 @@ bool InitPortAudio(void);
 bool IS_PORTAUDIO_INIT = FALSE;
 bool IS_PORTAUDIO_START = FALSE;
 #pragma endregion PortAudio Initial
-
 #pragma endregion Global_variable
 #endif

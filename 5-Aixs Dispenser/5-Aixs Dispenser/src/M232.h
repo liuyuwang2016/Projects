@@ -24,6 +24,7 @@ void Mt_UMove(float u);
 void Mt_VMove(float v);
 void MtCheck(void);
 void Mt_Line_Move(void);
+void Mt_Calib_Move(void);
 
 float Mt_x, Mt_y, Mt_z, Mt_u, Mt_v;
 float Mt_speed = 1;

@@ -19,7 +19,7 @@ IDepthFrameReader*	pDepthFrameReader = nullptr;
 ICoordinateMapper*	pCoordinateMapper = nullptr;
 
 int		iColorWidth = 0,
-iColorHeight = 0;
+        iColorHeight = 0;
 UINT	uDepthPointNum = 0;
 UINT	uColorPointNum = 0;
 UINT	uColorBufferSize = 0;
@@ -29,7 +29,24 @@ BYTE*	pColorBuffer = nullptr;
 CameraSpacePoint* pCSPoints = nullptr;
 
 SimpleCamera g_Camera;
+void Coordinate()
+{
+	// Coordinate
+	glLineWidth(5.0f);
+	glBegin(GL_LINES);
+	glColor3ub(255, 0, 0);//红色的X轴
+	glVertex3f(0, 0, 0);
+	glVertex3f(1, 0, 0);
 
+	glColor3ub(0, 255, 0);//绿色的Y轴
+	glVertex3f(0, 0, 0);
+	glVertex3f(0, 1, 0);
+
+	glColor3ub(0, 0, 255);//蓝色的Z轴
+	glVertex3f(0, 0, 0);
+	glVertex3f(0, 0, 1);
+	glEnd();
+}
 // glut display function(draw)
 void RenderScene()
 {
@@ -37,7 +54,7 @@ void RenderScene()
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
 	// draw points
-	glPointSize(4.0f);
+	glPointSize(1.0f);
 	glBegin(GL_POINTS);
 
 	for (int y = 0; y < iColorHeight; ++y)
@@ -54,26 +71,11 @@ void RenderScene()
 		}
 	}
 	glEnd();
-
-	// Coordinate
-	glLineWidth(5.0f);
-	glBegin(GL_LINES);
-	glColor3ub(255, 0, 0);//红色的X轴
-	glVertex3f(0, 0, 0);
-	glVertex3f(1, 0, 0);
-
-	glColor3ub(0, 255, 0);//绿色的Y轴
-	glVertex3f(0, 0, 0);
-	glVertex3f(0, 1, 0);
-
-	glColor3ub(0, 0, 255);//蓝色的Z轴
-	glVertex3f(0, 0, 0);
-	glVertex3f(0, 0, 1);
-	glEnd();
-
+	Coordinate();
 	// swap buffer
 	glutSwapBuffers();
 }
+
 
 // glut idle function
 void idle()

@@ -2,7 +2,7 @@
 
 #include "src/Scene.h"
 #include "src/M232.h"
-#include "osapi/Thread.h"
+
 
 #pragma region Function
 
@@ -252,7 +252,7 @@ void CameraSpaceROI()
 			//kinect坐标到opengl坐标，所以之后的坐标中Z相反，所以将Z设置为负
 			Temp[indx1].X = pCSPoints[indx2].X;
 			Temp[indx1].Y = pCSPoints[indx2].Y;
-			Temp[indx1].Z = -pCSPoints[indx2].Z;
+			Temp[indx1].Z = pCSPoints[indx2].Z;
 			indx1++;
 		}
 	}
@@ -457,6 +457,7 @@ void Keyboard(unsigned char key, int x, int y)
 	{
 	case VK_ESCAPE:
 		glutExit();
+		break;
 	//case 'F':
 	//case 'f':
 	//	/*Use CPU to get the FPS of the machine*/
@@ -472,10 +473,12 @@ void Keyboard(unsigned char key, int x, int y)
 		MtMove();
 		CUBIC_MOVE = TRUE;
 		ARFunc_IS_ON = FALSE;
+		glutPostRedisplay();
 		break;
 	case 'S':
 	case 's':
 		ROICameraSPStorage();
+		glutPostRedisplay();
 		break;
 	case 'B':
 	case 'b':
@@ -486,10 +489,10 @@ void Keyboard(unsigned char key, int x, int y)
 	case 'L':
 	case 'l':
 		MtReflash(md);
-		Mt_Line_Move();
+		Mt_Line_Move();	
 		break;
 	case 'R': //控制X+++
-	case 'r': 
+	case 'r':
 		md->x += Mt_speed;
 		Mt_x = md->x;
 		Mt_XMove(Mt_x);
@@ -671,6 +674,25 @@ void menuCB(int menu_value)
 	}
 }
 
+void Background()
+{
+	glPushMatrix();
+	glBegin(GL_QUADS);
+
+	glTexCoord2i(1, 0);
+	glVertex2i(0, iHeightColor);
+
+	glTexCoord2i(0, 0);
+	glVertex2i(iWidthColor, iHeightColor);
+
+	glTexCoord2i(0, 1);
+	glVertex2i(iWidthColor, 0);
+
+	glTexCoord2i(1, 1);
+	glVertex2i(0, 0);
+	glEnd();
+	glPopMatrix();
+}
 void SceneWithBackground()
 {
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
@@ -697,36 +719,9 @@ void SceneWithBackground()
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 	//画背景
-	bool MirrorFunction = FALSE;
-	if (!MirrorFunction)
-	{
-		glPushMatrix();
-		glBegin(GL_QUADS);
-		glTexCoord2i(0, 0);
-		glVertex2i(0, iHeightColor);
-		glTexCoord2i(1, 0);
-		glVertex2i(iWidthColor, iHeightColor);
-		glTexCoord2i(1, 1);
-		glVertex2i(iWidthColor, 0);
-		glTexCoord2i(0, 1);
-		glVertex2i(0, 0);
-		glEnd();
-		glPopMatrix();
-	}
-	else{
-		glPushMatrix();
-		glBegin(GL_QUADS);
-		glTexCoord2i(1, 0);
-		glVertex2i(0, iHeightColor);
-		glTexCoord2i(0, 0);
-		glVertex2i(iWidthColor, iHeightColor);
-		glTexCoord2i(0, 0);
-		glVertex2i(iWidthColor, 0);
-		glTexCoord2i(1, 1);
-		glVertex2i(0, 0);
-		glEnd();
-		glPopMatrix();
-	}
+
+	Background();
+
 	glDisable(GL_TEXTURE_2D);
 	static const double kFovY = 53.3;
 
@@ -740,8 +735,8 @@ void SceneWithBackground()
 	glEnable(GL_DEPTH_TEST);
  	glMatrixMode(GL_MODELVIEW);
 	glLoadIdentity();
-	gluLookAt(0, 0, 0, 0, 0, -1, 0, 1, 0);
-	glTranslatef(0.055f, -0.015f, 0.0f);
+	gluLookAt(0, 0, 0, 0, 0, 1, 0, 1, 0);
+	//glTranslatef(0.055f, -0.015f, 0.0f);
 }
 
 void SceneWithoutBackground()
@@ -758,8 +753,8 @@ void SceneWithoutBackground()
 	glEnable(GL_DEPTH_TEST);
 	glMatrixMode(GL_MODELVIEW);
 	glLoadIdentity();
-	gluLookAt(0, 0, 0, 0, 0, -1, 0, 1, 0);
-	glTranslatef(0.055f, -0.015f, 0.0f);
+	gluLookAt(0, 0, 0, 0, 0, 1, 0, 1, 0);
+	//glTranslatef(0.055f, -0.015f, 0.0f);
 }
 
 void DrawPointCloud()
@@ -774,7 +769,7 @@ void DrawPointCloud()
 		glColor3ub(pBufferColor[4 * i], pBufferColor[4 * i + 1], pBufferColor[4 * i + 2]);
 		GLfloat pX = pCSPoints[i].X;
 		GLfloat pY = pCSPoints[i].Y;
-		GLfloat pZ = -pCSPoints[i].Z;
+		GLfloat pZ = pCSPoints[i].Z;
 		glVertex3f(pX, pY, pZ);
 	}
 	/*for (int y = 0; y < iHeightColor; ++y)
@@ -1185,7 +1180,7 @@ void Draw3DPlane()
 		{
 			PlaneSP[indexP].X = pCSPoints[index4].X;
 			PlaneSP[indexP].Y = pCSPoints[index4].Y;
-			PlaneSP[indexP].Z = -pCSPoints[index4].Z;
+			PlaneSP[indexP].Z = pCSPoints[index4].Z;
 			indexP++;
 		}
 	}
@@ -1207,8 +1202,8 @@ void DrawMeshes()
 			glColor3ub(pBufferColor[4 * i], pBufferColor[4 * i + 1], pBufferColor[4 * i + 2]);
 			if (i < iWidthColor*(iHeightColor - 1))
 			{
-				glVertex3f(pCSPoints[i].X, pCSPoints[i].Y, -pCSPoints[i].Z);
-				glVertex3f(pCSPoints[i + iWidthColor].X, pCSPoints[i + iWidthColor].Y, -pCSPoints[i + iWidthColor].Z);
+				glVertex3f(pCSPoints[i].X, pCSPoints[i].Y, pCSPoints[i].Z);
+				glVertex3f(pCSPoints[i + iWidthColor].X, pCSPoints[i + iWidthColor].Y, pCSPoints[i + iWidthColor].Z);
 			}
 			else
 			{
@@ -1230,11 +1225,11 @@ void DrawMeshes()
 			glColor4ub(pBufferColor[4 * i], pBufferColor[4 * i + 1], pBufferColor[4 * i + 2], 125);
 			if (i % iWidthColor < (iWidthColor - 1) && i < iWidthColor*(iHeightColor - 1))
 			{
-				glVertex3f(pCSPoints[i].X, pCSPoints[i].Y, -pCSPoints[i].Z);
-				glVertex3f(pCSPoints[i + iWidthColor].X, pCSPoints[i + iWidthColor].Y, -pCSPoints[i + iWidthColor].Z);
+				glVertex3f(pCSPoints[i].X, pCSPoints[i].Y, pCSPoints[i].Z);
+				glVertex3f(pCSPoints[i + iWidthColor].X, pCSPoints[i + iWidthColor].Y, pCSPoints[i + iWidthColor].Z);
 
-				glVertex3f(pCSPoints[i + 1].X, pCSPoints[i + 1].Y, -pCSPoints[i + 1].Z);
-				glVertex3f(pCSPoints[i + iWidthColor + 1].X, pCSPoints[i + iWidthColor + 1].Y, -pCSPoints[i + iWidthColor + 1].Z);
+				glVertex3f(pCSPoints[i + 1].X, pCSPoints[i + 1].Y, pCSPoints[i + 1].Z);
+				glVertex3f(pCSPoints[i + iWidthColor + 1].X, pCSPoints[i + iWidthColor + 1].Y, pCSPoints[i + iWidthColor + 1].Z);
 			}
 			else
 			{
@@ -1460,6 +1455,39 @@ void Mt_Line_Move()
 	Sleep(100);
 }
 
+void Mt_Calib_Move()
+{
+	MtHome();
+	MtReflash(md);
+	Sleep(100);
+	for (int i = 0; i < 2; i++)
+	{
+		MtCmd("mt_out 12,1"); //12是出膠 9是閃燈
+		Sleep(100);
+		MtCmd("mt_out 12,0");
+		Sleep(100);
+	}
+	char mybuffx[50], mybuffz[50];
+	char commandx[60] = "mt_m_x ", commandz[60] = "mt_m_z ";
+	sprintf(mybuffx, "%i", 50);
+	sprintf(mybuffz, "%i", 50);
+
+	//strcat进行string的合并
+	strcat(commandx, mybuffx);
+	strcat(commandz, mybuffz);
+	MtCmd(commandx);
+	MtCmd(commandz);
+
+	do
+	{
+		//在这里MtReflash是控制点胶机再次移动，是让点胶机达到X,Z的标准后停一下
+		MtReflash(md);
+		glutPostRedisplay();
+	} while (md->x != 50 || md->z != 50);
+	//在这里表示在移动到点之后休息的时间，单位毫秒，在每个点休息1.5秒
+	sleep(1500);
+}
+
 void Mt_XMove(float mt_x)
 {
 	MtReflash(md);
@@ -1473,6 +1501,7 @@ void Mt_XMove(float mt_x)
 	do
 	{
 		MtReflash(md);
+		glutPostRedisplay();
 		//cout << value << " " << md->z << endl;
 	} while (abs(md->x - mt_x) > 0.01);
 }
@@ -1490,6 +1519,7 @@ void Mt_YMove(float mt_y)
 	do
 	{
 		MtReflash(md);
+		glutPostRedisplay();
 		//cout << value << " " << md->z << endl;
 	} while (abs(md->y - mt_y) > 0.01);
 }
@@ -1508,6 +1538,7 @@ void Mt_ZMove(float mt_z)
 	do
 	{
 		MtReflash(md);
+		glutPostRedisplay();
 		//cout << value << " " << md->z << endl;
 	} while (abs(md->z - mt_z) > 0.01);
 }
@@ -1525,6 +1556,7 @@ void Mt_UMove(float mt_u)
 	do
 	{
 		MtReflash(md);
+		glutPostRedisplay();
 		//cout << value << " " << md->z << endl;
 	} while (abs(md->u - mt_u) > 0.01);
 }
@@ -1543,6 +1575,7 @@ void Mt_VMove(float mt_v)
 	{
 		MtReflash(md);
 		//cout << value << " " << md->z << endl;
+		glutPostRedisplay();
 	} while (abs(md->v - mt_v) > 0.01);
 }
 
@@ -2000,19 +2033,19 @@ void KinectUpdate()
 		pDFrameDepth = nullptr;
 	}
 #pragma region Remap ColorImg
-	//map_x.create(mColorImg.size(), CV_32FC1);
-	//map_y.create(mColorImg.size(), CV_32FC1);
+	map_x.create(mColorImg.size(), CV_32FC1);
+	map_y.create(mColorImg.size(), CV_32FC1);
 
-	//for (int j = 0; j < mColorImg.rows; j++)
-	//{
-	//	for (int i = 0; i < mColorImg.cols; i++)
-	//	{
-	//		map_x.at<float>(j, i) = static_cast<float>(mColorImg.cols - i);
-	//		map_y.at<float>(j, i) = static_cast<float>(j);
-	//	}
-	//}
-	////成功remap。重映射将Kinect抓取的彩色图案反转
-	//remap(mColorImg, mColorImg, map_x, map_y, INTER_LINEAR, BORDER_CONSTANT, cv::Scalar(0, 0, 0));
+	for (int j = 0; j < mColorImg.rows; j++)
+	{
+		for (int i = 0; i < mColorImg.cols; i++)
+		{
+			map_x.at<float>(j, i) = static_cast<float>(mColorImg.cols - i);
+			map_y.at<float>(j, i) = static_cast<float>(j);
+		}
+	}
+	//成功remap。重映射将Kinect抓取的彩色图案反转
+	remap(mColorImg, mColorImg, map_x, map_y, INTER_LINEAR, BORDER_CONSTANT, cv::Scalar(0, 0, 0));
 #pragma endregion Remap ColorImg
 	
 	/*--------------Mapper Function (Point Cloud)-------------*/
