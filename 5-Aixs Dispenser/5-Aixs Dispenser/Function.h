@@ -15,6 +15,7 @@ void init()
 void SpecialKeys(int key, int x, int y)
 {
 	//需要的时候才会调用一次
+	float fRotateScale = 0.005f;
 	//Press F1 to store pt
 	if (key == GLUT_KEY_F1 && !ROI_IS_COLLIDE && ARFunc_InsideTriCheck)
 	{
@@ -138,25 +139,45 @@ void SpecialKeys(int key, int x, int y)
 #pragma endregion rotation
 
 	/*-------------Translation------------*/
-	else if (key == GLUT_KEY_DOWN )
+	else if (key == GLUT_KEY_DOWN && ARFunc_IS_ON)
 	{
 		ObjPosi.y += 0.001f;
 		cout << endl << "ObjPosi.y : " << ObjPosi.y << endl;
 	}
-	else if (key == GLUT_KEY_UP)
+	else if (key == GLUT_KEY_UP && ARFunc_IS_ON)
 	{
 		ObjPosi.y -= 0.001f;
 		cout << endl << "ObjPosi.y : " << ObjPosi.y << endl;
 	}
-	else if (key == GLUT_KEY_RIGHT)
+	else if (key == GLUT_KEY_RIGHT && ARFunc_IS_ON)
 	{
 		ObjPosi.x += 0.001f;
 		cout << endl << "ObjPosi.x : " << ObjPosi.x << endl;
 	}
-	else if (key == GLUT_KEY_LEFT)
+	else if (key == GLUT_KEY_LEFT && ARFunc_IS_ON)
 	{
 		ObjPosi.x -= 0.001f;
 		cout << endl << "ObjPosi.x : " << ObjPosi.x << endl;
+	}
+	else if (key == GLUT_KEY_DOWN)
+	{
+		g_Camera.RotateUp(-fRotateScale);
+		cout << endl << "Camera RotateUp minus = " << -fRotateScale << endl;
+	}
+	else if (key == GLUT_KEY_UP)
+	{
+		g_Camera.RotateUp(fRotateScale);
+		cout << endl << "Camera RotateUp plus = " << fRotateScale << endl;
+	}
+	else if (key == GLUT_KEY_RIGHT)
+	{
+		g_Camera.RotateSide(fRotateScale);
+		cout << endl << "Camera RotateUSide plus = " << fRotateScale << endl;
+	}
+	else if (key == GLUT_KEY_LEFT)
+	{
+		g_Camera.RotateSide(-fRotateScale);
+		cout << endl << "Camera RotateUSide minus = " << -fRotateScale << endl;
 	}
 	else if (key == GLUT_KEY_F9)
 	{
@@ -913,7 +934,23 @@ void ChangeLineColor()
 		glPopMatrix();
 	}
 }
+void Coordinate()
+{
+	glLineWidth(5.0f);
+	glBegin(GL_LINES);
+	glColor3ub(255, 0, 0);//红色的X轴
+	glVertex3f(0, 0, 0);
+	glVertex3f(1, 0, 0);
 
+	glColor3ub(0, 255, 0);//绿色的Y轴
+	glVertex3f(0, 0, 0);
+	glVertex3f(0, 1, 0);
+
+	glColor3ub(0, 0, 255);//蓝色的Z轴
+	glVertex3f(0, 0, 0);
+	glVertex3f(0, 0, 1);
+	glEnd();
+}
 void RenderScene()
 {
 
@@ -939,20 +976,7 @@ void RenderScene()
 
 	ChangeLineColor();
 	ROI_IS_COLLIDE = FALSE;
-	glLineWidth(5.0f);
-	glBegin(GL_LINES);
-	glColor3ub(255, 0, 0);//红色的X轴
-	glVertex3f(0, 0, 0);
-	glVertex3f(1, 0, 0);
-
-	glColor3ub(0, 255, 0);//绿色的Y轴
-	glVertex3f(0, 0, 0);
-	glVertex3f(0, 1, 0);
-
-	glColor3ub(0, 0, 255);//蓝色的Z轴
-	glVertex3f(0, 0, 0);
-	glVertex3f(0, 0, 1);
-	glEnd();
+	//Coordinate();
 	if (Finish_Without_Update)
 		glFinish();
 	else

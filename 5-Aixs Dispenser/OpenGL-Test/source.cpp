@@ -1,3 +1,4 @@
+// Standard Library
 #include <array>
 #include <iostream>
 
@@ -19,7 +20,7 @@ IDepthFrameReader*	pDepthFrameReader = nullptr;
 ICoordinateMapper*	pCoordinateMapper = nullptr;
 
 int		iColorWidth = 0,
-        iColorHeight = 0;
+iColorHeight = 0;
 UINT	uDepthPointNum = 0;
 UINT	uColorPointNum = 0;
 UINT	uColorBufferSize = 0;
@@ -29,26 +30,9 @@ BYTE*	pColorBuffer = nullptr;
 CameraSpacePoint* pCSPoints = nullptr;
 
 SimpleCamera g_Camera;
-void Coordinate()
-{
-	// Coordinate
-	glLineWidth(5.0f);
-	glBegin(GL_LINES);
-	glColor3ub(255, 0, 0);//红色的X轴
-	glVertex3f(0, 0, 0);
-	glVertex3f(1, 0, 0);
 
-	glColor3ub(0, 255, 0);//绿色的Y轴
-	glVertex3f(0, 0, 0);
-	glVertex3f(0, 1, 0);
-
-	glColor3ub(0, 0, 255);//蓝色的Z轴
-	glVertex3f(0, 0, 0);
-	glVertex3f(0, 0, 1);
-	glEnd();
-}
 // glut display function(draw)
-void RenderScene()
+void display()
 {
 	// clear previous screen
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
@@ -71,11 +55,26 @@ void RenderScene()
 		}
 	}
 	glEnd();
-	Coordinate();
+
+	// Coordinate
+	glLineWidth(5.0f);
+	glBegin(GL_LINES);
+	glColor3ub(255, 0, 0);
+	glVertex3f(0, 0, 0);
+	glVertex3f(1, 0, 0);
+
+	glColor3ub(0, 255, 0);
+	glVertex3f(0, 0, 0);
+	glVertex3f(0, 1, 0);
+
+	glColor3ub(0, 0, 255);
+	glVertex3f(0, 0, 0);
+	glVertex3f(0, 0, 1);
+	glEnd();
+
 	// swap buffer
 	glutSwapBuffers();
 }
-
 
 // glut idle function
 void idle()
@@ -170,7 +169,7 @@ void reshape(int w, int h)
 {
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
-	gluPerspective(57.5, (float)w / h, 0.01, 50.0);
+	gluPerspective(40.0, (float)w / h, 0.01, 50.0);
 
 	g_Camera.SetCamera();
 
@@ -312,19 +311,19 @@ int main(int argc, char** argv)
 	glutInit(&argc, argv);
 	glutInitDisplayMode(GLUT_DOUBLE | GLUT_DEPTH | GLUT_RGB);
 
-	glutInitWindowSize(1920, 1080);
+	glutInitWindowSize(640, 480);
 	glutCreateWindow("Kinect OpenGL 3D Point");
 
 	glEnable(GL_DEPTH_TEST);
 	glDisable(GL_LIGHTING);
 
 	// default camera
-	g_Camera.vPosition = Vector3(0.0, 0.0, 0.0);
 	g_Camera.vCenter = Vector3(0.0, 0.0, 1);
+	g_Camera.vPosition = Vector3(0.0, 0.0, -2.0);
 	g_Camera.vUpper = Vector3(0.0, 1.0, 0.0);
 
 	// register glut callback functions
-	glutDisplayFunc(RenderScene);
+	glutDisplayFunc(display);
 	glutIdleFunc(idle);
 	glutReshapeFunc(reshape);
 	glutKeyboardFunc(keyboard);

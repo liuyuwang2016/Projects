@@ -246,10 +246,9 @@ void CameraSpaceROI()
 	int indx1 = 0;
 	for (int i = 0; i < ROIcount; i++)
 	{
-		int indx2 = ROIPixel[i].x + ROIPixel[i].y * iWidthColor;
+		int indx2 = (iWidthColor - ROIPixel[i].x) + ROIPixel[i].y * iWidthColor;
 		if (pCSPoints[indx2].Z != -1 * numeric_limits<float>::infinity())
 		{
-			//kinect坐标到opengl坐标，所以之后的坐标中Z相反，所以将Z设置为负
 			Temp[indx1].X = pCSPoints[indx2].X;
 			Temp[indx1].Y = pCSPoints[indx2].Y;
 			Temp[indx1].Z = pCSPoints[indx2].Z;
@@ -453,6 +452,7 @@ void GLInit()
 
 void Keyboard(unsigned char key, int x, int y)
 {
+	float fSpeed = 0.005f;
 	switch (key)
 	{
 	case VK_ESCAPE:
@@ -467,16 +467,46 @@ void Keyboard(unsigned char key, int x, int y)
 	//	Finish_Without_Update = FALSE;
 	//	break;
 		/*A move */
+	case 'S'://控制opengl的相机移动
+	case 's':
+		g_Camera.MoveForward(-fSpeed);
+		cout << "Move Forward minus = " << -fSpeed << endl;
+		break;
+	case 'W':
+	case 'w':
+		g_Camera.MoveForward(fSpeed);
+		cout << "Move Forward plus = " << fSpeed << endl;
+		break;
 	case 'A':
 	case 'a':
+		g_Camera.MoveSide(-fSpeed);
+		cout << "Move Side minus = " << -fSpeed << endl;
+		break;
+	case 'D':
+	case 'd':
+		g_Camera.MoveSide(fSpeed);
+		cout << "Move Side plus = " << fSpeed << endl;
+		break;
+	case 'Z':
+	case 'z':
+		g_Camera.MoveUp(-fSpeed);
+		cout << "Move Up minus = " << -fSpeed << endl;
+		break;
+	case 'X':
+	case 'x':
+		g_Camera.MoveUp(fSpeed);
+		cout << "Move Up minus = " << fSpeed << endl;
+		break;
+	case 'O':
+	case 'o'://让机器移动
 		MtReflash(md);
 		MtMove();
 		CUBIC_MOVE = TRUE;
 		ARFunc_IS_ON = FALSE;
 		glutPostRedisplay();
 		break;
-	case 'S':
-	case 's':
+	case 'P':
+	case 'p'://存储想要到达的位置
 		ROICameraSPStorage();
 		glutPostRedisplay();
 		break;
@@ -723,7 +753,7 @@ void SceneWithBackground()
 	Background();
 
 	glDisable(GL_TEXTURE_2D);
-	static const double kFovY = 53.3;
+	static const double kFovY = 57.5;
 
 	double nearDist, farDist, aspect;
 	nearDist = 0.01f / tan((kFovY / 2.0) * CV_PI / 180.0);
@@ -732,16 +762,15 @@ void SceneWithBackground()
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
 	gluPerspective(kFovY, aspect, nearDist, farDist);
-	glEnable(GL_DEPTH_TEST);
- 	glMatrixMode(GL_MODELVIEW);
-	glLoadIdentity();
-	gluLookAt(0, 0, 0, 0, 0, 1, 0, 1, 0);
+	//glEnable(GL_DEPTH_TEST);
+	g_Camera.SetCamera();
+	
 	//glTranslatef(0.055f, -0.015f, 0.0f);
 }
 
 void SceneWithoutBackground()
 {
-	static const double kFovY = 53.3;
+	static const double kFovY = 57.5;
 	double nearDist, farDist, aspect;
 	nearDist = 0.01f / tan((kFovY / 2.0) * CV_PI / 180.0);
 	farDist = 50;
@@ -750,10 +779,9 @@ void SceneWithoutBackground()
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
 	gluPerspective(kFovY, aspect, nearDist, farDist);
-	glEnable(GL_DEPTH_TEST);
-	glMatrixMode(GL_MODELVIEW);
-	glLoadIdentity();
-	gluLookAt(0, 0, 0, 0, 0, 1, 0, 1, 0);
+	//glEnable(GL_DEPTH_TEST);
+	
+	g_Camera.SetCamera();
 	//glTranslatef(0.055f, -0.015f, 0.0f);
 }
 
@@ -1174,7 +1202,7 @@ void Draw3DPlane()
 
 	for (int i = 0; i < PlanePixelcount; i++)
 	{
-		int index4 = PlanePixel[i].x + PlanePixel[i].y * iWidthColor;
+		int index4 = (iWidthColor - PlanePixel[i].x) + PlanePixel[i].y * iWidthColor;
 		//cout << "PlanePixel[i].x = " << PlanePixel[i].x << endl;
 		if (pCSPoints[index4].Z != -1 * numeric_limits<float>::infinity())
 		{
@@ -1186,6 +1214,28 @@ void Draw3DPlane()
 	}
 	delete[] PlanePixel;
 	ifGetPlane = true;
+}
+
+inline bool BuildTriangle(unsigned int& iIdxCounter, unsigned int v1, unsigned int v2, unsigned int v3, float th = 0.05f)
+{
+	const CameraSpacePoint	&rP1 = pCSPoints[v1],
+		&rP2 = pCSPoints[v2],
+		&rP3 = pCSPoints[v3];
+
+	if (rP1.Z > 0 && rP2.Z > 0 && rP3.Z > 0)
+	{
+		if (abs(rP1.Z - rP2.Z) > th ||
+			abs(rP1.Z - rP3.Z) > th ||
+			abs(rP2.Z - rP3.Z) > th)
+			return false;
+
+		pIndex[iIdxCounter++] = v1;
+		pIndex[iIdxCounter++] = v2;
+		pIndex[iIdxCounter++] = v3;
+
+		return true;
+	}
+	return false;
 }
 
 void DrawMeshes()
@@ -2077,8 +2127,7 @@ void ShowImage()
 		FindROI();
 	}
 	//cout << "-----------------------ShowImage--------------------" << endl;
-	//opencv需要编译 http://blog.csdn.net/github_28833431/article/details/48226291
-	//不是opencv编译的问题，在这里如果关闭集显的话不能debug
+	//不是opencv编译的问题，在这里如果关闭集显的话不能debug：没找到原因，应该是opencv 3.0的bug
 	imshow("ROI Map", ROI);
 }
 #pragma endregion Kinect Function

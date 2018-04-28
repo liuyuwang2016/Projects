@@ -20,6 +20,7 @@
 #include <gl/Gl.h>
 #include <gl/glu.h>
 #include <GL/freeglut.h>
+#include "src/OpenGLCamera.h"
 //#include <gl/glut.h>
 //将库文件链接到文件中
 #pragma comment(lib,"opengl32.lib")
@@ -176,7 +177,9 @@ CameraSpacePoint* pCSPoints = nullptr;
 /*---------------------------------*/
 //Basic OpenGL Function
 GLfloat m[16];
-
+SimpleCamera g_Camera;
+unsigned int*	pIndex = nullptr;
+unsigned int	uTriangles = 0;
 void GLInit(void);
 void SpecialKeys(int key, int x, int y);
 void Keyboard(unsigned char key, int x, int y);
@@ -261,6 +264,7 @@ GLuint base = 0;							// 字型图像 的 display lists, 初始成 0
 bool loaded[65536] = { 0 };					// 定义 65536 个 bool, 全都初始成 0
 HFONT hFont;								// font handle
 int glPrintf(const char *format, ...);
+
 #pragma endregion OpenGL&DrawCubic Initial
 
 #pragma region LoadOBJ Initial
