@@ -591,6 +591,10 @@ void Keyboard(unsigned char key, int x, int y)
 		Mt_VMove(Mt_v);
 		cout << "Mt_v = " << Mt_v << endl;
 		break;
+	case 'C':
+	case 'c':
+		Mt_Calib_Move();
+		break;
 	}
 }
 
@@ -1507,6 +1511,10 @@ void Mt_Line_Move()
 
 void Mt_Calib_Move()
 {
+	/*
+	 * 在这里是让点胶机移动到特定的三个位置，然后测量出移动到位置的点在Kinect中的坐标值，以及移动到位置后的点在像素坐标系中的坐标值
+	 * 通过三个点的两个坐标系的坐标值，可以算出转换矩阵。其中机器坐标系原点为机器的尖端，红色ROI抓取点的坐标为（0,31，-101.5），单位mm。
+	 */
 	MtHome();
 	MtReflash(md);
 	Sleep(100);
@@ -1517,25 +1525,76 @@ void Mt_Calib_Move()
 		MtCmd("mt_out 12,0");
 		Sleep(100);
 	}
-	char mybuffx[50], mybuffz[50];
-	char commandx[60] = "mt_m_x ", commandz[60] = "mt_m_z ";
-	sprintf(mybuffx, "%i", 50);
-	sprintf(mybuffz, "%i", 50);
+	char mybuffx1[50], mybuffz1[50];
+	char commandx1[60] = "mt_m_x ", commandz1[60] = "mt_m_z ";
+	//第一个点的机器坐标（50,31，-51.5）单位:mm
+	sprintf(mybuffx1, "%i", 50);
+	sprintf(mybuffz1, "%i", 50);
 
 	//strcat进行string的合并
-	strcat(commandx, mybuffx);
-	strcat(commandz, mybuffz);
-	MtCmd(commandx);
-	MtCmd(commandz);
+	strcat(commandx1, mybuffx1);
+	strcat(commandz1, mybuffz1);
+	MtCmd(commandx1);
+	MtCmd(commandz1);
 
 	do
 	{
 		//在这里MtReflash是控制点胶机再次移动，是让点胶机达到X,Z的标准后停一下
 		MtReflash(md);
-		glutPostRedisplay();
 	} while (md->x != 50 || md->z != 50);
 	//在这里表示在移动到点之后休息的时间，单位毫秒，在每个点休息1.5秒
-	sleep(1500);
+	sleep(3000);
+
+	/*--------------------------------------------------------------------*/
+	char mybuffx2[50], mybuffz2[50];
+	char commandx2[60] = "mt_m_x ", commandz2[60] = "mt_m_z ";
+	//第二个点的机器坐标（100,31，-31.5）单位:mm
+	sprintf(mybuffx2, "%i", 100);
+	sprintf(mybuffz2, "%i", 70);
+
+	//strcat进行string的合并
+	strcat(commandx2, mybuffx2);
+	strcat(commandz2, mybuffz2);
+	MtCmd(commandx2);
+	MtCmd(commandz2);
+
+	do
+	{
+		//在这里MtReflash是控制点胶机再次移动，是让点胶机达到X,Z的标准后停一下
+		MtReflash(md);
+	} while (md->x != 100 || md->z != 70);
+	//在这里表示在移动到点之后休息的时间，单位毫秒，在每个点休息1.5秒
+	sleep(3000);
+	/*--------------------------------------------------------------------*/
+	char mybuffx3[50];
+	char commandx3[60] = "mt_m_x ";
+	//第三个点的机器坐标（200,31,-31.5）单位:mm
+	sprintf(mybuffx3, "%i", 200);
+	//strcat进行string的合并
+	strcat(commandx3, mybuffx3);
+	MtCmd(commandx3);
+	do
+	{
+		//在这里MtReflash是控制点胶机再次移动，是让点胶机达到X,Z的标准后停一下
+		MtReflash(md);
+	} while (md->x != 200 || md->z != 70);
+	//在这里表示在移动到点之后休息的时间，单位毫秒，在每个点休息1.5秒
+	sleep(3000);
+}
+
+void CalculateROIPoint()
+{
+	//在这里计算抓取到的点的X,Y,Z坐标
+	//因为Kinect抓取的坐标的单位是米，而机器坐标系单位为mm，所以在这里进行坐标的转换处理
+	for (int i = 0; i < ROIDepthCount; i++)
+	{
+		Calib_X += ROICameraSP[i].X * 1000;
+		Calib_Y += ROICameraSP[i].Y * 1000;
+		Calib_Z += ROICameraSP[i].Z * 1000;
+	}
+	Calib_X = Calib_X / ROIDepthCount;
+	Calib_Y = Calib_Y / ROIDepthCount;
+	Calib_Z = Calib_Z / ROIDepthCount;
 }
 
 void Mt_XMove(float mt_x)
