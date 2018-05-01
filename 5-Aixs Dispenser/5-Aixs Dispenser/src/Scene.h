@@ -34,11 +34,16 @@
 #include <algorithm>
 /*--------使用工作线程控制移动--------*/
 #include "osapi/Thread.h"
+/*----------矩阵运算库Eigen------------*/
+#include <Eigen/Dense>
 
 using namespace std;
 using namespace cv;
 void showHelpText();
 
+#pragma region Eigen
+Eigen::MatrixXd TransMFormKinect2Machine(4, 4);
+#pragma endregion Eigen
 #pragma region Global_variable
 
 #pragma region OpenCV&ROI Initial

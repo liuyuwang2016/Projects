@@ -87,7 +87,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\portaudio\include;C:\OpenCV300\opencv\build\include;C:\OpenCV300\opencv\build\include\opencv;C:\OpenCV300\opencv\build\include\opencv2;$(KINECTSDK20_DIR)\inc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\portaudio\include;C:\OpenCV300\opencv\build\include;C:\OpenCV300\opencv\build\include\opencv;C:\OpenCV300\opencv\build\include\opencv2;$(KINECTSDK20_DIR)\inc;C:\PCL 1.8.0 2013\3rdParty\Eigen\eigen3;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>

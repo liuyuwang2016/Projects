@@ -1,17 +1,17 @@
-﻿生成启动时间为 2018/4/29 16:13:35。
+﻿生成启动时间为 2018/4/30 21:21:59。
      1>项目“D:\USER\Documents\Visual Studio 2013\Projects\5-Aixs Dispenser\5-Aixs Dispenser\5-Aixs Dispenser.vcxproj”在节点 2 上(Build 个目标)。
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /IC:\portaudio\include /IC:\OpenCV300\opencv\build\include /IC:\OpenCV300\opencv\build\include\opencv /IC:\OpenCV300\opencv\build\include\opencv2 /I"C:\Program Files\Microsoft SDKs\Kinect\v2.0_1409\\inc" /AI"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0" /AI"C:\Program Files (x86)\Windows Kits\8.1\References\CommonConfiguration\Neutral" /Zi /clr /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _MBCS /EHa /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /TP /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\mscorlib.dll" /analyze- /errorReport:prompt /clr:nostdlib main.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /IC:\portaudio\include /IC:\OpenCV300\opencv\build\include /IC:\OpenCV300\opencv\build\include\opencv /IC:\OpenCV300\opencv\build\include\opencv2 /I"C:\Program Files\Microsoft SDKs\Kinect\v2.0_1409\\inc" /I"C:\PCL 1.8.0 2013\3rdParty\Eigen\eigen3" /AI"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0" /AI"C:\Program Files (x86)\Windows Kits\8.1\References\CommonConfiguration\Neutral" /Zi /clr /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _MBCS /EHa /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /TP /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\mscorlib.dll" /analyze- /errorReport:prompt /clr:nostdlib main.cpp
          main.cpp
      1>C:\OpenCV300\opencv\build\include\opencv2/core/mat.hpp(1965): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
      1>C:\OpenCV300\opencv\build\include\opencv2/core/persistence.hpp : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
      1>C:\OpenCV300\opencv\build\include\opencv2/core/utility.hpp : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Scene.h(196): warning C4305: “初始化”: 从“double”到“float”截断
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Scene.h(220): warning C4305: “初始化”: 从“double”到“float”截断
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Scene.h(201): warning C4305: “初始化”: 从“double”到“float”截断
      1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Scene.h(225): warning C4305: “初始化”: 从“double”到“float”截断
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Scene.h(325): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Scene.h(230): warning C4305: “初始化”: 从“double”到“float”截断
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Scene.h(330): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : 参见“sprintf”的声明
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Scene.h(414): warning C4244: “=”: 从“float”转换到“int”，可能丢失数据
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Scene.h(419): warning C4244: “=”: 从“float”转换到“int”，可能丢失数据
      1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/dllmain.h(234): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : 参见“sprintf”的声明
      1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/dllmain.h(237): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
@@ -54,97 +54,97 @@
      1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(576): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
      1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(583): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
      1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(590): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(799): warning C4018: “<”: 有符号/无符号不匹配
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(898): warning C4018: “<”: 有符号/无符号不匹配
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(801): warning C4018: “<”: 有符号/无符号不匹配
      1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(900): warning C4018: “<”: 有符号/无符号不匹配
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1253): warning C4018: “<”: 有符号/无符号不匹配
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1277): warning C4018: “<”: 有符号/无符号不匹配
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1335): warning C4244: “参数”: 从“int”转换到“GLfloat”，可能丢失数据
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1336): warning C4244: “参数”: 从“int”转换到“GLfloat”，可能丢失数据
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1364): warning C4244: “参数”: 从“int”转换到“GLfloat”，可能丢失数据
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1418): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : 参见“sprintf”的声明
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1419): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : 参见“sprintf”的声明
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(902): warning C4018: “<”: 有符号/无符号不匹配
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1255): warning C4018: “<”: 有符号/无符号不匹配
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1279): warning C4018: “<”: 有符号/无符号不匹配
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1337): warning C4244: “参数”: 从“int”转换到“GLfloat”，可能丢失数据
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1338): warning C4244: “参数”: 从“int”转换到“GLfloat”，可能丢失数据
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1366): warning C4244: “参数”: 从“int”转换到“GLfloat”，可能丢失数据
      1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1420): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : 参见“sprintf”的声明
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1423): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1421): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : 参见“sprintf”的声明
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1424): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1422): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : 参见“sprintf”的声明
      1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1425): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : 参见“sprintf”的声明
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1429): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(118) : 参见“strcat”的声明
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1430): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(118) : 参见“strcat”的声明
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1426): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : 参见“sprintf”的声明
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1427): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : 参见“sprintf”的声明
      1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1431): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(118) : 参见“strcat”的声明
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1413): warning C4101: “mybuffv”: 未引用的局部变量
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1413): warning C4101: “mybuffu”: 未引用的局部变量
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1531): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : 参见“sprintf”的声明
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1532): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : 参见“sprintf”的声明
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1535): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1432): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(118) : 参见“strcat”的声明
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1536): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1433): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(118) : 参见“strcat”的声明
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1552): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1415): warning C4101: “mybuffv”: 未引用的局部变量
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1415): warning C4101: “mybuffu”: 未引用的局部变量
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1545): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : 参见“sprintf”的声明
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1553): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1546): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : 参见“sprintf”的声明
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1556): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1549): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(118) : 参见“strcat”的声明
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1557): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1550): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(118) : 参见“strcat”的声明
      1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1572): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : 参见“sprintf”的声明
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1574): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(118) : 参见“strcat”的声明
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1606): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1573): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : 参见“sprintf”的声明
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1607): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1576): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(118) : 参见“strcat”的声明
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1624): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1577): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(118) : 参见“strcat”的声明
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1599): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : 参见“sprintf”的声明
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1625): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1601): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(118) : 参见“strcat”的声明
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1643): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1672): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : 参见“sprintf”的声明
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1644): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1673): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(118) : 参见“strcat”的声明
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1661): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1690): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : 参见“sprintf”的声明
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1662): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1691): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(118) : 参见“strcat”的声明
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1679): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1709): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : 参见“sprintf”的声明
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1680): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1710): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(118) : 参见“strcat”的声明
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1746): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1747): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1748): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1867): warning C4018: “<”: 有符号/无符号不匹配
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1874): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1875): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1876): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1878): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1879): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1880): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1882): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1883): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1884): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1932): warning C4800: “BOOL”: 将值强制为布尔值“true”或“false”(性能警告)
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(2290): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(2291): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(2292): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(2303): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(2304): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(2305): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(2311): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(2312): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(2313): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1727): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : 参见“sprintf”的声明
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1728): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(118) : 参见“strcat”的声明
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1745): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : 参见“sprintf”的声明
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1746): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(118) : 参见“strcat”的声明
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1812): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1813): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1814): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1933): warning C4018: “<”: 有符号/无符号不匹配
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1940): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1941): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1942): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1944): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1945): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1946): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1948): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1949): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1950): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1998): warning C4800: “BOOL”: 将值强制为布尔值“true”或“false”(性能警告)
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(2356): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(2357): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(2358): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(2369): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(2370): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(2371): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(2377): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(2378): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(2379): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
      1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\Function.h(20): warning C4551: 缺少参数列表的函数调用
      1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\Function.h(282): warning C4804: “>”: 在操作中使用类型“bool”不安全
      1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\Function.h(360): warning C4018: “<”: 有符号/无符号不匹配
@@ -154,9 +154,9 @@
      1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\Function.h(460): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
      1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\Function.h(550): warning C4804: “>”: 在操作中使用类型“bool”不安全
      1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\Function.h(924): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>main.cpp(38): warning C4305: “参数”: 从“double”到“float”截断
      1>main.cpp(39): warning C4305: “参数”: 从“double”到“float”截断
      1>main.cpp(40): warning C4305: “参数”: 从“double”到“float”截断
-     1>main.cpp(41): warning C4305: “参数”: 从“double”到“float”截断
      1>c:\opencv300\opencv\build\include\opencv2\core\cvstd.hpp(592): warning C4793: “cv::String::String”: 编译为本机的函数:
          	托管代码中发现一个不受支持的内部函数
      1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\function.h(262): warning C4700: 使用了未初始化的局部变量“sum_X”
@@ -164,25 +164,205 @@
      1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\function.h(264): warning C4700: 使用了未初始化的局部变量“sum_Z”
      1>c:\opencv300\opencv\build\include\opencv2\core\mat.inl.hpp(381): warning C4793: “cv::Mat::Mat”: 编译为本机的函数:
          	托管代码中发现一个不受支持的内部函数
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src\declae.h(1299): warning C4793: “glPrintf”: 编译为本机的函数:
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src\declae.h(1301): warning C4793: “glPrintf”: 编译为本机的函数:
          	/clr 下不支持 varargs
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src\declae.h(1302): warning C4793: “glPrintf”: 编译为本机的函数:
-         	托管代码中发现一个不受支持的内部函数
      1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src\declae.h(1304): warning C4793: “glPrintf”: 编译为本机的函数:
          	托管代码中发现一个不受支持的内部函数
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src\declae.h(2116): warning C4715: “KinectInit”: 不是所有的控件路径都返回值
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src\declae.h(1306): warning C4793: “glPrintf”: 编译为本机的函数:
+         	托管代码中发现一个不受支持的内部函数
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src\declae.h(2182): warning C4715: “KinectInit”: 不是所有的控件路径都返回值
      1>c:\opencv300\opencv\build\include\opencv2\core\mat.inl.hpp(666): warning C4793: “cv::Mat::release”: 编译为本机的函数:
          	托管代码中发现一个不受支持的内部函数
      1>c:\opencv300\opencv\build\include\opencv2\core\mat.inl.hpp(1703): warning C4793: “cv::SparseMat::addref”: 编译为本机的函数:
          	托管代码中发现一个不受支持的内部函数
      1>c:\opencv300\opencv\build\include\opencv2\core\mat.inl.hpp(3304): warning C4793: “cv::UMat::addref”: 编译为本机的函数:
          	托管代码中发现一个不受支持的内部函数
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\util\memory.h(931): warning C4793: “Eigen::internal::queryCacheSizes”: 编译为本机的函数:
+         	托管代码中发现一个不受支持的内部函数
      1>c:\opencv300\opencv\build\include\opencv2\core\ptr.inl.hpp(67): warning C4793: “cv::detail::PtrOwner::incRef”: 编译为本机的函数:
          	托管代码中发现一个不受支持的内部函数
      1>c:\opencv300\opencv\build\include\opencv2\core\ptr.inl.hpp(72): warning C4793: “cv::detail::PtrOwner::decRef”: 编译为本机的函数:
          	托管代码中发现一个不受支持的内部函数
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\densecoeffsbase.h(522): warning C4793: “Eigen::DenseCoeffsBase<Eigen::Block<Eigen::Block<Eigen::Map<Eigen::Matrix<double,-1,-1,0,-1,-1>,0,Eigen::Stride<0,0> >,-1,-1,0>,-1,-1,0>,1>::copyPacket<Eigen::Block<Eigen::Block<Eigen::Map<Eigen::Matrix<double,-1,-1,0,-1,-1>,0,Eigen::Stride<0,0> >,-1,-1,0>,-1,-1,0>,1,0>”: 编译为本机的函数:
+         	托管代码中不支持对齐数据类型
      1>c:\opencv300\opencv\build\include\opencv2\core\mat.inl.hpp(565): warning C4793: “cv::Mat::operator=”: 编译为本机的函数:
          	托管代码中发现一个不受支持的内部函数
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\products\generalblockpanelkernel.h(1148): warning C4793: “Eigen::internal::gemm_pack_lhs<double,int,4,2,0,0,0>::operator()”: 编译为本机的函数:
+         	托管代码中不支持对齐数据类型
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\products\generalblockpanelkernel.h(1149): warning C4793: “Eigen::internal::gemm_pack_lhs<double,int,4,2,0,0,0>::operator()”: 编译为本机的函数:
+         	托管代码中不支持对齐数据类型
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\products\generalblockpanelkernel.h(1150): warning C4793: “Eigen::internal::gemm_pack_lhs<double,int,4,2,0,0,0>::operator()”: 编译为本机的函数:
+         	托管代码中不支持对齐数据类型
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\products\generalblockpanelkernel.h(1151): warning C4793: “Eigen::internal::gemm_pack_lhs<double,int,4,2,0,0,0>::operator()”: 编译为本机的函数:
+         	托管代码中不支持对齐数据类型
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\products\generalblockpanelkernel.h(1198): warning C4793: “Eigen::internal::gemm_pack_lhs<double,int,4,2,0,0,0>::operator()”: 编译为本机的函数:
+         	托管代码中不支持对齐数据类型
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\products\generalblockpanelkernel.h(758): warning C4793: “Eigen::internal::gebp_kernel<double,double,int,4,2,0,0>::operator()”: 编译为本机的函数:
+         	托管代码中不支持对齐数据类型
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\products\generalblockpanelkernel.h(760): warning C4793: “Eigen::internal::gebp_kernel<double,double,int,4,2,0,0>::operator()”: 编译为本机的函数:
+         	托管代码中不支持对齐数据类型
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\products\generalblockpanelkernel.h(761): warning C4793: “Eigen::internal::gebp_kernel<double,double,int,4,2,0,0>::operator()”: 编译为本机的函数:
+         	托管代码中不支持对齐数据类型
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\products\generalblockpanelkernel.h(762): warning C4793: “Eigen::internal::gebp_kernel<double,double,int,4,2,0,0>::operator()”: 编译为本机的函数:
+         	托管代码中不支持对齐数据类型
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\products\generalblockpanelkernel.h(763): warning C4793: “Eigen::internal::gebp_kernel<double,double,int,4,2,0,0>::operator()”: 编译为本机的函数:
+         	托管代码中不支持对齐数据类型
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\products\generalblockpanelkernel.h(764): warning C4793: “Eigen::internal::gebp_kernel<double,double,int,4,2,0,0>::operator()”: 编译为本机的函数:
+         	托管代码中不支持对齐数据类型
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\products\generalblockpanelkernel.h(765): warning C4793: “Eigen::internal::gebp_kernel<double,double,int,4,2,0,0>::operator()”: 编译为本机的函数:
+         	托管代码中不支持对齐数据类型
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\products\generalblockpanelkernel.h(766): warning C4793: “Eigen::internal::gebp_kernel<double,double,int,4,2,0,0>::operator()”: 编译为本机的函数:
+         	托管代码中不支持对齐数据类型
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\products\generalblockpanelkernel.h(769): warning C4793: “Eigen::internal::gebp_kernel<double,double,int,4,2,0,0>::operator()”: 编译为本机的函数:
+         	托管代码中不支持对齐数据类型
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\products\generalblockpanelkernel.h(790): warning C4793: “Eigen::internal::gebp_kernel<double,double,int,4,2,0,0>::operator()”: 编译为本机的函数:
+         	托管代码中不支持对齐数据类型
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\products\generalblockpanelkernel.h(792): warning C4793: “Eigen::internal::gebp_kernel<double,double,int,4,2,0,0>::operator()”: 编译为本机的函数:
+         	托管代码中不支持对齐数据类型
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\products\generalblockpanelkernel.h(793): warning C4793: “Eigen::internal::gebp_kernel<double,double,int,4,2,0,0>::operator()”: 编译为本机的函数:
+         	托管代码中不支持对齐数据类型
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\products\generalblockpanelkernel.h(794): warning C4793: “Eigen::internal::gebp_kernel<double,double,int,4,2,0,0>::operator()”: 编译为本机的函数:
+         	托管代码中不支持对齐数据类型
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\products\generalblockpanelkernel.h(797): warning C4793: “Eigen::internal::gebp_kernel<double,double,int,4,2,0,0>::operator()”: 编译为本机的函数:
+         	托管代码中不支持对齐数据类型
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\products\generalblockpanelkernel.h(936): warning C4793: “Eigen::internal::gebp_kernel<double,double,int,4,2,0,0>::operator()”: 编译为本机的函数:
+         	托管代码中不支持对齐数据类型
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\products\generalblockpanelkernel.h(943): warning C4793: “Eigen::internal::gebp_kernel<double,double,int,4,2,0,0>::operator()”: 编译为本机的函数:
+         	托管代码中不支持对齐数据类型
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\products\generalblockpanelkernel.h(944): warning C4793: “Eigen::internal::gebp_kernel<double,double,int,4,2,0,0>::operator()”: 编译为本机的函数:
+         	托管代码中不支持对齐数据类型
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\products\generalblockpanelkernel.h(945): warning C4793: “Eigen::internal::gebp_kernel<double,double,int,4,2,0,0>::operator()”: 编译为本机的函数:
+         	托管代码中不支持对齐数据类型
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\products\generalblockpanelkernel.h(946): warning C4793: “Eigen::internal::gebp_kernel<double,double,int,4,2,0,0>::operator()”: 编译为本机的函数:
+         	托管代码中不支持对齐数据类型
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\products\generalblockpanelkernel.h(1041): warning C4793: “Eigen::internal::gebp_kernel<double,double,int,4,2,0,0>::operator()”: 编译为本机的函数:
+         	托管代码中不支持对齐数据类型
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\products\generalblockpanelkernel.h(1045): warning C4793: “Eigen::internal::gebp_kernel<double,double,int,4,2,0,0>::operator()”: 编译为本机的函数:
+         	托管代码中不支持对齐数据类型
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\products\generalblockpanelkernel.h(1046): warning C4793: “Eigen::internal::gebp_kernel<double,double,int,4,2,0,0>::operator()”: 编译为本机的函数:
+         	托管代码中不支持对齐数据类型
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\products\generalblockpanelkernel.h(1075): warning C4793: “Eigen::internal::gebp_kernel<double,double,int,4,2,0,0>::operator()”: 编译为本机的函数:
+         	托管代码中不支持对齐数据类型
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\products\generalblockpanelkernel.h(1076): warning C4793: “Eigen::internal::gebp_kernel<double,double,int,4,2,0,0>::operator()”: 编译为本机的函数:
+         	托管代码中不支持对齐数据类型
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\products\generalblockpanelkernel.h(1098): warning C4793: “Eigen::internal::gebp_kernel<double,double,int,4,2,0,0>::operator()”: 编译为本机的函数:
+         	托管代码中不支持对齐数据类型
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\densecoeffsbase.h(538): warning C4793: “Eigen::DenseCoeffsBase<Eigen::Matrix<double,-1,-1,0,-1,-1>,1>::copyPacket<Eigen::CwiseNullaryOp<Eigen::internal::scalar_constant_op<double>,Eigen::Matrix<double,-1,-1,0,-1,-1> >,1,0>”: 编译为本机的函数:
+         	托管代码中不支持对齐数据类型
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\densecoeffsbase.h(538): warning C4793: “Eigen::DenseCoeffsBase<Eigen::Matrix<double,-1,-1,0,-1,-1>,1>::copyPacket<Eigen::Matrix<double,-1,-1,0,-1,-1>,1,1>”: 编译为本机的函数:
+         	托管代码中不支持对齐数据类型
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\selfcwisebinaryop.h(122): warning C4793: “Eigen::SelfCwiseBinaryOp<Eigen::internal::scalar_quotient_op<double,double>,Eigen::Block<Eigen::Block<Eigen::Block<Eigen::Map<Eigen::Matrix<double,-1,-1,0,-1,-1>,0,Eigen::Stride<0,0> >,-1,-1,0>,-1,1,1>,-1,1,0>,Eigen::CwiseNullaryOp<Eigen::internal::scalar_constant_op<double>,Eigen::Matrix<double,-1,1,0,-1,1> > >::copyPacket<Eigen::CwiseNullaryOp<Eigen::internal::scalar_constant_op<double>,Eigen::Matrix<double,-1,1,0,-1,1> >,1,0>”: 编译为本机的函数:
+         	托管代码中不支持对齐数据类型
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\selfcwisebinaryop.h(122): warning C4793: “Eigen::SelfCwiseBinaryOp<Eigen::internal::scalar_difference_op<double>,Eigen::Block<Eigen::Block<Eigen::Block<Eigen::Map<Eigen::Matrix<double,-1,-1,0,-1,-1>,0,Eigen::Stride<0,0> >,-1,-1,0>,-1,-1,0>,-1,1,1>,Eigen::CwiseUnaryOp<Eigen::internal::scalar_multiple_op<double>,Eigen::Block<Eigen::Block<Eigen::Block<Eigen::Map<Eigen::Matrix<double,-1,-1,0,-1,-1>,0,Eigen::Stride<0,0> >,-1,-1,0>,-1,1,1>,-1,1,0> const > >::copyPacket<Eigen::CwiseUnaryOp<Eigen::internal::scalar_multiple_op<double>,Eigen::Block<Eigen::Block<Eigen::Block<Eigen::Map<Eigen::Matrix<double,-1,-1,0,-1,-1>,0,Eigen::Stride<0,0> >,-1,-1,0>,-1,1,1>,-1,1,0> const >,1,0>”: 编译为本机的函数:
+         	托管代码中不支持对齐数据类型
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\util\memory.h(911): warning C4793: “Eigen::internal::queryCacheSizes_amd”: 编译为本机的函数:
+         	托管代码中发现一个不受支持的内部函数
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\util\memory.h(914): warning C4793: “Eigen::internal::queryCacheSizes_amd”: 编译为本机的函数:
+         	托管代码中发现一个不受支持的内部函数
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\util\memory.h(795): warning C4793: “Eigen::internal::queryCacheSizes_intel_direct”: 编译为本机的函数:
+         	托管代码中发现一个不受支持的内部函数
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\util\memory.h(824): warning C4793: “Eigen::internal::queryCacheSizes_intel_codes”: 编译为本机的函数:
+         	托管代码中发现一个不受支持的内部函数
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\mapbase.h(116): warning C4793: “Eigen::MapBase<Eigen::Block<Eigen::Block<Eigen::Map<Eigen::Matrix<double,-1,-1,0,-1,-1>,0,Eigen::Stride<0,0> >,-1,-1,0>,-1,-1,0>,0>::packet<0>”: 编译为本机的函数:
+         	托管代码中不支持对齐数据类型
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\arch\sse\packetmath.h(274): warning C4793: “Eigen::internal::pstore<double,__m128d>”: 编译为本机的函数:
+         	托管代码中发现一个不受支持的内部函数
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\arch\sse\packetmath.h(274): warning C4793: “Eigen::internal::pstore<double,__m128d>”: 编译为本机的函数:
+         	托管代码中不支持对齐数据类型
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\arch\sse\packetmath.h(279): warning C4793: “Eigen::internal::pstoreu<double,__m128d>”: 编译为本机的函数:
+         	托管代码中发现一个不受支持的内部函数
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\arch\sse\packetmath.h(279): warning C4793: “Eigen::internal::pstoreu<double,__m128d>”: 编译为本机的函数:
+         	托管代码中不支持对齐数据类型
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\arch\sse\packetmath.h(280): warning C4793: “Eigen::internal::pstoreu<double,__m128d>”: 编译为本机的函数:
+         	托管代码中发现一个不受支持的内部函数
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\arch\sse\packetmath.h(280): warning C4793: “Eigen::internal::pstoreu<double,__m128d>”: 编译为本机的函数:
+         	托管代码中不支持对齐数据类型
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\arch\sse\packetmath.h(251): warning C4793: “Eigen::internal::ploadu<__m128d>”: 编译为本机的函数:
+         	托管代码中发现一个不受支持的内部函数
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\arch\sse\packetmath.h(251): warning C4793: “Eigen::internal::ploadu<__m128d>”: 编译为本机的函数:
+         	托管代码中不支持对齐数据类型
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\arch\sse\packetmath.h(299): warning C4793: “Eigen::internal::prefetch<double>”: 编译为本机的函数:
+         	托管代码中发现一个不受支持的内部函数
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\products\generalblockpanelkernel.h(187): warning C4793: “Eigen::internal::gebp_traits<double,double,0,0>::initAcc”: 编译为本机的函数:
+         	托管代码中不支持对齐数据类型
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\products\generalblockpanelkernel.h(203): warning C4793: “Eigen::internal::gebp_traits<double,double,0,0>::loadLhs”: 编译为本机的函数:
+         	托管代码中不支持对齐数据类型
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\products\generalblockpanelkernel.h(198): warning C4793: “Eigen::internal::gebp_traits<double,double,0,0>::loadRhs”: 编译为本机的函数:
+         	托管代码中不支持对齐数据类型
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\products\generalblockpanelkernel.h(208): warning C4793: “Eigen::internal::gebp_traits<double,double,0,0>::madd”: 编译为本机的函数:
+         	托管代码中不支持对齐数据类型
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\products\generalblockpanelkernel.h(208): warning C4793: “Eigen::internal::gebp_traits<double,double,0,0>::madd”: 编译为本机的函数:
+         	托管代码中不支持对齐数据类型
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\products\generalblockpanelkernel.h(208): warning C4793: “Eigen::internal::gebp_traits<double,double,0,0>::madd”: 编译为本机的函数:
+         	托管代码中不支持对齐数据类型
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\arch\sse\packetmath.h(114): warning C4793: “Eigen::internal::pset1<__m128d>”: 编译为本机的函数:
+         	托管代码中发现一个不受支持的内部函数
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\arch\sse\packetmath.h(114): warning C4793: “Eigen::internal::pset1<__m128d>”: 编译为本机的函数:
+         	托管代码中不支持对齐数据类型
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\products\generalblockpanelkernel.h(213): warning C4793: “Eigen::internal::gebp_traits<double,double,0,0>::acc”: 编译为本机的函数:
+         	托管代码中不支持对齐数据类型
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\arch\sse\packetmath.h(294): warning C4793: “Eigen::internal::pstore1<__m128d>”: 编译为本机的函数:
+         	托管代码中发现一个不受支持的内部函数
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\arch\sse\packetmath.h(294): warning C4793: “Eigen::internal::pstore1<__m128d>”: 编译为本机的函数:
+         	托管代码中不支持对齐数据类型
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\arch\sse\packetmath.h(295): warning C4793: “Eigen::internal::pstore1<__m128d>”: 编译为本机的函数:
+         	托管代码中发现一个不受支持的内部函数
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\arch\sse\packetmath.h(295): warning C4793: “Eigen::internal::pstore1<__m128d>”: 编译为本机的函数:
+         	托管代码中不支持对齐数据类型
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\arch\sse\packetmath.h(296): warning C4793: “Eigen::internal::pstore1<__m128d>”: 编译为本机的函数:
+         	托管代码中不支持对齐数据类型
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\cwisenullaryop.h(88): warning C4793: “Eigen::CwiseNullaryOp<Eigen::internal::scalar_constant_op<double>,Eigen::Matrix<double,-1,-1,0,-1,-1> >::packet<0>”: 编译为本机的函数:
+         	托管代码中不支持对齐数据类型
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\plainobjectbase.h(191): warning C4793: “Eigen::PlainObjectBase<Eigen::Matrix<double,-1,-1,0,-1,-1> >::packet<1>”: 编译为本机的函数:
+         	托管代码中不支持对齐数据类型
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\cwisenullaryop.h(88): warning C4793: “Eigen::CwiseNullaryOp<Eigen::internal::scalar_constant_op<double>,Eigen::Matrix<double,-1,1,0,-1,1> >::packet<0>”: 编译为本机的函数:
+         	托管代码中不支持对齐数据类型
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\mapbase.h(123): warning C4793: “Eigen::MapBase<Eigen::Block<Eigen::Block<Eigen::Block<Eigen::Map<Eigen::Matrix<double,-1,-1,0,-1,-1>,0,Eigen::Stride<0,0> >,-1,-1,0>,-1,1,1>,-1,1,0>,0>::packet<1>”: 编译为本机的函数:
+         	托管代码中不支持对齐数据类型
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\functors.h(217): warning C4793: “Eigen::internal::scalar_quotient_op<double,double>::packetOp<__m128d>”: 编译为本机的函数:
+         	托管代码中不支持对齐数据类型
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\cwiseunaryop.h(120): warning C4793: “Eigen::CwiseUnaryOpImpl<Eigen::internal::scalar_multiple_op<double>,Eigen::Block<Eigen::Block<Eigen::Block<Eigen::Map<Eigen::Matrix<double,-1,-1,0,-1,-1>,0,Eigen::Stride<0,0> >,-1,-1,0>,-1,1,1>,-1,1,0> const ,Eigen::Dense>::packet<0>”: 编译为本机的函数:
+         	托管代码中不支持对齐数据类型
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\mapbase.h(123): warning C4793: “Eigen::MapBase<Eigen::Block<Eigen::Block<Eigen::Block<Eigen::Map<Eigen::Matrix<double,-1,-1,0,-1,-1>,0,Eigen::Stride<0,0> >,-1,-1,0>,-1,-1,0>,-1,1,1>,0>::packet<1>”: 编译为本机的函数:
+         	托管代码中不支持对齐数据类型
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\functors.h(192): warning C4793: “Eigen::internal::scalar_difference_op<double>::packetOp<__m128d>”: 编译为本机的函数:
+         	托管代码中不支持对齐数据类型
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\genericpacketmath.h(290): warning C4793: “Eigen::internal::ploadt<__m128d,0>”: 编译为本机的函数:
+         	托管代码中不支持对齐数据类型
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\genericpacketmath.h(292): warning C4793: “Eigen::internal::ploadt<__m128d,0>”: 编译为本机的函数:
+         	托管代码中不支持对齐数据类型
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\arch\sse\packetmath.h(220): warning C4793: “Eigen::internal::pload<__m128d>”: 编译为本机的函数:
+         	托管代码中发现一个不受支持的内部函数
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\arch\sse\packetmath.h(220): warning C4793: “Eigen::internal::pload<__m128d>”: 编译为本机的函数:
+         	托管代码中不支持对齐数据类型
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\arch\sse\packetmath.h(150): warning C4793: “Eigen::internal::pmul<__m128d>”: 编译为本机的函数:
+         	托管代码中发现一个不受支持的内部函数
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\arch\sse\packetmath.h(150): warning C4793: “Eigen::internal::pmul<__m128d>”: 编译为本机的函数:
+         	托管代码中不支持对齐数据类型
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\arch\sse\packetmath.h(123): warning C4793: “Eigen::internal::padd<__m128d>”: 编译为本机的函数:
+         	托管代码中发现一个不受支持的内部函数
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\arch\sse\packetmath.h(123): warning C4793: “Eigen::internal::padd<__m128d>”: 编译为本机的函数:
+         	托管代码中不支持对齐数据类型
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\genericpacketmath.h(282): warning C4793: “Eigen::internal::pmadd<__m128d>”: 编译为本机的函数:
+         	托管代码中不支持对齐数据类型
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\functors.h(563): warning C4793: “Eigen::internal::scalar_constant_op<double>::packetOp<int>”: 编译为本机的函数:
+         	托管代码中不支持对齐数据类型
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\genericpacketmath.h(290): warning C4793: “Eigen::internal::ploadt<__m128d,1>”: 编译为本机的函数:
+         	托管代码中不支持对齐数据类型
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\genericpacketmath.h(292): warning C4793: “Eigen::internal::ploadt<__m128d,1>”: 编译为本机的函数:
+         	托管代码中不支持对齐数据类型
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\arch\sse\packetmath.h(168): warning C4793: “Eigen::internal::pdiv<__m128d>”: 编译为本机的函数:
+         	托管代码中发现一个不受支持的内部函数
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\arch\sse\packetmath.h(168): warning C4793: “Eigen::internal::pdiv<__m128d>”: 编译为本机的函数:
+         	托管代码中不支持对齐数据类型
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\mapbase.h(123): warning C4793: “Eigen::MapBase<Eigen::Block<Eigen::Block<Eigen::Block<Eigen::Map<Eigen::Matrix<double,-1,-1,0,-1,-1>,0,Eigen::Stride<0,0> >,-1,-1,0>,-1,1,1>,-1,1,0>,0>::packet<0>”: 编译为本机的函数:
+         	托管代码中不支持对齐数据类型
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\functors.h(511): warning C4793: “Eigen::internal::scalar_multiple_op<double>::packetOp”: 编译为本机的函数:
+         	托管代码中不支持对齐数据类型
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\arch\sse\packetmath.h(127): warning C4793: “Eigen::internal::psub<__m128d>”: 编译为本机的函数:
+         	托管代码中发现一个不受支持的内部函数
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\arch\sse\packetmath.h(127): warning C4793: “Eigen::internal::psub<__m128d>”: 编译为本机的函数:
+         	托管代码中不支持对齐数据类型
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\USER\Documents\Visual Studio 2013\Projects\5-Aixs Dispenser\Debug\5-Aixs Dispenser.exe" /INCREMENTAL /NOLOGO /LIBPATH:"C:\Program Files\Microsoft SDKs\Kinect\v2.0_1409\\Lib\x86" /LIBPATH:C:\OpenCV300\opencv\build\x86\vc12\lib /LIBPATH:C:\portaudio\lib glut32.lib opencv_ts300d.lib opencv_world300d.lib kinect20.lib portaudio_x86.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\USER\Documents\Visual Studio 2013\Projects\5-Aixs Dispenser\Debug\5-Aixs Dispenser.pdb" /ASSEMBLYDEBUG /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /FIXED:NO /NXCOMPAT /MACHINE:X86 "Debug\5-Aixs Dispenser.res"
          Debug\glm.obj
@@ -204,4 +384,4 @@
 
 生成成功。
 
-已用时间 00:00:02.54
+已用时间 00:00:04.26

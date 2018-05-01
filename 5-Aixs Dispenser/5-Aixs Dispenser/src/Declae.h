@@ -591,10 +591,12 @@ void Keyboard(unsigned char key, int x, int y)
 		Mt_VMove(Mt_v);
 		cout << "Mt_v = " << Mt_v << endl;
 		break;
-	case 'C':
-	case 'c':
-		Mt_Calib_Move();
-		break;
+	}	
+	if (key == 'C' || 'c')
+	{
+		Thread^ threadMt_Calib = gcnew::Thread(gcnew::ThreadStart(Mt_Calib_Move));
+		threadMt_Calib->Name = "threadMt_Calib";
+		threadMt_Calib->Start();
 	}
 }
 
@@ -1508,9 +1510,21 @@ void Mt_Line_Move()
 	} while (abs(md->x - 280) > 0.01);
 	Sleep(100);
 }
-
+template<typename _Tp>
+void print_matrix(const _Tp* data, const int rows, const int cols)
+{
+	for (int y = 0; y < rows; ++y) {
+		for (int x = 0; x < cols; ++x) {
+			fprintf(stderr, "  %f  ", static_cast<float>(data[y * cols + x]));
+		}
+		fprintf(stderr, "\n");
+	}
+	fprintf(stderr, "\n");
+}
 void Mt_Calib_Move()
 {
+	//Eigen库进行矩阵的定义，定义一个4*4矩阵，用来存储抓到的三个点的坐标值
+	Eigen::MatrixXd KinectCoord(4, 4);
 	/*
 	 * 在这里是让点胶机移动到特定的三个位置，然后测量出移动到位置的点在Kinect中的坐标值，以及移动到位置后的点在像素坐标系中的坐标值
 	 * 通过三个点的两个坐标系的坐标值，可以算出转换矩阵。其中机器坐标系原点为机器的尖端，红色ROI抓取点的坐标为（0,31，-101.5），单位mm。
@@ -1544,7 +1558,13 @@ void Mt_Calib_Move()
 	} while (md->x != 50 || md->z != 50);
 	//在这里表示在移动到点之后休息的时间，单位毫秒，在每个点休息1.5秒
 	sleep(3000);
-
+	CameraSpacePoint* point1 = new CameraSpacePoint[1];
+	CalculateROIPoint(point1);
+	KinectCoord(0, 0) = point1->X;
+	KinectCoord(0, 1) = point1->Y;
+	KinectCoord(0, 2) = point1->Z;
+	KinectCoord(0, 3) = 0;
+	delete[] point1;
 	/*--------------------------------------------------------------------*/
 	char mybuffx2[50], mybuffz2[50];
 	char commandx2[60] = "mt_m_x ", commandz2[60] = "mt_m_z ";
@@ -1565,6 +1585,13 @@ void Mt_Calib_Move()
 	} while (md->x != 100 || md->z != 70);
 	//在这里表示在移动到点之后休息的时间，单位毫秒，在每个点休息1.5秒
 	sleep(3000);
+	CameraSpacePoint* point2 = new CameraSpacePoint[1];
+	CalculateROIPoint(point2);
+	KinectCoord(1, 0) = point2->X;
+	KinectCoord(1, 1) = point2->Y;
+	KinectCoord(1, 2) = point2->Z;
+	KinectCoord(1, 3) = 0;
+	delete[] point2;
 	/*--------------------------------------------------------------------*/
 	char mybuffx3[50];
 	char commandx3[60] = "mt_m_x ";
@@ -1580,9 +1607,44 @@ void Mt_Calib_Move()
 	} while (md->x != 200 || md->z != 70);
 	//在这里表示在移动到点之后休息的时间，单位毫秒，在每个点休息1.5秒
 	sleep(3000);
+	CameraSpacePoint* point3 = new CameraSpacePoint[1];
+	CalculateROIPoint(point3);
+	KinectCoord(2, 0) = point3->X;
+	KinectCoord(2, 1) = point3->Y;
+	KinectCoord(2, 2) = point3->Z;
+	KinectCoord(2, 3) = 0;
+	delete[] point3;
+	KinectCoord(3, 0) = 0;
+	KinectCoord(3, 1) = 0;
+	KinectCoord(3, 1) = 0;
+	KinectCoord(3, 3) = 1;
+	Eigen::MatrixXd KinectCoord_inv = KinectCoord.inverse();
+	Eigen::MatrixXd MachineCoord(4, 4);
+	//第一个点加入到矩阵中
+	MachineCoord(0, 0) = 50;
+	MachineCoord(0, 1) = 31;
+	MachineCoord(0, 2) = -51.5;
+	MachineCoord(0, 3) = 0;
+	//第二个点加入到矩阵中
+	MachineCoord(1, 0) = 100;
+	MachineCoord(1, 1) = 31;
+	MachineCoord(1, 2) = -31.5;
+	MachineCoord(1, 3) = 0;
+	//第三个点加入到矩阵中
+	MachineCoord(2, 0) = 200;
+	MachineCoord(2, 1) = 31;
+	MachineCoord(2, 2) = -31.5;
+	MachineCoord(2, 3) = 0;
+	//单应性矩阵第四行
+	MachineCoord(3, 0) = 0;
+	MachineCoord(3, 1) = 0;
+	MachineCoord(3, 2) = 0;
+	MachineCoord(3, 3) = 1;
+
+	TransMFormKinect2Machine = KinectCoord_inv * MachineCoord;
 }
 
-void CalculateROIPoint()
+CameraSpacePoint* CalculateROIPoint(CameraSpacePoint* point)
 {
 	//在这里计算抓取到的点的X,Y,Z坐标
 	//因为Kinect抓取的坐标的单位是米，而机器坐标系单位为mm，所以在这里进行坐标的转换处理
@@ -1595,6 +1657,10 @@ void CalculateROIPoint()
 	Calib_X = Calib_X / ROIDepthCount;
 	Calib_Y = Calib_Y / ROIDepthCount;
 	Calib_Z = Calib_Z / ROIDepthCount;
+	point->X = Calib_X;
+	point->Y = Calib_Y;
+	point->Z = Calib_Z;
+	return point;
 }
 
 void Mt_XMove(float mt_x)

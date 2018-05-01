@@ -25,7 +25,7 @@ void Mt_VMove(float v);
 void MtCheck(void);
 void Mt_Line_Move(void);
 void Mt_Calib_Move(void);
-void CalculateROIPoint(void);
+CameraSpacePoint* CalculateROIPoint(CameraSpacePoint* point);
 float Calib_X, Calib_Y, Calib_Z;
 float Mt_x, Mt_y, Mt_z, Mt_u, Mt_v;
 float Mt_speed = 1;
