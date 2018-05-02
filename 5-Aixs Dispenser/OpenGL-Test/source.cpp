@@ -10,7 +10,7 @@
 
 // for OpenGL camera navigation
 #include "OpenGLCamera.h"
-
+#include <fstream>
 using namespace std;
 
 // global objects
@@ -138,6 +138,22 @@ void keyboard(unsigned char key, int x, int y)
 	case 'x':
 		g_Camera.MoveUp(fSpeed);
 		break;
+	case 'p':
+		ofstream fs2;
+		fs2.open("pCSPoints.txt");
+		//输出t的倒数第一步
+		for (int i = 0; i < iColorHeight*iColorWidth; i++)
+		{
+
+			GLfloat pX = pCSPoints[i].X;
+			GLfloat pY = pCSPoints[i].Y;
+			GLfloat pZ = pCSPoints[i].Z;
+			fs2 <<  pX << "           ";
+			fs2 <<  pY << "           ";
+			fs2 <<  pZ << endl;
+		}
+		fs2.close();
+		break;
 	}
 }
 
@@ -169,7 +185,7 @@ void reshape(int w, int h)
 {
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
-	gluPerspective(40.0, (float)w / h, 0.01, 50.0);
+	gluPerspective(57.5, (float)w / h, 0.01, 50.0);
 
 	g_Camera.SetCamera();
 
@@ -311,17 +327,20 @@ int main(int argc, char** argv)
 	glutInit(&argc, argv);
 	glutInitDisplayMode(GLUT_DOUBLE | GLUT_DEPTH | GLUT_RGB);
 
-	glutInitWindowSize(640, 480);
+	glutInitWindowSize(1920, 1080);
 	glutCreateWindow("Kinect OpenGL 3D Point");
 
 	glEnable(GL_DEPTH_TEST);
 	glDisable(GL_LIGHTING);
 
 	// default camera
-	g_Camera.vCenter = Vector3(0.0, 0.0, 1);
-	g_Camera.vPosition = Vector3(0.0, 0.0, -2.0);
-	g_Camera.vUpper = Vector3(0.0, 1.0, 0.0);
-
+	g_Camera.vCenter = Vector3(0, 0, 1);
+	g_Camera.vPosition = Vector3(0, 0, 0);
+	g_Camera.vUpper = Vector3(0, 1, 0);
+	
+	/*g_Camera.vPosition = Vector3(-0.064403, 0.000998867, 0.0897838);
+	g_Camera.vCenter = Vector3(-0.0494023, 0.0210018, 1.08971);
+	g_Camera.vUpper = Vector3(-0.000199958, 0.99968, -0.019995);*/
 	// register glut callback functions
 	glutDisplayFunc(display);
 	glutIdleFunc(idle);

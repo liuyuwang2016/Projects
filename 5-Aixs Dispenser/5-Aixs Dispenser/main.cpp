@@ -35,12 +35,12 @@ int main(int argc, char** argv)
 	glDisable(GL_LIGHTING);
 
 	/*--------------default camera--------------*/
-	g_Camera.vPosition = Vector3(-0.064403, 0.000998867, 0.0897838);
+	/*g_Camera.vPosition = Vector3(-0.064403, 0.000998867, 0.0897838);
 	g_Camera.vCenter = Vector3(-0.0494023, 0.0210018, 1.08971);
-	g_Camera.vUpper = Vector3(-0.000199958, 0.99968, -0.019995);
-	/*g_Camera.vPosition = Vector3(0, 0, 0);
+	g_Camera.vUpper = Vector3(-0.000199958, 0.99968, -0.019995);*/
+	g_Camera.vPosition = Vector3(0, 0, 0);
 	g_Camera.vCenter = Vector3(0, 0, 1);
-	g_Camera.vUpper = Vector3(0, 1, 0); */
+	g_Camera.vUpper = Vector3(0, 1, 0); 
 	glutDisplayFunc(RenderScene);
 	glutIdleFunc(KinectUpdate);
 	glutKeyboardFunc(Keyboard);
