@@ -141,9 +141,9 @@ public:
 
 	void Update()
 	{
-		vLook = (vCenter - vPosition).Normalize();
-		vSide = vLook.Cross(vUpper);
-		vUpper = vSide.Cross(vLook);
+		vLook = (vCenter - vPosition).Normalize();//Z÷·
+		vSide = vLook.Cross(vUpper);//X÷·
+		vUpper = vSide.Cross(vLook);//Y÷·
 	}
 
 	void SetCamera()

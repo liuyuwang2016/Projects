@@ -453,146 +453,142 @@ void GLInit()
 void Keyboard(unsigned char key, int x, int y)
 {
 	float fSpeed = 0.005f;
-	switch (key)
+	if (key == VK_ESCAPE)
 	{
-	case VK_ESCAPE:
 		glutExit();
-		break;
-	//case 'F':
-	//case 'f':
-	//	/*Use CPU to get the FPS of the machine*/
-	//	Finish_Without_Update = TRUE;
-	//	printf("%f fps\n", g_fps(RenderScene, 100));
-	//	cout << "FPS_RS = " << FPS_RS << endl;
-	//	Finish_Without_Update = FALSE;
-	//	break;
-		/*A move */
-	case 'S'://控制opengl的相机移动
-	case 's':
+	}
+	else if (key == 's' || key == 'S')//相机向前移动
+	{
 		g_Camera.MoveForward(-fSpeed);
-		cout << "Move Forward minus = " << -fSpeed << endl;
-		break;
-	case 'W':
-	case 'w':
+		std::cout << "Move Forward minus = " << -fSpeed << endl;
+	}
+	else if (key == 'w' || key == 'W')
+	{
 		g_Camera.MoveForward(fSpeed);
-		cout << "Move Forward plus = " << fSpeed << endl;
-		break;
-	case 'A':
-	case 'a':
+		std::cout << "Move Forward plus = " << fSpeed << endl;
+	}
+	else if (key == 'f' || key == 'F')
+	{
+		Finish_Without_Update = TRUE;
+		printf("%f fps\n", g_fps(RenderScene, 100));
+		std::cout << "FPS_RS = " << FPS_RS << endl;
+		Finish_Without_Update = FALSE;
+	}
+	else if (key == 'a' || key == 'A')
+	{
 		g_Camera.MoveSide(-fSpeed);
-		cout << "Move Side minus = " << -fSpeed << endl;
-		break;
-	case 'D':
-	case 'd':
+		std::cout << "Move Side minus = " << -fSpeed << endl;
+	}
+	else if (key == 'd' || key == 'D')
+	{
 		g_Camera.MoveSide(fSpeed);
-		cout << "Move Side plus = " << fSpeed << endl;
-		break;
-	case 'Z':
-	case 'z':
+		std::cout << "Move Side plus = " << fSpeed << endl;
+	}
+	else if (key == 'z' || key == 'Z')
+	{
 		g_Camera.MoveUp(-fSpeed);
-		cout << "Move Up minus = " << -fSpeed << endl;
-		break;
-	case 'X':
-	case 'x':
+		std::cout << "Move Up minus = " << -fSpeed << endl;
+	}
+	else if (key == 'x' || key == 'X')
+	{
 		g_Camera.MoveUp(fSpeed);
 		cout << "Move Up minus = " << fSpeed << endl;
-		break;
-	case 'O':
-	case 'o'://让机器移动
+	}
+	else if (key == 'o' || key == 'O')//让机器移动
+	{
 		MtReflash(md);
 		MtMove();
 		CUBIC_MOVE = TRUE;
 		ARFunc_IS_ON = FALSE;
 		glutPostRedisplay();
-		break;
-	case 'P':
-	case 'p'://存储想要到达的位置
+	}
+	else if (key == 'p' || key == 'P')
+	{
 		ROICameraSPStorage();
 		glutPostRedisplay();
-		break;
-	case 'B':
-	case 'b':
+	}
+	else if (key == 'b' || key == 'B')
+	{
 		MtReflash(md);
 		long MtEmpty();
 		MtHome();
-		break;
-	case 'L':
-	case 'l':
+	}
+	else if (key == 'l' || key == 'L')
+	{
 		MtReflash(md);
-		Mt_Line_Move();	
-		break;
-	case 'R': //控制X+++
-	case 'r':
+		Mt_Line_Move();
+	}
+	else if (key == 'r' || key == 'R')//控制X++
+	{
 		md->x += Mt_speed;
 		Mt_x = md->x;
 		Mt_XMove(Mt_x);
-		cout << "Mt_x = " << Mt_x << endl;
-		break;
-	case 'F'://控制X--
-	case 'f':
+		std::cout << "Mt_x = " << Mt_x << endl;
+	}
+	else if (key == 'f' || key == 'F')//控制X--
+	{
 		md->x -= Mt_speed;
 		Mt_x = md->x;
 		Mt_XMove(Mt_x);
-		cout << "Mt_x = " << Mt_x << endl;
-		break;
-	case 'T'://控制Y++
-	case 't':
+		std::cout << "Mt_x = " << Mt_x << endl;
+	}
+	else if (key == 't' || key == 'T')//控制Y++
+	{
 		md->y += Mt_speed;
 		Mt_y = md->y;
 		Mt_YMove(Mt_y);
-		cout << "Mt_y = " << Mt_y << endl;
-		break;
-	case 'G'://控制Y--
-	case 'g':
+		std::cout << "Mt_y = " << Mt_y << endl;
+	}
+	else if (key == 'g' || key == 'G')//控制Y--
+	{
 		md->y -= Mt_speed;
 		Mt_y = md->y;
 		Mt_YMove(Mt_y);
-		cout << "Mt_y = " << Mt_y << endl;
-		break;
-	case 'Y'://控制Z++
-	case 'y':
+		std::cout << "Mt_y = " << Mt_y << endl;
+	}
+	else if (key == 'g' || key == 'G')//控制Z++
+	{
 		md->z += Mt_speed;
 		Mt_z = md->z;
 		Mt_ZMove(Mt_z);
-		cout << "Mt_z = " << Mt_z << endl;
-		break;
-	case 'H'://控制Z--
-	case 'h':
+		std::cout << "Mt_z = " << Mt_z << endl;
+	}
+	else if (key == 'h' || key == 'H')//控制Z--
+	{
 		md->z -= Mt_speed;
 		Mt_z = md->z;
 		Mt_ZMove(Mt_z);
-		cout << "Mt_z = " << Mt_z << endl;
-		break;
-	case 'U'://控制U++
-	case 'u':
+		std::cout << "Mt_z = " << Mt_z << endl;
+	}
+	else if (key == 'u' || key == 'U')//控制U++
+	{
 		md->u += Mt_speed;
 		Mt_u = md->u;
 		Mt_UMove(Mt_u);
-		cout << "Mt_u = " << Mt_u << endl;
-		break;
-	case 'J'://控制U--
-	case 'j':
+		std::cout << "Mt_u = " << Mt_u << endl;
+	}
+	else if (key == 'j' || key == 'J')//控制U--
+	{
 		md->u -= Mt_speed;
 		Mt_u = md->u;
 		Mt_UMove(Mt_u);
-		cout << "Mt_u = " << Mt_u << endl;
-		break;
-	case 'I'://控制V++
-	case 'i':
+		std::cout << "Mt_u = " << Mt_u << endl;
+	}
+	else if (key == 'i' || key == 'I')//控制V++
+	{
 		md->v += Mt_speed;
 		Mt_v = md->v;
 		Mt_VMove(Mt_v);
-		cout << "Mt_v = " << Mt_v << endl;
-		break;
-	case 'K'://控制V--
-	case 'k':
+		std::cout << "Mt_v = " << Mt_v << endl;
+	}
+	else if (key == 'k' || key == 'K')//控制V--
+	{
 		md->v -= Mt_speed;
 		Mt_v = md->v;
 		Mt_VMove(Mt_v);
-		cout << "Mt_v = " << Mt_v << endl;
-		break;
-	}	
-	if (key == 'C' || 'c')
+		std::cout << "Mt_v = " << Mt_v << endl;
+	}
+	else if (key == 'C' || 'c')
 	{
 		Thread^ threadMt_Calib = gcnew::Thread(gcnew::ThreadStart(Mt_Calib_Move));
 		threadMt_Calib->Name = "threadMt_Calib";
@@ -1677,7 +1673,6 @@ void Mt_XMove(float mt_x)
 	do
 	{
 		MtReflash(md);
-		glutPostRedisplay();
 		//cout << value << " " << md->z << endl;
 	} while (abs(md->x - mt_x) > 0.01);
 }
@@ -1695,7 +1690,6 @@ void Mt_YMove(float mt_y)
 	do
 	{
 		MtReflash(md);
-		glutPostRedisplay();
 		//cout << value << " " << md->z << endl;
 	} while (abs(md->y - mt_y) > 0.01);
 }
@@ -1714,7 +1708,6 @@ void Mt_ZMove(float mt_z)
 	do
 	{
 		MtReflash(md);
-		glutPostRedisplay();
 		//cout << value << " " << md->z << endl;
 	} while (abs(md->z - mt_z) > 0.01);
 }
@@ -1732,7 +1725,6 @@ void Mt_UMove(float mt_u)
 	do
 	{
 		MtReflash(md);
-		glutPostRedisplay();
 		//cout << value << " " << md->z << endl;
 	} while (abs(md->u - mt_u) > 0.01);
 }
@@ -1751,7 +1743,6 @@ void Mt_VMove(float mt_v)
 	{
 		MtReflash(md);
 		//cout << value << " " << md->z << endl;
-		glutPostRedisplay();
 	} while (abs(md->v - mt_v) > 0.01);
 }
 
