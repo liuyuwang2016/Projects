@@ -1,19 +1,39 @@
 d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\debug\vc120.pdb
 d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\debug\main.obj
-d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\debug\scene.obj
-d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\debug\m232.obj
-d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\debug\kinect2.obj
 d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\debug\glm.obj
+d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\debug\thread_win32.obj
+d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\debug\thread_linux.obj
+d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\debug\socket.obj
+d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\debug\semaphore_win32.obj
+d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\debug\semaphore_linux.obj
+d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\debug\mutex_win32.obj
+d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\debug\mutex_linux.obj
 d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\debug\.netframework,version=v4.0.assemblyattributes.obj
+d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\debug\vector3.obj
+d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\debug\rotationmatrix.obj
+d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\debug\quaternion.obj
+d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\debug\matrix4x3.obj
+d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\debug\mathutil.obj
+d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\debug\eulerangle.obj
 d:\user\documents\visual studio 2013\projects\5-aixs dispenser\debug\5-aixs dispenser.exe
 d:\user\documents\visual studio 2013\projects\5-aixs dispenser\debug\5-aixs dispenser.pdb
+d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\debug\5-aixs dispenser.res
 d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\debug\5-aixs dispenser.vcxprojresolveassemblyreference.cache
 d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\debug\5-aixs dispenser.tlog\cl.command.1.tlog
 d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\debug\5-aixs dispenser.tlog\cl.read.1.tlog
 d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\debug\5-aixs dispenser.tlog\cl.write.1.tlog
+d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\debug\5-aixs dispenser.tlog\link.15692-cvtres.read.1.tlog
+d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\debug\5-aixs dispenser.tlog\link.15692-cvtres.write.1.tlog
+d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\debug\5-aixs dispenser.tlog\link.15692-rc.read.1.tlog
+d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\debug\5-aixs dispenser.tlog\link.15692-rc.write.1.tlog
+d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\debug\5-aixs dispenser.tlog\link.15692.read.1.tlog
+d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\debug\5-aixs dispenser.tlog\link.15692.write.1.tlog
 d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\debug\5-aixs dispenser.tlog\link.command.1.tlog
 d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\debug\5-aixs dispenser.tlog\link.read.1.tlog
 d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\debug\5-aixs dispenser.tlog\link.write.1.tlog
 d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\debug\5-aixs dispenser.tlog\metagen.read.1.tlog
 d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\debug\5-aixs dispenser.tlog\metagen.write.1.tlog
+d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\debug\5-aixs dispenser.tlog\rc.command.1.tlog
+d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\debug\5-aixs dispenser.tlog\rc.read.1.tlog
+d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\debug\5-aixs dispenser.tlog\rc.write.1.tlog
 d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\debug\5-aixs dispenser.tlog\tzres.dll.bi

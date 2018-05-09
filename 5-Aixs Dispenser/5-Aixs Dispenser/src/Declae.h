@@ -17,7 +17,7 @@ void ROITrans(CameraSpacePoint* Data, int DataNum, GLfloat* TransM, CameraSpaceP
 		m[12] = Data[i].X;
 		m[13] = Data[i].Y;
 		m[14] = Data[i].Z;
-		
+
 		glMatrixMode(GL_MODELVIEW);
 		glPushMatrix();
 		glLoadIdentity();
@@ -25,7 +25,7 @@ void ROITrans(CameraSpacePoint* Data, int DataNum, GLfloat* TransM, CameraSpaceP
 		glMultMatrixf(m);
 		glGetFloatv(GL_MODELVIEW_MATRIX, m);
 		glPopMatrix();
-			
+
 		Result[i].X = m[12] / m[15];
 		Result[i].Y = m[13] / m[15];
 		Result[i].Z = m[14] / m[15];
@@ -104,7 +104,7 @@ void onMouseROI(int event, int x, int y, int flags, void* param)
 	case EVENT_LBUTTONDOWN:
 		ROI_rect.x = x;
 		ROI_rect.y = y;
-		ROI_S1 = TRUE;
+		ROI_S1 = TRUE;//意思是左键按下但是右键还没
 		ROI_S2 = FALSE;
 		break;
 	case EVENT_LBUTTONUP:
@@ -112,6 +112,8 @@ void onMouseROI(int event, int x, int y, int flags, void* param)
 		ROI_rect.height = y - ROI_rect.y;
 		ROI_rect.width = x - ROI_rect.x;
 		ROI_p2 = Point(x, y);
+		if (ROI_rect.height > 0 && ROI_rect.width > 0)
+			trackObject = -1;
 		break;
 	}
 	//Drag
@@ -216,6 +218,78 @@ void FindROI()
 	}
 }
 
+void LoadCamShiftPicture()
+{
+	
+}
+
+void CameraShift()
+{
+	if (ROI_p2.x > ROI_p1.x && ROI_p2.y > ROI_p1.y)
+	{
+		/*get the ROI region that you choose by mouse*/
+		ROI_Image = mColorImg.colRange(ROI_p1.x, ROI_p2.x + 1).rowRange(ROI_p1.y, ROI_p2.y + 1).clone();
+	}
+	else
+	{
+		OutputDebugString("You push the left button, please add ROI from left-top to right-down, don't mess up with that\n");
+		return;
+	}
+	LoadCamShiftPicture();
+	Mat loadImage;
+	loadImage = imread("src/purple.JPG", IMREAD_COLOR);
+	imshow("loadImage", loadImage);
+
+	cvtColor(loadImage, hsv, COLOR_BGR2GRAY);//将现有的图像转成hsv空间的
+	int _vmin = vmin, _vmax = vmax;
+	//只处理像素值为H：0～180,S：smin～256，V：MIN～MAX之间的部分，过滤掉其他部分并复制给mask
+	inRange(hsv, Scalar(0, smin, MIN(_vmin, _vmax)), Scalar(180, 256, MAX(_vmin, _vmax)), mask);
+	int ch[] = { 0, 0 };
+	hue.create(hsv.size(), hsv.depth());
+	//hue初始化为与hsv大小深度一样的矩阵，色调的度量是用角度表示的，红绿蓝之间相差120度，反色相差180度
+	mixChannels(&hsv, 1, &hue, 1, ch, 1);
+	//将hsv第一个通道(也就是色调)的数复制到hue中，0索引数组
+	selection.x = 1;
+	selection.y = 1;
+	selection.width = 351 - 1;
+	selection.height = 309 - 1;
+	//设置H 通道和mask图像的ROI
+	if (trackObject < 0)
+	{
+		Mat roi(hue, selection), maskroi(mask, selection);
+		//calcHist()函数第一个参数为输入矩阵序列，第2个参数表示输入的矩阵数目，第3个参数表示将被计算直方图维数通道的列表，第4个参数表示可选的掩码函数
+		//第5个参数表示输出直方图，第6个参数表示直方图的维数，第7个参数为每一维直方图数组的大小，第8个参数为每一维直方图bin的边界
+
+		//计算ROI所在区域的直方图
+		calcHist(&roi, 1, 0, maskroi, hist, 1, &hsize, &phranges);
+
+		normalize(hist, hist, 0, 255, CV_MINMAX);
+		//将hist矩阵进行数组范围归一化，都归一化到0-255
+
+		//设置追踪窗口
+		trackWindow = ROI_rect;
+		//标记追踪的目标已经计算过直方图属性
+		trackObject = 1;
+	}
+
+	//计算直方图的反向投影，计算hue图像0通道直方图hist的反向投影，并放入backproj中
+	calcBackProject(&hue, 1, 0, hist, backproj, &phranges);
+	//取公共部分
+	backproj &= mask;
+	//调用Camshift 算法接口
+	RotatedRect trackBox = CamShift(backproj, trackWindow,
+		TermCriteria(CV_TERMCRIT_EPS | CV_TERMCRIT_ITER, 10, 1)); //trackWindow为鼠标选择的区域，TermCriteria为确定迭代终止的准则
+	//处理追踪面积过小的情况
+	if (trackWindow.area() <= 1)
+	{
+		int cols = backproj.cols, rows = backproj.rows, r = (MIN(cols, rows) + 5) / 6;
+		trackWindow = Rect(trackWindow.x - r, trackWindow.y - r,
+			trackWindow.x + r, trackWindow.y + r) &
+			Rect(0, 0, cols, rows);
+	}
+	//绘制追踪区域
+	ellipse(ROI, trackBox, Scalar(0, 255, 255), 3, CV_AA);//跟踪的时候以椭圆为代表目标
+}
 void CameraSpaceROI()
 {
 	if (ROICameraSP != nullptr && PlaneSP != nullptr)
@@ -426,7 +500,7 @@ void GLInit()
 	TipPosi.x = 0;
 	TipPosi.y = -0.12;
 	TipPosi.z = -0.035;
-	
+
 	DeviaDueToY = new CameraSpacePoint[1];
 	DeviaDueToY->X = DeviaDueToY->Y = DeviaDueToY->Z = 0;
 	GLfloat  whiteLight[] = { 0.45f, 0.45f, 0.45f, 1.0f };
@@ -728,7 +802,7 @@ void Background()
 void SceneWithBackground()
 {
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-	
+
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
 	glViewport(0, 0, iWidthColor, iHeightColor);
@@ -736,7 +810,7 @@ void SceneWithBackground()
 	glDisable(GL_DEPTH_TEST);
 	glDisable(GL_LIGHTING);
 	glDisable(GL_BLEND);
-	
+
 	glMatrixMode(GL_MODELVIEW);
 	glLoadIdentity();
 	//Draw Background through RGBA image from Kinect
@@ -766,7 +840,7 @@ void SceneWithBackground()
 	gluPerspective(kFovY, aspect, nearDist, farDist);
 	//glEnable(GL_DEPTH_TEST);
 	g_Camera.SetCamera();
-	
+
 	//glTranslatef(0.055f, -0.015f, 0.0f);
 }
 
@@ -782,7 +856,7 @@ void SceneWithoutBackground()
 	glLoadIdentity();
 	gluPerspective(kFovY, aspect, nearDist, farDist);
 	//glEnable(GL_DEPTH_TEST);
-	
+
 	g_Camera.SetCamera();
 	//glTranslatef(0.055f, -0.015f, 0.0f);
 }
@@ -804,16 +878,16 @@ void DrawPointCloud()
 	}
 	/*for (int y = 0; y < iHeightColor; ++y)
 	{
-		for (int x = 0; x < iWidthColor; ++x)
-		{
-			int idx = x + y * iWidthColor;
-			const CameraSpacePoint& rPt = pCSPoints[idx];
-			if (rPt.Z > 0)
-			{
-				glColor4ubv((const GLubyte*)(&pBufferColor[4 * idx]));
-				glVertex3f(rPt.X, rPt.Y, rPt.Z);
-			}
-		}
+	for (int x = 0; x < iWidthColor; ++x)
+	{
+	int idx = x + y * iWidthColor;
+	const CameraSpacePoint& rPt = pCSPoints[idx];
+	if (rPt.Z > 0)
+	{
+	glColor4ubv((const GLubyte*)(&pBufferColor[4 * idx]));
+	glVertex3f(rPt.X, rPt.Y, rPt.Z);
+	}
+	}
 	}*/
 	glEnd();
 	glPopMatrix();
@@ -1049,7 +1123,7 @@ vector<MatND> getHSVHist(Mat &src)
 	for (i = 0; i < 30; i++)
 	{
 		float value = hist[0].at<float>(i);
-		if (value  > 0)
+		if (value > 0)
 		{
 			if (start == -1)
 			{
@@ -1074,7 +1148,7 @@ vector<MatND> getHSVHist(Mat &src)
 	for (i = 0; i < 51; i++)
 	{
 		float value = hist[1].at<float>(i);
-		if (value  > 0)
+		if (value > 0)
 		{
 			if (start == -1)
 			{
@@ -1099,7 +1173,7 @@ vector<MatND> getHSVHist(Mat &src)
 	for (i = 0; i < 51; i++)
 	{
 		float value = hist[2].at<float>(i);
-		if (value  > 0)
+		if (value > 0)
 		{
 			if (start == -1)
 			{
@@ -1191,11 +1265,11 @@ void Draw3DPlane()
 	}
 	//cout << "PlanePixelcount的值 = " << PlanePixelcount << endl;
 	for (int i = 0; i < PlanePixelcount; i++)
-	{	
+	{
 		int index3 = PlanePixel[i].x + PlanePixel[i].y * iWidthColor;
 		//cout << "PlanePixel[i].x = " << PlanePixel[i].x << endl;
 		if (pCSPoints[index3].Z != -1 * numeric_limits<float>::infinity())
-		{		
+		{
 			PlaneDepthCount++;
 		}
 	}
@@ -1669,7 +1743,7 @@ void Mt_XMove(float mt_x)
 	sprintf(mybuffx, "%f", mt_x);
 	strcat(commandx, mybuffx);
 	MtCmd(commandx);
-	Sleep(1);	
+	Sleep(1);
 	do
 	{
 		MtReflash(md);
@@ -1696,7 +1770,7 @@ void Mt_YMove(float mt_y)
 
 void Mt_ZMove(float mt_z)
 {
-    
+
 	MtReflash(md);
 	MtCmd("mt_speed 50");
 	char mybuffz[60];
@@ -1755,7 +1829,7 @@ void MtCheck(void)
 		{
 		case 0:
 			//这里是怎么搞得？为什么需要用Z的值减去Y的值乘以一个tan值:因为Kinect 看物体的时候会有一个角度，这里的tan值是为了能够消除角度带来的误差:mtmove_step使用开控制谁先谁后
-			value = ROICameraSP_MachineCoord_Storage[mtmove_step].Z * 1000  +170/*- ROICameraSP_MachineCoord_Storage[mtmove_step].Y * 1000 * tan(dev_theta)*/;
+			value = ROICameraSP_MachineCoord_Storage[mtmove_step].Z * 1000 + 170/*- ROICameraSP_MachineCoord_Storage[mtmove_step].Y * 1000 * tan(dev_theta)*/;
 			break;
 		case 1:
 			value = ROICameraSP_MachineCoord_Proj_Storage[mtmove_step].Z * 1000 /*- ROICameraSP_MachineCoord_Proj_Storage[mtmove_step].Y * 1000 * tan(dev_theta)*/;
@@ -1831,7 +1905,7 @@ void ARFunc_FindProj()//换了模型之后有影响
 	float scale = 1;
 #pragma region NewWorkepiece
 	//input .obj file's top surface's 4 points
-	
+
 	CubeTop1[0].X = OBJ->vertices[3 * 12 + 0] * scale; //0
 	CubeTop1[0].Y = OBJ->vertices[3 * 12 + 1] * scale; //0
 	CubeTop1[0].Z = OBJ->vertices[3 * 12 + 2] * scale; //12
@@ -1847,7 +1921,7 @@ void ARFunc_FindProj()//换了模型之后有影响
 	CubeTop1[3].X = OBJ->vertices[3 * 18 + 0] * scale; //190
 	CubeTop1[3].Y = OBJ->vertices[3 * 18 + 1] * scale; //240
 	CubeTop1[3].Z = OBJ->vertices[3 * 18 + 2] * scale; //12
-	
+
 #pragma endregion NewWorkpiece
 
 #pragma region OriginObj
@@ -1892,7 +1966,7 @@ void ARFunc_FindProj()//换了模型之后有影响
 	glLoadIdentity();
 	glTranslatef(ObjPosi.x, ObjPosi.y, ObjPosi.z);
 	glTranslatef(Intersect.X, Intersect.Y, Intersect.Z);
-	
+
 	glMultMatrixf(M_Cubic);
 	glGetFloatv(GL_MODELVIEW_MATRIX, TransM_AR);
 	glPopMatrix();
@@ -1910,7 +1984,7 @@ void ARFunc_FindProj()//换了模型之后有影响
 	//Figure out the ROI center point to .OBJ file's projection point
 	CameraSpacePoint* ROICenter = new CameraSpacePoint;
 	ARFunc_ROICSP_Proj = new CameraSpacePoint;
-	
+
 	ROICenter->X = ROICenterCameraS.x;
 	ROICenter->Y = ROICenterCameraS.y;
 	ROICenter->Z = ROICenterCameraS.z;
@@ -2000,19 +2074,19 @@ void DrawCubic()//换了模型之后有影响
 	/*从opengl坐标转换到Kinect坐标
 	 *Virtual object's translate and rotate function*/
 	glPushMatrix();
-	
+
 	glTranslatef(ObjPosi.x, ObjPosi.y, ObjPosi.z);
 	/*Interact: the center red point of three-Axis dispenser's
 	 *0 translate value*/
 	glTranslatef(Intersect.X, Intersect.Y, Intersect.Z);
 	glRotatef(90, 1, 0, 0);
 	glMultMatrixf(M_Cubic);
-	
+
 	glEnable(GL_TEXTURE_2D);
 	glEnableClientState(GL_VERTEX_ARRAY);
 	glEnableClientState(GL_TEXTURE_COORD_ARRAY);
 	/*If the collide not happened, we draw the cubic with the original color 没有碰撞就画出原来的颜色*/
- 	if (!ROI_IS_COLLIDE)
+	if (!ROI_IS_COLLIDE)
 	{
 		GLMgroup* group = OBJ->groups;
 		int gCount = 0;
@@ -2020,9 +2094,9 @@ void DrawCubic()//换了模型之后有影响
 		{
 			glColor3f(1, 1, 1);
 			glVertexPointer(3, GL_FLOAT, 0, vertices[gCount]);//指定数组顶点
-			
+
 			glTexCoordPointer(2, GL_FLOAT, 0, vtextures[gCount]);//纹理映射坐标用法
-			
+
 			glBindTexture(GL_TEXTURE_2D, textures[gCount]);//一定不能放在glBegin和glEnd函数之中
 			glDrawArrays(GL_TRIANGLES, 0, group->numtriangles * 3);//第三个为count点的绘制次数
 			gCount++;
@@ -2053,7 +2127,7 @@ void DrawCubic()//换了模型之后有影响
 	glDisableClientState(GL_VERTEX_ARRAY);// http://www.cnblogs.com/Clingingboy/archive/2010/10/16/1853304.html 顶点数组
 	glDisableClientState(GL_TEXTURE_COORD_ARRAY);
 	glDisable(GL_TEXTURE_2D);
-	
+
 	glPopMatrix();
 }
 #pragma endregion DrawCubic Function
@@ -2214,7 +2288,7 @@ void KinectUpdate()
 	//成功remap。重映射将Kinect抓取的彩色图案反转
 	remap(mColorImg, mColorImg, map_x, map_y, INTER_LINEAR, BORDER_CONSTANT, cv::Scalar(0, 0, 0));
 #pragma endregion Remap ColorImg
-	
+
 	/*--------------Mapper Function (Point Cloud)-------------*/
 	Mapper->MapColorFrameToCameraSpace(depthPointCount, pBufferDepth, colorPointCount, pCSPoints);
 
@@ -2241,7 +2315,8 @@ void ShowImage()
 		int thickness = 2;
 		rectangle(ROI, ROI_p1, ROI_p2, Scalar(0, 255, 0), thickness);
 		/*when the code make sure that the ROI Rec has been done. Use FindROI to do color tracking*/
-		FindROI();
+		//FindROI();//这个是用来进行颜色追踪的函数
+		CameraShift();
 	}
 	//cout << "-----------------------ShowImage--------------------" << endl;
 	//不是opencv编译的问题，在这里如果关闭集显的话不能debug：没找到原因，应该是opencv 3.0的bug
@@ -2255,21 +2330,148 @@ void ShowImage()
 /*--------------------------------------------*/
 void loadOBJModel()//换了模型之后有影响
 {
+	//models = new model[filenames.size()];
+	//int idx = 0;
+	//for (string filename : filenames)
+	//{
+	//	if (models[idx].obj != NULL) {
+	//		free(models[idx].obj);
+	//	}
+	//	models[idx].obj = glmReadOBJ((char*)filename.c_str());
+	//	traverseColorModel(models[idx++]);
+	//}
 	// read an obj model here
 	if (OBJ != NULL) {
 		free(OBJ);
 	}
 	//OBJ = glmReadOBJ("box33/456.obj");
-	
+
 	OBJ = glmReadOBJ("box33/WorkPiece/WorkPiece.obj");
-	
+
 	// traverse the color model
-	traverseModel();
+	traverseColorModel();
 }
 
-/*It's traverseModel because we need to read the data column by column*/
-void traverseModel()
+/*It's traverseColorModel because we need to read the data column by column*/
+void traverseColorModel()
 {
+	//GLfloat maxVal[3];
+	//GLfloat minVal[3];
+
+	//m.vertices = new GLfloat[m.obj->numtriangles * 9];
+	//m.colors = new GLfloat[m.obj->numtriangles * 9];
+
+	//// The center position of the model 
+	//m.obj->position[0] = 0;
+	//m.obj->position[1] = 0;
+	//m.obj->position[2] = 0;
+
+	////printf("#triangles: %d\n", m.obj->numtriangles);
+
+
+	//for (int i = 0; i < (int)m.obj->numtriangles; i++)
+	//{
+	//	// the index of each vertex
+	//	int indv1 = m.obj->triangles[i].vindices[0];
+	//	int indv2 = m.obj->triangles[i].vindices[1];
+	//	int indv3 = m.obj->triangles[i].vindices[2];
+
+	//	// the index of each color
+	//	int indc1 = indv1;
+	//	int indc2 = indv2;
+	//	int indc3 = indv3;
+
+	//	// assign vertices
+	//	GLfloat vx, vy, vz;
+	//	vx = m.obj->vertices[indv1 * 3 + 0];
+	//	vy = m.obj->vertices[indv1 * 3 + 1];
+	//	vz = m.obj->vertices[indv1 * 3 + 2];
+
+	//	m.vertices[i * 9 + 0] = vx;
+	//	m.vertices[i * 9 + 1] = vy;
+	//	m.vertices[i * 9 + 2] = vz;
+
+	//	vx = m.obj->vertices[indv2 * 3 + 0];
+	//	vy = m.obj->vertices[indv2 * 3 + 1];
+	//	vz = m.obj->vertices[indv2 * 3 + 2];
+
+	//	m.vertices[i * 9 + 3] = vx;
+	//	m.vertices[i * 9 + 4] = vy;
+	//	m.vertices[i * 9 + 5] = vz;
+
+	//	vx = m.obj->vertices[indv3 * 3 + 0];
+	//	vy = m.obj->vertices[indv3 * 3 + 1];
+	//	vz = m.obj->vertices[indv3 * 3 + 2];
+
+	//	m.vertices[i * 9 + 6] = vx;
+	//	m.vertices[i * 9 + 7] = vy;
+	//	m.vertices[i * 9 + 8] = vz;
+
+	//	// assign colors
+	//	GLfloat c1, c2, c3;
+	//	c1 = m.obj->colors[indv1 * 3 + 0];
+	//	c2 = m.obj->colors[indv1 * 3 + 1];
+	//	c3 = m.obj->colors[indv1 * 3 + 2];
+
+	//	m.colors[i * 9 + 0] = c1;
+	//	m.colors[i * 9 + 1] = c2;
+	//	m.colors[i * 9 + 2] = c3;
+
+	//	c1 = m.obj->colors[indv2 * 3 + 0];
+	//	c2 = m.obj->colors[indv2 * 3 + 1];
+	//	c3 = m.obj->colors[indv2 * 3 + 2];
+
+	//	m.colors[i * 9 + 3] = c1;
+	//	m.colors[i * 9 + 4] = c2;
+	//	m.colors[i * 9 + 5] = c3;
+
+	//	c1 = m.obj->colors[indv3 * 3 + 0];
+	//	c2 = m.obj->colors[indv3 * 3 + 1];
+	//	c3 = m.obj->colors[indv3 * 3 + 2];
+
+	//	m.colors[i * 9 + 6] = c1;
+	//	m.colors[i * 9 + 7] = c2;
+	//	m.colors[i * 9 + 8] = c3;
+	//}
+
+	//// Find min and max value
+	//GLfloat meanVal[3];
+
+	//meanVal[0] = meanVal[1] = meanVal[2] = 0;
+	//maxVal[0] = maxVal[1] = maxVal[2] = -10e20;
+	//minVal[0] = minVal[1] = minVal[2] = 10e20;
+
+	//for (int i = 0; i < m.obj->numtriangles * 3; i++)
+	//{
+	//	maxVal[0] = max(m.vertices[3 * i + 0], maxVal[0]);
+	//	maxVal[1] = max(m.vertices[3 * i + 1], maxVal[1]);
+	//	maxVal[2] = max(m.vertices[3 * i + 2], maxVal[2]);
+
+	//	minVal[0] = min(m.vertices[3 * i + 0], minVal[0]);
+	//	minVal[1] = min(m.vertices[3 * i + 1], minVal[1]);
+	//	minVal[2] = min(m.vertices[3 * i + 2], minVal[2]);
+
+	//	meanVal[0] += m.vertices[3 * i + 0];
+	//	meanVal[1] += m.vertices[3 * i + 1];
+	//	meanVal[2] += m.vertices[3 * i + 2];
+	//}
+	//GLfloat scale = max(maxVal[0] - minVal[0], maxVal[1] - minVal[1]);
+	//scale = max(scale, maxVal[2] - minVal[2]);
+
+	//// Calculate mean values
+	//for (int i = 0; i < 3; i++)
+	//{
+	//	//meanVal[i] = (maxVal[i] + minVal[i]) / 2.0;
+	//	meanVal[i] /= (m.obj->numtriangles * 3);
+	//}
+
+	//// Normalization
+	//for (int i = 0; i < m.obj->numtriangles * 3; i++)
+	//{
+	//	m.vertices[3 * i + 0] = 1.0*((m.vertices[3 * i + 0] - meanVal[0]) / scale);
+	//	m.vertices[3 * i + 1] = 1.0*((m.vertices[3 * i + 1] - meanVal[1]) / scale);
+	//	m.vertices[3 * i + 2] = 1.0*((m.vertices[3 * i + 2] - meanVal[2]) / scale);
+	//}
 	GLMgroup* group = OBJ->groups;
 
 	float maxx, maxy, maxz;
@@ -2314,7 +2516,7 @@ void traverseModel()
 	OBJ->position[0] = (maxx + minx) / 2;
 	OBJ->position[1] = (maxy + miny) / 2;
 	OBJ->position[2] = (maxz + minz) / 2;
-	
+
 	int gCount = 0;
 	while (group) {
 		for (unsigned int i = 0; i < group->numtriangles; i++) {

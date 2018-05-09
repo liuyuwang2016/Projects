@@ -9,9 +9,8 @@
 using namespace cv;
 using namespace std;
 
-double FPS;
-char string[10];
-double t = 0;
+
+
 bool backprojMode = false;//表示是否要进入反向投影模式，true则表示要进入反向投影模式
 bool selectObject = false;//表是否在选中要跟踪的初始目标，true表示正在用鼠标选择要跟踪的目标
 int trackObject = 0;//跟踪目标的数目
@@ -20,6 +19,7 @@ Point origin;//用于保存鼠标选择第一次单击时点的位置
 Rect selection;//用于保存鼠标选择的矩形框
 int vmin = 10, vmax = 256, smin = 30;
 Mat image;
+Mat map_x, map_y;
 
 static void onMouse(int event, int x, int y, int, void*)
 {
@@ -97,8 +97,8 @@ int main(int argc, const char** argv)
 
 	// 2b. Get frame description
 	cout << "get color frame description" << endl;
-	int iWidth = 0;
-	int	iHeight = 0;
+	int		iWidth = 0;
+	int		iHeight = 0;
 	IFrameDescription* pFrameDescription = nullptr;
 	if (pFrameSource->get_FrameDescription(&pFrameDescription) == S_OK)
 	{
@@ -125,12 +125,12 @@ int main(int argc, const char** argv)
 	// Prepare OpenCV data
 	cv::Mat	mColorImg(iHeight, iWidth, CV_8UC4);
 	UINT uBufferSize = iHeight * iWidth * 4 * sizeof(BYTE);
-	
+
 	Rect trackWindow;
 	int hsize = 16;
 	float hranges[] = { 0, 180 };//hranges在后面的计算直方图函数中要用到
 	const float* phranges = hranges;
-	
+
 
 	if (!mColorImg.data)//摄像头没有打开文档提示
 	{
@@ -142,25 +142,34 @@ int main(int argc, const char** argv)
 	namedWindow("Histogram", 0);
 	namedWindow("CamShift Demo", 0);
 	setMouseCallback("CamShift Demo", onMouse, 0);//鼠标响应事件
-	createTrackbar("Vmin", "CamShift Demo", &vmin, 256, 0);//createTrackbar函数的功能是在对应的窗口创建滑动条，滑动条Vmin,vmin表示滑动条的值，最大为256
-	createTrackbar("Vmax", "CamShift Demo", &vmax, 256, 0);//最后一个参数为0代表没有调用滑动拖动的响应函数
-	createTrackbar("Smin", "CamShift Demo", &smin, 256, 0);//vmin,vmax,smin初始值分别为10，256，30
+	//createTrackbar("Vmin", "CamShift Demo", &vmin, 256, 0);//createTrackbar函数的功能是在对应的窗口创建滑动条，滑动条Vmin,vmin表示滑动条的值，最大为256
+	//createTrackbar("Vmax", "CamShift Demo", &vmax, 256, 0);//最后一个参数为0代表没有调用滑动拖动的响应函数
+	//createTrackbar("Smin", "CamShift Demo", &smin, 256, 0);//vmin,vmax,smin初始值分别为10，256，30
 
 	Mat hsv, hue, mask, hist, histimg = Mat::zeros(iWidth, iHeight, CV_8UC3), backproj;
 	bool paused = false;
 
 	while (true)
 	{
-		t = (double)getTickCount();
 		IColorFrame* pFrame = nullptr;
 		if (pFrameReader->AcquireLatestFrame(&pFrame) == S_OK)
 		{
-			t = ((double)getTickCount() - t) / getTickFrequency();
-			FPS = 1.0 / t;
-			cout << "FPS = " << FPS << endl;
 			// 4c. Copy to OpenCV image
 			if (pFrame->CopyConvertedFrameDataToArray(uBufferSize, mColorImg.data, ColorImageFormat_Bgra) == S_OK)
 			{
+				map_x.create(mColorImg.size(), CV_32FC1);
+				map_y.create(mColorImg.size(), CV_32FC1);
+
+				for (int j = 0; j < mColorImg.rows; j++)
+				{
+					for (int i = 0; i < mColorImg.cols; i++)
+					{
+						map_x.at<float>(j, i) = static_cast<float>(mColorImg.cols - i);
+						map_y.at<float>(j, i) = static_cast<float>(j);
+					}
+				}
+				//成功remap。重映射将Kinect抓取的彩色图案反转
+				remap(mColorImg, mColorImg, map_x, map_y, INTER_LINEAR, BORDER_CONSTANT, cv::Scalar(0, 0, 0));
 				mColorImg.copyTo(image);
 
 				if (!paused)
@@ -180,7 +189,6 @@ int main(int argc, const char** argv)
 						int ch[] = { 0, 0 };
 						hue.create(hsv.size(), hsv.depth());//hue初始化为与hsv大小深度一样的矩阵，色调的度量是用角度表示的，红绿蓝之间相差120度，反色相差180度
 						mixChannels(&hsv, 1, &hue, 1, ch, 1);//将hsv第一个通道(也就是色调)的数复制到hue中，0索引数组
-
 
 						if (trackObject < 0)//鼠标选择区域松开后，该函数内部又将其赋值1
 						{
@@ -251,7 +259,7 @@ int main(int argc, const char** argv)
 			// 4e. release frame
 			pFrame->Release();
 		}
-		
+
 		char c = (char)waitKey(10);
 		if (c == 27)//退出键
 			break;

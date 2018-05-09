@@ -147,8 +147,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="3D Math\EulerAngle.cpp" />
+    <ClCompile Include="3D Math\MathUtil.cpp" />
+    <ClCompile Include="3D Math\Matrix4x3.cpp" />
+    <ClCompile Include="3D Math\Quaternion.cpp" />
+    <ClCompile Include="3D Math\RotationMatrix.cpp" />
+    <ClCompile Include="3D Math\Vector3M.cpp" />
     <ClCompile Include="glm.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Model Import\textfile.cpp" />
     <ClCompile Include="osapi\Mutex_Linux.cpp" />
     <ClCompile Include="osapi\Mutex_Win32.cpp" />
     <ClCompile Include="osapi\Semaphore_Linux.cpp" />
@@ -158,7 +165,16 @@
     <ClCompile Include="osapi\Thread_Win32.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="3D Math\3DMath.h" />
+    <ClInclude Include="3D Math\AABB.h" />
+    <ClInclude Include="3D Math\EulerAngle.hpp" />
+    <ClInclude Include="3D Math\MathUtil.h" />
+    <ClInclude Include="3D Math\Matrix4x3.hpp" />
+    <ClInclude Include="3D Math\Quaternion.hpp" />
+    <ClInclude Include="3D Math\RotationMatrix.hpp" />
+    <ClInclude Include="3D Math\Vector3M.hpp" />
     <ClInclude Include="Function.h" />
+    <ClInclude Include="Model Import\textfile.h" />
     <ClInclude Include="osapi\Mutex.h" />
     <ClInclude Include="osapi\osapi.h" />
     <ClInclude Include="osapi\Semaphore.h" />
@@ -182,6 +198,10 @@
   </ItemGroup>
   <ItemGroup>
     <Image Include="icon1.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Shader\shader.frag" />
+    <None Include="Shader\shader.vert" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

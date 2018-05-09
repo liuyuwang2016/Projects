@@ -1,5 +1,92 @@
 #include "src/Declae.h"
+#pragma region loadConfigFile
+void loadConfigFile()
+{
+	ifstream fin;
+	string line;
+	fin.open("config.txt", ios::in);
+	if (fin.is_open())
+	{
+		while (getline(fin, line))
+		{
+			filenames.push_back(line);
+		}
+		fin.close();
+	}
+	else
+	{
+		cout << "Unable to open the config file!" << endl;
+	}
+	for (int i = 0; i < filenames.size(); i++)
+		printf("%s\n", filenames[i].c_str());
+}
+#pragma endregion loadConfigFile
 
+void showShaderCompileStatus(GLuint shader, GLint *shaderCompiled)
+{
+	glGetShaderiv(shader, GL_COMPILE_STATUS, shaderCompiled);
+	if (GL_FALSE == (*shaderCompiled))
+	{
+		GLint maxLength = 0;
+		glGetShaderiv(shader, GL_INFO_LOG_LENGTH, &maxLength);
+
+		// The maxLength includes the NULL character.
+		GLchar *errorLog = (GLchar*)malloc(sizeof(GLchar)* maxLength);
+		glGetShaderInfoLog(shader, maxLength, &maxLength, &errorLog[0]);
+		fprintf(stderr, "%s", errorLog);
+
+		glDeleteShader(shader);
+		free(errorLog);
+	}
+}
+void setShaders()
+{
+	GLuint v, f, p;
+	char *vs = NULL;
+	char *fs = NULL;
+
+	v = glCreateShader(GL_VERTEX_SHADER);
+	f = glCreateShader(GL_FRAGMENT_SHADER);
+
+	vs = textFileRead("shader.vert");
+	fs = textFileRead("shader.frag");
+
+	glShaderSource(v, 1, (const GLchar**)&vs, NULL);
+	glShaderSource(f, 1, (const GLchar**)&fs, NULL);
+
+	free(vs);
+	free(fs);
+
+	// compile vertex shader
+	glCompileShader(v);
+	GLint vShaderCompiled;
+	showShaderCompileStatus(v, &vShaderCompiled);
+	if (!vShaderCompiled) system("pause"), exit(123);
+
+	// compile fragment shader
+	glCompileShader(f);
+	GLint fShaderCompiled;
+	showShaderCompileStatus(f, &fShaderCompiled);
+	if (!fShaderCompiled) system("pause"), exit(456);
+
+	p = glCreateProgram();
+
+	// bind shader
+	glAttachShader(p, f);
+	glAttachShader(p, v);
+
+	// link program
+	glLinkProgram(p);
+
+	iLocPosition = glGetAttribLocation(p, "av4position");
+	iLocColor = glGetAttribLocation(p, "av3color");
+	iLocMVP = glGetUniformLocation(p, "mvp");
+
+	glUseProgram(p);
+
+	glEnableVertexAttribArray(iLocPosition);
+	glEnableVertexAttribArray(iLocColor);
+}
 #pragma region Init
 void init()
 {

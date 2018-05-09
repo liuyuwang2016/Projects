@@ -15,7 +15,6 @@ struct Rs232MotionData{
 
 Rs232MotionData mdr, mdr1, mdr2;
 
-
 int MtTestYvan(int a, int b);
 long MtConnect(/*long ptr*/char* name);
 long MtClose(void);
@@ -959,6 +958,3 @@ int MtTestYvan(int a, int b)
 {
 	return (a + b);
 }
-
-
-

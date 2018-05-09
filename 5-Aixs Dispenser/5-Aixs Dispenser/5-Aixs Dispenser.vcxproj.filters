@@ -31,6 +31,15 @@
     <Filter Include="旋转相机">
       <UniqueIdentifier>{3916269c-dea0-46ea-9d67-d8d408747f63}</UniqueIdentifier>
     </Filter>
+    <Filter Include="3D Math">
+      <UniqueIdentifier>{0144bcc8-9878-4a7c-8e6c-e4b05075090f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Model Import">
+      <UniqueIdentifier>{1ae0ad9b-7fa6-4fad-aa67-24dc8c80e6f0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shader">
+      <UniqueIdentifier>{1e9cfeb5-2a66-4b72-ba81-9a1996db1db9}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="glm.cpp">
@@ -59,6 +68,27 @@
     </ClCompile>
     <ClCompile Include="osapi\Thread_Win32.cpp">
       <Filter>osapi</Filter>
+    </ClCompile>
+    <ClCompile Include="3D Math\EulerAngle.cpp">
+      <Filter>3D Math</Filter>
+    </ClCompile>
+    <ClCompile Include="3D Math\MathUtil.cpp">
+      <Filter>3D Math</Filter>
+    </ClCompile>
+    <ClCompile Include="3D Math\Matrix4x3.cpp">
+      <Filter>3D Math</Filter>
+    </ClCompile>
+    <ClCompile Include="3D Math\Quaternion.cpp">
+      <Filter>3D Math</Filter>
+    </ClCompile>
+    <ClCompile Include="3D Math\RotationMatrix.cpp">
+      <Filter>3D Math</Filter>
+    </ClCompile>
+    <ClCompile Include="3D Math\Vector3M.cpp">
+      <Filter>3D Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Model Import\textfile.cpp">
+      <Filter>Model Import</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -116,6 +146,33 @@
     <ClInclude Include="resource3.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="3D Math\3DMath.h">
+      <Filter>3D Math</Filter>
+    </ClInclude>
+    <ClInclude Include="3D Math\AABB.h">
+      <Filter>3D Math</Filter>
+    </ClInclude>
+    <ClInclude Include="3D Math\EulerAngle.hpp">
+      <Filter>3D Math</Filter>
+    </ClInclude>
+    <ClInclude Include="3D Math\MathUtil.h">
+      <Filter>3D Math</Filter>
+    </ClInclude>
+    <ClInclude Include="3D Math\Matrix4x3.hpp">
+      <Filter>3D Math</Filter>
+    </ClInclude>
+    <ClInclude Include="3D Math\Quaternion.hpp">
+      <Filter>3D Math</Filter>
+    </ClInclude>
+    <ClInclude Include="3D Math\RotationMatrix.hpp">
+      <Filter>3D Math</Filter>
+    </ClInclude>
+    <ClInclude Include="3D Math\Vector3M.hpp">
+      <Filter>3D Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Model Import\textfile.h">
+      <Filter>Model Import</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="5-Aixs Dispenser.rc">
@@ -126,5 +183,13 @@
     <Image Include="icon1.ico">
       <Filter>资源文件</Filter>
     </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Shader\shader.frag">
+      <Filter>Shader</Filter>
+    </None>
+    <None Include="Shader\shader.vert">
+      <Filter>Shader</Filter>
+    </None>
   </ItemGroup>
 </Project>

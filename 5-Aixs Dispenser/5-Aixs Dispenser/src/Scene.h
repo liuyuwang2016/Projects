@@ -12,18 +12,23 @@
 #include <opencv2/highgui.hpp>
 #include <cv.h>
 #include <opencv2/imgcodecs/imgcodecs.hpp>
+#include <opencv2/video/tracking.hpp>
 /*--------------Kinect-------------*/
 #include <Kinect.h>
 #include "src/RealScene.h"
 /*--------------OpenGL-------------*/
 #include <windows.h>   
+#include <GL/glew.h>
 #include <gl/Gl.h>
 #include <gl/glu.h>
 #include <GL/freeglut.h>
 #include "src/OpenGLCamera.h"
+#include "3D Math/3DMath.h"
 //#include <gl/glut.h>
+#include "Model Import/textfile.h"
 //将库文件链接到文件中
 #pragma comment(lib,"opengl32.lib")
+#pragma comment (lib, "glew32.lib")
 #pragma comment(lib,"GLU32.LIB")
 #pragma comment(lib,"GLUT32.LIB")
 /*-------------LoadOBJ-------------*/
@@ -40,7 +45,32 @@
 using namespace std;
 using namespace cv;
 void showHelpText();
+#pragma region Shader
+GLint iLocPosition;
+GLint iLocColor;
+GLint iLocMVP;
 
+struct model
+{
+	GLMmodel *obj;
+	GLfloat *vertices;
+	GLfloat *colors;
+
+	Vector3M position = Vector3M(0, 0, 0);
+	Vector3M scale = Vector3M(1, 1, 1);
+	Vector3M rotation = Vector3M(0, 0, 0);
+};
+
+int current_x, current_y;
+model* models;//存储我们加载的obj模型
+vector<string> filenames;//.obj模型列表
+int cur_idx = 0;//表示现在哪一个模型应该被渲染
+bool use_wire_mode = false;
+bool operation_translate = false;
+bool operation_scaling = false;
+bool operation_rotation = false;
+
+#pragma endregion Shader
 #pragma region Eigen
 Eigen::MatrixXd TransMFormKinect2Machine(4, 4);
 #pragma endregion Eigen
@@ -55,7 +85,7 @@ bool g_dDrawingBox = FALSE;
 bool ROI_S1 = FALSE;
 bool ROI_S2 = FALSE;
 int Head, Tail;
-Rect2i ROI_rect = Rect(-1, -1, 0, 0);
+Rect ROI_rect = Rect(-1, -1, 0, 0);
 Point ROI_p1, ROI_p2;
 Mat ROI;
 
@@ -113,6 +143,7 @@ void InputValue(Mat M, int DataType, int Row, int Col, int Chan, float Data);
 void OutputValue(Mat M, int Row, int Col, int Chan, uchar* Data);
 void OutputValue(Mat M, int Row, int Col, int Chan, float* Data);
 void FindROI(void);
+void CameraShift(void);
 void Draw3DLine(void);
 void Draw3DPlane(void);
 bool ifGetPlane = false;
@@ -140,6 +171,18 @@ result* Get_Y_Min_Max(CameraSpacePoint* point, int start, int end);
 int line_Res_X_head, line_Res_X_tail;
 int plane_Res_X_head, plane_Res_X_tail;
 int plane_Res_Y_head, plane_Res_Y_tail;
+/*-------------CamShift------------*/
+bool backprojMode = false;//表示是否要进入反向投影模式，true则表示要进入反向投影模式
+bool selectObject = false;//表是否在选中要跟踪的初始目标，true表示正在用鼠标选择要跟踪的目标
+int trackObject = 0;//跟踪目标的数目
+bool showHist = true;//是否显示HUE分量直方图
+Rect selection;//用于保存鼠标选择的矩形框
+Rect trackWindow;
+int vmin = 10, vmax = 256, smin = 30;
+Mat hsv, hue, mask, hist, histimg, backproj;
+int hsize = 16;
+float hranges[] = { 0, 180 };//hranges在后面的计算直方图函数中要用到
+const float* phranges = hranges;
 #pragma endregion OpenCV&ROI Initial
 
 #pragma region Kinect Initial
@@ -288,7 +331,11 @@ float vtextures[MAXGROUPSIZE][MAXSIZE];
 void loadOBJModel(void);
 void SetTexObj(char *name, int i);
 void Texture(void);
-void traverseModel(void);
+//void traverseColorModel(model &m);
+void traverseColorModel();
+void loadConfigFile(void);
+void setShaders(void);
+void showShaderCompileStatus(GLuint shader, GLint *shaderCompiled);
 #pragma endregion LoadOBJ Initial
 
 #pragma region AR Function Initial
