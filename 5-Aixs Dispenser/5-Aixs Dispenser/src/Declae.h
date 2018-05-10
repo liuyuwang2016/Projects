@@ -105,10 +105,10 @@ void onMouseROI(int event, int x, int y, int flags, void* param)
 		ROI_rect.x = x;
 		ROI_rect.y = y;
 		ROI_S1 = TRUE;//意思是左键按下但是右键还没
-		ROI_S2 = FALSE;
+		//ROI_S2 = FALSE;
 		break;
 	case EVENT_LBUTTONUP:
-		ROI_S1 = FALSE;
+		ROI_S2 = TRUE;
 		ROI_rect.height = y - ROI_rect.y;
 		ROI_rect.width = x - ROI_rect.x;
 		ROI_p2 = Point(x, y);
@@ -120,7 +120,6 @@ void onMouseROI(int event, int x, int y, int flags, void* param)
 	if (flags == CV_EVENT_FLAG_LBUTTON)
 	{
 		namedWindow("ROI Map", WINDOW_AUTOSIZE);
-		ROI_S2 = TRUE;
 		ROI_p1 = Point(ROI_rect.x, ROI_rect.y);
 		ROI_p2 = Point(x, y);
 		rectangle(ROI, ROI_p1, ROI_p2, Scalar(0, 255, 0), 2);
@@ -220,11 +219,7 @@ void FindROI()
 
 void LoadCamShiftPicture()
 {
-	
-}
-
-void CameraShift()
-{
+	/*--------------Find ROI-------------*/
 	if (ROI_p2.x > ROI_p1.x && ROI_p2.y > ROI_p1.y)
 	{
 		/*get the ROI region that you choose by mouse*/
@@ -235,60 +230,15 @@ void CameraShift()
 		OutputDebugString("You push the left button, please add ROI from left-top to right-down, don't mess up with that\n");
 		return;
 	}
-	LoadCamShiftPicture();
-	Mat loadImage;
-	loadImage = imread("src/purple.JPG", IMREAD_COLOR);
-	imshow("loadImage", loadImage);
+	Mat loadImage = imread("src/purple.JPG", CV_LOAD_IMAGE_COLOR);
+	cvtColor(loadImage, hsv, COLOR_BGR2HSV);
+}
 
-	cvtColor(loadImage, hsv, COLOR_BGR2GRAY);//将现有的图像转成hsv空间的
-	int _vmin = vmin, _vmax = vmax;
-	//只处理像素值为H：0～180,S：smin～256，V：MIN～MAX之间的部分，过滤掉其他部分并复制给mask
-	inRange(hsv, Scalar(0, smin, MIN(_vmin, _vmax)), Scalar(180, 256, MAX(_vmin, _vmax)), mask);
-	int ch[] = { 0, 0 };
-	hue.create(hsv.size(), hsv.depth());
-	//hue初始化为与hsv大小深度一样的矩阵，色调的度量是用角度表示的，红绿蓝之间相差120度，反色相差180度
-	mixChannels(&hsv, 1, &hue, 1, ch, 1);
-	//将hsv第一个通道(也就是色调)的数复制到hue中，0索引数组
-	selection.x = 1;
-	selection.y = 1;
-	selection.width = 351 - 1;
-	selection.height = 309 - 1;
-	//设置H 通道和mask图像的ROI
-	if (trackObject < 0)
-	{
-		Mat roi(hue, selection), maskroi(mask, selection);
-		//calcHist()函数第一个参数为输入矩阵序列，第2个参数表示输入的矩阵数目，第3个参数表示将被计算直方图维数通道的列表，第4个参数表示可选的掩码函数
-		//第5个参数表示输出直方图，第6个参数表示直方图的维数，第7个参数为每一维直方图数组的大小，第8个参数为每一维直方图bin的边界
+void CameraShift()
+{
+	
 
-		//计算ROI所在区域的直方图
-		calcHist(&roi, 1, 0, maskroi, hist, 1, &hsize, &phranges);
-
-		normalize(hist, hist, 0, 255, CV_MINMAX);
-		//将hist矩阵进行数组范围归一化，都归一化到0-255
-
-		//设置追踪窗口
-		trackWindow = ROI_rect;
-		//标记追踪的目标已经计算过直方图属性
-		trackObject = 1;
-	}
-
-	//计算直方图的反向投影，计算hue图像0通道直方图hist的反向投影，并放入backproj中
-	calcBackProject(&hue, 1, 0, hist, backproj, &phranges);
-	//取公共部分
-	backproj &= mask;
-	//调用Camshift 算法接口
-	RotatedRect trackBox = CamShift(backproj, trackWindow,
-		TermCriteria(CV_TERMCRIT_EPS | CV_TERMCRIT_ITER, 10, 1)); //trackWindow为鼠标选择的区域，TermCriteria为确定迭代终止的准则
-	//处理追踪面积过小的情况
-	if (trackWindow.area() <= 1)
-	{
-		int cols = backproj.cols, rows = backproj.rows, r = (MIN(cols, rows) + 5) / 6;
-		trackWindow = Rect(trackWindow.x - r, trackWindow.y - r,
-			trackWindow.x + r, trackWindow.y + r) &
-			Rect(0, 0, cols, rows);
-	}
-	//绘制追踪区域
-	ellipse(ROI, trackBox, Scalar(0, 255, 255), 3, CV_AA);//跟踪的时候以椭圆为代表目标
+	
 }
 void CameraSpaceROI()
 {
@@ -2307,21 +2257,23 @@ void ShowImage()
 	//imshow("Depth Map", mDepthImg);
 	/*--------------Set Mouse Callback Function and Find ROI-------------*/
 	/*-----------Use green box to get ROI by mouse-----------*/
-	cvSetMouseCallback("ROI Map", onMouseROI, NULL);//鼠标事件发生的时候被调用的函数指针
 	mColorImg.copyTo(ROI);
+	setMouseCallback("ROI Map", onMouseROI, NULL);//鼠标事件发生的时候被调用的函数指针
+	
 	//// finish or not finish the ROI getting process
-	if (ROI_S2 == TRUE && ROI_S1 == FALSE)
+	if (ROI_S2 == TRUE && ROI_S1 == TRUE)
 	{
 		int thickness = 2;
 		rectangle(ROI, ROI_p1, ROI_p2, Scalar(0, 255, 0), thickness);
 		/*when the code make sure that the ROI Rec has been done. Use FindROI to do color tracking*/
-		//FindROI();//这个是用来进行颜色追踪的函数
-		CameraShift();
+		FindROI();
+		//CameraShift();
 	}
 	//cout << "-----------------------ShowImage--------------------" << endl;
 	//不是opencv编译的问题，在这里如果关闭集显的话不能debug：没找到原因，应该是opencv 3.0的bug
 	imshow("ROI Map", ROI);
 }
+
 #pragma endregion Kinect Function
 
 #pragma region Load OBJ Function

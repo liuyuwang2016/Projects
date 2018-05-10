@@ -115,6 +115,7 @@ Point2i ROICenterColorS_Old, ROICenterColorS_New;   //center of tracking object 
 Point2i* ROIPixel = nullptr;
 Point2i* PlanePixel = nullptr;
 Point2i* LineROIPixel = nullptr;
+
 CameraSpacePoint* ROICameraSP = nullptr;
 CameraSpacePoint* PlaneSP = nullptr;
 //Mapping
@@ -138,6 +139,7 @@ CameraSpacePoint* LineSP_MachCoord = nullptr;
 CameraSpacePoint* PlaneSP_MachCoord = nullptr;
 
 void onMouseROI(int event, int x, int y, int flags, void* param);
+static void onMouse(int event, int x, int y, int, void*);
 //DataType: 0 = unsigned char, 1 = float 这里是读取mat的数据
 void InputValue(Mat M, int DataType, int Row, int Col, int Chan, float Data);
 void OutputValue(Mat M, int Row, int Col, int Chan, uchar* Data);
@@ -177,12 +179,9 @@ bool selectObject = false;//表是否在选中要跟踪的初始目标，true表示正在用鼠标选择
 int trackObject = 0;//跟踪目标的数目
 bool showHist = true;//是否显示HUE分量直方图
 Rect selection;//用于保存鼠标选择的矩形框
-Rect trackWindow;
+Point2i origin;
 int vmin = 10, vmax = 256, smin = 30;
-Mat hsv, hue, mask, hist, histimg, backproj;
-int hsize = 16;
-float hranges[] = { 0, 180 };//hranges在后面的计算直方图函数中要用到
-const float* phranges = hranges;
+
 #pragma endregion OpenCV&ROI Initial
 
 #pragma region Kinect Initial
@@ -218,6 +217,9 @@ BYTE* pBufferColor = nullptr;			//Color map origin format (RGBA)
 CameraSpacePoint* pCSPoints = nullptr;
 
 #pragma endregion Kinect Initial
+
+/*必须放在后面初始化的*/
+Mat hsv, hue, mask, hist, histimg = Mat::zeros(iWidthColor, iHeightColor, CV_8UC3), backproj;
 
 #pragma region OpenGL&DrawCubic Initial
 /*---------------------------------*/
