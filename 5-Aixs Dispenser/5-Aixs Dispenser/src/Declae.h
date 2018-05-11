@@ -102,12 +102,16 @@ void onMouseROI(int event, int x, int y, int flags, void* param)
 	switch (event)
 	{
 	case EVENT_LBUTTONDOWN:
+		origin = Point(x, y);
+		selection = Rect(x, y, 0, 0);
+		selectObject = 1;
 		ROI_rect.x = x;
 		ROI_rect.y = y;
 		ROI_S1 = TRUE;//意思是左键按下但是右键还没
 		//ROI_S2 = FALSE;
 		break;
 	case EVENT_LBUTTONUP:
+		selectObject = 0;
 		ROI_S2 = TRUE;
 		ROI_rect.height = y - ROI_rect.y;
 		ROI_rect.width = x - ROI_rect.x;
@@ -115,6 +119,17 @@ void onMouseROI(int event, int x, int y, int flags, void* param)
 		if (ROI_rect.height > 0 && ROI_rect.width > 0)
 			trackObject = -1;
 		break;
+	}
+	if (selectObject)
+	{
+		selection.x = MIN(x, origin.x);
+		selection.y = MIN(y, origin.y);
+		selection.width = abs(x - origin.x);
+		selection.height = abs(y - origin.y);
+
+		// & 运算符被cv::Rect重载
+		// 表示两个区域交集，主要目的是为了处理当鼠标在选择区域时移除画面外
+		selection &= cv::Rect(0, 0, ROI.cols, ROI.rows);
 	}
 	//Drag
 	if (flags == CV_EVENT_FLAG_LBUTTON)
@@ -219,6 +234,46 @@ void FindROI()
 
 void LoadCamShiftPicture()
 {
+	Mat loadImage = imread("src/purple.JPG", CV_LOAD_IMAGE_COLOR);
+	cvtColor(loadImage, hsv, COLOR_BGR2HSV);
+	int _vmin = vmin, _vmax = vmax;
+	inRange(hsv, Scalar(0, smin, MIN(_vmin, _vmax)),
+		Scalar(180, 256, MAX(_vmin, _vmax)), mask);
+	int ch[] = { 0, 0 };
+	hue.create(hsv.size(), hsv.depth());//hue初始化为与hsv大小深度一样的矩阵，色调的度量是用角度表示的，红绿蓝之间相差120度，反色相差180度
+	mixChannels(&hsv, 1, &hue, 1, ch, 1);//将hsv第一个通道(也就是色调)的数复制到hue中，0索引数组
+	loadPicture.x = 1;
+	loadPicture.y = 1;
+	loadPicture.width = 351 - 1;//这个是模板的大小，351*309 pixels
+	loadPicture.height = 309 - 1;
+	Mat roi(hue, loadPicture), maskroi(mask, loadPicture);
+	calcHist(&roi, 1, 0, maskroi, hist, 1, &hsize, &phranges);//将roi的0通道计算直方图并通过mask放入hist中，hsize为每一维直方图的大小
+	normalize(hist, hist, 0, 255, CV_MINMAX);//将hist矩阵进行数组范围归一化，都归一化到0-255
+	trackWindow = selection;
+	trackObject = 1;
+	/*
+	 * 下面的这个部分是用来画出hist图案的
+	 */
+	histimg = Scalar::all(0);//与按下‘c’键是一样的，这里的all（0）表示的是标量全部清0
+	int binW = histimg.cols / hsize;//histing是一个200*300的矩阵，hsize应该是每一个bin的宽度，也就是histing矩阵能分出几个bin出来
+
+	Mat buf(1, hsize, CV_8UC3);//定义一个缓冲单bin矩阵
+	for (int i = 0; i < hsize; i++)//saturate_case函数为从一个初始类型准确变换到另一个初始类型
+		buf.at<Vec3b>(i) = Vec3b(saturate_cast<uchar>(i*180. / hsize), 255, 255);
+	cvtColor(buf, buf, CV_HSV2BGR);//hsv又转换成bgr
+
+	for (int i = 0; i < hsize; i++)
+	{
+		int val = saturate_cast<int>(hist.at<float>(i)*histimg.rows / 255);//at函数为返回一个指定数组元素的参考值
+		//在一幅输入图像上画一个简单抽的矩形，指定左上角和右下角，并定义颜色，大小，线型等
+		rectangle(histimg, Point(i*binW, histimg.rows),
+			Point((i + 1)*binW, histimg.rows - val),
+			Scalar(buf.at<Vec3b>(i)), -1, 8);
+	}
+}
+
+void CameraShift()
+{
 	/*--------------Find ROI-------------*/
 	if (ROI_p2.x > ROI_p1.x && ROI_p2.y > ROI_p1.y)
 	{
@@ -230,15 +285,36 @@ void LoadCamShiftPicture()
 		OutputDebugString("You push the left button, please add ROI from left-top to right-down, don't mess up with that\n");
 		return;
 	}
-	Mat loadImage = imread("src/purple.JPG", CV_LOAD_IMAGE_COLOR);
-	cvtColor(loadImage, hsv, COLOR_BGR2HSV);
-}
-
-void CameraShift()
-{
+	LoadCamShiftPicture();
+	cvtColor(ROI_Image, hsv, COLOR_BGR2HSV);
 	
+	if (trackObject)
+	{
+		int _vmin = vmin, _vmax = vmax;
+		
+		inRange(hsv, Scalar(0, smin, MIN(_vmin, _vmax)),
+			Scalar(180, 256, MAX(_vmin, _vmax)), mask);
+		int ch[] = { 0, 0 };
+		hue.create(hsv.size(), hsv.depth());//hue初始化为与hsv大小深度一样的矩阵，色调的度量是用角度表示的，红绿蓝之间相差120度，反色相差180度
+		mixChannels(&hsv, 1, &hue, 1, ch, 1);//将hsv第一个通道(也就是色调)的数复制到hue中，0索引数组
+		//这里的hist是通过上面的loadCamshiftPicture算出来的
+		calcBackProject(&hue, 1, 0, hist, backproj, &phranges);
 
-	
+		backproj &= mask;
+		imshow("---", backproj);
+		RotatedRect trackBox = CamShift(backproj, trackWindow,
+			TermCriteria(CV_TERMCRIT_EPS | CV_TERMCRIT_ITER, 10, 1)); //trackWindow为鼠标选择的区域，TermCriteria为确定迭代终止的准则
+		if (trackWindow.area() <= 1)
+		{
+			int cols = backproj.cols, rows = backproj.rows, r = (MIN(cols, rows) + 5) / 6;
+			trackWindow = Rect(trackWindow.x - r, trackWindow.y - r,
+				trackWindow.x + r, trackWindow.y + r) &
+				Rect(0, 0, cols, rows);
+		}
+
+		ellipse(ROI, trackBox, Scalar(0, 0, 255), 3, CV_AA);//跟踪的时候以椭圆为代表目标
+		//imshow("---", ROI_Image);
+	}	
 }
 void CameraSpaceROI()
 {
@@ -2266,8 +2342,8 @@ void ShowImage()
 		int thickness = 2;
 		rectangle(ROI, ROI_p1, ROI_p2, Scalar(0, 255, 0), thickness);
 		/*when the code make sure that the ROI Rec has been done. Use FindROI to do color tracking*/
-		FindROI();
-		//CameraShift();
+		//FindROI();
+		CameraShift();
 	}
 	//cout << "-----------------------ShowImage--------------------" << endl;
 	//不是opencv编译的问题，在这里如果关闭集显的话不能debug：没找到原因，应该是opencv 3.0的bug

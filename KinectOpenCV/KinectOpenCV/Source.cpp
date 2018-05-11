@@ -155,6 +155,19 @@ int main(int argc, const char** argv)
 			// 4c. Copy to OpenCV image
 			if (pFrame->CopyConvertedFrameDataToArray(uBufferSize, mColorImg.data, ColorImageFormat_Bgra) == S_OK)
 			{
+				map_x.create(mColorImg.size(), CV_32FC1);
+				map_y.create(mColorImg.size(), CV_32FC1);
+
+				for (int j = 0; j < mColorImg.rows; j++)
+				{
+					for (int i = 0; i < mColorImg.cols; i++)
+					{
+						map_x.at<float>(j, i) = static_cast<float>(mColorImg.cols - i);
+						map_y.at<float>(j, i) = static_cast<float>(j);
+					}
+				}
+				//成功remap。重映射将Kinect抓取的彩色图案反转
+				remap(mColorImg, mColorImg, map_x, map_y, INTER_LINEAR, BORDER_CONSTANT, cv::Scalar(0, 0, 0));
 				mColorImg.copyTo(image);
 
 				if (!paused)
@@ -255,7 +268,7 @@ int main(int argc, const char** argv)
 			break;
 		case 'c'://清零跟踪目标对象
 			trackObject = 0;
-			histimg = Scalar::all(0);
+			h = Scalar::all(0);
 			break;
 		case 'h'://显示直方图交替
 			showHist = !showHist;

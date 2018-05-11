@@ -179,9 +179,13 @@ bool selectObject = false;//表是否在选中要跟踪的初始目标，true表示正在用鼠标选择
 int trackObject = 0;//跟踪目标的数目
 bool showHist = true;//是否显示HUE分量直方图
 Rect selection;//用于保存鼠标选择的矩形框
+Rect loadPicture;
 Point2i origin;
+Rect trackWindow;
 int vmin = 10, vmax = 256, smin = 30;
-
+int hsize = 16;
+float hranges[] = { 0, 180 };//hranges在后面的计算直方图函数中要用到
+const float* phranges = hranges;
 #pragma endregion OpenCV&ROI Initial
 
 #pragma region Kinect Initial
