@@ -249,6 +249,7 @@ void LoadCamShiftPicture()
 	Mat roi(hue, loadPicture), maskroi(mask, loadPicture);
 	calcHist(&roi, 1, 0, maskroi, hist, 1, &hsize, &phranges);//将roi的0通道计算直方图并通过mask放入hist中，hsize为每一维直方图的大小
 	normalize(hist, hist, 0, 255, CV_MINMAX);//将hist矩阵进行数组范围归一化，都归一化到0-255
+	
 	trackWindow = selection;
 	trackObject = 1;
 	/*
@@ -301,7 +302,8 @@ void CameraShift()
 		calcBackProject(&hue, 1, 0, hist, backproj, &phranges);
 
 		backproj &= mask;
-		imshow("---", backproj);
+	
+		
 		RotatedRect trackBox = CamShift(backproj, trackWindow,
 			TermCriteria(CV_TERMCRIT_EPS | CV_TERMCRIT_ITER, 10, 1)); //trackWindow为鼠标选择的区域，TermCriteria为确定迭代终止的准则
 		if (trackWindow.area() <= 1)
@@ -311,10 +313,27 @@ void CameraShift()
 				trackWindow.x + r, trackWindow.y + r) &
 				Rect(0, 0, cols, rows);
 		}
+		trackBox.center.x = trackBox.center.x + origin.x;//在这里是为了把椭圆的位置移动到正确的位置
+		trackBox.center.y = trackBox.center.y + origin.y;
 
-		ellipse(ROI, trackBox, Scalar(0, 0, 255), 3, CV_AA);//跟踪的时候以椭圆为代表目标
-		//imshow("---", ROI_Image);
+		ellipse_ROI.center_x = trackBox.center.x;
+		ellipse_ROI.center_y = trackBox.center.y;
+		ellipse(ROI, trackBox, Scalar(255, 0, 255), -1, CV_AA);//跟踪的时候以椭圆为代表目标
+		
+		ellipse_ROI.u_angle = trackBox.angle;
+		/*
+		 * 计算椭圆的最下的点作为tip Position然后传入结构体中，以此可以构建出ellipse_ROI struct。
+		 */
+		ellipse_ROI.tip.x = ellipse_ROI.center_x - sin(ellipse_ROI.u_angle)*(1 / 2)*trackBox.size.height;
+		ellipse_ROI.tip.y = ellipse_ROI.center_y + cos(ellipse_ROI.u_angle)*(1 / 2)*trackBox.size.width;
+		
 	}	
+	if (ROIPixel != nullptr)
+	{
+		delete[] ROIPixel;
+		ROIPixel = nullptr;
+	}
+	ROIPixel = new Point2i[1000];
 }
 void CameraSpaceROI()
 {

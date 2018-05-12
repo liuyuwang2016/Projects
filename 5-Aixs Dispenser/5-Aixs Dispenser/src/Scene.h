@@ -186,6 +186,16 @@ int vmin = 10, vmax = 256, smin = 30;
 int hsize = 16;
 float hranges[] = { 0, 180 };//hranges在后面的计算直方图函数中要用到
 const float* phranges = hranges;
+
+struct MyEllipse
+{
+	float center_x;
+	float center_y;
+	Point2i tip;
+	float u_angle;//第四个轴向的角度，理论上角度在-7-~70之间，在后面要记得控制
+};
+
+MyEllipse ellipse_ROI;
 #pragma endregion OpenCV&ROI Initial
 
 #pragma region Kinect Initial
