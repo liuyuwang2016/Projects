@@ -315,7 +315,7 @@ void CameraShift()
 		}
 		trackBox.center.x = trackBox.center.x + origin.x;//在这里是为了把椭圆的位置移动到正确的位置
 		trackBox.center.y = trackBox.center.y + origin.y;
-
+		
 		ellipse_ROI.center_x = trackBox.center.x;
 		ellipse_ROI.center_y = trackBox.center.y;
 		ellipse(ROI, trackBox, Scalar(255, 0, 255), -1, CV_AA);//跟踪的时候以椭圆为代表目标
@@ -326,15 +326,50 @@ void CameraShift()
 		 */
 		ellipse_ROI.tip.x = ellipse_ROI.center_x - sin(ellipse_ROI.u_angle)*(1 / 2)*trackBox.size.height;
 		ellipse_ROI.tip.y = ellipse_ROI.center_y + cos(ellipse_ROI.u_angle)*(1 / 2)*trackBox.size.width;
-		
+		/*Point center;
+		center.x = ellipse_ROI.tip.x;
+		center.y = ellipse_ROI.tip.y;
+		circle(ROI, center, 5, Scalar(0, 255, 0), -1, LINE_8);*/
 	}	
 	if (ROIPixel != nullptr)
 	{
 		delete[] ROIPixel;
 		ROIPixel = nullptr;
 	}
-	ROIPixel = new Point2i[1000];
+	ROIPixel = new Point2i[100];
+	int rows = 5;
+	int cols = 5;
+	ROIcount = 0;
+	for (int i = -5; i < rows;i++)
+	{
+		for (int j = -5; j < cols;j++)
+		{
+			ROIPixel[ROIcount].x = ellipse_ROI.tip.x + j;
+			ROIPixel[ROIcount].y = ellipse_ROI.tip.x + i;
+			ROICenterColorS_New.x += ROIPixel[ROIcount].x;
+			ROICenterColorS_New.y += ROIPixel[ROIcount].y;
+			ROIcount++;
+		}
+	}
+	if (ROIcount == 100)
+	{
+		ROICenterColorS_New.x = static_cast<int>(ROICenterColorS_New.x / ROIcount);
+		ROICenterColorS_New.y = static_cast<int>(ROICenterColorS_New.y / ROIcount);
+		CameraSpaceROI();
+		MoveROI();
+	}
+	//在这里有一个问题，就是ROI跟着移动的速度比较慢一点，然后就是识别到的位置的误差较大
+	//初步怀疑是因tip的位置计算有错误，之后会更正
+	//如果搜寻不到的时候首先再次搜索整张图片一次
+	/*
+	else if (ROIcount = 0)
+	{
+		ROICenterColorS_Old.x = ROICenterColorS_New.x = 0;
+		ROICenterColorS_Old.y = ROICenterColorS_New.y = 0;
+		Draw3DLine();
+	}*/
 }
+
 void CameraSpaceROI()
 {
 	if (ROICameraSP != nullptr && PlaneSP != nullptr)
