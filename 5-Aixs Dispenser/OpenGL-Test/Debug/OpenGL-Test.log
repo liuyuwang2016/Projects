@@ -1,13 +1,31 @@
-﻿生成启动时间为 2018/5/2 15:59:42。
+﻿生成启动时间为 2018/5/16 21:47:01。
      1>项目“D:\USER\Documents\Visual Studio 2013\Projects\5-Aixs Dispenser\OpenGL-Test\OpenGL-Test.vcxproj”在节点 2 上(Build 个目标)。
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"C:\Program Files\Microsoft SDKs\Kinect\v2.0_1409\\inc" /IC:\OpenCV300\opencv\build\include /IC:\OpenCV300\opencv\build\include\opencv /IC:\OpenCV300\opencv\build\include\opencv2 /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt source.cpp
-         source.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt glm.cpp
+         glm.cpp
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\opengl-test\glm.cpp(282): warning C4305: “=”: 从“double”到“GLfloat”截断
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\opengl-test\glm.cpp(283): warning C4305: “=”: 从“double”到“GLfloat”截断
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\opengl-test\glm.cpp(284): warning C4305: “=”: 从“double”到“GLfloat”截断
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\opengl-test\glm.cpp(286): warning C4305: “=”: 从“double”到“GLfloat”截断
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\opengl-test\glm.cpp(287): warning C4305: “=”: 从“double”到“GLfloat”截断
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\opengl-test\glm.cpp(288): warning C4305: “=”: 从“double”到“GLfloat”截断
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\opengl-test\glm.cpp(787): warning C4244: “=”: 从“double”转换到“GLfloat”，可能丢失数据
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\opengl-test\glm.cpp(788): warning C4244: “=”: 从“double”转换到“GLfloat”，可能丢失数据
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\opengl-test\glm.cpp(789): warning C4244: “=”: 从“double”转换到“GLfloat”，可能丢失数据
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\opengl-test\glm.cpp(791): warning C4244: “=”: 从“double”转换到“GLfloat”，可能丢失数据
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\opengl-test\glm.cpp(963): warning C4244: “=”: 从“double”转换到“GLfloat”，可能丢失数据
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\opengl-test\glm.cpp(1169): warning C4305: “=”: 从“double”到“GLfloat”截断
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\opengl-test\glm.cpp(1174): warning C4305: “=”: 从“double”到“GLfloat”截断
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\opengl-test\glm.cpp(1176): warning C4244: “=”: 从“double”转换到“GLfloat”，可能丢失数据
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\opengl-test\glm.cpp(1179): warning C4244: “=”: 从“double”转换到“GLfloat”，可能丢失数据
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\opengl-test\glm.cpp(1180): warning C4244: “=”: 从“double”转换到“GLfloat”，可能丢失数据
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\opengl-test\glm.cpp(1274): warning C4018: “<”: 有符号/无符号不匹配
        Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\USER\Documents\Visual Studio 2013\Projects\5-Aixs Dispenser\Debug\OpenGL-Test.exe" /INCREMENTAL /NOLOGO /LIBPATH:"C:\Program Files\Microsoft SDKs\Kinect\v2.0_1409\\Lib\x86" /LIBPATH:C:\OpenCV300\opencv\build\x86\vc12\lib kinect20.lib opencv_ts300d.lib opencv_world300d.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\USER\Documents\Visual Studio 2013\Projects\5-Aixs Dispenser\Debug\OpenGL-Test.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\USER\Documents\Visual Studio 2013\Projects\5-Aixs Dispenser\Debug\OpenGL-Test.lib" /MACHINE:X86 Debug\source.obj
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\USER\Documents\Visual Studio 2013\Projects\5-Aixs Dispenser\Debug\OpenGL-Test.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\USER\Documents\Visual Studio 2013\Projects\5-Aixs Dispenser\Debug\OpenGL-Test.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\USER\Documents\Visual Studio 2013\Projects\5-Aixs Dispenser\Debug\OpenGL-Test.lib" /MACHINE:X86 Debug\glm.obj
+         Debug\main.obj
          OpenGL-Test.vcxproj -> D:\USER\Documents\Visual Studio 2013\Projects\5-Aixs Dispenser\Debug\OpenGL-Test.exe
      1>已完成生成项目“D:\USER\Documents\Visual Studio 2013\Projects\5-Aixs Dispenser\OpenGL-Test\OpenGL-Test.vcxproj”(Build 个目标)的操作。
 
 生成成功。
 
-已用时间 00:00:01.10
+已用时间 00:00:01.56

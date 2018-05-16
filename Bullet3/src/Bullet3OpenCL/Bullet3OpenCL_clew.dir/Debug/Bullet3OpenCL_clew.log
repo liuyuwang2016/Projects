@@ -1,0 +1,81 @@
+﻿生成启动时间为 2018/5/8 18:52:43。
+     1>项目“D:\USER\Desktop\Bullet3\src\Bullet3OpenCL\Bullet3OpenCL_clew.vcxproj”在节点 2 上(Build 个目标)。
+     1>CustomBuild:
+         Building Custom Rule D:/USER/Desktop/bullet3-master/src/Bullet3OpenCL/CMakeLists.txt
+         CMake does not need to re-run because D:/USER/Desktop/Bullet3/src/Bullet3OpenCL/CMakeFiles/generate.stamp is up-to-date.
+       ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"D:\USER\Desktop\bullet3-master\src" /Zi /nologo /W3 /WX- /Od /Ob0 /Oy- /D WIN32 /D _DEBUG /D USE_GRAPHICAL_BENCHMARK /D _CRT_SECURE_NO_WARNINGS /D _CRT_SECURE_NO_DEPRECATE /D _SCL_SECURE_NO_WARNINGS /D B3_USE_CLEW /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /GF /Gm- /EHsc /RTC1 /MTd /GS /Gy /arch:AVX /fp:fast /Zc:wchar_t /Zc:forScope /GR- /Fo"Bullet3OpenCL_clew.dir\Debug\\" /Fd"Bullet3OpenCL_clew.dir\Debug\vc120.pdb" /Gd /TC /wd4244 /wd4267 /analyze- /errorReport:prompt "D:\USER\Desktop\bullet3-master\src\clew\clew.c"
+         clew.c
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"D:\USER\Desktop\bullet3-master\src" /Zi /nologo /W3 /WX- /Od /Ob0 /Oy- /D WIN32 /D _DEBUG /D USE_GRAPHICAL_BENCHMARK /D _CRT_SECURE_NO_WARNINGS /D _CRT_SECURE_NO_DEPRECATE /D _SCL_SECURE_NO_WARNINGS /D B3_USE_CLEW /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /GF /Gm- /EHsc /RTC1 /MTd /GS /Gy /arch:AVX /fp:fast /Zc:wchar_t /Zc:forScope /GR- /Fo"Bullet3OpenCL_clew.dir\Debug\\" /Fd"Bullet3OpenCL_clew.dir\Debug\vc120.pdb" /Gd /TP /wd4244 /wd4267 /analyze- /errorReport:prompt "D:\USER\Desktop\bullet3-master\src\Bullet3OpenCL\BroadphaseCollision\b3GpuGridBroadphase.cpp" "D:\USER\Desktop\bullet3-master\src\Bullet3OpenCL\BroadphaseCollision\b3GpuSapBroadphase.cpp" "D:\USER\Desktop\bullet3-master\src\Bullet3OpenCL\BroadphaseCollision\b3GpuParallelLinearBvhBroadphase.cpp" "D:\USER\Desktop\bullet3-master\src\Bullet3OpenCL\BroadphaseCollision\b3GpuParallelLinearBvh.cpp" "D:\USER\Desktop\bullet3-master\src\Bullet3OpenCL\Initialize\b3OpenCLUtils.cpp" "D:\USER\Desktop\bullet3-master\src\Bullet3OpenCL\NarrowphaseCollision\b3ContactCache.cpp" "D:\USER\Desktop\bullet3-master\src\Bullet3OpenCL\NarrowphaseCollision\b3ConvexHullContact.cpp" "D:\USER\Desktop\bullet3-master\src\Bullet3OpenCL\NarrowphaseCollision\b3GjkEpa.cpp" "D:\USER\Desktop\bullet3-master\src\Bullet3OpenCL\NarrowphaseCollision\b3OptimizedBvh.cpp" "D:\USER\Desktop\bullet3-master\src\Bullet3OpenCL\NarrowphaseCollision\b3QuantizedBvh.cpp" "D:\USER\Desktop\bullet3-master\src\Bullet3OpenCL\NarrowphaseCollision\b3StridingMeshInterface.cpp" "D:\USER\Desktop\bullet3-master\src\Bullet3OpenCL\NarrowphaseCollision\b3TriangleCallback.cpp" "D:\USER\Desktop\bullet3-master\src\Bullet3OpenCL\NarrowphaseCollision\b3TriangleIndexVertexArray.cpp" "D:\USER\Desktop\bullet3-master\src\Bullet3OpenCL\NarrowphaseCollision\b3VoronoiSimplexSolver.cpp" "D:\USER\Desktop\bullet3-master\src\Bullet3OpenCL\ParallelPrimitives\b3BoundSearchCL.cpp" "D:\USER\Desktop\bullet3-master\src\Bullet3OpenCL\ParallelPrimitives\b3FillCL.cpp" "D:\USER\Desktop\bullet3-master\src\Bullet3OpenCL\ParallelPrimitives\b3LauncherCL.cpp" "D:\USER\Desktop\bullet3-master\src\Bullet3OpenCL\ParallelPrimitives\b3PrefixScanCL.cpp" "D:\USER\Desktop\bullet3-master\src\Bullet3OpenCL\ParallelPrimitives\b3PrefixScanFloat4CL.cpp" "D:\USER\Desktop\bullet3-master\src\Bullet3OpenCL\ParallelPrimitives\b3RadixSort32CL.cpp" "D:\USER\Desktop\bullet3-master\src\Bullet3OpenCL\Raycast\b3GpuRaycast.cpp" "D:\USER\Desktop\bullet3-master\src\Bullet3OpenCL\RigidBody\b3GpuGenericConstraint.cpp" "D:\USER\Desktop\bullet3-master\src\Bullet3OpenCL\RigidBody\b3GpuJacobiContactSolver.cpp" "D:\USER\Desktop\bullet3-master\src\Bullet3OpenCL\RigidBody\b3GpuNarrowPhase.cpp" "D:\USER\Desktop\bullet3-master\src\Bullet3OpenCL\RigidBody\b3GpuPgsConstraintSolver.cpp" "D:\USER\Desktop\bullet3-master\src\Bullet3OpenCL\RigidBody\b3GpuPgsContactSolver.cpp" "D:\USER\Desktop\bullet3-master\src\Bullet3OpenCL\RigidBody\b3GpuRigidBodyPipeline.cpp" "D:\USER\Desktop\bullet3-master\src\Bullet3OpenCL\RigidBody\b3Solver.cpp"
+         b3GpuGridBroadphase.cpp
+     1>D:\USER\Desktop\bullet3-master\src\Bullet3OpenCL\BroadphaseCollision\b3GpuGridBroadphase.cpp(283): warning C4018: “<”: 有符号/无符号不匹配
+         b3GpuSapBroadphase.cpp
+         b3GpuParallelLinearBvhBroadphase.cpp
+         b3GpuParallelLinearBvh.cpp
+         b3OpenCLUtils.cpp
+         b3ContactCache.cpp
+         b3ConvexHullContact.cpp
+         b3GjkEpa.cpp
+         b3OptimizedBvh.cpp
+         b3QuantizedBvh.cpp
+         b3StridingMeshInterface.cpp
+         b3TriangleCallback.cpp
+         b3TriangleIndexVertexArray.cpp
+         b3VoronoiSimplexSolver.cpp
+         b3BoundSearchCL.cpp
+     1>D:\USER\Desktop\bullet3-master\src\Bullet3OpenCL\ParallelPrimitives\b3BoundSearchCL.cpp(112): warning C4018: “<=”: 有符号/无符号不匹配
+     1>D:\USER\Desktop\bullet3-master\src\Bullet3OpenCL\ParallelPrimitives\b3BoundSearchCL.cpp(113): warning C4018: “<=”: 有符号/无符号不匹配
+         b3FillCL.cpp
+         b3LauncherCL.cpp
+         b3PrefixScanCL.cpp
+         b3PrefixScanFloat4CL.cpp
+         b3RadixSort32CL.cpp
+         正在生成代码...
+         正在编译...
+         b3GpuRaycast.cpp
+     1>D:\USER\Desktop\bullet3-master\src\Bullet3OpenCL\Raycast\b3GpuRaycast.cpp(314): warning C4018: “>”: 有符号/无符号不匹配
+         b3GpuGenericConstraint.cpp
+         b3GpuJacobiContactSolver.cpp
+         b3GpuNarrowPhase.cpp
+         b3GpuPgsConstraintSolver.cpp
+         b3GpuPgsContactSolver.cpp
+         b3GpuRigidBodyPipeline.cpp
+     1>D:\USER\Desktop\bullet3-master\src\Bullet3OpenCL\RigidBody\b3GpuRigidBodyPipeline.cpp(68): warning C4316: “b3GpuRigidBodyPipelineInternalData”: 在堆上分配的对象可能不是对齐 16
+         b3Solver.cpp
+         正在生成代码...
+       Lib:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\Lib.exe /OUT:"D:\USER\Desktop\Bullet3\lib\Debug\Bullet3OpenCL_clew_Debug.lib" /NOLOGO   /machine:X86 Bullet3OpenCL_clew.dir\Debug\clew.obj
+         Bullet3OpenCL_clew.dir\Debug\b3GpuGridBroadphase.obj
+         Bullet3OpenCL_clew.dir\Debug\b3GpuSapBroadphase.obj
+         Bullet3OpenCL_clew.dir\Debug\b3GpuParallelLinearBvhBroadphase.obj
+         Bullet3OpenCL_clew.dir\Debug\b3GpuParallelLinearBvh.obj
+         Bullet3OpenCL_clew.dir\Debug\b3OpenCLUtils.obj
+         Bullet3OpenCL_clew.dir\Debug\b3ContactCache.obj
+         Bullet3OpenCL_clew.dir\Debug\b3ConvexHullContact.obj
+         Bullet3OpenCL_clew.dir\Debug\b3GjkEpa.obj
+         Bullet3OpenCL_clew.dir\Debug\b3OptimizedBvh.obj
+         Bullet3OpenCL_clew.dir\Debug\b3QuantizedBvh.obj
+         Bullet3OpenCL_clew.dir\Debug\b3StridingMeshInterface.obj
+         Bullet3OpenCL_clew.dir\Debug\b3TriangleCallback.obj
+         Bullet3OpenCL_clew.dir\Debug\b3TriangleIndexVertexArray.obj
+         Bullet3OpenCL_clew.dir\Debug\b3VoronoiSimplexSolver.obj
+         Bullet3OpenCL_clew.dir\Debug\b3BoundSearchCL.obj
+         Bullet3OpenCL_clew.dir\Debug\b3FillCL.obj
+         Bullet3OpenCL_clew.dir\Debug\b3LauncherCL.obj
+         Bullet3OpenCL_clew.dir\Debug\b3PrefixScanCL.obj
+         Bullet3OpenCL_clew.dir\Debug\b3PrefixScanFloat4CL.obj
+         Bullet3OpenCL_clew.dir\Debug\b3RadixSort32CL.obj
+         Bullet3OpenCL_clew.dir\Debug\b3GpuRaycast.obj
+         Bullet3OpenCL_clew.dir\Debug\b3GpuGenericConstraint.obj
+         Bullet3OpenCL_clew.dir\Debug\b3GpuJacobiContactSolver.obj
+         Bullet3OpenCL_clew.dir\Debug\b3GpuNarrowPhase.obj
+         Bullet3OpenCL_clew.dir\Debug\b3GpuPgsConstraintSolver.obj
+         Bullet3OpenCL_clew.dir\Debug\b3GpuPgsContactSolver.obj
+         Bullet3OpenCL_clew.dir\Debug\b3GpuRigidBodyPipeline.obj
+         Bullet3OpenCL_clew.dir\Debug\b3Solver.obj
+         Bullet3OpenCL_clew.vcxproj -> D:\USER\Desktop\Bullet3\lib\Debug\Bullet3OpenCL_clew_Debug.lib
+     1>已完成生成项目“D:\USER\Desktop\Bullet3\src\Bullet3OpenCL\Bullet3OpenCL_clew.vcxproj”(Build 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:07.79

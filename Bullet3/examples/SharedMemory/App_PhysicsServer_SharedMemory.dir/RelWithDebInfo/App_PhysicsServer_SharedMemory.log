@@ -1,0 +1,157 @@
+﻿生成启动时间为 2018/5/8 19:05:06。
+     1>项目“D:\USER\Desktop\Bullet3\examples\SharedMemory\App_PhysicsServer_SharedMemory.vcxproj”在节点 2 上(Build 个目标)。
+     1>CustomBuild:
+         Building Custom Rule D:/USER/Desktop/bullet3-master/examples/SharedMemory/CMakeLists.txt
+         CMake does not need to re-run because D:/USER/Desktop/Bullet3/examples/SharedMemory/CMakeFiles/generate.stamp is up-to-date.
+       ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"D:\USER\Desktop\bullet3-master\src" /I"D:\USER\Desktop\bullet3-master\examples\ThirdPartyLibs" /I"D:\USER\Desktop\bullet3-master\examples\ThirdPartyLibs\glad" /I"D:\USER\Desktop\bullet3-master\examples\ThirdPartyLibs\openvr\headers" /I"D:\USER\Desktop\bullet3-master\examples\ThirdPartyLibs\openvr\samples\shared" /Zi /nologo /W3 /WX- /O2 /Ob1 /Oy- /D WIN32 /D NDEBUG /D USE_GRAPHICAL_BENCHMARK /D _CRT_SECURE_NO_WARNINGS /D _CRT_SECURE_NO_DEPRECATE /D _SCL_SECURE_NO_WARNINGS /D B3_USE_STANDALONE_EXAMPLE /D GLEW_STATIC /D "CMAKE_INTDIR=\"RelWithDebInfo\"" /D _MBCS /GF /Gm- /EHsc /MT /GS /Gy /arch:AVX /fp:fast /Zc:wchar_t /Zc:forScope /GR- /Fo"App_PhysicsServer_SharedMemory.dir\RelWithDebInfo\\" /Fd"App_PhysicsServer_SharedMemory.dir\RelWithDebInfo\vc120.pdb" /Gd /TP /wd4244 /wd4267 /analyze- /errorReport:prompt "D:\USER\Desktop\bullet3-master\examples\SharedMemory\IKTrajectoryHelper.cpp" "D:\USER\Desktop\bullet3-master\examples\SharedMemory\PhysicsClient.cpp" "D:\USER\Desktop\bullet3-master\examples\SharedMemory\PhysicsClientSharedMemory.cpp" "D:\USER\Desktop\bullet3-master\examples\SharedMemory\PhysicsClientExample.cpp" "D:\USER\Desktop\bullet3-master\examples\SharedMemory\PhysicsServerExample.cpp" "D:\USER\Desktop\bullet3-master\examples\SharedMemory\PhysicsServerExampleBullet2.cpp" "D:\USER\Desktop\bullet3-master\examples\SharedMemory\PhysicsServerSharedMemory.cpp" "D:\USER\Desktop\bullet3-master\examples\SharedMemory\PhysicsServer.cpp" "D:\USER\Desktop\bullet3-master\examples\SharedMemory\PhysicsClientC_API.cpp" "D:\USER\Desktop\bullet3-master\examples\SharedMemory\PosixSharedMemory.cpp" "D:\USER\Desktop\bullet3-master\examples\SharedMemory\Win32SharedMemory.cpp" "D:\USER\Desktop\bullet3-master\examples\SharedMemory\InProcessMemory.cpp" "D:\USER\Desktop\bullet3-master\examples\SharedMemory\PhysicsDirect.cpp" "D:\USER\Desktop\bullet3-master\examples\SharedMemory\PhysicsDirectC_API.cpp" "D:\USER\Desktop\bullet3-master\examples\SharedMemory\PhysicsLoopBack.cpp" "D:\USER\Desktop\bullet3-master\examples\SharedMemory\PhysicsLoopBackC_API.cpp" "D:\USER\Desktop\bullet3-master\examples\SharedMemory\PhysicsClientSharedMemory_C_API.cpp" "D:\USER\Desktop\bullet3-master\examples\SharedMemory\PhysicsClientSharedMemory2_C_API.cpp" "D:\USER\Desktop\bullet3-master\examples\SharedMemory\PhysicsClientSharedMemory2.cpp" "D:\USER\Desktop\bullet3-master\examples\SharedMemory\SharedMemoryCommandProcessor.cpp" "D:\USER\Desktop\bullet3-master\examples\SharedMemory\PhysicsServerCommandProcessor.cpp" "D:\USER\Desktop\bullet3-master\examples\SharedMemory\plugins\tinyRendererPlugin\tinyRendererPlugin.cpp" "D:\USER\Desktop\bullet3-master\examples\SharedMemory\plugins\tinyRendererPlugin\TinyRendererVisualShapeConverter.cpp" "D:\USER\Desktop\bullet3-master\examples\SharedMemory\b3PluginManager.cpp" "D:\USER\Desktop\bullet3-master\examples\TinyRenderer\geometry.cpp" "D:\USER\Desktop\bullet3-master\examples\TinyRenderer\model.cpp" "D:\USER\Desktop\bullet3-master\examples\TinyRenderer\tgaimage.cpp" "D:\USER\Desktop\bullet3-master\examples\TinyRenderer\our_gl.cpp" "D:\USER\Desktop\bullet3-master\examples\TinyRenderer\TinyRenderer.cpp" "D:\USER\Desktop\bullet3-master\examples\OpenGLWindow\SimpleCamera.cpp" "D:\USER\Desktop\bullet3-master\examples\Importers\ImportURDFDemo\MyMultiBodyCreator.cpp" "D:\USER\Desktop\bullet3-master\examples\Importers\ImportURDFDemo\BulletUrdfImporter.cpp" "D:\USER\Desktop\bullet3-master\examples\Importers\ImportURDFDemo\UrdfParser.cpp" "D:\USER\Desktop\bullet3-master\examples\Importers\ImportURDFDemo\urdfStringSplit.cpp" "D:\USER\Desktop\bullet3-master\examples\Importers\ImportURDFDemo\URDF2Bullet.cpp" "D:\USER\Desktop\bullet3-master\examples\Importers\ImportMJCFDemo\BulletMJCFImporter.cpp" "D:\USER\Desktop\bullet3-master\examples\Utils\b3ResourcePath.cpp" "D:\USER\Desktop\bullet3-master\examples\Utils\b3Clock.cpp" "D:\USER\Desktop\bullet3-master\examples\Utils\RobotLoggingUtil.cpp" "D:\USER\Desktop\bullet3-master\examples\Utils\ChromeTraceUtil.cpp" "D:\USER\Desktop\bullet3-master\examples\Importers\ImportObjDemo\Wavefront2GLInstanceGraphicsShape.cpp" "D:\USER\Desktop\bullet3-master\examples\Importers\ImportObjDemo\LoadMeshFromObj.cpp" "D:\USER\Desktop\bullet3-master\examples\Importers\ImportColladaDemo\LoadMeshFromCollada.cpp" "D:\USER\Desktop\bullet3-master\examples\ThirdPartyLibs\Wavefront\tiny_obj_loader.cpp" "D:\USER\Desktop\bullet3-master\examples\ThirdPartyLibs\tinyxml2\tinyxml2.cpp" "D:\USER\Desktop\bullet3-master\examples\Importers\ImportMeshUtility\b3ImportMeshUtility.cpp" "D:\USER\Desktop\bullet3-master\examples\ThirdPartyLibs\stb_image\stb_image.cpp" "D:\USER\Desktop\bullet3-master\examples\MultiThreading\b3ThreadSupportInterface.cpp" "D:\USER\Desktop\bullet3-master\examples\SharedMemory\main.cpp" "D:\USER\Desktop\bullet3-master\examples\MultiThreading\b3Win32ThreadSupport.cpp"
+         IKTrajectoryHelper.cpp
+         PhysicsClient.cpp
+         PhysicsClientSharedMemory.cpp
+         PhysicsClientExample.cpp
+         PhysicsServerExample.cpp
+     1>D:\USER\Desktop\bullet3-master\examples\SharedMemory\PhysicsServerExample.cpp(870): warning C4316: “MultithreadedDebugDrawer”: 在堆上分配的对象可能不是对齐 16
+     1>D:\USER\Desktop\bullet3-master\examples\SharedMemory\PhysicsServerExample.cpp(3229): warning C4316: “MultiThreadedOpenGLGuiHelper”: 在堆上分配的对象可能不是对齐 16
+     1>D:\USER\Desktop\bullet3-master\examples\SharedMemory\PhysicsServerExample.cpp(3235): warning C4316: “PhysicsServerExample”: 在堆上分配的对象可能不是对齐 16
+         PhysicsServerExampleBullet2.cpp
+         PhysicsServerSharedMemory.cpp
+         PhysicsServer.cpp
+         PhysicsClientC_API.cpp
+         PosixSharedMemory.cpp
+         Win32SharedMemory.cpp
+         InProcessMemory.cpp
+         PhysicsDirect.cpp
+         PhysicsDirectC_API.cpp
+         PhysicsLoopBack.cpp
+         PhysicsLoopBackC_API.cpp
+         PhysicsClientSharedMemory_C_API.cpp
+         PhysicsClientSharedMemory2_C_API.cpp
+         PhysicsClientSharedMemory2.cpp
+         SharedMemoryCommandProcessor.cpp
+         正在生成代码...
+         正在编译...
+         PhysicsServerCommandProcessor.cpp
+     1>D:\USER\Desktop\bullet3-master\examples\SharedMemory\PhysicsServerCommandProcessor.cpp(1689): warning C4316: “PhysicsServerCommandProcessorInternalData”: 在堆上分配的对象可能不是对齐 16
+     1>D:\USER\Desktop\bullet3-master\examples\SharedMemory\PhysicsServerCommandProcessor.cpp(5939): warning C4018: “<”: 有符号/无符号不匹配
+     1>D:\USER\Desktop\bullet3-master\examples\SharedMemory\PhysicsServerCommandProcessor.cpp(5943): warning C4018: “<”: 有符号/无符号不匹配
+     1>D:\USER\Desktop\bullet3-master\examples\SharedMemory\PhysicsServerCommandProcessor.cpp(6007): warning C4316: “btMultiBodyJointFeedback”: 在堆上分配的对象可能不是对齐 16
+         tinyRendererPlugin.cpp
+         TinyRendererVisualShapeConverter.cpp
+     1>D:\USER\Desktop\bullet3-master\examples\SharedMemory\plugins\tinyRendererPlugin\TinyRendererVisualShapeConverter.cpp(128): warning C4316: “TinyRendererVisualShapeConverterInternalData”: 在堆上分配的对象可能不是对齐 16
+     1>D:\USER\Desktop\bullet3-master\examples\SharedMemory\plugins\tinyRendererPlugin\TinyRendererVisualShapeConverter.cpp(634): warning C4316: “TinyRendererObjectArray”: 在堆上分配的对象可能不是对齐 16
+     1>D:\USER\Desktop\bullet3-master\examples\SharedMemory\plugins\tinyRendererPlugin\TinyRendererVisualShapeConverter.cpp(666): warning C4316: “TinyRenderObjectData”: 在堆上分配的对象可能不是对齐 16
+         b3PluginManager.cpp
+         geometry.cpp
+         model.cpp
+         tgaimage.cpp
+         our_gl.cpp
+         TinyRenderer.cpp
+         SimpleCamera.cpp
+         MyMultiBodyCreator.cpp
+     1>D:\USER\Desktop\bullet3-master\examples\Importers\ImportURDFDemo\MyMultiBodyCreator.cpp(65): warning C4316: “GenericConstraintUserInfo”: 在堆上分配的对象可能不是对齐 16
+     1>D:\USER\Desktop\bullet3-master\examples\Importers\ImportURDFDemo\MyMultiBodyCreator.cpp(148): warning C4316: “GenericConstraintUserInfo”: 在堆上分配的对象可能不是对齐 16
+     1>D:\USER\Desktop\bullet3-master\examples\Importers\ImportURDFDemo\MyMultiBodyCreator.cpp(172): warning C4316: “GenericConstraintUserInfo”: 在堆上分配的对象可能不是对齐 16
+         BulletUrdfImporter.cpp
+         UrdfParser.cpp
+     1>D:\USER\Desktop\bullet3-master\examples\Importers\ImportURDFDemo\UrdfParser.cpp(627): warning C4316: “UrdfMaterial”: 在堆上分配的对象可能不是对齐 16
+     1>D:\USER\Desktop\bullet3-master\examples\Importers\ImportURDFDemo\UrdfParser.cpp(684): warning C4316: “UrdfMaterial”: 在堆上分配的对象可能不是对齐 16
+     1>D:\USER\Desktop\bullet3-master\examples\Importers\ImportURDFDemo\UrdfParser.cpp(1533): warning C4316: “UrdfMaterial”: 在堆上分配的对象可能不是对齐 16
+     1>D:\USER\Desktop\bullet3-master\examples\Importers\ImportURDFDemo\UrdfParser.cpp(1557): warning C4316: “UrdfLink”: 在堆上分配的对象可能不是对齐 16
+     1>D:\USER\Desktop\bullet3-master\examples\Importers\ImportURDFDemo\UrdfParser.cpp(1606): warning C4316: “UrdfJoint”: 在堆上分配的对象可能不是对齐 16
+     1>D:\USER\Desktop\bullet3-master\examples\Importers\ImportURDFDemo\UrdfParser.cpp(1696): warning C4316: “UrdfModel”: 在堆上分配的对象可能不是对齐 16
+     1>D:\USER\Desktop\bullet3-master\examples\Importers\ImportURDFDemo\UrdfParser.cpp(1732): warning C4316: “UrdfMaterial”: 在堆上分配的对象可能不是对齐 16
+     1>D:\USER\Desktop\bullet3-master\examples\Importers\ImportURDFDemo\UrdfParser.cpp(1756): warning C4316: “UrdfLink”: 在堆上分配的对象可能不是对齐 16
+     1>D:\USER\Desktop\bullet3-master\examples\Importers\ImportURDFDemo\UrdfParser.cpp(1805): warning C4316: “UrdfJoint”: 在堆上分配的对象可能不是对齐 16
+         urdfStringSplit.cpp
+         URDF2Bullet.cpp
+         BulletMJCFImporter.cpp
+     1>D:\USER\Desktop\bullet3-master\examples\Importers\ImportMJCFDemo\BulletMJCFImporter.cpp(427): warning C4316: “UrdfModel”: 在堆上分配的对象可能不是对齐 16
+     1>D:\USER\Desktop\bullet3-master\examples\Importers\ImportMJCFDemo\BulletMJCFImporter.cpp(437): warning C4316: “UrdfModel”: 在堆上分配的对象可能不是对齐 16
+     1>D:\USER\Desktop\bullet3-master\examples\Importers\ImportMJCFDemo\BulletMJCFImporter.cpp(440): warning C4316: “UrdfLink”: 在堆上分配的对象可能不是对齐 16
+     1>D:\USER\Desktop\bullet3-master\examples\Importers\ImportMJCFDemo\BulletMJCFImporter.cpp(617): warning C4316: “UrdfJoint”: 在堆上分配的对象可能不是对齐 16
+     1>D:\USER\Desktop\bullet3-master\examples\Importers\ImportMJCFDemo\BulletMJCFImporter.cpp(1084): warning C4316: “UrdfLink”: 在堆上分配的对象可能不是对齐 16
+     1>D:\USER\Desktop\bullet3-master\examples\Importers\ImportMJCFDemo\BulletMJCFImporter.cpp(1286): warning C4316: “UrdfJoint”: 在堆上分配的对象可能不是对齐 16
+         b3ResourcePath.cpp
+         b3Clock.cpp
+         RobotLoggingUtil.cpp
+         ChromeTraceUtil.cpp
+         正在生成代码...
+         正在编译...
+         Wavefront2GLInstanceGraphicsShape.cpp
+     1>D:\USER\Desktop\bullet3-master\examples\Importers\ImportObjDemo\Wavefront2GLInstanceGraphicsShape.cpp(53): warning C4018: “<”: 有符号/无符号不匹配
+     1>D:\USER\Desktop\bullet3-master\examples\Importers\ImportObjDemo\Wavefront2GLInstanceGraphicsShape.cpp(80): warning C4018: “<”: 有符号/无符号不匹配
+     1>D:\USER\Desktop\bullet3-master\examples\Importers\ImportObjDemo\Wavefront2GLInstanceGraphicsShape.cpp(105): warning C4018: “<”: 有符号/无符号不匹配
+         LoadMeshFromObj.cpp
+         LoadMeshFromCollada.cpp
+         tiny_obj_loader.cpp
+     1>D:\USER\Desktop\bullet3-master\examples\ThirdPartyLibs\Wavefront\tiny_obj_loader.cpp(214): warning C4018: “<”: 有符号/无符号不匹配
+         tinyxml2.cpp
+         b3ImportMeshUtility.cpp
+     1>D:\USER\Desktop\bullet3-master\examples\Importers\ImportMeshUtility\b3ImportMeshUtility.cpp(84): warning C4018: “<”: 有符号/无符号不匹配
+         stb_image.cpp
+         b3ThreadSupportInterface.cpp
+         main.cpp
+         b3Win32ThreadSupport.cpp
+         正在生成代码...
+       ResourceCompile:
+         C:\Program Files (x86)\Windows Kits\8.1\bin\x86\rc.exe /D WIN32 /D NDEBUG /D USE_GRAPHICAL_BENCHMARK /D _CRT_SECURE_NO_WARNINGS /D _CRT_SECURE_NO_DEPRECATE /D _SCL_SECURE_NO_WARNINGS /D B3_USE_STANDALONE_EXAMPLE /D GLEW_STATIC /D "CMAKE_INTDIR=\\\"RelWithDebInfo\\\"" /l"0x0409" /I"D:\USER\Desktop\bullet3-master\src" /I"D:\USER\Desktop\bullet3-master\examples\ThirdPartyLibs" /I"D:\USER\Desktop\bullet3-master\examples\ThirdPartyLibs\glad" /I"D:\USER\Desktop\bullet3-master\examples\ThirdPartyLibs\openvr\headers" /I"D:\USER\Desktop\bullet3-master\examples\ThirdPartyLibs\openvr\samples\shared" /nologo /fo"App_PhysicsServer_SharedMemory.dir\RelWithDebInfo\bullet.res" D:\USER\Desktop\bullet3-master\build3\bullet.rc 
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\USER\Desktop\Bullet3\examples\SharedMemory\RelWithDebInfo\App_PhysicsServer_SharedMemory.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib ..\..\lib\RelWithDebInfo\BulletSoftBody_RelWithDebugInfo.lib ..\..\lib\RelWithDebInfo\Bullet3Common_RelWithDebugInfo.lib ..\..\lib\RelWithDebInfo\BulletWorldImporter_RelWithDebugInfo.lib ..\..\lib\RelWithDebInfo\BulletFileLoader_RelWithDebugInfo.lib ..\..\lib\RelWithDebInfo\BulletInverseDynamicsUtils_RelWithDebugInfo.lib ..\..\lib\RelWithDebInfo\BulletInverseDynamics_RelWithDebugInfo.lib ..\..\lib\RelWithDebInfo\BulletDynamics_RelWithDebugInfo.lib ..\..\lib\RelWithDebInfo\BulletCollision_RelWithDebugInfo.lib ..\..\lib\RelWithDebInfo\LinearMath_RelWithDebugInfo.lib ..\..\lib\RelWithDebInfo\BussIK_RelWithDebugInfo.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:/USER/Desktop/Bullet3/examples/SharedMemory/RelWithDebInfo/App_PhysicsServer_SharedMemory.pdb" /SUBSYSTEM:CONSOLE /OPT:REF /OPT:ICF /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:/USER/Desktop/Bullet3/examples/SharedMemory/RelWithDebInfo/App_PhysicsServer_SharedMemory.lib" /MACHINE:X86 /SAFESEH   /machine:X86 App_PhysicsServer_SharedMemory.dir\RelWithDebInfo\bullet.res
+         App_PhysicsServer_SharedMemory.dir\RelWithDebInfo\IKTrajectoryHelper.obj
+         App_PhysicsServer_SharedMemory.dir\RelWithDebInfo\PhysicsClient.obj
+         App_PhysicsServer_SharedMemory.dir\RelWithDebInfo\PhysicsClientSharedMemory.obj
+         App_PhysicsServer_SharedMemory.dir\RelWithDebInfo\PhysicsClientExample.obj
+         App_PhysicsServer_SharedMemory.dir\RelWithDebInfo\PhysicsServerExample.obj
+         App_PhysicsServer_SharedMemory.dir\RelWithDebInfo\PhysicsServerExampleBullet2.obj
+         App_PhysicsServer_SharedMemory.dir\RelWithDebInfo\PhysicsServerSharedMemory.obj
+         App_PhysicsServer_SharedMemory.dir\RelWithDebInfo\PhysicsServer.obj
+         App_PhysicsServer_SharedMemory.dir\RelWithDebInfo\PhysicsClientC_API.obj
+         App_PhysicsServer_SharedMemory.dir\RelWithDebInfo\PosixSharedMemory.obj
+         App_PhysicsServer_SharedMemory.dir\RelWithDebInfo\Win32SharedMemory.obj
+         App_PhysicsServer_SharedMemory.dir\RelWithDebInfo\InProcessMemory.obj
+         App_PhysicsServer_SharedMemory.dir\RelWithDebInfo\PhysicsDirect.obj
+         App_PhysicsServer_SharedMemory.dir\RelWithDebInfo\PhysicsDirectC_API.obj
+         App_PhysicsServer_SharedMemory.dir\RelWithDebInfo\PhysicsLoopBack.obj
+         App_PhysicsServer_SharedMemory.dir\RelWithDebInfo\PhysicsLoopBackC_API.obj
+         App_PhysicsServer_SharedMemory.dir\RelWithDebInfo\PhysicsClientSharedMemory_C_API.obj
+         App_PhysicsServer_SharedMemory.dir\RelWithDebInfo\PhysicsClientSharedMemory2_C_API.obj
+         App_PhysicsServer_SharedMemory.dir\RelWithDebInfo\PhysicsClientSharedMemory2.obj
+         App_PhysicsServer_SharedMemory.dir\RelWithDebInfo\SharedMemoryCommandProcessor.obj
+         App_PhysicsServer_SharedMemory.dir\RelWithDebInfo\PhysicsServerCommandProcessor.obj
+         App_PhysicsServer_SharedMemory.dir\RelWithDebInfo\tinyRendererPlugin.obj
+         App_PhysicsServer_SharedMemory.dir\RelWithDebInfo\TinyRendererVisualShapeConverter.obj
+         App_PhysicsServer_SharedMemory.dir\RelWithDebInfo\b3PluginManager.obj
+         App_PhysicsServer_SharedMemory.dir\RelWithDebInfo\geometry.obj
+         App_PhysicsServer_SharedMemory.dir\RelWithDebInfo\model.obj
+         App_PhysicsServer_SharedMemory.dir\RelWithDebInfo\tgaimage.obj
+         App_PhysicsServer_SharedMemory.dir\RelWithDebInfo\our_gl.obj
+         App_PhysicsServer_SharedMemory.dir\RelWithDebInfo\TinyRenderer.obj
+         App_PhysicsServer_SharedMemory.dir\RelWithDebInfo\SimpleCamera.obj
+         App_PhysicsServer_SharedMemory.dir\RelWithDebInfo\MyMultiBodyCreator.obj
+         App_PhysicsServer_SharedMemory.dir\RelWithDebInfo\BulletUrdfImporter.obj
+         App_PhysicsServer_SharedMemory.dir\RelWithDebInfo\UrdfParser.obj
+         App_PhysicsServer_SharedMemory.dir\RelWithDebInfo\urdfStringSplit.obj
+         App_PhysicsServer_SharedMemory.dir\RelWithDebInfo\URDF2Bullet.obj
+         App_PhysicsServer_SharedMemory.dir\RelWithDebInfo\BulletMJCFImporter.obj
+         App_PhysicsServer_SharedMemory.dir\RelWithDebInfo\b3ResourcePath.obj
+         App_PhysicsServer_SharedMemory.dir\RelWithDebInfo\b3Clock.obj
+         App_PhysicsServer_SharedMemory.dir\RelWithDebInfo\RobotLoggingUtil.obj
+         App_PhysicsServer_SharedMemory.dir\RelWithDebInfo\ChromeTraceUtil.obj
+         App_PhysicsServer_SharedMemory.dir\RelWithDebInfo\Wavefront2GLInstanceGraphicsShape.obj
+         App_PhysicsServer_SharedMemory.dir\RelWithDebInfo\LoadMeshFromObj.obj
+         App_PhysicsServer_SharedMemory.dir\RelWithDebInfo\LoadMeshFromCollada.obj
+         App_PhysicsServer_SharedMemory.dir\RelWithDebInfo\tiny_obj_loader.obj
+         App_PhysicsServer_SharedMemory.dir\RelWithDebInfo\tinyxml2.obj
+         App_PhysicsServer_SharedMemory.dir\RelWithDebInfo\b3ImportMeshUtility.obj
+         App_PhysicsServer_SharedMemory.dir\RelWithDebInfo\stb_image.obj
+         App_PhysicsServer_SharedMemory.dir\RelWithDebInfo\b3ThreadSupportInterface.obj
+         App_PhysicsServer_SharedMemory.dir\RelWithDebInfo\main.obj
+         App_PhysicsServer_SharedMemory.dir\RelWithDebInfo\b3Win32ThreadSupport.obj
+     1>LINK : warning LNK4075: 忽略“/INCREMENTAL”(由于“/OPT:ICF”规范)
+            正在创建库 D:/USER/Desktop/Bullet3/examples/SharedMemory/RelWithDebInfo/App_PhysicsServer_SharedMemory.lib 和对象 D:/USER/Desktop/Bullet3/examples/SharedMemory/RelWithDebInfo/App_PhysicsServer_SharedMemory.exp
+         App_PhysicsServer_SharedMemory.vcxproj -> D:\USER\Desktop\Bullet3\examples\SharedMemory\RelWithDebInfo\App_PhysicsServer_SharedMemory.exe
+     1>已完成生成项目“D:\USER\Desktop\Bullet3\examples\SharedMemory\App_PhysicsServer_SharedMemory.vcxproj”(Build 个目标)的操作。
+
+生成成功。
+
+已用时间 00:01:31.61

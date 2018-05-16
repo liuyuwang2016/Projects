@@ -1,0 +1,23 @@
+﻿生成启动时间为 2018/5/8 18:52:51。
+     1>项目“D:\USER\Desktop\Bullet3\examples\RobotSimulator\App_RobotSimulator_NoGUI.vcxproj”在节点 3 上(Build 个目标)。
+     1>CustomBuild:
+         Building Custom Rule D:/USER/Desktop/bullet3-master/examples/RobotSimulator/CMakeLists.txt
+         CMake does not need to re-run because D:/USER/Desktop/Bullet3/examples/RobotSimulator/CMakeFiles/generate.stamp is up-to-date.
+       ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"D:\USER\Desktop\bullet3-master\src" /I"D:\USER\Desktop\bullet3-master\examples" /I"D:\USER\Desktop\bullet3-master\examples\ThirdPartyLibs" /I"D:\USER\Desktop\bullet3-master\examples\ThirdPartyLibs\enet\include" /I"D:\USER\Desktop\bullet3-master\examples\ThirdPartyLibs\clsocket\src" /I"D:\USER\Desktop\bullet3-master\btgui\OpenGLWindow\GlewWindows" /Zi /nologo /W3 /WX- /Od /Ob0 /Oy- /D WIN32 /D _DEBUG /D USE_GRAPHICAL_BENCHMARK /D _CRT_SECURE_NO_WARNINGS /D _CRT_SECURE_NO_DEPRECATE /D _SCL_SECURE_NO_WARNINGS /D BT_ENABLE_CLSOCKET /D GLEW_STATIC /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /GF /Gm- /EHsc /RTC1 /MTd /GS /Gy /arch:AVX /fp:fast /Zc:wchar_t /Zc:forScope /GR- /Fo"App_RobotSimulator_NoGUI.dir\Debug\\" /Fd"App_RobotSimulator_NoGUI.dir\Debug\vc120.pdb" /Gd /TP /wd4244 /wd4267 /analyze- /errorReport:prompt "D:\USER\Desktop\bullet3-master\examples\RobotSimulator\RobotSimulatorMain.cpp" "D:\USER\Desktop\bullet3-master\examples\RobotSimulator\b3RobotSimulatorClientAPI_NoGUI.cpp" "D:\USER\Desktop\bullet3-master\examples\RobotSimulator\MinitaurSetup.cpp"
+         RobotSimulatorMain.cpp
+         b3RobotSimulatorClientAPI_NoGUI.cpp
+         MinitaurSetup.cpp
+         正在生成代码...
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\USER\Desktop\Bullet3\examples\RobotSimulator\Debug\App_RobotSimulator_NoGUI_d.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib opengl32.lib glu32.lib opengl32.lib glu32.lib ws2_32.lib ..\..\lib\Debug\BulletRobotics_Debug.lib ..\..\lib\Debug\BulletFileLoader_Debug.lib ..\..\lib\Debug\BulletWorldImporter_Debug.lib ..\..\lib\Debug\BulletSoftBody_Debug.lib ..\..\lib\Debug\BulletDynamics_Debug.lib ..\..\lib\Debug\BulletCollision_Debug.lib ..\..\lib\Debug\BulletInverseDynamicsUtils_Debug.lib ..\..\lib\Debug\BulletInverseDynamics_Debug.lib ..\..\lib\Debug\LinearMath_Debug.lib ..\..\lib\Debug\Bullet3Common_Debug.lib opengl32.lib glu32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:/USER/Desktop/Bullet3/examples/RobotSimulator/Debug/App_RobotSimulator_NoGUI_d.pdb" /SUBSYSTEM:CONSOLE /OPT:REF /OPT:ICF /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:/USER/Desktop/Bullet3/examples/RobotSimulator/Debug/App_RobotSimulator_NoGUI_d.lib" /MACHINE:X86 /SAFESEH   /machine:X86 App_RobotSimulator_NoGUI.dir\Debug\RobotSimulatorMain.obj
+         App_RobotSimulator_NoGUI.dir\Debug\b3RobotSimulatorClientAPI_NoGUI.obj
+         App_RobotSimulator_NoGUI.dir\Debug\MinitaurSetup.obj
+     1>LINK : warning LNK4075: 忽略“/INCREMENTAL”(由于“/OPT:ICF”规范)
+            正在创建库 D:/USER/Desktop/Bullet3/examples/RobotSimulator/Debug/App_RobotSimulator_NoGUI_d.lib 和对象 D:/USER/Desktop/Bullet3/examples/RobotSimulator/Debug/App_RobotSimulator_NoGUI_d.exp
+         App_RobotSimulator_NoGUI.vcxproj -> D:\USER\Desktop\Bullet3\examples\RobotSimulator\Debug\App_RobotSimulator_NoGUI_d.exe
+     1>已完成生成项目“D:\USER\Desktop\Bullet3\examples\RobotSimulator\App_RobotSimulator_NoGUI.vcxproj”(Build 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:22.64

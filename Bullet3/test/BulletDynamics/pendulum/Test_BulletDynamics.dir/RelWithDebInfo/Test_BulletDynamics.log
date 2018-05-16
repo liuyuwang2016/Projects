@@ -1,0 +1,19 @@
+﻿生成启动时间为 2018/5/8 19:07:05。
+     1>项目“D:\USER\Desktop\Bullet3\test\BulletDynamics\pendulum\Test_BulletDynamics.vcxproj”在节点 3 上(Build 个目标)。
+     1>CustomBuild:
+         Building Custom Rule D:/USER/Desktop/bullet3-master/test/BulletDynamics/pendulum/CMakeLists.txt
+         CMake does not need to re-run because D:/USER/Desktop/Bullet3/test/BulletDynamics/pendulum/CMakeFiles/generate.stamp is up-to-date.
+       ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"D:\USER\Desktop\bullet3-master\src" /I"D:\USER\Desktop\bullet3-master\test\gtest-1.7.0\include" /I"D:\USER\Desktop\bullet3-master\test\BulletDynamics\pendulum\." /I"D:\USER\Desktop\bullet3-master\test\BulletDynamics\pendulum\..\..\..\src" /I"D:\USER\Desktop\bullet3-master\test\BulletDynamics\pendulum\..\..\gtest-1.7.0\include" /Zi /nologo /W3 /WX- /O2 /Ob1 /Oy- /D WIN32 /D NDEBUG /D USE_GRAPHICAL_BENCHMARK /D _CRT_SECURE_NO_WARNINGS /D _CRT_SECURE_NO_DEPRECATE /D _SCL_SECURE_NO_WARNINGS /D USE_GTEST /D _VARIADIC_MAX=10 /D "CMAKE_INTDIR=\"RelWithDebInfo\"" /D _MBCS /GF /Gm- /EHsc /MT /GS /Gy /arch:AVX /fp:fast /Zc:wchar_t /Zc:forScope /GR- /Fo"Test_BulletDynamics.dir\RelWithDebInfo\\" /Fd"Test_BulletDynamics.dir\RelWithDebInfo\vc120.pdb" /Gd /TP /wd4244 /wd4267 /analyze- /errorReport:prompt "D:\USER\Desktop\bullet3-master\examples\MultiBody\Pendulum.cpp"
+         Pendulum.cpp
+     1>D:\USER\Desktop\bullet3-master\examples\MultiBody\Pendulum.cpp(195): warning C4316: “Pendulum”: 在堆上分配的对象可能不是对齐 16
+     1>D:\USER\Desktop\bullet3-master\examples\MultiBody\Pendulum.cpp(225): warning C4316: “Pendulum”: 在堆上分配的对象可能不是对齐 16
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\USER\Desktop\Bullet3\test\BulletDynamics\pendulum\RelWithDebInfo\Test_BulletDynamics.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib ..\..\..\lib\RelWithDebInfo\BulletDynamics_RelWithDebugInfo.lib ..\..\..\lib\RelWithDebInfo\BulletCollision_RelWithDebugInfo.lib ..\..\..\lib\RelWithDebInfo\LinearMath_RelWithDebugInfo.lib ..\..\..\lib\RelWithDebInfo\gtest_RelWithDebugInfo.lib ..\..\..\lib\RelWithDebInfo\BulletDynamics_RelWithDebugInfo.lib ..\..\..\lib\RelWithDebInfo\BulletCollision_RelWithDebugInfo.lib ..\..\..\lib\RelWithDebInfo\LinearMath_RelWithDebugInfo.lib ..\..\..\lib\RelWithDebInfo\gtest_RelWithDebugInfo.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:/USER/Desktop/Bullet3/test/BulletDynamics/pendulum/RelWithDebInfo/Test_BulletDynamics.pdb" /SUBSYSTEM:CONSOLE /OPT:REF /OPT:ICF /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:/USER/Desktop/Bullet3/test/BulletDynamics/pendulum/RelWithDebInfo/Test_BulletDynamics.lib" /MACHINE:X86 /SAFESEH   /machine:X86 Test_BulletDynamics.dir\RelWithDebInfo\Pendulum.obj
+     1>LINK : warning LNK4075: 忽略“/INCREMENTAL”(由于“/OPT:ICF”规范)
+         Test_BulletDynamics.vcxproj -> D:\USER\Desktop\Bullet3\test\BulletDynamics\pendulum\RelWithDebInfo\Test_BulletDynamics.exe
+     1>已完成生成项目“D:\USER\Desktop\Bullet3\test\BulletDynamics\pendulum\Test_BulletDynamics.vcxproj”(Build 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:02.77

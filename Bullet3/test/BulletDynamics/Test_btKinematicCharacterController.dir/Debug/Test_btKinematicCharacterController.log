@@ -1,0 +1,18 @@
+﻿生成启动时间为 2018/5/8 18:53:50。
+     1>项目“D:\USER\Desktop\Bullet3\test\BulletDynamics\Test_btKinematicCharacterController.vcxproj”在节点 5 上(Build 个目标)。
+     1>CustomBuild:
+         Building Custom Rule D:/USER/Desktop/bullet3-master/test/BulletDynamics/CMakeLists.txt
+         CMake does not need to re-run because D:/USER/Desktop/Bullet3/test/BulletDynamics/CMakeFiles/generate.stamp is up-to-date.
+       ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"D:\USER\Desktop\bullet3-master\src" /I"D:\USER\Desktop\bullet3-master\test\gtest-1.7.0\include" /Zi /nologo /W3 /WX- /Od /Ob0 /Oy- /D WIN32 /D _DEBUG /D USE_GRAPHICAL_BENCHMARK /D _CRT_SECURE_NO_WARNINGS /D _CRT_SECURE_NO_DEPRECATE /D _SCL_SECURE_NO_WARNINGS /D USE_GTEST /D _VARIADIC_MAX=10 /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /GF /Gm- /EHsc /RTC1 /MTd /GS /Gy /arch:AVX /fp:fast /Zc:wchar_t /Zc:forScope /GR- /Fo"Test_btKinematicCharacterController.dir\Debug\\" /Fd"Test_btKinematicCharacterController.dir\Debug\vc120.pdb" /Gd /TP /wd4244 /wd4267 /analyze- /errorReport:prompt "D:\USER\Desktop\bullet3-master\test\BulletDynamics\test_btKinematicCharacterController.cpp"
+         test_btKinematicCharacterController.cpp
+     1>D:\USER\Desktop\bullet3-master\test\BulletDynamics\test_btKinematicCharacterController.cpp(16): warning C4800: “btKinematicCharacterController *”: 将值强制为布尔值“true”或“false”(性能警告)
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\USER\Desktop\Bullet3\test\BulletDynamics\Debug\Test_btKinematicCharacterController.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib ..\..\lib\Debug\BulletDynamics_Debug.lib ..\..\lib\Debug\BulletCollision_Debug.lib ..\..\lib\Debug\LinearMath_Debug.lib ..\..\lib\Debug\gtest_Debug.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:/USER/Desktop/Bullet3/test/BulletDynamics/Debug/Test_btKinematicCharacterController.pdb" /SUBSYSTEM:CONSOLE /OPT:REF /OPT:ICF /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:/USER/Desktop/Bullet3/test/BulletDynamics/Debug/Test_btKinematicCharacterController.lib" /MACHINE:X86 /SAFESEH   /machine:X86 Test_btKinematicCharacterController.dir\Debug\test_btKinematicCharacterController.obj
+     1>LINK : warning LNK4075: 忽略“/INCREMENTAL”(由于“/OPT:ICF”规范)
+         Test_btKinematicCharacterController.vcxproj -> D:\USER\Desktop\Bullet3\test\BulletDynamics\Debug\Test_btKinematicCharacterController.exe
+     1>已完成生成项目“D:\USER\Desktop\Bullet3\test\BulletDynamics\Test_btKinematicCharacterController.vcxproj”(Build 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:05.76

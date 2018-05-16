@@ -331,6 +331,7 @@ void CameraShift()
 		center.y = ellipse_ROI.tip.y;
 		circle(ROI, center, 5, Scalar(0, 255, 0), -1, LINE_8);*/
 	}	
+
 	if (ROIPixel != nullptr)
 	{
 		delete[] ROIPixel;
@@ -358,25 +359,13 @@ void CameraShift()
 		CameraSpaceROI();
 		MoveROI();
 	}
-	//在这里有一个问题，就是ROI跟着移动的速度比较慢一点，然后就是识别到的位置的误差较大
-	//初步怀疑是因tip的位置计算有错误，之后会更正
-	//如果搜寻不到的时候首先再次搜索整张图片一次
-	/*
-	else if (ROIcount = 0)
-	{
-		ROICenterColorS_Old.x = ROICenterColorS_New.x = 0;
-		ROICenterColorS_Old.y = ROICenterColorS_New.y = 0;
-		Draw3DLine();
-	}*/
 }
 
 void CameraSpaceROI()
 {
-	if (ROICameraSP != nullptr && PlaneSP != nullptr)
+	if (ROICameraSP != nullptr)
 	{
 		delete[] ROICameraSP;
-		delete[] PlaneSP;
-		PlaneSP = nullptr;
 		ROICameraSP = nullptr;
 	}
 	ROIDepthCount = 0;
@@ -2396,8 +2385,8 @@ void ShowImage()
 		int thickness = 2;
 		rectangle(ROI, ROI_p1, ROI_p2, Scalar(0, 255, 0), thickness);
 		/*when the code make sure that the ROI Rec has been done. Use FindROI to do color tracking*/
-		//FindROI();
-		CameraShift();
+		FindROI();
+		//CameraShift();
 	}
 	//cout << "-----------------------ShowImage--------------------" << endl;
 	//不是opencv编译的问题，在这里如果关闭集显的话不能debug：没找到原因，应该是opencv 3.0的bug

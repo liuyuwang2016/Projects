@@ -1,0 +1,222 @@
+﻿生成启动时间为 2018/5/8 18:57:04。
+     1>项目“D:\USER\Desktop\Bullet3\Extras\BulletRobotics\BulletRobotics.vcxproj”在节点 5 上(Build 个目标)。
+     1>CustomBuild:
+         Building Custom Rule D:/USER/Desktop/bullet3-master/Extras/BulletRobotics/CMakeLists.txt
+         CMake does not need to re-run because D:/USER/Desktop/Bullet3/Extras/BulletRobotics/CMakeFiles/generate.stamp is up-to-date.
+       ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"D:\USER\Desktop\bullet3-master\src" /I"D:\USER\Desktop\bullet3-master\examples" /I"D:\USER\Desktop\bullet3-master\examples\ThirdPartyLibs" /I"D:\USER\Desktop\bullet3-master\examples\ThirdPartyLibs\enet\include" /I"D:\USER\Desktop\bullet3-master\examples\ThirdPartyLibs\clsocket\src" /nologo /W3 /WX- /O1 /Ob1 /Oy- /D WIN32 /D NDEBUG /D USE_GRAPHICAL_BENCHMARK /D _CRT_SECURE_NO_WARNINGS /D _CRT_SECURE_NO_DEPRECATE /D _SCL_SECURE_NO_WARNINGS /D BT_ENABLE_CLSOCKET /D BT_ENABLE_ENET /D PHYSICS_SERVER_DIRECT /D "CMAKE_INTDIR=\"MinSizeRel\"" /D _MBCS /GF /Gm- /EHsc /MT /GS /Gy /arch:AVX /fp:fast /Zc:wchar_t /Zc:forScope /GR- /Fo"BulletRobotics.dir\MinSizeRel\\" /Fd"BulletRobotics.dir\MinSizeRel\vc120.pdb" /Gd /TP /wd4244 /wd4267 /analyze- /errorReport:prompt "D:\USER\Desktop\bullet3-master\examples\SharedMemory\IKTrajectoryHelper.cpp" "D:\USER\Desktop\bullet3-master\examples\SharedMemory\plugins\tinyRendererPlugin\tinyRendererPlugin.cpp" "D:\USER\Desktop\bullet3-master\examples\SharedMemory\plugins\tinyRendererPlugin\TinyRendererVisualShapeConverter.cpp" "D:\USER\Desktop\bullet3-master\examples\OpenGLWindow\SimpleCamera.cpp" "D:\USER\Desktop\bullet3-master\examples\TinyRenderer\geometry.cpp" "D:\USER\Desktop\bullet3-master\examples\TinyRenderer\model.cpp" "D:\USER\Desktop\bullet3-master\examples\TinyRenderer\tgaimage.cpp" "D:\USER\Desktop\bullet3-master\examples\TinyRenderer\our_gl.cpp" "D:\USER\Desktop\bullet3-master\examples\TinyRenderer\TinyRenderer.cpp" "D:\USER\Desktop\bullet3-master\examples\SharedMemory\InProcessMemory.cpp" "D:\USER\Desktop\bullet3-master\examples\SharedMemory\PhysicsClient.cpp" "D:\USER\Desktop\bullet3-master\examples\SharedMemory\PhysicsServer.cpp" "D:\USER\Desktop\bullet3-master\examples\SharedMemory\PhysicsServerSharedMemory.cpp" "D:\USER\Desktop\bullet3-master\examples\SharedMemory\PhysicsDirect.cpp" "D:\USER\Desktop\bullet3-master\examples\SharedMemory\PhysicsDirectC_API.cpp" "D:\USER\Desktop\bullet3-master\examples\SharedMemory\PhysicsServerCommandProcessor.cpp" "D:\USER\Desktop\bullet3-master\examples\SharedMemory\b3PluginManager.cpp" "D:\USER\Desktop\bullet3-master\examples\SharedMemory\PhysicsClientSharedMemory.cpp" "D:\USER\Desktop\bullet3-master\examples\SharedMemory\PhysicsClientSharedMemory_C_API.cpp" "D:\USER\Desktop\bullet3-master\examples\SharedMemory\PhysicsClientC_API.cpp" "D:\USER\Desktop\bullet3-master\examples\SharedMemory\Win32SharedMemory.cpp" "D:\USER\Desktop\bullet3-master\examples\SharedMemory\PosixSharedMemory.cpp" "D:\USER\Desktop\bullet3-master\examples\Utils\b3ResourcePath.cpp" "D:\USER\Desktop\bullet3-master\examples\Utils\RobotLoggingUtil.cpp" "D:\USER\Desktop\bullet3-master\examples\Utils\b3Clock.cpp" "D:\USER\Desktop\bullet3-master\examples\Utils\ChromeTraceUtil.cpp" "D:\USER\Desktop\bullet3-master\examples\ThirdPartyLibs\tinyxml2\tinyxml2.cpp" "D:\USER\Desktop\bullet3-master\examples\ThirdPartyLibs\Wavefront\tiny_obj_loader.cpp" "D:\USER\Desktop\bullet3-master\examples\ThirdPartyLibs\stb_image\stb_image.cpp" "D:\USER\Desktop\bullet3-master\examples\ThirdPartyLibs\BussIK\Jacobian.cpp" "D:\USER\Desktop\bullet3-master\examples\ThirdPartyLibs\BussIK\LinearR2.cpp" "D:\USER\Desktop\bullet3-master\examples\ThirdPartyLibs\BussIK\LinearR3.cpp" "D:\USER\Desktop\bullet3-master\examples\ThirdPartyLibs\BussIK\LinearR4.cpp" "D:\USER\Desktop\bullet3-master\examples\ThirdPartyLibs\BussIK\MatrixRmn.cpp" "D:\USER\Desktop\bullet3-master\examples\ThirdPartyLibs\BussIK\Misc.cpp" "D:\USER\Desktop\bullet3-master\examples\ThirdPartyLibs\BussIK\Node.cpp" "D:\USER\Desktop\bullet3-master\examples\ThirdPartyLibs\BussIK\Tree.cpp" "D:\USER\Desktop\bullet3-master\examples\ThirdPartyLibs\BussIK\VectorRn.cpp" "D:\USER\Desktop\bullet3-master\examples\Importers\ImportColladaDemo\LoadMeshFromCollada.cpp" "D:\USER\Desktop\bullet3-master\examples\Importers\ImportObjDemo\LoadMeshFromObj.cpp" "D:\USER\Desktop\bullet3-master\examples\Importers\ImportObjDemo\Wavefront2GLInstanceGraphicsShape.cpp" "D:\USER\Desktop\bullet3-master\examples\Importers\ImportMJCFDemo\BulletMJCFImporter.cpp" "D:\USER\Desktop\bullet3-master\examples\Importers\ImportURDFDemo\BulletUrdfImporter.cpp" "D:\USER\Desktop\bullet3-master\examples\Importers\ImportURDFDemo\MyMultiBodyCreator.cpp" "D:\USER\Desktop\bullet3-master\examples\Importers\ImportURDFDemo\URDF2Bullet.cpp" "D:\USER\Desktop\bullet3-master\examples\Importers\ImportURDFDemo\UrdfParser.cpp" "D:\USER\Desktop\bullet3-master\examples\Importers\ImportURDFDemo\urdfStringSplit.cpp" "D:\USER\Desktop\bullet3-master\examples\Importers\ImportMeshUtility\b3ImportMeshUtility.cpp" "D:\USER\Desktop\bullet3-master\examples\MultiThreading\b3PosixThreadSupport.cpp" "D:\USER\Desktop\bullet3-master\examples\MultiThreading\b3Win32ThreadSupport.cpp" "D:\USER\Desktop\bullet3-master\examples\MultiThreading\b3ThreadSupportInterface.cpp" "D:\USER\Desktop\bullet3-master\examples\SharedMemory\PhysicsClientUDP.cpp" "D:\USER\Desktop\bullet3-master\examples\SharedMemory\PhysicsClientUDP_C_API.cpp" "D:\USER\Desktop\bullet3-master\examples\SharedMemory\PhysicsClientTCP.cpp" "D:\USER\Desktop\bullet3-master\examples\SharedMemory\PhysicsClientTCP_C_API.cpp" "D:\USER\Desktop\bullet3-master\examples\ThirdPartyLibs\clsocket\src\SimpleSocket.cpp" "D:\USER\Desktop\bullet3-master\examples\ThirdPartyLibs\clsocket\src\ActiveSocket.cpp" "D:\USER\Desktop\bullet3-master\examples\ThirdPartyLibs\clsocket\src\PassiveSocket.cpp"
+         IKTrajectoryHelper.cpp
+         tinyRendererPlugin.cpp
+         TinyRendererVisualShapeConverter.cpp
+     1>D:\USER\Desktop\bullet3-master\examples\SharedMemory\plugins\tinyRendererPlugin\TinyRendererVisualShapeConverter.cpp(128): warning C4316: “TinyRendererVisualShapeConverterInternalData”: 在堆上分配的对象可能不是对齐 16
+     1>D:\USER\Desktop\bullet3-master\examples\SharedMemory\plugins\tinyRendererPlugin\TinyRendererVisualShapeConverter.cpp(634): warning C4316: “TinyRendererObjectArray”: 在堆上分配的对象可能不是对齐 16
+     1>D:\USER\Desktop\bullet3-master\examples\SharedMemory\plugins\tinyRendererPlugin\TinyRendererVisualShapeConverter.cpp(666): warning C4316: “TinyRenderObjectData”: 在堆上分配的对象可能不是对齐 16
+         SimpleCamera.cpp
+         geometry.cpp
+         model.cpp
+         tgaimage.cpp
+         our_gl.cpp
+         TinyRenderer.cpp
+         InProcessMemory.cpp
+         PhysicsClient.cpp
+         PhysicsServer.cpp
+         PhysicsServerSharedMemory.cpp
+         PhysicsDirect.cpp
+         PhysicsDirectC_API.cpp
+         PhysicsServerCommandProcessor.cpp
+     1>D:\USER\Desktop\bullet3-master\examples\SharedMemory\PhysicsServerCommandProcessor.cpp(1689): warning C4316: “PhysicsServerCommandProcessorInternalData”: 在堆上分配的对象可能不是对齐 16
+     1>D:\USER\Desktop\bullet3-master\examples\SharedMemory\PhysicsServerCommandProcessor.cpp(5939): warning C4018: “<”: 有符号/无符号不匹配
+     1>D:\USER\Desktop\bullet3-master\examples\SharedMemory\PhysicsServerCommandProcessor.cpp(5943): warning C4018: “<”: 有符号/无符号不匹配
+     1>D:\USER\Desktop\bullet3-master\examples\SharedMemory\PhysicsServerCommandProcessor.cpp(6007): warning C4316: “btMultiBodyJointFeedback”: 在堆上分配的对象可能不是对齐 16
+         b3PluginManager.cpp
+         PhysicsClientSharedMemory.cpp
+         PhysicsClientSharedMemory_C_API.cpp
+         PhysicsClientC_API.cpp
+         正在生成代码...
+         正在编译...
+         Win32SharedMemory.cpp
+         PosixSharedMemory.cpp
+         b3ResourcePath.cpp
+         RobotLoggingUtil.cpp
+         b3Clock.cpp
+         ChromeTraceUtil.cpp
+         tinyxml2.cpp
+         tiny_obj_loader.cpp
+     1>D:\USER\Desktop\bullet3-master\examples\ThirdPartyLibs\Wavefront\tiny_obj_loader.cpp(214): warning C4018: “<”: 有符号/无符号不匹配
+         stb_image.cpp
+         Jacobian.cpp
+         LinearR2.cpp
+         LinearR3.cpp
+         LinearR4.cpp
+         MatrixRmn.cpp
+         Misc.cpp
+         Node.cpp
+         Tree.cpp
+         VectorRn.cpp
+         LoadMeshFromCollada.cpp
+         LoadMeshFromObj.cpp
+         正在生成代码...
+         正在编译...
+         Wavefront2GLInstanceGraphicsShape.cpp
+     1>D:\USER\Desktop\bullet3-master\examples\Importers\ImportObjDemo\Wavefront2GLInstanceGraphicsShape.cpp(53): warning C4018: “<”: 有符号/无符号不匹配
+     1>D:\USER\Desktop\bullet3-master\examples\Importers\ImportObjDemo\Wavefront2GLInstanceGraphicsShape.cpp(80): warning C4018: “<”: 有符号/无符号不匹配
+     1>D:\USER\Desktop\bullet3-master\examples\Importers\ImportObjDemo\Wavefront2GLInstanceGraphicsShape.cpp(105): warning C4018: “<”: 有符号/无符号不匹配
+         BulletMJCFImporter.cpp
+     1>D:\USER\Desktop\bullet3-master\examples\Importers\ImportMJCFDemo\BulletMJCFImporter.cpp(427): warning C4316: “UrdfModel”: 在堆上分配的对象可能不是对齐 16
+     1>D:\USER\Desktop\bullet3-master\examples\Importers\ImportMJCFDemo\BulletMJCFImporter.cpp(437): warning C4316: “UrdfModel”: 在堆上分配的对象可能不是对齐 16
+     1>D:\USER\Desktop\bullet3-master\examples\Importers\ImportMJCFDemo\BulletMJCFImporter.cpp(440): warning C4316: “UrdfLink”: 在堆上分配的对象可能不是对齐 16
+     1>D:\USER\Desktop\bullet3-master\examples\Importers\ImportMJCFDemo\BulletMJCFImporter.cpp(617): warning C4316: “UrdfJoint”: 在堆上分配的对象可能不是对齐 16
+     1>D:\USER\Desktop\bullet3-master\examples\Importers\ImportMJCFDemo\BulletMJCFImporter.cpp(1084): warning C4316: “UrdfLink”: 在堆上分配的对象可能不是对齐 16
+     1>D:\USER\Desktop\bullet3-master\examples\Importers\ImportMJCFDemo\BulletMJCFImporter.cpp(1286): warning C4316: “UrdfJoint”: 在堆上分配的对象可能不是对齐 16
+         BulletUrdfImporter.cpp
+         MyMultiBodyCreator.cpp
+     1>D:\USER\Desktop\bullet3-master\examples\Importers\ImportURDFDemo\MyMultiBodyCreator.cpp(65): warning C4316: “GenericConstraintUserInfo”: 在堆上分配的对象可能不是对齐 16
+     1>D:\USER\Desktop\bullet3-master\examples\Importers\ImportURDFDemo\MyMultiBodyCreator.cpp(148): warning C4316: “GenericConstraintUserInfo”: 在堆上分配的对象可能不是对齐 16
+     1>D:\USER\Desktop\bullet3-master\examples\Importers\ImportURDFDemo\MyMultiBodyCreator.cpp(172): warning C4316: “GenericConstraintUserInfo”: 在堆上分配的对象可能不是对齐 16
+         URDF2Bullet.cpp
+         UrdfParser.cpp
+     1>D:\USER\Desktop\bullet3-master\examples\Importers\ImportURDFDemo\UrdfParser.cpp(627): warning C4316: “UrdfMaterial”: 在堆上分配的对象可能不是对齐 16
+     1>D:\USER\Desktop\bullet3-master\examples\Importers\ImportURDFDemo\UrdfParser.cpp(684): warning C4316: “UrdfMaterial”: 在堆上分配的对象可能不是对齐 16
+     1>D:\USER\Desktop\bullet3-master\examples\Importers\ImportURDFDemo\UrdfParser.cpp(1533): warning C4316: “UrdfMaterial”: 在堆上分配的对象可能不是对齐 16
+     1>D:\USER\Desktop\bullet3-master\examples\Importers\ImportURDFDemo\UrdfParser.cpp(1557): warning C4316: “UrdfLink”: 在堆上分配的对象可能不是对齐 16
+     1>D:\USER\Desktop\bullet3-master\examples\Importers\ImportURDFDemo\UrdfParser.cpp(1606): warning C4316: “UrdfJoint”: 在堆上分配的对象可能不是对齐 16
+     1>D:\USER\Desktop\bullet3-master\examples\Importers\ImportURDFDemo\UrdfParser.cpp(1696): warning C4316: “UrdfModel”: 在堆上分配的对象可能不是对齐 16
+     1>D:\USER\Desktop\bullet3-master\examples\Importers\ImportURDFDemo\UrdfParser.cpp(1732): warning C4316: “UrdfMaterial”: 在堆上分配的对象可能不是对齐 16
+     1>D:\USER\Desktop\bullet3-master\examples\Importers\ImportURDFDemo\UrdfParser.cpp(1756): warning C4316: “UrdfLink”: 在堆上分配的对象可能不是对齐 16
+     1>D:\USER\Desktop\bullet3-master\examples\Importers\ImportURDFDemo\UrdfParser.cpp(1805): warning C4316: “UrdfJoint”: 在堆上分配的对象可能不是对齐 16
+         urdfStringSplit.cpp
+         b3ImportMeshUtility.cpp
+     1>D:\USER\Desktop\bullet3-master\examples\Importers\ImportMeshUtility\b3ImportMeshUtility.cpp(84): warning C4018: “<”: 有符号/无符号不匹配
+         b3PosixThreadSupport.cpp
+         b3Win32ThreadSupport.cpp
+         b3ThreadSupportInterface.cpp
+         PhysicsClientUDP.cpp
+         PhysicsClientUDP_C_API.cpp
+         PhysicsClientTCP.cpp
+         PhysicsClientTCP_C_API.cpp
+         SimpleSocket.cpp
+     1>d:\user\desktop\bullet3-master\examples\thirdpartylibs\clsocket\src\SimpleSocket.h(463): warning C4996: 'inet_ntoa': Use inet_ntop() or InetNtop() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\um\winsock2.h(1868) : 参见“inet_ntoa”的声明
+     1>d:\user\desktop\bullet3-master\examples\thirdpartylibs\clsocket\src\SimpleSocket.h(475): warning C4996: 'inet_ntoa': Use inet_ntop() or InetNtop() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\um\winsock2.h(1868) : 参见“inet_ntoa”的声明
+     1>D:\USER\Desktop\bullet3-master\examples\ThirdPartyLibs\clsocket\src\SimpleSocket.cpp(176): warning C4996: 'inet_addr': Use inet_pton() or InetPton() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\um\winsock2.h(1850) : 参见“inet_addr”的声明
+     1>D:\USER\Desktop\bullet3-master\examples\ThirdPartyLibs\clsocket\src\SimpleSocket.cpp(915): warning C4996: 'lseek': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _lseek. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\io.h(334) : 参见“lseek”的声明
+     1>D:\USER\Desktop\bullet3-master\examples\ThirdPartyLibs\clsocket\src\SimpleSocket.cpp(924): warning C4996: 'read': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _read. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\io.h(337) : 参见“read”的声明
+         ActiveSocket.cpp
+     1>d:\user\desktop\bullet3-master\examples\thirdpartylibs\clsocket\src\SimpleSocket.h(463): warning C4996: 'inet_ntoa': Use inet_ntop() or InetNtop() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\um\winsock2.h(1868) : 参见“inet_ntoa”的声明
+     1>d:\user\desktop\bullet3-master\examples\thirdpartylibs\clsocket\src\SimpleSocket.h(475): warning C4996: 'inet_ntoa': Use inet_ntop() or InetNtop() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\um\winsock2.h(1868) : 参见“inet_ntoa”的声明
+     1>D:\USER\Desktop\bullet3-master\examples\ThirdPartyLibs\clsocket\src\ActiveSocket.cpp(65): warning C4996: 'gethostbyname': Use getaddrinfo() or GetAddrInfoW() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\um\winsock2.h(2238) : 参见“gethostbyname”的声明
+     1>D:\USER\Desktop\bullet3-master\examples\ThirdPartyLibs\clsocket\src\ActiveSocket.cpp(145): warning C4996: 'gethostbyname': Use getaddrinfo() or GetAddrInfoW() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\um\winsock2.h(2238) : 参见“gethostbyname”的声明
+     1>D:\USER\Desktop\bullet3-master\examples\ThirdPartyLibs\clsocket\src\ActiveSocket.cpp(203): warning C4996: 'gethostbyname': Use getaddrinfo() or GetAddrInfoW() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\um\winsock2.h(2238) : 参见“gethostbyname”的声明
+         PassiveSocket.cpp
+     1>d:\user\desktop\bullet3-master\examples\thirdpartylibs\clsocket\src\SimpleSocket.h(463): warning C4996: 'inet_ntoa': Use inet_ntop() or InetNtop() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\um\winsock2.h(1868) : 参见“inet_ntoa”的声明
+     1>d:\user\desktop\bullet3-master\examples\thirdpartylibs\clsocket\src\SimpleSocket.h(475): warning C4996: 'inet_ntoa': Use inet_ntop() or InetNtop() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\um\winsock2.h(1868) : 参见“inet_ntoa”的声明
+     1>D:\USER\Desktop\bullet3-master\examples\ThirdPartyLibs\clsocket\src\PassiveSocket.cpp(82): warning C4996: 'inet_addr': Use inet_pton() or InetPton() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\um\winsock2.h(1850) : 参见“inet_addr”的声明
+     1>D:\USER\Desktop\bullet3-master\examples\ThirdPartyLibs\clsocket\src\PassiveSocket.cpp(96): warning C4996: 'inet_addr': Use inet_pton() or InetPton() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\um\winsock2.h(1850) : 参见“inet_addr”的声明
+     1>D:\USER\Desktop\bullet3-master\examples\ThirdPartyLibs\clsocket\src\PassiveSocket.cpp(169): warning C4996: 'inet_addr': Use inet_pton() or InetPton() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings
+                 C:\Program Files (x86)\Windows Kits\8.1\Include\um\winsock2.h(1850) : 参见“inet_addr”的声明
+         正在生成代码...
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"D:\USER\Desktop\bullet3-master\src" /I"D:\USER\Desktop\bullet3-master\examples" /I"D:\USER\Desktop\bullet3-master\examples\ThirdPartyLibs" /I"D:\USER\Desktop\bullet3-master\examples\ThirdPartyLibs\enet\include" /I"D:\USER\Desktop\bullet3-master\examples\ThirdPartyLibs\clsocket\src" /nologo /W3 /WX- /O1 /Ob1 /Oy- /D WIN32 /D NDEBUG /D USE_GRAPHICAL_BENCHMARK /D _CRT_SECURE_NO_WARNINGS /D _CRT_SECURE_NO_DEPRECATE /D _SCL_SECURE_NO_WARNINGS /D BT_ENABLE_CLSOCKET /D BT_ENABLE_ENET /D PHYSICS_SERVER_DIRECT /D "CMAKE_INTDIR=\"MinSizeRel\"" /D _MBCS /GF /Gm- /EHsc /MT /GS /Gy /arch:AVX /fp:fast /Zc:wchar_t /Zc:forScope /GR- /Fo"BulletRobotics.dir\MinSizeRel\\" /Fd"BulletRobotics.dir\MinSizeRel\vc120.pdb" /Gd /TC /wd4244 /wd4267 /analyze- /errorReport:prompt "D:\USER\Desktop\bullet3-master\examples\ThirdPartyLibs\enet\win32.c" "D:\USER\Desktop\bullet3-master\examples\ThirdPartyLibs\enet\unix.c" "D:\USER\Desktop\bullet3-master\examples\ThirdPartyLibs\enet\callbacks.c" "D:\USER\Desktop\bullet3-master\examples\ThirdPartyLibs\enet\compress.c" "D:\USER\Desktop\bullet3-master\examples\ThirdPartyLibs\enet\host.c" "D:\USER\Desktop\bullet3-master\examples\ThirdPartyLibs\enet\list.c" "D:\USER\Desktop\bullet3-master\examples\ThirdPartyLibs\enet\packet.c" "D:\USER\Desktop\bullet3-master\examples\ThirdPartyLibs\enet\peer.c" "D:\USER\Desktop\bullet3-master\examples\ThirdPartyLibs\enet\protocol.c"
+         win32.c
+         unix.c
+         callbacks.c
+         compress.c
+     1>D:\USER\Desktop\bullet3-master\examples\ThirdPartyLibs\enet\compress.c(303): warning C4146: 一元负运算符应用于无符号类型，结果仍为无符号类型
+     1>D:\USER\Desktop\bullet3-master\examples\ThirdPartyLibs\enet\compress.c(308): warning C4146: 一元负运算符应用于无符号类型，结果仍为无符号类型
+     1>D:\USER\Desktop\bullet3-master\examples\ThirdPartyLibs\enet\compress.c(326): warning C4146: 一元负运算符应用于无符号类型，结果仍为无符号类型
+     1>D:\USER\Desktop\bullet3-master\examples\ThirdPartyLibs\enet\compress.c(548): warning C4146: 一元负运算符应用于无符号类型，结果仍为无符号类型
+     1>D:\USER\Desktop\bullet3-master\examples\ThirdPartyLibs\enet\compress.c(563): warning C4146: 一元负运算符应用于无符号类型，结果仍为无符号类型
+     1>D:\USER\Desktop\bullet3-master\examples\ThirdPartyLibs\enet\compress.c(578): warning C4146: 一元负运算符应用于无符号类型，结果仍为无符号类型
+     1>D:\USER\Desktop\bullet3-master\examples\ThirdPartyLibs\enet\compress.c(593): warning C4146: 一元负运算符应用于无符号类型，结果仍为无符号类型
+         host.c
+         list.c
+         packet.c
+         peer.c
+         protocol.c
+         正在生成代码...
+       Lib:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\Lib.exe /OUT:"D:\USER\Desktop\Bullet3\lib\MinSizeRel\BulletRobotics_MinsizeRel.lib" /NOLOGO   /machine:X86 BulletRobotics.dir\MinSizeRel\IKTrajectoryHelper.obj
+         BulletRobotics.dir\MinSizeRel\tinyRendererPlugin.obj
+         BulletRobotics.dir\MinSizeRel\TinyRendererVisualShapeConverter.obj
+         BulletRobotics.dir\MinSizeRel\SimpleCamera.obj
+         BulletRobotics.dir\MinSizeRel\geometry.obj
+         BulletRobotics.dir\MinSizeRel\model.obj
+         BulletRobotics.dir\MinSizeRel\tgaimage.obj
+         BulletRobotics.dir\MinSizeRel\our_gl.obj
+         BulletRobotics.dir\MinSizeRel\TinyRenderer.obj
+         BulletRobotics.dir\MinSizeRel\InProcessMemory.obj
+         BulletRobotics.dir\MinSizeRel\PhysicsClient.obj
+         BulletRobotics.dir\MinSizeRel\PhysicsServer.obj
+         BulletRobotics.dir\MinSizeRel\PhysicsServerSharedMemory.obj
+         BulletRobotics.dir\MinSizeRel\PhysicsDirect.obj
+         BulletRobotics.dir\MinSizeRel\PhysicsDirectC_API.obj
+         BulletRobotics.dir\MinSizeRel\PhysicsServerCommandProcessor.obj
+         BulletRobotics.dir\MinSizeRel\b3PluginManager.obj
+         BulletRobotics.dir\MinSizeRel\PhysicsClientSharedMemory.obj
+         BulletRobotics.dir\MinSizeRel\PhysicsClientSharedMemory_C_API.obj
+         BulletRobotics.dir\MinSizeRel\PhysicsClientC_API.obj
+         BulletRobotics.dir\MinSizeRel\Win32SharedMemory.obj
+         BulletRobotics.dir\MinSizeRel\PosixSharedMemory.obj
+         BulletRobotics.dir\MinSizeRel\b3ResourcePath.obj
+         BulletRobotics.dir\MinSizeRel\RobotLoggingUtil.obj
+         BulletRobotics.dir\MinSizeRel\b3Clock.obj
+         BulletRobotics.dir\MinSizeRel\ChromeTraceUtil.obj
+         BulletRobotics.dir\MinSizeRel\tinyxml2.obj
+         BulletRobotics.dir\MinSizeRel\tiny_obj_loader.obj
+         BulletRobotics.dir\MinSizeRel\stb_image.obj
+         BulletRobotics.dir\MinSizeRel\Jacobian.obj
+         BulletRobotics.dir\MinSizeRel\LinearR2.obj
+         BulletRobotics.dir\MinSizeRel\LinearR3.obj
+         BulletRobotics.dir\MinSizeRel\LinearR4.obj
+         BulletRobotics.dir\MinSizeRel\MatrixRmn.obj
+         BulletRobotics.dir\MinSizeRel\Misc.obj
+         BulletRobotics.dir\MinSizeRel\Node.obj
+         BulletRobotics.dir\MinSizeRel\Tree.obj
+         BulletRobotics.dir\MinSizeRel\VectorRn.obj
+         BulletRobotics.dir\MinSizeRel\LoadMeshFromCollada.obj
+         BulletRobotics.dir\MinSizeRel\LoadMeshFromObj.obj
+         BulletRobotics.dir\MinSizeRel\Wavefront2GLInstanceGraphicsShape.obj
+         BulletRobotics.dir\MinSizeRel\BulletMJCFImporter.obj
+         BulletRobotics.dir\MinSizeRel\BulletUrdfImporter.obj
+         BulletRobotics.dir\MinSizeRel\MyMultiBodyCreator.obj
+         BulletRobotics.dir\MinSizeRel\URDF2Bullet.obj
+         BulletRobotics.dir\MinSizeRel\UrdfParser.obj
+         BulletRobotics.dir\MinSizeRel\urdfStringSplit.obj
+         BulletRobotics.dir\MinSizeRel\b3ImportMeshUtility.obj
+         BulletRobotics.dir\MinSizeRel\b3PosixThreadSupport.obj
+         BulletRobotics.dir\MinSizeRel\b3Win32ThreadSupport.obj
+         BulletRobotics.dir\MinSizeRel\b3ThreadSupportInterface.obj
+         BulletRobotics.dir\MinSizeRel\PhysicsClientUDP.obj
+         BulletRobotics.dir\MinSizeRel\PhysicsClientUDP_C_API.obj
+         BulletRobotics.dir\MinSizeRel\win32.obj
+         BulletRobotics.dir\MinSizeRel\unix.obj
+         BulletRobotics.dir\MinSizeRel\callbacks.obj
+         BulletRobotics.dir\MinSizeRel\compress.obj
+         BulletRobotics.dir\MinSizeRel\host.obj
+         BulletRobotics.dir\MinSizeRel\list.obj
+         BulletRobotics.dir\MinSizeRel\packet.obj
+         BulletRobotics.dir\MinSizeRel\peer.obj
+         BulletRobotics.dir\MinSizeRel\protocol.obj
+         BulletRobotics.dir\MinSizeRel\PhysicsClientTCP.obj
+         BulletRobotics.dir\MinSizeRel\PhysicsClientTCP_C_API.obj
+         BulletRobotics.dir\MinSizeRel\SimpleSocket.obj
+         BulletRobotics.dir\MinSizeRel\ActiveSocket.obj
+         BulletRobotics.dir\MinSizeRel\PassiveSocket.obj
+         BulletRobotics.vcxproj -> D:\USER\Desktop\Bullet3\lib\MinSizeRel\BulletRobotics_MinsizeRel.lib
+     1>已完成生成项目“D:\USER\Desktop\Bullet3\Extras\BulletRobotics\BulletRobotics.vcxproj”(Build 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:53.98

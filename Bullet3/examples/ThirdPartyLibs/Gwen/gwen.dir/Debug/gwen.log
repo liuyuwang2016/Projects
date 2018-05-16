@@ -1,0 +1,152 @@
+﻿生成启动时间为 2018/5/8 18:52:25。
+     1>项目“D:\USER\Desktop\Bullet3\examples\ThirdPartyLibs\Gwen\gwen.vcxproj”在节点 3 上(Build 个目标)。
+     1>CustomBuild:
+         Building Custom Rule D:/USER/Desktop/bullet3-master/examples/ThirdPartyLibs/Gwen/CMakeLists.txt
+         CMake does not need to re-run because D:/USER/Desktop/Bullet3/examples/ThirdPartyLibs/Gwen/CMakeFiles/generate.stamp is up-to-date.
+       ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"D:\USER\Desktop\bullet3-master\src" /I"D:\USER\Desktop\bullet3-master\examples\ThirdPartyLibs" /I"D:\USER\Desktop\bullet3-master\examples\ThirdPartyLibs\glad" /Zi /nologo /W3 /WX- /Od /Ob0 /Oy- /D WIN32 /D _DEBUG /D USE_GRAPHICAL_BENCHMARK /D _CRT_SECURE_NO_WARNINGS /D _CRT_SECURE_NO_DEPRECATE /D _SCL_SECURE_NO_WARNINGS /D GLEW_STATIC /D GWEN_COMPILE_STATIC /D _HAS_EXCEPTIONS=0 /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /GF /Gm- /EHsc /RTC1 /MTd /GS /Gy /arch:AVX /fp:fast /Zc:wchar_t /Zc:forScope /GR- /Fo"gwen.dir\Debug\\" /Fd"gwen.dir\Debug\vc120.pdb" /Gd /TP /wd4244 /wd4267 /analyze- /errorReport:prompt "D:\USER\Desktop\bullet3-master\examples\ThirdPartyLibs\Gwen\Anim.cpp" "D:\USER\Desktop\bullet3-master\examples\ThirdPartyLibs\Gwen\BaseRender.cpp" "D:\USER\Desktop\bullet3-master\examples\ThirdPartyLibs\Gwen\DragAndDrop.cpp" "D:\USER\Desktop\bullet3-master\examples\ThirdPartyLibs\Gwen\Gwen.cpp" "D:\USER\Desktop\bullet3-master\examples\ThirdPartyLibs\Gwen\Hook.cpp" "D:\USER\Desktop\bullet3-master\examples\ThirdPartyLibs\Gwen\Skin.cpp" "D:\USER\Desktop\bullet3-master\examples\ThirdPartyLibs\Gwen\ToolTip.cpp" "D:\USER\Desktop\bullet3-master\examples\ThirdPartyLibs\Gwen\Utility.cpp" "D:\USER\Desktop\bullet3-master\examples\ThirdPartyLibs\Gwen\events.cpp" "D:\USER\Desktop\bullet3-master\examples\ThirdPartyLibs\Gwen\inputhandler.cpp" "D:\USER\Desktop\bullet3-master\examples\ThirdPartyLibs\Gwen\Controls\Base.cpp" "D:\USER\Desktop\bullet3-master\examples\ThirdPartyLibs\Gwen\Controls\Button.cpp" "D:\USER\Desktop\bullet3-master\examples\ThirdPartyLibs\Gwen\Controls\Canvas.cpp" "D:\USER\Desktop\bullet3-master\examples\ThirdPartyLibs\Gwen\Controls\CheckBox.cpp" "D:\USER\Desktop\bullet3-master\examples\ThirdPartyLibs\Gwen\Controls\ColorControls.cpp" "D:\USER\Desktop\bullet3-master\examples\ThirdPartyLibs\Gwen\Controls\ColorPicker.cpp" "D:\USER\Desktop\bullet3-master\examples\ThirdPartyLibs\Gwen\Controls\ComboBox.cpp" "D:\USER\Desktop\bullet3-master\examples\ThirdPartyLibs\Gwen\Controls\CrossSplitter.cpp" "D:\USER\Desktop\bullet3-master\examples\ThirdPartyLibs\Gwen\Controls\DockBase.cpp" "D:\USER\Desktop\bullet3-master\examples\ThirdPartyLibs\Gwen\Controls\DockedTabControl.cpp" "D:\USER\Desktop\bullet3-master\examples\ThirdPartyLibs\Gwen\Controls\Dragger.cpp" "D:\USER\Desktop\bullet3-master\examples\ThirdPartyLibs\Gwen\Controls\GroupBox.cpp" "D:\USER\Desktop\bullet3-master\examples\ThirdPartyLibs\Gwen\Controls\HSVColorPicker.cpp" "D:\USER\Desktop\bullet3-master\examples\ThirdPartyLibs\Gwen\Controls\HorizontalScrollBar.cpp" "D:\USER\Desktop\bullet3-master\examples\ThirdPartyLibs\Gwen\Controls\HorizontalSlider.cpp" "D:\USER\Desktop\bullet3-master\examples\ThirdPartyLibs\Gwen\Controls\ImagePanel.cpp" "D:\USER\Desktop\bullet3-master\examples\ThirdPartyLibs\Gwen\Controls\Label.cpp" "D:\USER\Desktop\bullet3-master\examples\ThirdPartyLibs\Gwen\Controls\LabelClickable.cpp" "D:\USER\Desktop\bullet3-master\examples\ThirdPartyLibs\Gwen\Controls\ListBox.cpp" "D:\USER\Desktop\bullet3-master\examples\ThirdPartyLibs\Gwen\Controls\Menu.cpp" "D:\USER\Desktop\bullet3-master\examples\ThirdPartyLibs\Gwen\Controls\MenuItem.cpp" "D:\USER\Desktop\bullet3-master\examples\ThirdPartyLibs\Gwen\Controls\MenuStrip.cpp" "D:\USER\Desktop\bullet3-master\examples\ThirdPartyLibs\Gwen\Controls\NumericUpDown.cpp" "D:\USER\Desktop\bullet3-master\examples\ThirdPartyLibs\Gwen\Controls\PanelListPanel.cpp" "D:\USER\Desktop\bullet3-master\examples\ThirdPartyLibs\Gwen\Controls\ProgressBar.cpp" "D:\USER\Desktop\bullet3-master\examples\ThirdPartyLibs\Gwen\Controls\Properties.cpp" "D:\USER\Desktop\bullet3-master\examples\ThirdPartyLibs\Gwen\Controls\RadioButton.cpp" "D:\USER\Desktop\bullet3-master\examples\ThirdPartyLibs\Gwen\Controls\RadioButtonController.cpp" "D:\USER\Desktop\bullet3-master\examples\ThirdPartyLibs\Gwen\Controls\ResizableControl.cpp" "D:\USER\Desktop\bullet3-master\examples\ThirdPartyLibs\Gwen\Controls\Resizer.cpp" "D:\USER\Desktop\bullet3-master\examples\ThirdPartyLibs\Gwen\Controls\RichLabel.cpp" "D:\USER\Desktop\bullet3-master\examples\ThirdPartyLibs\Gwen\Controls\ScrollBar.cpp" "D:\USER\Desktop\bullet3-master\examples\ThirdPartyLibs\Gwen\Controls\ScrollBarBar.cpp" "D:\USER\Desktop\bullet3-master\examples\ThirdPartyLibs\Gwen\Controls\ScrollBarButton.cpp" "D:\USER\Desktop\bullet3-master\examples\ThirdPartyLibs\Gwen\Controls\ScrollControl.cpp" "D:\USER\Desktop\bullet3-master\examples\ThirdPartyLibs\Gwen\Controls\Slider.cpp" "D:\USER\Desktop\bullet3-master\examples\ThirdPartyLibs\Gwen\Controls\SplitterBar.cpp" "D:\USER\Desktop\bullet3-master\examples\ThirdPartyLibs\Gwen\Controls\TabButton.cpp" "D:\USER\Desktop\bullet3-master\examples\ThirdPartyLibs\Gwen\Controls\TabControl.cpp" "D:\USER\Desktop\bullet3-master\examples\ThirdPartyLibs\Gwen\Controls\TabStrip.cpp" "D:\USER\Desktop\bullet3-master\examples\ThirdPartyLibs\Gwen\Controls\Text.cpp" "D:\USER\Desktop\bullet3-master\examples\ThirdPartyLibs\Gwen\Controls\TextBox.cpp" "D:\USER\Desktop\bullet3-master\examples\ThirdPartyLibs\Gwen\Controls\TextBoxNumeric.cpp" "D:\USER\Desktop\bullet3-master\examples\ThirdPartyLibs\Gwen\Controls\TreeControl.cpp" "D:\USER\Desktop\bullet3-master\examples\ThirdPartyLibs\Gwen\Controls\TreeNode.cpp" "D:\USER\Desktop\bullet3-master\examples\ThirdPartyLibs\Gwen\Controls\VerticalScrollBar.cpp" "D:\USER\Desktop\bullet3-master\examples\ThirdPartyLibs\Gwen\Controls\VerticalSlider.cpp" "D:\USER\Desktop\bullet3-master\examples\ThirdPartyLibs\Gwen\Controls\WindowControl.cpp" "D:\USER\Desktop\bullet3-master\examples\ThirdPartyLibs\Gwen\Controls\Dialog\FileOpen.cpp" "D:\USER\Desktop\bullet3-master\examples\ThirdPartyLibs\Gwen\Controls\Dialog\FileSave.cpp" "D:\USER\Desktop\bullet3-master\examples\ThirdPartyLibs\Gwen\Controls\Dialog\Query.cpp" "D:\USER\Desktop\bullet3-master\examples\ThirdPartyLibs\Gwen\Platforms\Null.cpp" "D:\USER\Desktop\bullet3-master\examples\ThirdPartyLibs\Gwen\Platforms\Windows.cpp" "D:\USER\Desktop\bullet3-master\examples\ThirdPartyLibs\Gwen\Renderers\OpenGL_DebugFont.cpp"
+         Anim.cpp
+         BaseRender.cpp
+         DragAndDrop.cpp
+         Gwen.cpp
+         Hook.cpp
+         Skin.cpp
+         ToolTip.cpp
+         Utility.cpp
+         events.cpp
+         inputhandler.cpp
+         Base.cpp
+         Button.cpp
+         Canvas.cpp
+         CheckBox.cpp
+         ColorControls.cpp
+         ColorPicker.cpp
+         ComboBox.cpp
+         CrossSplitter.cpp
+         DockBase.cpp
+         DockedTabControl.cpp
+         正在生成代码...
+         正在编译...
+         Dragger.cpp
+         GroupBox.cpp
+         HSVColorPicker.cpp
+         HorizontalScrollBar.cpp
+         HorizontalSlider.cpp
+         ImagePanel.cpp
+         Label.cpp
+         LabelClickable.cpp
+         ListBox.cpp
+         Menu.cpp
+         MenuItem.cpp
+         MenuStrip.cpp
+         NumericUpDown.cpp
+         PanelListPanel.cpp
+         ProgressBar.cpp
+         Properties.cpp
+         RadioButton.cpp
+         RadioButtonController.cpp
+         ResizableControl.cpp
+         Resizer.cpp
+         正在生成代码...
+         正在编译...
+         RichLabel.cpp
+         ScrollBar.cpp
+         ScrollBarBar.cpp
+         ScrollBarButton.cpp
+         ScrollControl.cpp
+         Slider.cpp
+         SplitterBar.cpp
+         TabButton.cpp
+         TabControl.cpp
+         TabStrip.cpp
+         Text.cpp
+         TextBox.cpp
+         TextBoxNumeric.cpp
+         TreeControl.cpp
+         TreeNode.cpp
+         VerticalScrollBar.cpp
+         VerticalSlider.cpp
+         WindowControl.cpp
+         FileOpen.cpp
+         FileSave.cpp
+         正在生成代码...
+         正在编译...
+         Query.cpp
+         Null.cpp
+         Windows.cpp
+         OpenGL_DebugFont.cpp
+         正在生成代码...
+       Lib:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\Lib.exe /OUT:"D:\USER\Desktop\Bullet3\lib\Debug\gwen_Debug.lib" /NOLOGO   /machine:X86 gwen.dir\Debug\Anim.obj
+         gwen.dir\Debug\BaseRender.obj
+         gwen.dir\Debug\DragAndDrop.obj
+         gwen.dir\Debug\Gwen.obj
+         gwen.dir\Debug\Hook.obj
+         gwen.dir\Debug\Skin.obj
+         gwen.dir\Debug\ToolTip.obj
+         gwen.dir\Debug\Utility.obj
+         gwen.dir\Debug\events.obj
+         gwen.dir\Debug\inputhandler.obj
+         gwen.dir\Debug\Base.obj
+         gwen.dir\Debug\Button.obj
+         gwen.dir\Debug\Canvas.obj
+         gwen.dir\Debug\CheckBox.obj
+         gwen.dir\Debug\ColorControls.obj
+         gwen.dir\Debug\ColorPicker.obj
+         gwen.dir\Debug\ComboBox.obj
+         gwen.dir\Debug\CrossSplitter.obj
+         gwen.dir\Debug\DockBase.obj
+         gwen.dir\Debug\DockedTabControl.obj
+         gwen.dir\Debug\Dragger.obj
+         gwen.dir\Debug\GroupBox.obj
+         gwen.dir\Debug\HSVColorPicker.obj
+         gwen.dir\Debug\HorizontalScrollBar.obj
+         gwen.dir\Debug\HorizontalSlider.obj
+         gwen.dir\Debug\ImagePanel.obj
+         gwen.dir\Debug\Label.obj
+         gwen.dir\Debug\LabelClickable.obj
+         gwen.dir\Debug\ListBox.obj
+         gwen.dir\Debug\Menu.obj
+         gwen.dir\Debug\MenuItem.obj
+         gwen.dir\Debug\MenuStrip.obj
+         gwen.dir\Debug\NumericUpDown.obj
+         gwen.dir\Debug\PanelListPanel.obj
+         gwen.dir\Debug\ProgressBar.obj
+         gwen.dir\Debug\Properties.obj
+         gwen.dir\Debug\RadioButton.obj
+         gwen.dir\Debug\RadioButtonController.obj
+         gwen.dir\Debug\ResizableControl.obj
+         gwen.dir\Debug\Resizer.obj
+         gwen.dir\Debug\RichLabel.obj
+         gwen.dir\Debug\ScrollBar.obj
+         gwen.dir\Debug\ScrollBarBar.obj
+         gwen.dir\Debug\ScrollBarButton.obj
+         gwen.dir\Debug\ScrollControl.obj
+         gwen.dir\Debug\Slider.obj
+         gwen.dir\Debug\SplitterBar.obj
+         gwen.dir\Debug\TabButton.obj
+         gwen.dir\Debug\TabControl.obj
+         gwen.dir\Debug\TabStrip.obj
+         gwen.dir\Debug\Text.obj
+         gwen.dir\Debug\TextBox.obj
+         gwen.dir\Debug\TextBoxNumeric.obj
+         gwen.dir\Debug\TreeControl.obj
+         gwen.dir\Debug\TreeNode.obj
+         gwen.dir\Debug\VerticalScrollBar.obj
+         gwen.dir\Debug\VerticalSlider.obj
+         gwen.dir\Debug\WindowControl.obj
+         gwen.dir\Debug\FileOpen.obj
+         gwen.dir\Debug\FileSave.obj
+         gwen.dir\Debug\Query.obj
+         gwen.dir\Debug\Null.obj
+         gwen.dir\Debug\Windows.obj
+         gwen.dir\Debug\OpenGL_DebugFont.obj
+     1>Null.obj : warning LNK4221: 此对象文件未定义任何之前未定义的公共符号，因此任何耗用此库的链接操作都不会使用此文件
+     1>Query.obj : warning LNK4221: 此对象文件未定义任何之前未定义的公共符号，因此任何耗用此库的链接操作都不会使用此文件
+     1>ImagePanel.obj : warning LNK4221: 此对象文件未定义任何之前未定义的公共符号，因此任何耗用此库的链接操作都不会使用此文件
+         gwen.vcxproj -> D:\USER\Desktop\Bullet3\lib\Debug\gwen_Debug.lib
+     1>已完成生成项目“D:\USER\Desktop\Bullet3\examples\ThirdPartyLibs\Gwen\gwen.vcxproj”(Build 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:56.11

@@ -1,0 +1,34 @@
+﻿生成启动时间为 2018/5/8 18:52:53。
+     1>项目“D:\USER\Desktop\Bullet3\examples\BasicDemo\AppBasicExampleGui.vcxproj”在节点 2 上(Build 个目标)。
+     1>CustomBuild:
+         Building Custom Rule D:/USER/Desktop/bullet3-master/examples/BasicDemo/CMakeLists.txt
+         CMake does not need to re-run because D:/USER/Desktop/Bullet3/examples/BasicDemo/CMakeFiles/generate.stamp is up-to-date.
+       ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"D:\USER\Desktop\bullet3-master\src" /I"D:\USER\Desktop\bullet3-master\btgui" /I"D:\USER\Desktop\bullet3-master\examples" /I"D:\USER\Desktop\bullet3-master\examples\ThirdPartyLibs\glad" /I"D:\USER\Desktop\bullet3-master\btgui\OpenGLWindow\GlewWindows" /Zi /nologo /W3 /WX- /Od /Ob0 /Oy- /D WIN32 /D _DEBUG /D USE_GRAPHICAL_BENCHMARK /D _CRT_SECURE_NO_WARNINGS /D _CRT_SECURE_NO_DEPRECATE /D _SCL_SECURE_NO_WARNINGS /D B3_USE_STANDALONE_EXAMPLE /D GLEW_STATIC /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /GF /Gm- /EHsc /RTC1 /MTd /GS /Gy /arch:AVX /fp:fast /Zc:wchar_t /Zc:forScope /GR- /Fo"AppBasicExampleGui.dir\Debug\\" /Fd"AppBasicExampleGui.dir\Debug\vc120.pdb" /Gd /TP /wd4244 /wd4267 /analyze- /errorReport:prompt "D:\USER\Desktop\bullet3-master\examples\BasicDemo\BasicExample.cpp" "D:\USER\Desktop\bullet3-master\examples\StandaloneMain\main_opengl_single_example.cpp" "D:\USER\Desktop\bullet3-master\examples\ExampleBrowser\OpenGLGuiHelper.cpp" "D:\USER\Desktop\bullet3-master\examples\ExampleBrowser\GL_ShapeDrawer.cpp" "D:\USER\Desktop\bullet3-master\examples\ExampleBrowser\CollisionShape2TriangleMesh.cpp" "D:\USER\Desktop\bullet3-master\examples\Utils\b3Clock.cpp"
+         BasicExample.cpp
+     1>D:\USER\Desktop\bullet3-master\examples\BasicDemo\BasicExample.cpp(143): warning C4316: “BasicExample”: 在堆上分配的对象可能不是对齐 16
+         main_opengl_single_example.cpp
+         OpenGLGuiHelper.cpp
+     1>D:\USER\Desktop\bullet3-master\examples\ExampleBrowser\OpenGLGuiHelper.cpp(1038): warning C4800: “int”: 将值强制为布尔值“true”或“false”(性能警告)
+     1>D:\USER\Desktop\bullet3-master\examples\ExampleBrowser\OpenGLGuiHelper.cpp(1330): warning C4101: “j”: 未引用的局部变量
+         GL_ShapeDrawer.cpp
+         CollisionShape2TriangleMesh.cpp
+         b3Clock.cpp
+         正在生成代码...
+       ResourceCompile:
+         C:\Program Files (x86)\Windows Kits\8.1\bin\x86\rc.exe /D WIN32 /D _DEBUG /D USE_GRAPHICAL_BENCHMARK /D _CRT_SECURE_NO_WARNINGS /D _CRT_SECURE_NO_DEPRECATE /D _SCL_SECURE_NO_WARNINGS /D B3_USE_STANDALONE_EXAMPLE /D GLEW_STATIC /D "CMAKE_INTDIR=\\\"Debug\\\"" /l"0x0409" /I"D:\USER\Desktop\bullet3-master\src" /I"D:\USER\Desktop\bullet3-master\btgui" /I"D:\USER\Desktop\bullet3-master\examples" /I"D:\USER\Desktop\bullet3-master\examples\ThirdPartyLibs\glad" /I"D:\USER\Desktop\bullet3-master\btgui\OpenGLWindow\GlewWindows" /nologo /fo"AppBasicExampleGui.dir\Debug\bullet.res" D:\USER\Desktop\bullet3-master\build3\bullet.rc 
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\USER\Desktop\Bullet3\examples\BasicDemo\Debug\AppBasicExampleGui.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib ..\..\lib\Debug\BulletDynamics_Debug.lib ..\..\lib\Debug\BulletCollision_Debug.lib ..\..\lib\Debug\LinearMath_Debug.lib ..\..\lib\Debug\BulletDynamics_Debug.lib ..\..\lib\Debug\BulletCollision_Debug.lib ..\..\lib\Debug\LinearMath_Debug.lib ..\..\lib\Debug\OpenGLWindow_Debug.lib ..\..\lib\Debug\Bullet3Common_Debug.lib opengl32.lib glu32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:/USER/Desktop/Bullet3/examples/BasicDemo/Debug/AppBasicExampleGui.pdb" /SUBSYSTEM:CONSOLE /OPT:REF /OPT:ICF /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:/USER/Desktop/Bullet3/examples/BasicDemo/Debug/AppBasicExampleGui.lib" /MACHINE:X86 /SAFESEH   /machine:X86 AppBasicExampleGui.dir\Debug\bullet.res
+         AppBasicExampleGui.dir\Debug\BasicExample.obj
+         AppBasicExampleGui.dir\Debug\main_opengl_single_example.obj
+         AppBasicExampleGui.dir\Debug\OpenGLGuiHelper.obj
+         AppBasicExampleGui.dir\Debug\GL_ShapeDrawer.obj
+         AppBasicExampleGui.dir\Debug\CollisionShape2TriangleMesh.obj
+         AppBasicExampleGui.dir\Debug\b3Clock.obj
+     1>LINK : warning LNK4075: 忽略“/INCREMENTAL”(由于“/OPT:ICF”规范)
+         AppBasicExampleGui.vcxproj -> D:\USER\Desktop\Bullet3\examples\BasicDemo\Debug\AppBasicExampleGui.exe
+     1>已完成生成项目“D:\USER\Desktop\Bullet3\examples\BasicDemo\AppBasicExampleGui.vcxproj”(Build 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:20.25

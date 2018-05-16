@@ -15,12 +15,18 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="source.cpp">
+    <ClCompile Include="main.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="glm.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="OpenGLCamera.h">
+    <ClInclude Include="gjk_epa.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="glm.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

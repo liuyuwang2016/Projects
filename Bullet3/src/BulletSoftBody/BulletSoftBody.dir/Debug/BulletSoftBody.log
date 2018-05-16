@@ -1,0 +1,34 @@
+﻿生成启动时间为 2018/5/8 18:52:06。
+     1>项目“D:\USER\Desktop\Bullet3\src\BulletSoftBody\BulletSoftBody.vcxproj”在节点 5 上(Build 个目标)。
+     1>CustomBuild:
+         Building Custom Rule D:/USER/Desktop/bullet3-master/src/BulletSoftBody/CMakeLists.txt
+         CMake does not need to re-run because D:/USER/Desktop/Bullet3/src/BulletSoftBody/CMakeFiles/generate.stamp is up-to-date.
+       ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"D:\USER\Desktop\bullet3-master\src" /Zi /nologo /W3 /WX- /Od /Ob0 /Oy- /D WIN32 /D _DEBUG /D USE_GRAPHICAL_BENCHMARK /D _CRT_SECURE_NO_WARNINGS /D _CRT_SECURE_NO_DEPRECATE /D _SCL_SECURE_NO_WARNINGS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /GF /Gm- /EHsc /RTC1 /MTd /GS /Gy /arch:AVX /fp:fast /Zc:wchar_t /Zc:forScope /GR- /Fo"BulletSoftBody.dir\Debug\\" /Fd"BulletSoftBody.dir\Debug\vc120.pdb" /Gd /TP /wd4244 /wd4267 /analyze- /errorReport:prompt "D:\USER\Desktop\bullet3-master\src\BulletSoftBody\btSoftBody.cpp" "D:\USER\Desktop\bullet3-master\src\BulletSoftBody\btSoftBodyConcaveCollisionAlgorithm.cpp" "D:\USER\Desktop\bullet3-master\src\BulletSoftBody\btSoftBodyHelpers.cpp" "D:\USER\Desktop\bullet3-master\src\BulletSoftBody\btSoftBodyRigidBodyCollisionConfiguration.cpp" "D:\USER\Desktop\bullet3-master\src\BulletSoftBody\btSoftRigidCollisionAlgorithm.cpp" "D:\USER\Desktop\bullet3-master\src\BulletSoftBody\btSoftRigidDynamicsWorld.cpp" "D:\USER\Desktop\bullet3-master\src\BulletSoftBody\btSoftMultiBodyDynamicsWorld.cpp" "D:\USER\Desktop\bullet3-master\src\BulletSoftBody\btSoftSoftCollisionAlgorithm.cpp" "D:\USER\Desktop\bullet3-master\src\BulletSoftBody\btDefaultSoftBodySolver.cpp"
+         btSoftBody.cpp
+     1>D:\USER\Desktop\bullet3-master\src\BulletSoftBody\btSoftBody.cpp : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+         btSoftBodyConcaveCollisionAlgorithm.cpp
+         btSoftBodyHelpers.cpp
+         btSoftBodyRigidBodyCollisionConfiguration.cpp
+         btSoftRigidCollisionAlgorithm.cpp
+         btSoftRigidDynamicsWorld.cpp
+         btSoftMultiBodyDynamicsWorld.cpp
+         btSoftSoftCollisionAlgorithm.cpp
+         btDefaultSoftBodySolver.cpp
+         正在生成代码...
+       Lib:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\Lib.exe /OUT:"D:\USER\Desktop\Bullet3\lib\Debug\BulletSoftBody_Debug.lib" /NOLOGO   /machine:X86 BulletSoftBody.dir\Debug\btSoftBody.obj
+         BulletSoftBody.dir\Debug\btSoftBodyConcaveCollisionAlgorithm.obj
+         BulletSoftBody.dir\Debug\btSoftBodyHelpers.obj
+         BulletSoftBody.dir\Debug\btSoftBodyRigidBodyCollisionConfiguration.obj
+         BulletSoftBody.dir\Debug\btSoftRigidCollisionAlgorithm.obj
+         BulletSoftBody.dir\Debug\btSoftRigidDynamicsWorld.obj
+         BulletSoftBody.dir\Debug\btSoftMultiBodyDynamicsWorld.obj
+         BulletSoftBody.dir\Debug\btSoftSoftCollisionAlgorithm.obj
+         BulletSoftBody.dir\Debug\btDefaultSoftBodySolver.obj
+         BulletSoftBody.vcxproj -> D:\USER\Desktop\Bullet3\lib\Debug\BulletSoftBody_Debug.lib
+     1>已完成生成项目“D:\USER\Desktop\Bullet3\src\BulletSoftBody\BulletSoftBody.vcxproj”(Build 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:05.64

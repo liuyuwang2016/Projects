@@ -87,7 +87,9 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\portaudio\include;C:\OpenCV300\opencv\build\include;C:\OpenCV300\opencv\build\include\opencv;C:\OpenCV300\opencv\build\include\opencv2;$(KINECTSDK20_DIR)\inc;C:\PCL 1.8.0 2013\3rdParty\Eigen\eigen3;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\OpenCV300\opencv\build\include;C:\OpenCV300\opencv\build\include\opencv;C:\OpenCV300\opencv\build\include\opencv2;$(KINECTSDK20_DIR)\inc;C:\PCL 1.8.0 2013\3rdParty\Eigen\eigen3;C:\portaudio\include;D:\USER\Documents\Visual Studio 2013\Projects\Bullet3\src;D:\USER\Documents\Visual Studio 2013\Projects\5-Aixs Dispenser\5-Aixs Dispenser\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <SDLCheck>false</SDLCheck>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>

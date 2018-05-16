@@ -1,0 +1,23 @@
+﻿生成启动时间为 2018/5/8 19:04:56。
+     1>项目“D:\USER\Desktop\Bullet3\Extras\obj2sdf\App_obj2sdf.vcxproj”在节点 2 上(Build 个目标)。
+     1>CustomBuild:
+         Building Custom Rule D:/USER/Desktop/bullet3-master/Extras/obj2sdf/CMakeLists.txt
+         CMake does not need to re-run because D:/USER/Desktop/Bullet3/Extras/obj2sdf/CMakeFiles/generate.stamp is up-to-date.
+       ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"D:\USER\Desktop\bullet3-master\Extras\obj2sdf\." /I"D:\USER\Desktop\bullet3-master\examples\ThirdPartyLibs" /I"D:\USER\Desktop\bullet3-master\src" /Zi /nologo /W3 /WX- /O2 /Ob1 /Oy- /D WIN32 /D NDEBUG /D USE_GRAPHICAL_BENCHMARK /D _CRT_SECURE_NO_WARNINGS /D _CRT_SECURE_NO_DEPRECATE /D _SCL_SECURE_NO_WARNINGS /D "CMAKE_INTDIR=\"RelWithDebInfo\"" /D _MBCS /GF /Gm- /EHsc /MT /GS /Gy /arch:AVX /fp:fast /Zc:wchar_t /Zc:forScope /GR- /Fo"App_obj2sdf.dir\RelWithDebInfo\\" /Fd"App_obj2sdf.dir\RelWithDebInfo\vc120.pdb" /Gd /TP /wd4244 /wd4267 /analyze- /errorReport:prompt "D:\USER\Desktop\bullet3-master\Extras\obj2sdf\obj2sdf.cpp" "D:\USER\Desktop\bullet3-master\examples\Utils\b3ResourcePath.cpp" "D:\USER\Desktop\bullet3-master\examples\ThirdPartyLibs\Wavefront\tiny_obj_loader.cpp"
+         obj2sdf.cpp
+         b3ResourcePath.cpp
+         tiny_obj_loader.cpp
+     1>D:\USER\Desktop\bullet3-master\examples\ThirdPartyLibs\Wavefront\tiny_obj_loader.cpp(214): warning C4018: “<”: 有符号/无符号不匹配
+         正在生成代码...
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\USER\Desktop\Bullet3\Extras\obj2sdf\RelWithDebInfo\App_obj2sdf.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib ..\..\lib\RelWithDebInfo\Bullet3Common_RelWithDebugInfo.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:/USER/Desktop/Bullet3/Extras/obj2sdf/RelWithDebInfo/App_obj2sdf.pdb" /SUBSYSTEM:CONSOLE /OPT:REF /OPT:ICF /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:/USER/Desktop/Bullet3/Extras/obj2sdf/RelWithDebInfo/App_obj2sdf.lib" /MACHINE:X86 /SAFESEH   /machine:X86 App_obj2sdf.dir\RelWithDebInfo\obj2sdf.obj
+         App_obj2sdf.dir\RelWithDebInfo\b3ResourcePath.obj
+         App_obj2sdf.dir\RelWithDebInfo\tiny_obj_loader.obj
+     1>LINK : warning LNK4075: 忽略“/INCREMENTAL”(由于“/OPT:ICF”规范)
+         App_obj2sdf.vcxproj -> D:\USER\Desktop\Bullet3\Extras\obj2sdf\RelWithDebInfo\App_obj2sdf.exe
+     1>已完成生成项目“D:\USER\Desktop\Bullet3\Extras\obj2sdf\App_obj2sdf.vcxproj”(Build 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:05.00
