@@ -25,12 +25,7 @@ public:
 	float x;
 	float y;
 	float z;
-
-
 public:
-
-	//----------------[ ructors ]--------------------------
-
 	Vector3()
 		: x(0), y(0), z(0)
 	{
@@ -40,16 +35,12 @@ public:
 		: x(nx), y(ny), z(nz)
 	{
 	}
-
-
-
 	//---------------[ 运算符重载 ]--------------
 
 	Vector3 operator+(Vector3& rhs) 
 	{
 		return Vector3(x + rhs.x, y + rhs.y, z + rhs.z);
 	}
-
 
 	Vector3 operator-(Vector3& rhs) 
 	{
@@ -78,15 +69,12 @@ public:
 		return Vector3(x / rhs, y / rhs, z / rhs);
 	}
 
-
 	//-------------[ unary operations ]--------------------------
 
 	Vector3 operator-() 
 	{
 		return Vector3(-x, -y, -z);
 	}
-
-
 
 	//-------------[ function operations ]---------------------------
 
@@ -119,7 +107,7 @@ public:
 		y /= s;
 		z /= s;
 	}
-
+	//-------------[ 计算单位向量 ]---------------------------
 	Vector3 getUnit() 
 	{
 		float lengthVector = length();
@@ -134,7 +122,6 @@ public:
 			z * lengthInv);
 	}
 
-
 	void rotateAroundAxis(Vector3 &axis,  float angle)
 	{
 		Vector3 self = *this;
@@ -146,7 +133,6 @@ public:
 	}
 };
 
-
 float dot(Vector3& a, Vector3& b)
 {
 	return a.dot(b);
@@ -157,12 +143,8 @@ Vector3 cross(Vector3& a, Vector3& b)
 	return a.cross(b);
 }
 
-
-
 //--------------------------------  gjk-epa ----------------------------------//
-
-
-// FLOATING POINT VALIDITY
+// 是否无穷
 template<typename T> bool is_infinite( T &value)
 {
 	T max_value = (std::numeric_limits<T>::max)();
@@ -172,7 +154,7 @@ template<typename T> bool is_infinite( T &value)
 
 template<typename T> bool is_nan( T &value)
 {
-	// True if NAN
+	// True if NAN value是不是有效//
 	return value != value;
 }
 
@@ -181,22 +163,20 @@ template<typename T> bool is_valid( T &value)
 	return !is_infinite(value) && !is_nan(value);
 }
 
-
 class ContactBasicData
 {
 public:
-
-	Vector3 point; // point is on the surface of A (inside of B if penetration is positive)
-	Vector3 normal; // points from B to A
+	// point is on the surface of A (inside of B if penetration is positive)
+	//A上面的点，如果penetration是正的说明A在B里面
+	Vector3 point; 
+	// points from B to A 向量
+	Vector3 normal; 
 	float penetration;
 
 	// the local support points of the minkowski difference triangle that was used to generate this contact originally
 	// these points can be used to update the contact data even after the two objects have been arbitrarily changed
 	Vector3 triangleSupports_world[2][3];
 };
-
-
-
 
 class GJKEPAGenerator
 {
@@ -214,8 +194,6 @@ public:
 		// id is only used in the expanding polytope algorithm while generating edges
 		inline SupportPoint(int uniqueId = 0) : uniqueId(uniqueId) {}
 	};
-
-
 
 	// Minkowski Differential
 	template <typename ConvexTemplate>
@@ -282,11 +260,8 @@ public:
 
 	struct Simplex
 	{
-
 	public:
-
 		SupportPoint _simplex[4];
-
 		int num;
 		SupportPoint &a;
 		SupportPoint &b;
@@ -301,9 +276,7 @@ public:
 		{
 			clear();
 		}
-
 		inline void clear() { num = 0; }
-
 		inline void set(SupportPoint a, SupportPoint b, SupportPoint c, SupportPoint d)
 		{
 			num = 4;
@@ -312,7 +285,6 @@ public:
 			this->c = c;
 			this->d = d;
 		}
-
 		inline void set(SupportPoint a, SupportPoint b, SupportPoint c)
 		{
 			num = 3;
@@ -320,27 +292,23 @@ public:
 			this->b = b;
 			this->c = c;
 		}
-
 		inline void set(SupportPoint a, SupportPoint b)
 		{
 			num = 2;
 			this->a = a;
 			this->b = b;
 		}
-
 		inline void set(SupportPoint a)
 		{
 			num = 1;
 			this->a = a;
 		}
-
 		inline void push(SupportPoint p)
 		{
 			num = (std::min)(num + 1, 4);
 			for (int i = num - 1; i > 0; i--) _simplex[i] = _simplex[i - 1];
 			_simplex[0] = p;
 		}
-
 	};
 
 	static bool extrapolateContactInformation(ContactBasicData* contactData)

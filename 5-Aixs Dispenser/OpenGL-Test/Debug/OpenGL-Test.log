@@ -1,31 +1,76 @@
-﻿生成启动时间为 2018/5/16 21:47:01。
+﻿生成启动时间为 2018/5/17 22:13:49。
      1>项目“D:\USER\Documents\Visual Studio 2013\Projects\5-Aixs Dispenser\OpenGL-Test\OpenGL-Test.vcxproj”在节点 2 上(Build 个目标)。
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt glm.cpp
-         glm.cpp
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\opengl-test\glm.cpp(282): warning C4305: “=”: 从“double”到“GLfloat”截断
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\opengl-test\glm.cpp(283): warning C4305: “=”: 从“double”到“GLfloat”截断
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\opengl-test\glm.cpp(284): warning C4305: “=”: 从“double”到“GLfloat”截断
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\opengl-test\glm.cpp(286): warning C4305: “=”: 从“double”到“GLfloat”截断
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\opengl-test\glm.cpp(287): warning C4305: “=”: 从“double”到“GLfloat”截断
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\opengl-test\glm.cpp(288): warning C4305: “=”: 从“double”到“GLfloat”截断
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\opengl-test\glm.cpp(787): warning C4244: “=”: 从“double”转换到“GLfloat”，可能丢失数据
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\opengl-test\glm.cpp(788): warning C4244: “=”: 从“double”转换到“GLfloat”，可能丢失数据
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\opengl-test\glm.cpp(789): warning C4244: “=”: 从“double”转换到“GLfloat”，可能丢失数据
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\opengl-test\glm.cpp(791): warning C4244: “=”: 从“double”转换到“GLfloat”，可能丢失数据
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\opengl-test\glm.cpp(963): warning C4244: “=”: 从“double”转换到“GLfloat”，可能丢失数据
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\opengl-test\glm.cpp(1169): warning C4305: “=”: 从“double”到“GLfloat”截断
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\opengl-test\glm.cpp(1174): warning C4305: “=”: 从“double”到“GLfloat”截断
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\opengl-test\glm.cpp(1176): warning C4244: “=”: 从“double”转换到“GLfloat”，可能丢失数据
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\opengl-test\glm.cpp(1179): warning C4244: “=”: 从“double”转换到“GLfloat”，可能丢失数据
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\opengl-test\glm.cpp(1180): warning C4244: “=”: 从“double”转换到“GLfloat”，可能丢失数据
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\opengl-test\glm.cpp(1274): warning C4018: “<”: 有符号/无符号不匹配
-       Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\USER\Documents\Visual Studio 2013\Projects\5-Aixs Dispenser\Debug\OpenGL-Test.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\USER\Documents\Visual Studio 2013\Projects\5-Aixs Dispenser\Debug\OpenGL-Test.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\USER\Documents\Visual Studio 2013\Projects\5-Aixs Dispenser\Debug\OpenGL-Test.lib" /MACHINE:X86 Debug\glm.obj
-         Debug\main.obj
-         OpenGL-Test.vcxproj -> D:\USER\Documents\Visual Studio 2013\Projects\5-Aixs Dispenser\Debug\OpenGL-Test.exe
-     1>已完成生成项目“D:\USER\Documents\Visual Studio 2013\Projects\5-Aixs Dispenser\OpenGL-Test\OpenGL-Test.vcxproj”(Build 个目标)的操作。
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt main.cpp
+         main.cpp
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\opengl-test\gjk_epa.hpp(119): warning C4244: “初始化”: 从“double”转换到“float”，可能丢失数据
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\opengl-test\main.cpp(134): error C2065: “vertices”: 未声明的标识符
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\opengl-test\main.cpp(135): error C2065: “vertices”: 未声明的标识符
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\opengl-test\main.cpp(136): error C2065: “vertices”: 未声明的标识符
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\opengl-test\main.cpp(147): error C2065: “vertices”: 未声明的标识符
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\opengl-test\main.cpp(148): error C2065: “vertices”: 未声明的标识符
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\opengl-test\main.cpp(149): error C2065: “vertices”: 未声明的标识符
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\opengl-test\main.cpp(155): error C2065: “vertices”: 未声明的标识符
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\opengl-test\main.cpp(156): error C2065: “vertices”: 未声明的标识符
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\opengl-test\main.cpp(157): error C2065: “vertices”: 未声明的标识符
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\opengl-test\main.cpp(165): error C2065: “normals”: 未声明的标识符
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\opengl-test\main.cpp(166): error C2065: “normals”: 未声明的标识符
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\opengl-test\main.cpp(167): error C2065: “normals”: 未声明的标识符
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\opengl-test\main.cpp(169): error C2065: “normals”: 未声明的标识符
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\opengl-test\main.cpp(170): error C2065: “normals”: 未声明的标识符
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\opengl-test\main.cpp(171): error C2065: “normals”: 未声明的标识符
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\opengl-test\main.cpp(173): error C2065: “normals”: 未声明的标识符
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\opengl-test\main.cpp(174): error C2065: “normals”: 未声明的标识符
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\opengl-test\main.cpp(175): error C2065: “normals”: 未声明的标识符
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\opengl-test\main.cpp(182): error C2065: “vtextures”: 未声明的标识符
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\opengl-test\main.cpp(183): error C2065: “vtextures”: 未声明的标识符
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\opengl-test\main.cpp(185): error C2065: “vtextures”: 未声明的标识符
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\opengl-test\main.cpp(186): error C2065: “vtextures”: 未声明的标识符
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\opengl-test\main.cpp(188): error C2065: “vtextures”: 未声明的标识符
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\opengl-test\main.cpp(189): error C2065: “vtextures”: 未声明的标识符
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\opengl-test\main.cpp(303): error C2065: “vertices”: 未声明的标识符
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\opengl-test\main.cpp(304): error C2065: “vertices”: 未声明的标识符
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\opengl-test\main.cpp(305): error C2065: “vertices”: 未声明的标识符
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\opengl-test\main.cpp(316): error C2065: “vertices”: 未声明的标识符
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\opengl-test\main.cpp(317): error C2065: “vertices”: 未声明的标识符
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\opengl-test\main.cpp(318): error C2065: “vertices”: 未声明的标识符
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\opengl-test\main.cpp(324): error C2065: “vertices”: 未声明的标识符
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\opengl-test\main.cpp(325): error C2065: “vertices”: 未声明的标识符
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\opengl-test\main.cpp(326): error C2065: “vertices”: 未声明的标识符
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\opengl-test\main.cpp(334): error C2065: “normals”: 未声明的标识符
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\opengl-test\main.cpp(335): error C2065: “normals”: 未声明的标识符
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\opengl-test\main.cpp(336): error C2065: “normals”: 未声明的标识符
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\opengl-test\main.cpp(338): error C2065: “normals”: 未声明的标识符
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\opengl-test\main.cpp(339): error C2065: “normals”: 未声明的标识符
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\opengl-test\main.cpp(340): error C2065: “normals”: 未声明的标识符
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\opengl-test\main.cpp(342): error C2065: “normals”: 未声明的标识符
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\opengl-test\main.cpp(343): error C2065: “normals”: 未声明的标识符
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\opengl-test\main.cpp(344): error C2065: “normals”: 未声明的标识符
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\opengl-test\main.cpp(351): error C2065: “vtextures”: 未声明的标识符
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\opengl-test\main.cpp(352): error C2065: “vtextures”: 未声明的标识符
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\opengl-test\main.cpp(354): error C2065: “vtextures”: 未声明的标识符
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\opengl-test\main.cpp(355): error C2065: “vtextures”: 未声明的标识符
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\opengl-test\main.cpp(357): error C2065: “vtextures”: 未声明的标识符
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\opengl-test\main.cpp(358): error C2065: “vtextures”: 未声明的标识符
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\opengl-test\main.cpp(484): warning C4305: “初始化”: 从“double”到“float”截断
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\opengl-test\main.cpp(515): warning C4244: “参数”: 从“float”转换到“GLsizei”，可能丢失数据
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\opengl-test\main.cpp(549): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\opengl-test\main.cpp(554): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\opengl-test\main.cpp(558): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\opengl-test\main.cpp(559): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\opengl-test\main.cpp(593): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\opengl-test\main.cpp(594): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\opengl-test\main.cpp(604): warning C4244: “初始化”: 从“double”转换到“float”，可能丢失数据
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\opengl-test\main.cpp(605): warning C4244: “初始化”: 从“double”转换到“float”，可能丢失数据
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\opengl-test\main.cpp(631): warning C4244: “初始化”: 从“double”转换到“float”，可能丢失数据
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\opengl-test\main.cpp(632): warning C4244: “初始化”: 从“double”转换到“float”，可能丢失数据
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\opengl-test\main.cpp(665): warning C4305: “参数”: 从“double”到“float”截断
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\opengl-test\main.cpp(668): warning C4305: “参数”: 从“double”到“float”截断
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\opengl-test\main.cpp(671): warning C4305: “参数”: 从“double”到“float”截断
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\opengl-test\main.cpp(674): warning C4305: “参数”: 从“double”到“float”截断
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\opengl-test\main.cpp(690): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+     1>已完成生成项目“D:\USER\Documents\Visual Studio 2013\Projects\5-Aixs Dispenser\OpenGL-Test\OpenGL-Test.vcxproj”(Build 个目标)的操作 - 失败。
 
-生成成功。
+生成失败。
 
-已用时间 00:00:01.56
+已用时间 00:00:00.51
