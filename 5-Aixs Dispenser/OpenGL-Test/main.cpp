@@ -24,7 +24,6 @@ float vtextures[MAXGROUPSIZE][MAXSIZE];
 class Model
 {
 public:
-	Vector3 position;
 	Model(){}
 	~Model(){}
 	
@@ -40,7 +39,13 @@ class probeTipModel : public Model
 {
 public:
 	GLMmodel* obj;
-	probeTipModel()
+	GLfloat *vertices;
+	GLfloat *colors;
+
+	Vector3 position = Vector3(0, 0, 0);
+	Vector3 scale = Vector3(1, 1, 1);
+	Vector3 rotation = Vector3(0, 0, 0);	// Euler form
+	probeTipModel(GLMmodel* m) : Model(), obj(m)
 	{
 	}
 	~probeTipModel()
@@ -53,164 +58,149 @@ public:
 		return res;
 	}
 
-	void drawModel(GLMmodel* obj);
+	void drawModel(probeTipModel* m);
 };
 
-void probeTipModel::drawModel(GLMmodel* obj)
+void probeTipModel::drawModel(probeTipModel* m)
 {
-	if (obj != NULL) {
-		free(obj);
+	if (m->obj != NULL) {
+		free(m->obj);
 	}
-	obj = glmReadOBJ("model/bunny.obj");
-	glmUnitize(obj);
-		
-	GLMgroup* group = obj->groups;
+	m->obj = glmReadOBJ("model/elephant.obj");
 
-	float maxx, maxy, maxz;
-	float minx, miny, minz;
-	float dx, dy, dz;
-	//glm中，vertices3,4,5是第一个点
-	maxx = minx = obj->vertices[3];
-	maxy = miny = obj->vertices[4];
-	maxz = minz = obj->vertices[5];
+	glmUnitize(m->obj);
 
-	//3,4,5的值为第一组v的值
-	//找最大最小值：三个维度,遍历模型中顶点的数目
-	for (unsigned int i = 2; i <= obj->numvertices; i++)
+
+	GLfloat maxVal[3];
+	GLfloat minVal[3];
+
+	m->vertices = new GLfloat[m->obj->numtriangles * 9];
+	m->colors = new GLfloat[m->obj->numtriangles * 9];
+
+	// The center position of the model 
+	m->obj->position[0] = 0;
+	m->obj->position[1] = 0;
+	m->obj->position[2] = 0;
+
+	//printf("#triangles: %d\n", m->obj->numtriangles);
+
+
+	for (int i = 0; i < (int)m->obj->numtriangles; i++)
 	{
+		// the index of each vertex
+		int indv1 = m->obj->triangles[i].vindices[0];
+		int indv2 = m->obj->triangles[i].vindices[1];
+		int indv3 = m->obj->triangles[i].vindices[2];
+
+		// the index of each color
+		int indc1 = indv1;
+		int indc2 = indv2;
+		int indc3 = indv3;
+
+		// assign vertices
 		GLfloat vx, vy, vz;
+		vx = m->obj->vertices[indv1 * 3 + 0];
+		vy = m->obj->vertices[indv1 * 3 + 1];
+		vz = m->obj->vertices[indv1 * 3 + 2];
 
-		vx = obj->vertices[i * 3 + 0];
-		vy = obj->vertices[i * 3 + 1];
-		vz = obj->vertices[i * 3 + 2];
+		m->vertices[i * 9 + 0] = vx;
+		m->vertices[i * 9 + 1] = vy;
+		m->vertices[i * 9 + 2] = vz;
 
-		if (vx > maxx)
-			maxx = vx;
-		if (vx < minx)
-			minx = vx;
-		if (vy > maxy)
-			maxy = vy;
-		if (vy < miny)
-			miny = vy;
-		if (vz > maxz)
-			maxz = vz;
-		if (vz < minz)
-			minz = vz;
+		vx = m->obj->vertices[indv2 * 3 + 0];
+		vy = m->obj->vertices[indv2 * 3 + 1];
+		vz = m->obj->vertices[indv2 * 3 + 2];
+
+		m->vertices[i * 9 + 3] = vx;
+		m->vertices[i * 9 + 4] = vy;
+		m->vertices[i * 9 + 5] = vz;
+
+		vx = m->obj->vertices[indv3 * 3 + 0];
+		vy = m->obj->vertices[indv3 * 3 + 1];
+		vz = m->obj->vertices[indv3 * 3 + 2];
+
+		m->vertices[i * 9 + 6] = vx;
+		m->vertices[i * 9 + 7] = vy;
+		m->vertices[i * 9 + 8] = vz;
+
+		// assign colors
+		GLfloat c1, c2, c3;
+		c1 = m->obj->colors[indv1 * 3 + 0];
+		c2 = m->obj->colors[indv1 * 3 + 1];
+		c3 = m->obj->colors[indv1 * 3 + 2];
+
+		m->colors[i * 9 + 0] = c1;
+		m->colors[i * 9 + 1] = c2;
+		m->colors[i * 9 + 2] = c3;
+
+		c1 = m->obj->colors[indv2 * 3 + 0];
+		c2 = m->obj->colors[indv2 * 3 + 1];
+		c3 = m->obj->colors[indv2 * 3 + 2];
+
+		m->colors[i * 9 + 3] = c1;
+		m->colors[i * 9 + 4] = c2;
+		m->colors[i * 9 + 5] = c3;
+
+		c1 = m->obj->colors[indv3 * 3 + 0];
+		c2 = m->obj->colors[indv3 * 3 + 1];
+		c3 = m->obj->colors[indv3 * 3 + 2];
+
+		m->colors[i * 9 + 6] = c1;
+		m->colors[i * 9 + 7] = c2;
+		m->colors[i * 9 + 8] = c3;
 	}
-	//printf("max\n%f %f, %f %f, %f %f\n", maxx, minx, maxy, miny, maxz, minz);
-	dx = maxx - minx;
-	dy = maxy - miny;
-	dz = maxz - minz;
-	//找到模型的顶点中X,Y,Z的值最大的三个点和X,Y,Z值最小的三个点，从而算出模型的长宽高
-	//printf("dx,dy,dz = %f %f %f\n", dx, dy, dz);
-	//GLfloat normalizationScale = myMax(myMax(dx, dy), dz) / 2;
-	//算出模型的长宽高之后，拿到模型中心点所在的位置
-	obj->position[0] = (maxx + minx) / 2;
-	obj->position[1] = (maxy + miny) / 2;
-	obj->position[2] = (maxz + minz) / 2;
 
-	int gCount = 0;
-	while (group) {
-		for (unsigned int i = 0; i < group->numtriangles; i++) {
+	// Find min and max value
+	GLfloat meanVal[3];
 
-			// triangle index
-			int triangleID = group->triangles[i];
+	meanVal[0] = meanVal[1] = meanVal[2] = 0;
+	maxVal[0] = maxVal[1] = maxVal[2] = -10e20;
+	minVal[0] = minVal[1] = minVal[2] = 10e20;
 
-			// the index of each vertex vindices是三角形的顶点
-			int indv1 = obj->triangles[triangleID].vindices[0];
-			int indv2 = obj->triangles[triangleID].vindices[1];
-			int indv3 = obj->triangles[triangleID].vindices[2];
+	for (int i = 0; i < m->obj->numtriangles * 3; i++)
+	{
+		maxVal[0] = max(m->vertices[3 * i + 0], maxVal[0]);
+		maxVal[1] = max(m->vertices[3 * i + 1], maxVal[1]);
+		maxVal[2] = max(m->vertices[3 * i + 2], maxVal[2]);
 
-			//在这里可以得到，见文件triangle.txt
-			/*cout << "obj->triangles["<<triangleID<<"].vindices[0] = " << obj->triangles[triangleID].vindices[0] << endl;
-			cout << "obj->triangles["<<triangleID<<"].vindices[1] = " << obj->triangles[triangleID].vindices[1] << endl;
-			cout << "obj->triangles["<<triangleID<<"].vindices[2] = " << obj->triangles[triangleID].vindices[2] << endl;*/
+		minVal[0] = min(m->vertices[3 * i + 0], minVal[0]);
+		minVal[1] = min(m->vertices[3 * i + 1], minVal[1]);
+		minVal[2] = min(m->vertices[3 * i + 2], minVal[2]);
 
-			// vertices
-			GLfloat vx, vy, vz;
-			double scale = 0.001;
-			//抓取的三角形的第一个顶点的数据X,Y,Z
-			vx = obj->vertices[indv1 * 3];
-			vy = obj->vertices[indv1 * 3 + 1];
-			vz = obj->vertices[indv1 * 3 + 2];
-
-			//读三角形三个点
-			//printf("vertices1 %f %f %f\n", vx, vy, vz);
-			//这里是把原来的 vertices 转移到新的二维数组中，原来的单位是米，我们转变后单位是毫米
-			/* The model size's unit is mm but glm.h's size unit is m, so we use a scale to resize it\n*/
-			//让真实的三角形的第一个顶点的数据等于模型中的数据
-			obj->vertices[gCount][i * 9 + 0] = vx * scale;
-			obj->vertices[gCount][i * 9 + 1] = vy * scale;
-			obj->vertices[gCount][i * 9 + 2] = vz * scale;
-
-			//在这里可以得到，见文件vertices.txt
-			/*cout << "vertices[" << gCount << "][" << i  << " * 9]+0 = " << vertices[gCount][i * 9 + 0] << endl;
-			cout << "vertices[" << gCount << "][" << i << " * 9]+1 = " << vertices[gCount][i * 9 + 1] << endl;
-			cout << "vertices[" << gCount << "][" << i  << " * 9]+2 = " << vertices[gCount][i * 9 + 2] << endl;*/
-			//抓取的三角形的第二个顶点的数据
-			vx = obj->vertices[indv2 * 3];
-			vy = obj->vertices[indv2 * 3 + 1];
-			vz = obj->vertices[indv2 * 3 + 2];
-
-			obj->vertices[gCount][i * 9 + 3] = vx * scale;
-			obj->vertices[gCount][i * 9 + 4] = vy * scale;
-			obj->vertices[gCount][i * 9 + 5] = vz * scale;
-			//抓取的三角形的第三个顶点的数据
-			vx = obj->vertices[indv3 * 3];
-			vy = obj->vertices[indv3 * 3 + 1];
-			vz = obj->vertices[indv3 * 3 + 2];
-
-			obj->vertices[gCount][i * 9 + 6] = vx * scale;
-			obj->vertices[gCount][i * 9 + 7] = vy * scale;
-			obj->vertices[gCount][i * 9 + 8] = vz * scale;
-
-			//抓取的三角形的三个点的法向量
-			int indn1 = obj->triangles[triangleID].nindices[0];
-			int indn2 = obj->triangles[triangleID].nindices[1];
-			int indn3 = obj->triangles[triangleID].nindices[2];
-
-			// 三个点的法向量的X,Y,Z数据
-			obj->normals[gCount][i * 9 + 0] = obj->normals[indn1 * 3 + 0];
-			obj->[gCount][i * 9 + 1] = obj->normals[indn1 * 3 + 1];
-			obj->[gCount][i * 9 + 2] = obj->normals[indn1 * 3 + 2];
-
-			obj->normals[gCount][i * 9 + 3] = obj->normals[indn2 * 3 + 0];
-			obj->normals[gCount][i * 9 + 4] = obj->normals[indn2 * 3 + 1];
-			obj->normals[gCount][i * 9 + 5] = obj->normals[indn2 * 3 + 2];
-
-			obj->normals[gCount][i * 9 + 6] = obj->normals[indn3 * 3 + 0];
-			obj->normals[gCount][i * 9 + 7] = obj->normals[indn3 * 3 + 1];
-			obj->normals[gCount][i * 9 + 8] = obj->normals[indn3 * 3 + 2];
-
-			//三角形的三个点的纹理坐标
-			int indt1 = obj->triangles[triangleID].tindices[0];
-			int indt2 = obj->triangles[triangleID].tindices[1];
-			int indt3 = obj->triangles[triangleID].tindices[2];
-			//三角形的三个点的纹理坐标的X,Y值
-			obj->vtextures[gCount][i * 6 + 0] = obj->texcoords[indt1 * 2 + 0];
-			obj->vtextures[gCount][i * 6 + 1] = obj->texcoords[indt1 * 2 + 1];
-
-			vtextures[gCount][i * 6 + 2] = obj->texcoords[indt2 * 2 + 0];
-			vtextures[gCount][i * 6 + 3] = obj->texcoords[indt2 * 2 + 1];
-
-			vtextures[gCount][i * 6 + 4] = obj->texcoords[indt3 * 2 + 0];
-			vtextures[gCount][i * 6 + 5] = obj->texcoords[indt3 * 2 + 1];
-		}
-		//指向下一组模型数据
-		group = group->next;
-		gCount++;
-		//vertices;
+		meanVal[0] += m->vertices[3 * i + 0];
+		meanVal[1] += m->vertices[3 * i + 1];
+		meanVal[2] += m->vertices[3 * i + 2];
 	}
-	cout << "gcount " << gCount << endl;
+	GLfloat scale = max(maxVal[0] - minVal[0], maxVal[1] - minVal[1]);
+	scale = max(scale, maxVal[2] - minVal[2]);
 
+	// Calculate mean values
+	for (int i = 0; i < 3; i++)
+	{
+		//meanVal[i] = (maxVal[i] + minVal[i]) / 2.0;
+		meanVal[i] /= (m->obj->numtriangles * 3);
+	}
 
+	// Normalization
+	for (int i = 0; i < m->obj->numtriangles * 3; i++)
+	{
+		m->vertices[3 * i + 0] = 1.0*((m->vertices[3 * i + 0] - meanVal[0]) / scale);
+		m->vertices[3 * i + 1] = 1.0*((m->vertices[3 * i + 1] - meanVal[1]) / scale);
+		m->vertices[3 * i + 2] = 1.0*((m->vertices[3 * i + 2] - meanVal[2]) / scale);
+	}
 }
 
 class virtualModel :public Model
 {
 public:
 	GLMmodel* obj;
-	virtualModel()
+	GLfloat *vertices;
+	GLfloat *colors;
+
+	Vector3 position = Vector3(0, 0, 0);
+	Vector3 scale = Vector3(1, 1, 1);
+	Vector3 rotation = Vector3(0, 0, 0);	// Euler form
+	virtualModel(GLMmodel* m):Model(), obj(m)
 	{
 	}
 	~virtualModel()
@@ -221,156 +211,137 @@ public:
 		Vector3 res;
 		return res;
 	}
-	void drawModel(GLMmodel* obj);
+	void drawModel(virtualModel* m);
 };
 
-void virtualModel::drawModel(GLMmodel* obj)
+void virtualModel::drawModel(virtualModel* m)
 {
-	if (obj != NULL) {
-		free(obj);
+	if (m->obj != NULL) {
+		free(m->obj);
 	}
-	obj = glmReadOBJ("model/elephant.obj");
+	m->obj = glmReadOBJ("model/elephant.obj");
 	
-	glmUnitize(obj);
+	glmUnitize(m->obj);
 
-	GLMgroup* group = obj->groups;
 
-	float maxx, maxy, maxz;
-	float minx, miny, minz;
-	float dx, dy, dz;
-	//glm中，vertices3,4,5是第一个点
-	maxx = minx = obj->vertices[3];
-	maxy = miny = obj->vertices[4];
-	maxz = minz = obj->vertices[5];
+	GLfloat maxVal[3];
+	GLfloat minVal[3];
 
-	//3,4,5的值为第一组v的值
-	//找最大最小值：三个维度,遍历模型中顶点的数目
-	for (unsigned int i = 2; i <= obj->numvertices; i++)
+	m->vertices = new GLfloat[m->obj->numtriangles * 9];
+	m->colors = new GLfloat[m->obj->numtriangles * 9];
+
+	// The center position of the model 
+	m->obj->position[0] = 0;
+	m->obj->position[1] = 0;
+	m->obj->position[2] = 0;
+
+	//printf("#triangles: %d\n", m->obj->numtriangles);
+
+
+	for (int i = 0; i < (int)m->obj->numtriangles; i++)
 	{
+		// the index of each vertex
+		int indv1 = m->obj->triangles[i].vindices[0];
+		int indv2 = m->obj->triangles[i].vindices[1];
+		int indv3 = m->obj->triangles[i].vindices[2];
+
+		// the index of each color
+		int indc1 = indv1;
+		int indc2 = indv2;
+		int indc3 = indv3;
+
+		// assign vertices
 		GLfloat vx, vy, vz;
+		vx = m->obj->vertices[indv1 * 3 + 0];
+		vy = m->obj->vertices[indv1 * 3 + 1];
+		vz = m->obj->vertices[indv1 * 3 + 2];
 
-		vx = obj->vertices[i * 3 + 0];
-		vy = obj->vertices[i * 3 + 1];
-		vz = obj->vertices[i * 3 + 2];
+		m->vertices[i * 9 + 0] = vx;
+		m->vertices[i * 9 + 1] = vy;
+		m->vertices[i * 9 + 2] = vz;
 
-		if (vx > maxx)
-			maxx = vx;
-		if (vx < minx)
-			minx = vx;
-		if (vy > maxy)
-			maxy = vy;
-		if (vy < miny)
-			miny = vy;
-		if (vz > maxz)
-			maxz = vz;
-		if (vz < minz)
-			minz = vz;
+		vx = m->obj->vertices[indv2 * 3 + 0];
+		vy = m->obj->vertices[indv2 * 3 + 1];
+		vz = m->obj->vertices[indv2 * 3 + 2];
+
+		m->vertices[i * 9 + 3] = vx;
+		m->vertices[i * 9 + 4] = vy;
+		m->vertices[i * 9 + 5] = vz;
+
+		vx = m->obj->vertices[indv3 * 3 + 0];
+		vy = m->obj->vertices[indv3 * 3 + 1];
+		vz = m->obj->vertices[indv3 * 3 + 2];
+
+		m->vertices[i * 9 + 6] = vx;
+		m->vertices[i * 9 + 7] = vy;
+		m->vertices[i * 9 + 8] = vz;
+
+		// assign colors
+		GLfloat c1, c2, c3;
+		c1 = m->obj->colors[indv1 * 3 + 0];
+		c2 = m->obj->colors[indv1 * 3 + 1];
+		c3 = m->obj->colors[indv1 * 3 + 2];
+
+		m->colors[i * 9 + 0] = c1;
+		m->colors[i * 9 + 1] = c2;
+		m->colors[i * 9 + 2] = c3;
+
+		c1 = m->obj->colors[indv2 * 3 + 0];
+		c2 = m->obj->colors[indv2 * 3 + 1];
+		c3 = m->obj->colors[indv2 * 3 + 2];
+
+		m->colors[i * 9 + 3] = c1;
+		m->colors[i * 9 + 4] = c2;
+		m->colors[i * 9 + 5] = c3;
+
+		c1 = m->obj->colors[indv3 * 3 + 0];
+		c2 = m->obj->colors[indv3 * 3 + 1];
+		c3 = m->obj->colors[indv3 * 3 + 2];
+
+		m->colors[i * 9 + 6] = c1;
+		m->colors[i * 9 + 7] = c2;
+		m->colors[i * 9 + 8] = c3;
 	}
-	//printf("max\n%f %f, %f %f, %f %f\n", maxx, minx, maxy, miny, maxz, minz);
-	dx = maxx - minx;
-	dy = maxy - miny;
-	dz = maxz - minz;
-	//找到模型的顶点中X,Y,Z的值最大的三个点和X,Y,Z值最小的三个点，从而算出模型的长宽高
-	//printf("dx,dy,dz = %f %f %f\n", dx, dy, dz);
-	//GLfloat normalizationScale = myMax(myMax(dx, dy), dz) / 2;
-	//算出模型的长宽高之后，拿到模型中心点所在的位置
-	obj->position[0] = (maxx + minx) / 2;
-	obj->position[1] = (maxy + miny) / 2;
-	obj->position[2] = (maxz + minz) / 2;
 
-	int gCount = 0;
-	while (group) {
-		for (unsigned int i = 0; i < group->numtriangles; i++) {
+	// Find min and max value
+	GLfloat meanVal[3];
 
-			// triangle index
-			int triangleID = group->triangles[i];
+	meanVal[0] = meanVal[1] = meanVal[2] = 0;
+	maxVal[0] = maxVal[1] = maxVal[2] = -10e20;
+	minVal[0] = minVal[1] = minVal[2] = 10e20;
 
-			// the index of each vertex vindices是三角形的顶点
-			int indv1 = obj->triangles[triangleID].vindices[0];
-			int indv2 = obj->triangles[triangleID].vindices[1];
-			int indv3 = obj->triangles[triangleID].vindices[2];
+	for (int i = 0; i < m->obj->numtriangles * 3; i++)
+	{
+		maxVal[0] = max(m->vertices[3 * i + 0], maxVal[0]);
+		maxVal[1] = max(m->vertices[3 * i + 1], maxVal[1]);
+		maxVal[2] = max(m->vertices[3 * i + 2], maxVal[2]);
 
-			//在这里可以得到，见文件triangle.txt
-			/*cout << "obj->triangles["<<triangleID<<"].vindices[0] = " << obj->triangles[triangleID].vindices[0] << endl;
-			cout << "obj->triangles["<<triangleID<<"].vindices[1] = " << obj->triangles[triangleID].vindices[1] << endl;
-			cout << "obj->triangles["<<triangleID<<"].vindices[2] = " << obj->triangles[triangleID].vindices[2] << endl;*/
+		minVal[0] = min(m->vertices[3 * i + 0], minVal[0]);
+		minVal[1] = min(m->vertices[3 * i + 1], minVal[1]);
+		minVal[2] = min(m->vertices[3 * i + 2], minVal[2]);
 
-			// vertices
-			GLfloat vx, vy, vz;
-			double scale = 0.001;
-			//抓取的三角形的第一个顶点的数据X,Y,Z
-			vx = obj->vertices[indv1 * 3];
-			vy = obj->vertices[indv1 * 3 + 1];
-			vz = obj->vertices[indv1 * 3 + 2];
-
-			//读三角形三个点
-			//printf("vertices1 %f %f %f\n", vx, vy, vz);
-			//这里是把原来的 vertices 转移到新的二维数组中，原来的单位是米，我们转变后单位是毫米
-			/* The model size's unit is mm but glm.h's size unit is m, so we use a scale to resize it\n*/
-			//让真实的三角形的第一个顶点的数据等于模型中的数据
-			vertices[gCount][i * 9 + 0] = vx * scale;
-			vertices[gCount][i * 9 + 1] = vy * scale;
-			vertices[gCount][i * 9 + 2] = vz * scale;
-
-			//在这里可以得到，见文件vertices.txt
-			/*cout << "vertices[" << gCount << "][" << i  << " * 9]+0 = " << vertices[gCount][i * 9 + 0] << endl;
-			cout << "vertices[" << gCount << "][" << i << " * 9]+1 = " << vertices[gCount][i * 9 + 1] << endl;
-			cout << "vertices[" << gCount << "][" << i  << " * 9]+2 = " << vertices[gCount][i * 9 + 2] << endl;*/
-			//抓取的三角形的第二个顶点的数据
-			vx = obj->vertices[indv2 * 3];
-			vy = obj->vertices[indv2 * 3 + 1];
-			vz = obj->vertices[indv2 * 3 + 2];
-
-			vertices[gCount][i * 9 + 3] = vx * scale;
-			vertices[gCount][i * 9 + 4] = vy * scale;
-			vertices[gCount][i * 9 + 5] = vz * scale;
-			//抓取的三角形的第三个顶点的数据
-			vx = obj->vertices[indv3 * 3];
-			vy = obj->vertices[indv3 * 3 + 1];
-			vz = obj->vertices[indv3 * 3 + 2];
-
-			vertices[gCount][i * 9 + 6] = vx * scale;
-			vertices[gCount][i * 9 + 7] = vy * scale;
-			vertices[gCount][i * 9 + 8] = vz * scale;
-
-			//抓取的三角形的三个点的法向量
-			int indn1 = obj->triangles[triangleID].nindices[0];
-			int indn2 = obj->triangles[triangleID].nindices[1];
-			int indn3 = obj->triangles[triangleID].nindices[2];
-
-			// 三个点的法向量的X,Y,Z数据
-			normals[gCount][i * 9 + 0] = obj->normals[indn1 * 3 + 0];
-			normals[gCount][i * 9 + 1] = obj->normals[indn1 * 3 + 1];
-			normals[gCount][i * 9 + 2] = obj->normals[indn1 * 3 + 2];
-
-			normals[gCount][i * 9 + 3] = obj->normals[indn2 * 3 + 0];
-			normals[gCount][i * 9 + 4] = obj->normals[indn2 * 3 + 1];
-			normals[gCount][i * 9 + 5] = obj->normals[indn2 * 3 + 2];
-
-			normals[gCount][i * 9 + 6] = obj->normals[indn3 * 3 + 0];
-			normals[gCount][i * 9 + 7] = obj->normals[indn3 * 3 + 1];
-			normals[gCount][i * 9 + 8] = obj->normals[indn3 * 3 + 2];
-
-			//三角形的三个点的纹理坐标
-			int indt1 = obj->triangles[triangleID].tindices[0];
-			int indt2 = obj->triangles[triangleID].tindices[1];
-			int indt3 = obj->triangles[triangleID].tindices[2];
-			//三角形的三个点的纹理坐标的X,Y值
-			vtextures[gCount][i * 6 + 0] = obj->texcoords[indt1 * 2 + 0];
-			vtextures[gCount][i * 6 + 1] = obj->texcoords[indt1 * 2 + 1];
-
-			vtextures[gCount][i * 6 + 2] = obj->texcoords[indt2 * 2 + 0];
-			vtextures[gCount][i * 6 + 3] = obj->texcoords[indt2 * 2 + 1];
-
-			vtextures[gCount][i * 6 + 4] = obj->texcoords[indt3 * 2 + 0];
-			vtextures[gCount][i * 6 + 5] = obj->texcoords[indt3 * 2 + 1];
-		}
-		//指向下一组模型数据
-		group = group->next;
-		gCount++;
-		//vertices;
+		meanVal[0] += m->vertices[3 * i + 0];
+		meanVal[1] += m->vertices[3 * i + 1];
+		meanVal[2] += m->vertices[3 * i + 2];
 	}
-	cout << "gcount " << gCount << endl;
+	GLfloat scale = max(maxVal[0] - minVal[0], maxVal[1] - minVal[1]);
+	scale = max(scale, maxVal[2] - minVal[2]);
+
+	// Calculate mean values
+	for (int i = 0; i < 3; i++)
+	{
+		//meanVal[i] = (maxVal[i] + minVal[i]) / 2.0;
+		meanVal[i] /= (m->obj->numtriangles * 3);
+	}
+
+	// Normalization
+	for (int i = 0; i < m->obj->numtriangles * 3; i++)
+	{
+		m->vertices[3 * i + 0] = 1.0*((m->vertices[3 * i + 0] - meanVal[0]) / scale);
+		m->vertices[3 * i + 1] = 1.0*((m->vertices[3 * i + 1] - meanVal[1]) / scale);
+		m->vertices[3 * i + 2] = 1.0*((m->vertices[3 * i + 2] - meanVal[2]) / scale);
+	}
+
 }
 
 struct Shape
@@ -450,8 +421,8 @@ struct BoxShape : public Shape
 //GLMmodel* shape1 = glmReadOBJ("model/bunny.obj");
 //GLMmodel* shape0 = glmReadOBJ("model/elephant.obj");
 
-Model *shape0 = new probeTipModel();
-Model *shape1 = new virtualModel();
+probeTipModel* shape0;
+virtualModel* shape1;
 //Shape *shape1 = new BoxShape(Vector3(2, 1, 2));
 //Shape *shape0 = new SphereShape(2);
 
@@ -561,13 +532,11 @@ void display()
 		glColor3f(1, 1, 1);
 		print_text(20, Height - 60, " COLLISION : No");
 	}
-	shape0->drawModel();
-	shape1->drawModel();
+	shape0->drawModel(shape0);
+	shape1->drawModel(shape1);
 	print_text(20, Height - 20, " KEY   : (UP,DOWN,RIGHT,LEFT) : Move-Object");
 	print_text(20, Height - 40, " MOUSE : Move-Camera");
 	glutSwapBuffers();
-
-
 }
 
 float zoom_distance = 25;
@@ -594,14 +563,12 @@ void UpdateTime(void)
 	display();
 };
 
-
 // Reshape function
 void reshape(int width, int height)
 {
 	Width = width;
 	Height = height;
 }
-
 
 // Called when a mouse button event occurs
 void mouseButton(int button, int state, int x, int y)
@@ -663,7 +630,6 @@ void processNormalKeys(unsigned char key, int x, int y)
 	}
 
 }
-
 
 void processSpecialKeys(int key, int x, int y) {
 	switch (key)
