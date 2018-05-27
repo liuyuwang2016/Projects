@@ -21,328 +21,328 @@ float vtextures[MAXGROUPSIZE][MAXSIZE];
 #define GLUT_WHEEL_UP   3
 #define GLUT_WHEEL_DOWN 4
 
-class Model
-{
-public:
-	Model(){}
-	~Model(){}
-	
-	virtual Vector3 support_world(Vector3& direction)
-	{
-		Vector3 res;
-		return res;
-	}
-	virtual void drawModel(){}
-};
-
-class probeTipModel : public Model
-{
-public:
-	GLMmodel* obj;
-	GLfloat *vertices;
-	GLfloat *colors;
-
-	Vector3 position = Vector3(0, 0, 0);
-	Vector3 scale = Vector3(1, 1, 1);
-	Vector3 rotation = Vector3(0, 0, 0);	// Euler form
-	probeTipModel(GLMmodel* m) : Model(), obj(m)
-	{
-	}
-	~probeTipModel()
-	{
-	}
-
-	Vector3 support_world(Vector3& direction)
-	{
-		Vector3 res;
-		return res;
-	}
-
-	void drawModel(probeTipModel* m);
-};
-
-void probeTipModel::drawModel(probeTipModel* m)
-{
-	if (m->obj != NULL) {
-		free(m->obj);
-	}
-	m->obj = glmReadOBJ("model/elephant.obj");
-
-	glmUnitize(m->obj);
-
-
-	GLfloat maxVal[3];
-	GLfloat minVal[3];
-
-	m->vertices = new GLfloat[m->obj->numtriangles * 9];
-	m->colors = new GLfloat[m->obj->numtriangles * 9];
-
-	// The center position of the model 
-	m->obj->position[0] = 0;
-	m->obj->position[1] = 0;
-	m->obj->position[2] = 0;
-
-	//printf("#triangles: %d\n", m->obj->numtriangles);
-
-
-	for (int i = 0; i < (int)m->obj->numtriangles; i++)
-	{
-		// the index of each vertex
-		int indv1 = m->obj->triangles[i].vindices[0];
-		int indv2 = m->obj->triangles[i].vindices[1];
-		int indv3 = m->obj->triangles[i].vindices[2];
-
-		// the index of each color
-		int indc1 = indv1;
-		int indc2 = indv2;
-		int indc3 = indv3;
-
-		// assign vertices
-		GLfloat vx, vy, vz;
-		vx = m->obj->vertices[indv1 * 3 + 0];
-		vy = m->obj->vertices[indv1 * 3 + 1];
-		vz = m->obj->vertices[indv1 * 3 + 2];
-
-		m->vertices[i * 9 + 0] = vx;
-		m->vertices[i * 9 + 1] = vy;
-		m->vertices[i * 9 + 2] = vz;
-
-		vx = m->obj->vertices[indv2 * 3 + 0];
-		vy = m->obj->vertices[indv2 * 3 + 1];
-		vz = m->obj->vertices[indv2 * 3 + 2];
-
-		m->vertices[i * 9 + 3] = vx;
-		m->vertices[i * 9 + 4] = vy;
-		m->vertices[i * 9 + 5] = vz;
-
-		vx = m->obj->vertices[indv3 * 3 + 0];
-		vy = m->obj->vertices[indv3 * 3 + 1];
-		vz = m->obj->vertices[indv3 * 3 + 2];
-
-		m->vertices[i * 9 + 6] = vx;
-		m->vertices[i * 9 + 7] = vy;
-		m->vertices[i * 9 + 8] = vz;
-
-		// assign colors
-		GLfloat c1, c2, c3;
-		c1 = m->obj->colors[indv1 * 3 + 0];
-		c2 = m->obj->colors[indv1 * 3 + 1];
-		c3 = m->obj->colors[indv1 * 3 + 2];
-
-		m->colors[i * 9 + 0] = c1;
-		m->colors[i * 9 + 1] = c2;
-		m->colors[i * 9 + 2] = c3;
-
-		c1 = m->obj->colors[indv2 * 3 + 0];
-		c2 = m->obj->colors[indv2 * 3 + 1];
-		c3 = m->obj->colors[indv2 * 3 + 2];
-
-		m->colors[i * 9 + 3] = c1;
-		m->colors[i * 9 + 4] = c2;
-		m->colors[i * 9 + 5] = c3;
-
-		c1 = m->obj->colors[indv3 * 3 + 0];
-		c2 = m->obj->colors[indv3 * 3 + 1];
-		c3 = m->obj->colors[indv3 * 3 + 2];
-
-		m->colors[i * 9 + 6] = c1;
-		m->colors[i * 9 + 7] = c2;
-		m->colors[i * 9 + 8] = c3;
-	}
-
-	// Find min and max value
-	GLfloat meanVal[3];
-
-	meanVal[0] = meanVal[1] = meanVal[2] = 0;
-	maxVal[0] = maxVal[1] = maxVal[2] = -10e20;
-	minVal[0] = minVal[1] = minVal[2] = 10e20;
-
-	for (int i = 0; i < m->obj->numtriangles * 3; i++)
-	{
-		maxVal[0] = max(m->vertices[3 * i + 0], maxVal[0]);
-		maxVal[1] = max(m->vertices[3 * i + 1], maxVal[1]);
-		maxVal[2] = max(m->vertices[3 * i + 2], maxVal[2]);
-
-		minVal[0] = min(m->vertices[3 * i + 0], minVal[0]);
-		minVal[1] = min(m->vertices[3 * i + 1], minVal[1]);
-		minVal[2] = min(m->vertices[3 * i + 2], minVal[2]);
-
-		meanVal[0] += m->vertices[3 * i + 0];
-		meanVal[1] += m->vertices[3 * i + 1];
-		meanVal[2] += m->vertices[3 * i + 2];
-	}
-	GLfloat scale = max(maxVal[0] - minVal[0], maxVal[1] - minVal[1]);
-	scale = max(scale, maxVal[2] - minVal[2]);
-
-	// Calculate mean values
-	for (int i = 0; i < 3; i++)
-	{
-		//meanVal[i] = (maxVal[i] + minVal[i]) / 2.0;
-		meanVal[i] /= (m->obj->numtriangles * 3);
-	}
-
-	// Normalization
-	for (int i = 0; i < m->obj->numtriangles * 3; i++)
-	{
-		m->vertices[3 * i + 0] = 1.0*((m->vertices[3 * i + 0] - meanVal[0]) / scale);
-		m->vertices[3 * i + 1] = 1.0*((m->vertices[3 * i + 1] - meanVal[1]) / scale);
-		m->vertices[3 * i + 2] = 1.0*((m->vertices[3 * i + 2] - meanVal[2]) / scale);
-	}
-}
-
-class virtualModel :public Model
-{
-public:
-	GLMmodel* obj;
-	GLfloat *vertices;
-	GLfloat *colors;
-
-	Vector3 position = Vector3(0, 0, 0);
-	Vector3 scale = Vector3(1, 1, 1);
-	Vector3 rotation = Vector3(0, 0, 0);	// Euler form
-	virtualModel(GLMmodel* m):Model(), obj(m)
-	{
-	}
-	~virtualModel()
-	{
-	}
-	Vector3 support_world(Vector3& direction)
-	{
-		Vector3 res;
-		return res;
-	}
-	void drawModel(virtualModel* m);
-};
-
-void virtualModel::drawModel(virtualModel* m)
-{
-	if (m->obj != NULL) {
-		free(m->obj);
-	}
-	m->obj = glmReadOBJ("model/elephant.obj");
-	
-	glmUnitize(m->obj);
-
-
-	GLfloat maxVal[3];
-	GLfloat minVal[3];
-
-	m->vertices = new GLfloat[m->obj->numtriangles * 9];
-	m->colors = new GLfloat[m->obj->numtriangles * 9];
-
-	// The center position of the model 
-	m->obj->position[0] = 0;
-	m->obj->position[1] = 0;
-	m->obj->position[2] = 0;
-
-	//printf("#triangles: %d\n", m->obj->numtriangles);
-
-
-	for (int i = 0; i < (int)m->obj->numtriangles; i++)
-	{
-		// the index of each vertex
-		int indv1 = m->obj->triangles[i].vindices[0];
-		int indv2 = m->obj->triangles[i].vindices[1];
-		int indv3 = m->obj->triangles[i].vindices[2];
-
-		// the index of each color
-		int indc1 = indv1;
-		int indc2 = indv2;
-		int indc3 = indv3;
-
-		// assign vertices
-		GLfloat vx, vy, vz;
-		vx = m->obj->vertices[indv1 * 3 + 0];
-		vy = m->obj->vertices[indv1 * 3 + 1];
-		vz = m->obj->vertices[indv1 * 3 + 2];
-
-		m->vertices[i * 9 + 0] = vx;
-		m->vertices[i * 9 + 1] = vy;
-		m->vertices[i * 9 + 2] = vz;
-
-		vx = m->obj->vertices[indv2 * 3 + 0];
-		vy = m->obj->vertices[indv2 * 3 + 1];
-		vz = m->obj->vertices[indv2 * 3 + 2];
-
-		m->vertices[i * 9 + 3] = vx;
-		m->vertices[i * 9 + 4] = vy;
-		m->vertices[i * 9 + 5] = vz;
-
-		vx = m->obj->vertices[indv3 * 3 + 0];
-		vy = m->obj->vertices[indv3 * 3 + 1];
-		vz = m->obj->vertices[indv3 * 3 + 2];
-
-		m->vertices[i * 9 + 6] = vx;
-		m->vertices[i * 9 + 7] = vy;
-		m->vertices[i * 9 + 8] = vz;
-
-		// assign colors
-		GLfloat c1, c2, c3;
-		c1 = m->obj->colors[indv1 * 3 + 0];
-		c2 = m->obj->colors[indv1 * 3 + 1];
-		c3 = m->obj->colors[indv1 * 3 + 2];
-
-		m->colors[i * 9 + 0] = c1;
-		m->colors[i * 9 + 1] = c2;
-		m->colors[i * 9 + 2] = c3;
-
-		c1 = m->obj->colors[indv2 * 3 + 0];
-		c2 = m->obj->colors[indv2 * 3 + 1];
-		c3 = m->obj->colors[indv2 * 3 + 2];
-
-		m->colors[i * 9 + 3] = c1;
-		m->colors[i * 9 + 4] = c2;
-		m->colors[i * 9 + 5] = c3;
-
-		c1 = m->obj->colors[indv3 * 3 + 0];
-		c2 = m->obj->colors[indv3 * 3 + 1];
-		c3 = m->obj->colors[indv3 * 3 + 2];
-
-		m->colors[i * 9 + 6] = c1;
-		m->colors[i * 9 + 7] = c2;
-		m->colors[i * 9 + 8] = c3;
-	}
-
-	// Find min and max value
-	GLfloat meanVal[3];
-
-	meanVal[0] = meanVal[1] = meanVal[2] = 0;
-	maxVal[0] = maxVal[1] = maxVal[2] = -10e20;
-	minVal[0] = minVal[1] = minVal[2] = 10e20;
-
-	for (int i = 0; i < m->obj->numtriangles * 3; i++)
-	{
-		maxVal[0] = max(m->vertices[3 * i + 0], maxVal[0]);
-		maxVal[1] = max(m->vertices[3 * i + 1], maxVal[1]);
-		maxVal[2] = max(m->vertices[3 * i + 2], maxVal[2]);
-
-		minVal[0] = min(m->vertices[3 * i + 0], minVal[0]);
-		minVal[1] = min(m->vertices[3 * i + 1], minVal[1]);
-		minVal[2] = min(m->vertices[3 * i + 2], minVal[2]);
-
-		meanVal[0] += m->vertices[3 * i + 0];
-		meanVal[1] += m->vertices[3 * i + 1];
-		meanVal[2] += m->vertices[3 * i + 2];
-	}
-	GLfloat scale = max(maxVal[0] - minVal[0], maxVal[1] - minVal[1]);
-	scale = max(scale, maxVal[2] - minVal[2]);
-
-	// Calculate mean values
-	for (int i = 0; i < 3; i++)
-	{
-		//meanVal[i] = (maxVal[i] + minVal[i]) / 2.0;
-		meanVal[i] /= (m->obj->numtriangles * 3);
-	}
-
-	// Normalization
-	for (int i = 0; i < m->obj->numtriangles * 3; i++)
-	{
-		m->vertices[3 * i + 0] = 1.0*((m->vertices[3 * i + 0] - meanVal[0]) / scale);
-		m->vertices[3 * i + 1] = 1.0*((m->vertices[3 * i + 1] - meanVal[1]) / scale);
-		m->vertices[3 * i + 2] = 1.0*((m->vertices[3 * i + 2] - meanVal[2]) / scale);
-	}
-
-}
+//class Model
+//{
+//public:
+//	Model(){}
+//	~Model(){}
+//	
+//	virtual Vector3 support_world(Vector3& direction)
+//	{
+//		Vector3 res;
+//		return res;
+//	}
+//	virtual void drawModel(){}
+//};
+//
+//class probeTipModel : public Model
+//{
+//public:
+//	GLMmodel* obj;
+//	GLfloat *vertices;
+//	GLfloat *colors;
+//
+//	Vector3 position = Vector3(0, 0, 0);
+//	Vector3 scale = Vector3(1, 1, 1);
+//	Vector3 rotation = Vector3(0, 0, 0);	// Euler form
+//	probeTipModel(GLMmodel* m) : Model(), obj(m)
+//	{
+//	}
+//	~probeTipModel()
+//	{
+//	}
+//
+//	Vector3 support_world(Vector3& direction)
+//	{
+//		Vector3 res;
+//		return res;
+//	}
+//
+//	void drawModel(probeTipModel* m);
+//};
+//
+//void probeTipModel::drawModel(probeTipModel* m)
+//{
+//	if (m->obj != NULL) {
+//		free(m->obj);
+//	}
+//	m->obj = glmReadOBJ("model/elephant.obj");
+//
+//	glmUnitize(m->obj);
+//
+//
+//	GLfloat maxVal[3];
+//	GLfloat minVal[3];
+//
+//	m->vertices = new GLfloat[m->obj->numtriangles * 9];
+//	m->colors = new GLfloat[m->obj->numtriangles * 9];
+//
+//	// The center position of the model 
+//	m->obj->position[0] = 0;
+//	m->obj->position[1] = 0;
+//	m->obj->position[2] = 0;
+//
+//	//printf("#triangles: %d\n", m->obj->numtriangles);
+//
+//
+//	for (int i = 0; i < (int)m->obj->numtriangles; i++)
+//	{
+//		// the index of each vertex
+//		int indv1 = m->obj->triangles[i].vindices[0];
+//		int indv2 = m->obj->triangles[i].vindices[1];
+//		int indv3 = m->obj->triangles[i].vindices[2];
+//
+//		// the index of each color
+//		int indc1 = indv1;
+//		int indc2 = indv2;
+//		int indc3 = indv3;
+//
+//		// assign vertices
+//		GLfloat vx, vy, vz;
+//		vx = m->obj->vertices[indv1 * 3 + 0];
+//		vy = m->obj->vertices[indv1 * 3 + 1];
+//		vz = m->obj->vertices[indv1 * 3 + 2];
+//
+//		m->vertices[i * 9 + 0] = vx;
+//		m->vertices[i * 9 + 1] = vy;
+//		m->vertices[i * 9 + 2] = vz;
+//
+//		vx = m->obj->vertices[indv2 * 3 + 0];
+//		vy = m->obj->vertices[indv2 * 3 + 1];
+//		vz = m->obj->vertices[indv2 * 3 + 2];
+//
+//		m->vertices[i * 9 + 3] = vx;
+//		m->vertices[i * 9 + 4] = vy;
+//		m->vertices[i * 9 + 5] = vz;
+//
+//		vx = m->obj->vertices[indv3 * 3 + 0];
+//		vy = m->obj->vertices[indv3 * 3 + 1];
+//		vz = m->obj->vertices[indv3 * 3 + 2];
+//
+//		m->vertices[i * 9 + 6] = vx;
+//		m->vertices[i * 9 + 7] = vy;
+//		m->vertices[i * 9 + 8] = vz;
+//
+//		// assign colors
+//		GLfloat c1, c2, c3;
+//		c1 = m->obj->colors[indv1 * 3 + 0];
+//		c2 = m->obj->colors[indv1 * 3 + 1];
+//		c3 = m->obj->colors[indv1 * 3 + 2];
+//
+//		m->colors[i * 9 + 0] = c1;
+//		m->colors[i * 9 + 1] = c2;
+//		m->colors[i * 9 + 2] = c3;
+//
+//		c1 = m->obj->colors[indv2 * 3 + 0];
+//		c2 = m->obj->colors[indv2 * 3 + 1];
+//		c3 = m->obj->colors[indv2 * 3 + 2];
+//
+//		m->colors[i * 9 + 3] = c1;
+//		m->colors[i * 9 + 4] = c2;
+//		m->colors[i * 9 + 5] = c3;
+//
+//		c1 = m->obj->colors[indv3 * 3 + 0];
+//		c2 = m->obj->colors[indv3 * 3 + 1];
+//		c3 = m->obj->colors[indv3 * 3 + 2];
+//
+//		m->colors[i * 9 + 6] = c1;
+//		m->colors[i * 9 + 7] = c2;
+//		m->colors[i * 9 + 8] = c3;
+//	}
+//
+//	// Find min and max value
+//	GLfloat meanVal[3];
+//
+//	meanVal[0] = meanVal[1] = meanVal[2] = 0;
+//	maxVal[0] = maxVal[1] = maxVal[2] = -10e20;
+//	minVal[0] = minVal[1] = minVal[2] = 10e20;
+//
+//	for (int i = 0; i < m->obj->numtriangles * 3; i++)
+//	{
+//		maxVal[0] = max(m->vertices[3 * i + 0], maxVal[0]);
+//		maxVal[1] = max(m->vertices[3 * i + 1], maxVal[1]);
+//		maxVal[2] = max(m->vertices[3 * i + 2], maxVal[2]);
+//
+//		minVal[0] = min(m->vertices[3 * i + 0], minVal[0]);
+//		minVal[1] = min(m->vertices[3 * i + 1], minVal[1]);
+//		minVal[2] = min(m->vertices[3 * i + 2], minVal[2]);
+//
+//		meanVal[0] += m->vertices[3 * i + 0];
+//		meanVal[1] += m->vertices[3 * i + 1];
+//		meanVal[2] += m->vertices[3 * i + 2];
+//	}
+//	GLfloat scale = max(maxVal[0] - minVal[0], maxVal[1] - minVal[1]);
+//	scale = max(scale, maxVal[2] - minVal[2]);
+//
+//	// Calculate mean values
+//	for (int i = 0; i < 3; i++)
+//	{
+//		//meanVal[i] = (maxVal[i] + minVal[i]) / 2.0;
+//		meanVal[i] /= (m->obj->numtriangles * 3);
+//	}
+//
+//	// Normalization
+//	for (int i = 0; i < m->obj->numtriangles * 3; i++)
+//	{
+//		m->vertices[3 * i + 0] = 1.0*((m->vertices[3 * i + 0] - meanVal[0]) / scale);
+//		m->vertices[3 * i + 1] = 1.0*((m->vertices[3 * i + 1] - meanVal[1]) / scale);
+//		m->vertices[3 * i + 2] = 1.0*((m->vertices[3 * i + 2] - meanVal[2]) / scale);
+//	}
+//}
+//
+//class virtualModel :public Model
+//{
+//public:
+//	GLMmodel* obj;
+//	GLfloat *vertices;
+//	GLfloat *colors;
+//
+//	Vector3 position = Vector3(0, 0, 0);
+//	Vector3 scale = Vector3(1, 1, 1);
+//	Vector3 rotation = Vector3(0, 0, 0);	// Euler form
+//	virtualModel(GLMmodel* m):Model(), obj(m)
+//	{
+//	}
+//	~virtualModel()
+//	{
+//	}
+//	Vector3 support_world(Vector3& direction)
+//	{
+//		Vector3 res;
+//		return res;
+//	}
+//	void drawModel(virtualModel* m);
+//};
+//
+//void virtualModel::drawModel(virtualModel* m)
+//{
+//	if (m->obj != NULL) {
+//		free(m->obj);
+//	}
+//	m->obj = glmReadOBJ("model/elephant.obj");
+//	
+//	glmUnitize(m->obj);
+//
+//
+//	GLfloat maxVal[3];
+//	GLfloat minVal[3];
+//
+//	m->vertices = new GLfloat[m->obj->numtriangles * 9];
+//	m->colors = new GLfloat[m->obj->numtriangles * 9];
+//
+//	// The center position of the model 
+//	m->obj->position[0] = 0;
+//	m->obj->position[1] = 0;
+//	m->obj->position[2] = 0;
+//
+//	//printf("#triangles: %d\n", m->obj->numtriangles);
+//
+//
+//	for (int i = 0; i < (int)m->obj->numtriangles; i++)
+//	{
+//		// the index of each vertex
+//		int indv1 = m->obj->triangles[i].vindices[0];
+//		int indv2 = m->obj->triangles[i].vindices[1];
+//		int indv3 = m->obj->triangles[i].vindices[2];
+//
+//		// the index of each color
+//		int indc1 = indv1;
+//		int indc2 = indv2;
+//		int indc3 = indv3;
+//
+//		// assign vertices
+//		GLfloat vx, vy, vz;
+//		vx = m->obj->vertices[indv1 * 3 + 0];
+//		vy = m->obj->vertices[indv1 * 3 + 1];
+//		vz = m->obj->vertices[indv1 * 3 + 2];
+//
+//		m->vertices[i * 9 + 0] = vx;
+//		m->vertices[i * 9 + 1] = vy;
+//		m->vertices[i * 9 + 2] = vz;
+//
+//		vx = m->obj->vertices[indv2 * 3 + 0];
+//		vy = m->obj->vertices[indv2 * 3 + 1];
+//		vz = m->obj->vertices[indv2 * 3 + 2];
+//
+//		m->vertices[i * 9 + 3] = vx;
+//		m->vertices[i * 9 + 4] = vy;
+//		m->vertices[i * 9 + 5] = vz;
+//
+//		vx = m->obj->vertices[indv3 * 3 + 0];
+//		vy = m->obj->vertices[indv3 * 3 + 1];
+//		vz = m->obj->vertices[indv3 * 3 + 2];
+//
+//		m->vertices[i * 9 + 6] = vx;
+//		m->vertices[i * 9 + 7] = vy;
+//		m->vertices[i * 9 + 8] = vz;
+//
+//		// assign colors
+//		GLfloat c1, c2, c3;
+//		c1 = m->obj->colors[indv1 * 3 + 0];
+//		c2 = m->obj->colors[indv1 * 3 + 1];
+//		c3 = m->obj->colors[indv1 * 3 + 2];
+//
+//		m->colors[i * 9 + 0] = c1;
+//		m->colors[i * 9 + 1] = c2;
+//		m->colors[i * 9 + 2] = c3;
+//
+//		c1 = m->obj->colors[indv2 * 3 + 0];
+//		c2 = m->obj->colors[indv2 * 3 + 1];
+//		c3 = m->obj->colors[indv2 * 3 + 2];
+//
+//		m->colors[i * 9 + 3] = c1;
+//		m->colors[i * 9 + 4] = c2;
+//		m->colors[i * 9 + 5] = c3;
+//
+//		c1 = m->obj->colors[indv3 * 3 + 0];
+//		c2 = m->obj->colors[indv3 * 3 + 1];
+//		c3 = m->obj->colors[indv3 * 3 + 2];
+//
+//		m->colors[i * 9 + 6] = c1;
+//		m->colors[i * 9 + 7] = c2;
+//		m->colors[i * 9 + 8] = c3;
+//	}
+//
+//	// Find min and max value
+//	GLfloat meanVal[3];
+//
+//	meanVal[0] = meanVal[1] = meanVal[2] = 0;
+//	maxVal[0] = maxVal[1] = maxVal[2] = -10e20;
+//	minVal[0] = minVal[1] = minVal[2] = 10e20;
+//
+//	for (int i = 0; i < m->obj->numtriangles * 3; i++)
+//	{
+//		maxVal[0] = max(m->vertices[3 * i + 0], maxVal[0]);
+//		maxVal[1] = max(m->vertices[3 * i + 1], maxVal[1]);
+//		maxVal[2] = max(m->vertices[3 * i + 2], maxVal[2]);
+//
+//		minVal[0] = min(m->vertices[3 * i + 0], minVal[0]);
+//		minVal[1] = min(m->vertices[3 * i + 1], minVal[1]);
+//		minVal[2] = min(m->vertices[3 * i + 2], minVal[2]);
+//
+//		meanVal[0] += m->vertices[3 * i + 0];
+//		meanVal[1] += m->vertices[3 * i + 1];
+//		meanVal[2] += m->vertices[3 * i + 2];
+//	}
+//	GLfloat scale = max(maxVal[0] - minVal[0], maxVal[1] - minVal[1]);
+//	scale = max(scale, maxVal[2] - minVal[2]);
+//
+//	// Calculate mean values
+//	for (int i = 0; i < 3; i++)
+//	{
+//		//meanVal[i] = (maxVal[i] + minVal[i]) / 2.0;
+//		meanVal[i] /= (m->obj->numtriangles * 3);
+//	}
+//
+//	// Normalization
+//	for (int i = 0; i < m->obj->numtriangles * 3; i++)
+//	{
+//		m->vertices[3 * i + 0] = 1.0*((m->vertices[3 * i + 0] - meanVal[0]) / scale);
+//		m->vertices[3 * i + 1] = 1.0*((m->vertices[3 * i + 1] - meanVal[1]) / scale);
+//		m->vertices[3 * i + 2] = 1.0*((m->vertices[3 * i + 2] - meanVal[2]) / scale);
+//	}
+//
+//}
 
 struct Shape
 {
@@ -351,6 +351,7 @@ struct Shape
 	Shape()
 	{
 	}
+
 	~Shape()
 	{
 		
@@ -400,7 +401,7 @@ struct BoxShape : public Shape
 
 	}
 
-	Vector3 support_world(Vector3& direction)
+	Vector3 support_world(Vector3& direction) override
 	{
 		Vector3 res = Vector3(direction.x < 0.0 ? -mExtent.x : mExtent.x,
 			direction.y < 0.0 ? -mExtent.y : mExtent.y,
@@ -421,10 +422,10 @@ struct BoxShape : public Shape
 //GLMmodel* shape1 = glmReadOBJ("model/bunny.obj");
 //GLMmodel* shape0 = glmReadOBJ("model/elephant.obj");
 
-probeTipModel* shape0;
-virtualModel* shape1;
-//Shape *shape1 = new BoxShape(Vector3(2, 1, 2));
-//Shape *shape0 = new SphereShape(2);
+//probeTipModel* shape0;
+//virtualModel* shape1;
+Shape *shape1 = new BoxShape(Vector3(2, 1, 2));
+Shape *shape0 = new SphereShape(2);
 
 //=================================  Unit Test ==================================//
 
@@ -532,8 +533,8 @@ void display()
 		glColor3f(1, 1, 1);
 		print_text(20, Height - 60, " COLLISION : No");
 	}
-	shape0->drawModel(shape0);
-	shape1->drawModel(shape1);
+	shape0->draw();
+	shape1->draw();
 	print_text(20, Height - 20, " KEY   : (UP,DOWN,RIGHT,LEFT) : Move-Object");
 	print_text(20, Height - 40, " MOUSE : Move-Camera");
 	glutSwapBuffers();

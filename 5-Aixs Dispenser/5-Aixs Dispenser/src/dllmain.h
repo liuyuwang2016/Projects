@@ -3,7 +3,6 @@
 
 using namespace std;
 
-
 struct Rs232MotionData{
 	double x, y, z, u, v, w;
 	double laser;

@@ -1,4 +1,4 @@
-﻿生成启动时间为 2018/5/18 15:28:14。
+﻿生成启动时间为 2018/5/23 17:15:16。
      1>项目“D:\USER\Documents\Visual Studio 2013\Projects\5-Aixs Dispenser\OpenGL-Test\OpenGL-Test.vcxproj”在节点 2 上(Build 个目标)。
      1>ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt main.cpp
@@ -20,10 +20,6 @@
      1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\opengl-test\main.cpp(342): warning C4244: “=”: 从“double”转换到“GLfloat”，可能丢失数据
      1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\opengl-test\main.cpp(463): warning C4305: “初始化”: 从“double”到“float”截断
      1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\opengl-test\main.cpp(494): warning C4244: “参数”: 从“float”转换到“GLsizei”，可能丢失数据
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\opengl-test\main.cpp(508): error C2782: “bool GJKEPAGenerator::CollisionSolveGJK_EPA(ConvexTemplate *,ConvexTemplate *,ContactBasicData *)”: 模板 参数“ConvexTemplate”不明确
-                 d:\user\documents\visual studio 2013\projects\5-aixs dispenser\opengl-test\gjk_epa.hpp(686) : 参见“GJKEPAGenerator::CollisionSolveGJK_EPA”的声明
-                 可能是“virtualModel”
-                 或       “probeTipModel”
      1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\opengl-test\main.cpp(528): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
      1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\opengl-test\main.cpp(533): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
      1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\opengl-test\main.cpp(537): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
@@ -39,8 +35,12 @@
      1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\opengl-test\main.cpp(644): warning C4305: “参数”: 从“double”到“float”截断
      1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\opengl-test\main.cpp(647): warning C4305: “参数”: 从“double”到“float”截断
      1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\opengl-test\main.cpp(660): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
-     1>已完成生成项目“D:\USER\Documents\Visual Studio 2013\Projects\5-Aixs Dispenser\OpenGL-Test\OpenGL-Test.vcxproj”(Build 个目标)的操作 - 失败。
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\USER\Documents\Visual Studio 2013\Projects\5-Aixs Dispenser\Debug\OpenGL-Test.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\USER\Documents\Visual Studio 2013\Projects\5-Aixs Dispenser\Debug\OpenGL-Test.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\USER\Documents\Visual Studio 2013\Projects\5-Aixs Dispenser\Debug\OpenGL-Test.lib" /MACHINE:X86 Debug\glm.obj
+         Debug\main.obj
+         OpenGL-Test.vcxproj -> D:\USER\Documents\Visual Studio 2013\Projects\5-Aixs Dispenser\Debug\OpenGL-Test.exe
+     1>已完成生成项目“D:\USER\Documents\Visual Studio 2013\Projects\5-Aixs Dispenser\OpenGL-Test\OpenGL-Test.vcxproj”(Build 个目标)的操作。
 
-生成失败。
+生成成功。
 
-已用时间 00:00:00.93
+已用时间 00:00:01.18
