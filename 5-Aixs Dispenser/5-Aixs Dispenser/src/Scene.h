@@ -18,27 +18,26 @@
 #include "src/RealScene.h"
 /*--------------OpenGL-------------*/
 #include <windows.h>   
-#include <GL/glew.h>
 #include <gl/Gl.h>
 #include <gl/glu.h>
+#pragma once
 #include <GL/freeglut.h>
+
 #include "src/OpenGLCamera.h"
-#include "3D Math/3DMath.h"
 //#include <gl/glut.h>
-#include "Model Import/textfile.h"
 //将库文件链接到文件中
 #pragma comment(lib,"opengl32.lib")
 #pragma comment (lib, "glew32.lib")
 #pragma comment(lib,"GLU32.LIB")
 #pragma comment(lib,"GLUT32.LIB")
 /*-------------LoadOBJ-------------*/
-#include "src/glm.h"
+#include "glm.h"
 /*------------PortAduio-------------*/
 #include "src/portaudio.h"
 /*----------输出最大最小值-----------*/
 #include <algorithm>
-/*--------使用工作线程控制移动--------*/
-#include "osapi/Thread.h"
+///*--------使用工作线程控制移动--------*/
+//#include "osapi/Thread.h"
 /*----------矩阵运算库Eigen------------*/
 #include <Eigen/Dense>
 
@@ -50,19 +49,7 @@ GLint iLocPosition;
 GLint iLocColor;
 GLint iLocMVP;
 
-struct model
-{
-	GLMmodel *obj;
-	GLfloat *vertices;
-	GLfloat *colors;
-
-	Vector3M position = Vector3M(0, 0, 0);
-	Vector3M scale = Vector3M(1, 1, 1);
-	Vector3M rotation = Vector3M(0, 0, 0);
-};
-
 int current_x, current_y;
-model* models;//存储我们加载的obj模型
 vector<string> filenames;//.obj模型列表
 int cur_idx = 0;//表示现在哪一个模型应该被渲染
 bool use_wire_mode = false;
@@ -288,7 +275,7 @@ float M_Cubic_inv[16] = {				//Machine Coordinate rotation inversion
 	-0.005685330840486647, 0.3858474945742184, -0.9225450601157825, 0,
 	0, 0, 0, 1 };
 
-CameraSpacePoint Intersect;				//Machine Coordinate translation
+CameraSpacePoint IntersectPoint;				//Machine Coordinate translation
 
 void DrawCubic(void);
 //Creat Pop Up menu
@@ -390,7 +377,7 @@ public:
 		{
 			sine[i] = (float)sin(((double)i / (double)TABLE_SIZE) * CV_PI * 2.);
 		}
-		sprintf(message, "No Message");
+		sprintf_s(message, "No Message");
 	}
 	bool open(PaDeviceIndex index)
 	{

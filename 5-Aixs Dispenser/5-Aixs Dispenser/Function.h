@@ -22,71 +22,24 @@ void loadConfigFile()
 }
 #pragma endregion loadConfigFile
 
-void showShaderCompileStatus(GLuint shader, GLint *shaderCompiled)
-{
-	glGetShaderiv(shader, GL_COMPILE_STATUS, shaderCompiled);
-	if (GL_FALSE == (*shaderCompiled))
-	{
-		GLint maxLength = 0;
-		glGetShaderiv(shader, GL_INFO_LOG_LENGTH, &maxLength);
+//void showShaderCompileStatus(GLuint shader, GLint *shaderCompiled)
+//{
+//	glGetShaderiv(shader, GL_COMPILE_STATUS, shaderCompiled);
+//	if (GL_FALSE == (*shaderCompiled))
+//	{
+//		GLint maxLength = 0;
+//		glGetShaderiv(shader, GL_INFO_LOG_LENGTH, &maxLength);
+//
+//		// The maxLength includes the NULL character.
+//		GLchar *errorLog = (GLchar*)malloc(sizeof(GLchar)* maxLength);
+//		glGetShaderInfoLog(shader, maxLength, &maxLength, &errorLog[0]);
+//		fprintf(stderr, "%s", errorLog);
+//
+//		glDeleteShader(shader);
+//		free(errorLog);
+//	}
+//}
 
-		// The maxLength includes the NULL character.
-		GLchar *errorLog = (GLchar*)malloc(sizeof(GLchar)* maxLength);
-		glGetShaderInfoLog(shader, maxLength, &maxLength, &errorLog[0]);
-		fprintf(stderr, "%s", errorLog);
-
-		glDeleteShader(shader);
-		free(errorLog);
-	}
-}
-void setShaders()
-{
-	GLuint v, f, p;
-	char *vs = NULL;
-	char *fs = NULL;
-
-	v = glCreateShader(GL_VERTEX_SHADER);
-	f = glCreateShader(GL_FRAGMENT_SHADER);
-
-	vs = textFileRead("shader.vert");
-	fs = textFileRead("shader.frag");
-
-	glShaderSource(v, 1, (const GLchar**)&vs, NULL);
-	glShaderSource(f, 1, (const GLchar**)&fs, NULL);
-
-	free(vs);
-	free(fs);
-
-	// compile vertex shader
-	glCompileShader(v);
-	GLint vShaderCompiled;
-	showShaderCompileStatus(v, &vShaderCompiled);
-	if (!vShaderCompiled) system("pause"), exit(123);
-
-	// compile fragment shader
-	glCompileShader(f);
-	GLint fShaderCompiled;
-	showShaderCompileStatus(f, &fShaderCompiled);
-	if (!fShaderCompiled) system("pause"), exit(456);
-
-	p = glCreateProgram();
-
-	// bind shader
-	glAttachShader(p, f);
-	glAttachShader(p, v);
-
-	// link program
-	glLinkProgram(p);
-
-	iLocPosition = glGetAttribLocation(p, "av4position");
-	iLocColor = glGetAttribLocation(p, "av3color");
-	iLocMVP = glGetUniformLocation(p, "mvp");
-
-	glUseProgram(p);
-
-	glEnableVertexAttribArray(iLocPosition);
-	glEnableVertexAttribArray(iLocColor);
-}
 #pragma region Init
 void init()
 {
@@ -343,17 +296,17 @@ void DrawProbeTip()
 		/*
 		 * 此处进行了颜色追踪的误差测定和范围测定，具体见颜色追踪误差测定和范围文档
 		 */
-		float sum_X, sum_Y, sum_Z;
-		for (int i = 0; i < ROIDepthCount; i++)
-		{
-			sum_X += ROICameraSP[i].X;
-			sum_Y += ROICameraSP[i].Y;
-			sum_Z += ROICameraSP[i].Z;
-		}
-		sum_X = sum_X / ROIDepthCount;
-		sum_Y = sum_Y / ROIDepthCount;
-		sum_Z = sum_Z / ROIDepthCount;
-		float distance = sqrt(abs(sum_X)*abs(sum_X) + abs(sum_Y)*abs(sum_Y) + abs(sum_Z)*abs(sum_Z));
+		//float sum_X, sum_Y, sum_Z;
+		//for (int i = 0; i < ROIDepthCount; i++)
+		//{
+		//	sum_X += ROICameraSP[i].X;
+		//	sum_Y += ROICameraSP[i].Y;
+		//	sum_Z += ROICameraSP[i].Z;
+		//}
+		//sum_X = sum_X / ROIDepthCount;
+		//sum_Y = sum_Y / ROIDepthCount;
+		//sum_Z = sum_Z / ROIDepthCount;
+		//float distance = sqrt(abs(sum_X)*abs(sum_X) + abs(sum_Y)*abs(sum_Y) + abs(sum_Z)*abs(sum_Z));
 		//cout << ROIDepthCount << ", " << distance * 100  << endl;
 	}
 }
@@ -418,7 +371,7 @@ void CollisionDetection()
 		//移动到原点,荧幕中心就是原点
 		glMultMatrixf(M_Cubic_inv);
 		//把obj模型的坐标移动到opengl坐标原点
-		glTranslatef(-Intersect.X, -Intersect.Y, -Intersect.Z);
+		glTranslatef(-IntersectPoint.X, -IntersectPoint.Y, -IntersectPoint.Z);
 		glTranslatef(-ObjPosi.x, -ObjPosi.y, -ObjPosi.z);
 		//http://blog.csdn.net/lyx2007825/article/details/8792475
 		//http://blog.csdn.net/hippig/article/details/7894034
@@ -594,7 +547,7 @@ void CoordGLtoMachine()
 		//http://cuiqingcai.com/1658.html 旋转示例	
 		glRotatef(90, 1, 0, 0);
 		glRotatef(180, 0, 0, 1);
-		glTranslatef(-Intersect.X, -Intersect.Y, -Intersect.Z);
+		glTranslatef(-IntersectPoint.X, -IntersectPoint.Y, -IntersectPoint.Z);
 		glTranslatef(TipPosi.x, TipPosi.y, TipPosi.z);
 		//glRotatef(90, 0, 0, 1);//旋转后Z值和X值与机器的坐标系相反		
 		//glMultMatrixf(const GLfloat *m);//把m指定的16个值作为一个矩阵，与当前矩阵相乘，并把结果存储在当前矩阵中 
@@ -644,7 +597,7 @@ void CoordGLtoMachine()
 		glTranslatef(TipPosi.x, TipPosi.y, TipPosi.z);
 		glRotatef(-90, 1, 0, 0);
 		glMultMatrixf(M_Cubic_inv);
-		glTranslatef(-Intersect.X, -Intersect.Y, -Intersect.Z);
+		glTranslatef(-IntersectPoint.X, -IntersectPoint.Y, -IntersectPoint.Z);
 		glGetFloatv(GL_MODELVIEW_MATRIX, TransGLtoMach);
 		glPopMatrix();
 		if (LineSP_MachCoord != nullptr)
@@ -700,7 +653,7 @@ void CoordGLtoMachine()
 		glTranslatef(TipPosi.x, TipPosi.y, TipPosi.z);
 		glRotatef(-90, 1, 0, 0);
 		glMultMatrixf(M_Cubic_inv);
-		glTranslatef(-Intersect.X, -Intersect.Y, -Intersect.Z);
+		glTranslatef(-IntersectPoint.X, -IntersectPoint.Y, -IntersectPoint.Z);
 		glGetFloatv(GL_MODELVIEW_MATRIX, TransGLtoMach);
 		glPopMatrix();
 		if (PlaneSP_MachCoord != nullptr)
@@ -943,7 +896,7 @@ void MoveCubicInY_Axis()//换了模型之后有影响
 
 		glPushMatrix();
 		glLoadIdentity();
-		glTranslatef(Intersect.X, Intersect.Y, Intersect.Z);
+		glTranslatef(IntersectPoint.X, IntersectPoint.Y, IntersectPoint.Z);
 		glMultMatrixf(M_Cubic);
 		glRotatef(90, 1, 0, 0);
 		glTranslatef(TipPosi.x, TipPosi.y, TipPosi.z);
@@ -1063,10 +1016,6 @@ void RenderScene()
 	ChangeLineColor();
 	ROI_IS_COLLIDE = FALSE;
 	//Coordinate();
-	if (Finish_Without_Update)
-		glFinish();
-	else
-		glutSwapBuffers();
-	FPS_RS++;
+	
 }
 #pragma endregion RenderScene

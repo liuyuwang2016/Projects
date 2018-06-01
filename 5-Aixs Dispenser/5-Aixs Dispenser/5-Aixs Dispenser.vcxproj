@@ -28,7 +28,7 @@
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v120</PlatformToolset>
-    <CharacterSet>Unicode</CharacterSet>
+    <CharacterSet>MultiByte</CharacterSet>
     <CLRSupport>true</CLRSupport>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
@@ -86,9 +86,9 @@
       </PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\OpenCV300\opencv\build\include;C:\OpenCV300\opencv\build\include\opencv;C:\OpenCV300\opencv\build\include\opencv2;$(KINECTSDK20_DIR)\inc;C:\PCL 1.8.0 2013\3rdParty\Eigen\eigen3;C:\portaudio\include;D:\USER\Documents\Visual Studio 2013\Projects\Bullet3\src;D:\USER\Documents\Visual Studio 2013\Projects\5-Aixs Dispenser\5-Aixs Dispenser\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <SDLCheck>false</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;_LIB;_CRT_SECURE_NO_WARNINGS;_CRT_NON_CONFORMING_SWPRINTFS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\USER\Desktop\bullet3-master\bullet3-master\src;C:\OpenCV300\opencv\build\include;C:\OpenCV300\opencv\build\include\opencv;C:\OpenCV300\opencv\build\include\opencv2;$(KINECTSDK20_DIR)\inc;C:\PCL 1.8.0 2013\3rdParty\Eigen\eigen3;C:\portaudio\include;D:\USER\Documents\Visual Studio 2013\Projects\Bullet3\src;D:\USER\Documents\Visual Studio 2013\Projects\5-Aixs Dispenser\5-Aixs Dispenser\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <SDLCheck>true</SDLCheck>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
     </ClCompile>
     <Link>
@@ -149,48 +149,26 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="3D Math\EulerAngle.cpp" />
-    <ClCompile Include="3D Math\MathUtil.cpp" />
-    <ClCompile Include="3D Math\Matrix4x3.cpp" />
-    <ClCompile Include="3D Math\Quaternion.cpp" />
-    <ClCompile Include="3D Math\RotationMatrix.cpp" />
-    <ClCompile Include="3D Math\Vector3M.cpp" />
     <ClCompile Include="glm.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="Model Import\textfile.cpp" />
-    <ClCompile Include="osapi\Mutex_Linux.cpp" />
-    <ClCompile Include="osapi\Mutex_Win32.cpp" />
-    <ClCompile Include="osapi\Semaphore_Linux.cpp" />
-    <ClCompile Include="osapi\Semaphore_Win32.cpp" />
-    <ClCompile Include="osapi\Socket.cpp" />
-    <ClCompile Include="osapi\Thread_Linux.cpp" />
-    <ClCompile Include="osapi\Thread_Win32.cpp" />
+    <ClCompile Include="src\BasicDemo.cpp" />
+    <ClCompile Include="src\BulletOpenGLApplication.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="3D Math\3DMath.h" />
-    <ClInclude Include="3D Math\AABB.h" />
-    <ClInclude Include="3D Math\EulerAngle.hpp" />
-    <ClInclude Include="3D Math\MathUtil.h" />
-    <ClInclude Include="3D Math\Matrix4x3.hpp" />
-    <ClInclude Include="3D Math\Quaternion.hpp" />
-    <ClInclude Include="3D Math\RotationMatrix.hpp" />
-    <ClInclude Include="3D Math\Vector3M.hpp" />
     <ClInclude Include="Function.h" />
-    <ClInclude Include="Model Import\textfile.h" />
-    <ClInclude Include="osapi\Mutex.h" />
-    <ClInclude Include="osapi\osapi.h" />
-    <ClInclude Include="osapi\Semaphore.h" />
-    <ClInclude Include="osapi\Socket.h" />
-    <ClInclude Include="osapi\Thread.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="resource1.h" />
     <ClInclude Include="resource2.h" />
     <ClInclude Include="resource3.h" />
+    <ClInclude Include="src\BasicDemo.h" />
+    <ClInclude Include="src\BulletOpenGLApplication.h" />
     <ClInclude Include="src\Declae.h" />
     <ClInclude Include="src\dllmain.h" />
+    <ClInclude Include="src\FreeGLUTCallbacks.h" />
     <ClInclude Include="src\glm.h" />
     <ClInclude Include="src\M232.h" />
     <ClInclude Include="src\OpenGLCamera.h" />
+    <ClInclude Include="src\OpenGLMotionState.h" />
     <ClInclude Include="src\portaudio.h" />
     <ClInclude Include="src\RealScene.h" />
     <ClInclude Include="src\Scene.h" />
@@ -204,6 +182,17 @@
   <ItemGroup>
     <None Include="Shader\shader.frag" />
     <None Include="Shader\shader.vert" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\Desktop\Bullet3\src\BulletCollision\BulletCollision.vcxproj">
+      <Project>{d4862e96-d3e3-3c19-b65a-93fdf4f736d6}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\Desktop\Bullet3\src\BulletDynamics\BulletDynamics.vcxproj">
+      <Project>{94ff885a-e2a0-3e85-86b1-260b60232183}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\Desktop\Bullet3\src\LinearMath\LinearMath.vcxproj">
+      <Project>{72f280f6-8bf1-3e4a-8e42-9e833ece6e79}</Project>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

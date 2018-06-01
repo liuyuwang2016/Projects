@@ -1,210 +1,55 @@
-﻿生成启动时间为 2018/5/18 16:17:39。
+﻿生成启动时间为 2018/5/31 21:41:28。
      1>项目“D:\USER\Documents\Visual Studio 2013\Projects\5-Aixs Dispenser\5-Aixs Dispenser\5-Aixs Dispenser.vcxproj”在节点 2 上(Build 个目标)。
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /IC:\OpenCV300\opencv\build\include /IC:\OpenCV300\opencv\build\include\opencv /IC:\OpenCV300\opencv\build\include\opencv2 /I"C:\Program Files\Microsoft SDKs\Kinect\v2.0_1409\\inc" /I"C:\PCL 1.8.0 2013\3rdParty\Eigen\eigen3" /IC:\portaudio\include /I"D:\USER\Documents\Visual Studio 2013\Projects\Bullet3\src" /I"D:\USER\Documents\Visual Studio 2013\Projects\5-Aixs Dispenser\5-Aixs Dispenser\src" /AI"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0" /AI"C:\Program Files (x86)\Windows Kits\8.1\References\CommonConfiguration\Neutral" /Zi /clr /nologo /W3 /WX- /sdl- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /EHa /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /TP /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\mscorlib.dll" /analyze- /errorReport:prompt /clr:nostdlib "3D Math\EulerAngle.cpp" "3D Math\MathUtil.cpp" "3D Math\Matrix4x3.cpp" "3D Math\Quaternion.cpp" "3D Math\RotationMatrix.cpp" "3D Math\Vector3M.cpp" glm.cpp main.cpp "Model Import\textfile.cpp" osapi\Mutex_Linux.cpp osapi\Mutex_Win32.cpp osapi\Semaphore_Linux.cpp osapi\Semaphore_Win32.cpp osapi\Socket.cpp osapi\Thread_Linux.cpp osapi\Thread_Win32.cpp
-         EulerAngle.cpp
-     1>3D Math\EulerAngle.cpp : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\3d math\EulerAngle.hpp : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\3d math\3DMath.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\3d math\MathUtil.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\3d math\Vector3M.hpp : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\3d math\Matrix4x3.hpp : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\3d math\RotationMatrix.hpp : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\3d math\Quaternion.hpp : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
-         MathUtil.cpp
-     1>3D Math\MathUtil.cpp : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\3d math\MathUtil.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
-         Matrix4x3.cpp
-     1>3D Math\Matrix4x3.cpp : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\3d math\3DMath.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\3d math\MathUtil.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\3d math\Vector3M.hpp : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\3d math\Matrix4x3.hpp : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\3d math\RotationMatrix.hpp : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\3d math\EulerAngle.hpp : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\3d math\Quaternion.hpp : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
-         Quaternion.cpp
-     1>3D Math\Quaternion.cpp : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\3d math\3DMath.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\3d math\MathUtil.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\3d math\Vector3M.hpp : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\3d math\Matrix4x3.hpp : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\3d math\RotationMatrix.hpp : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\3d math\EulerAngle.hpp : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\3d math\Quaternion.hpp : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
-         RotationMatrix.cpp
-     1>3D Math\RotationMatrix.cpp : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\3d math\3DMath.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\3d math\MathUtil.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\3d math\Vector3M.hpp : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\3d math\Matrix4x3.hpp : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\3d math\RotationMatrix.hpp : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\3d math\EulerAngle.hpp : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\3d math\Quaternion.hpp : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
-         Vector3M.cpp
-     1>3D Math\Vector3M.cpp : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\3d math\3DMath.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\3d math\MathUtil.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\3d math\Vector3M.hpp : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\3d math\Matrix4x3.hpp : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\3d math\RotationMatrix.hpp : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\3d math\EulerAngle.hpp : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\3d math\Quaternion.hpp : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
-         glm.cpp
-     1>C:\OpenCV300\opencv\build\include\opencv2/core/mat.hpp(1965): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
-     1>C:\OpenCV300\opencv\build\include\opencv2/core/persistence.hpp : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
-     1>C:\OpenCV300\opencv\build\include\opencv2/core/utility.hpp : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
-     1>glm.cpp(285): warning C4305: “=”: 从“double”到“GLfloat”截断
-     1>glm.cpp(286): warning C4305: “=”: 从“double”到“GLfloat”截断
-     1>glm.cpp(287): warning C4305: “=”: 从“double”到“GLfloat”截断
-     1>glm.cpp(289): warning C4305: “=”: 从“double”到“GLfloat”截断
-     1>glm.cpp(290): warning C4305: “=”: 从“double”到“GLfloat”截断
-     1>glm.cpp(291): warning C4305: “=”: 从“double”到“GLfloat”截断
-     1>glm.cpp(790): warning C4244: “=”: 从“double”转换到“GLfloat”，可能丢失数据
-     1>glm.cpp(791): warning C4244: “=”: 从“double”转换到“GLfloat”，可能丢失数据
-     1>glm.cpp(792): warning C4244: “=”: 从“double”转换到“GLfloat”，可能丢失数据
-     1>glm.cpp(794): warning C4244: “=”: 从“double”转换到“GLfloat”，可能丢失数据
-     1>glm.cpp(966): warning C4244: “=”: 从“double”转换到“GLfloat”，可能丢失数据
-     1>glm.cpp(1171): warning C4305: “=”: 从“double”到“GLfloat”截断
-     1>glm.cpp(1176): warning C4305: “=”: 从“double”到“GLfloat”截断
-     1>glm.cpp(1178): warning C4244: “=”: 从“double”转换到“GLfloat”，可能丢失数据
-     1>glm.cpp(1181): warning C4244: “=”: 从“double”转换到“GLfloat”，可能丢失数据
-     1>glm.cpp(1182): warning C4244: “=”: 从“double”转换到“GLfloat”，可能丢失数据
-     1>glm.cpp(1276): warning C4018: “<”: 有符号/无符号不匹配
-         main.cpp
-     1>C:\OpenCV300\opencv\build\include\opencv2/core/mat.hpp(1965): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
-     1>C:\OpenCV300\opencv\build\include\opencv2/core/persistence.hpp : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
-     1>C:\OpenCV300\opencv\build\include\opencv2/core/utility.hpp : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\3D Math/3DMath.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\3d math\MathUtil.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\3d math\Vector3M.hpp : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\3d math\Matrix4x3.hpp : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\3d math\RotationMatrix.hpp : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\3d math\EulerAngle.hpp : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\3d math\3DMath.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\3d math\Quaternion.hpp : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Scene.h(260): warning C4305: “初始化”: 从“double”到“float”截断
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Scene.h(284): warning C4305: “初始化”: 从“double”到“float”截断
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Scene.h(289): warning C4305: “初始化”: 从“double”到“float”截断
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Scene.h(393): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : 参见“sprintf”的声明
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Scene.h(482): warning C4244: “=”: 从“float”转换到“int”，可能丢失数据
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/dllmain.h(233): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : 参见“sprintf”的声明
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/dllmain.h(236): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h(356) : 参见“sprintf”的声明
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/dllmain.h(349): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(112) : 参见“strcpy”的声明
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/dllmain.h(361): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(112) : 参见“strcpy”的声明
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/dllmain.h(461): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(112) : 参见“strcpy”的声明
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/dllmain.h(551): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(118) : 参见“strcat”的声明
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/dllmain.h(553): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h(118) : 参见“strcat”的声明
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/dllmain.h(668): warning C4996: 'swprintf': swprintf has been changed to conform with the ISO C standard, adding an extra character count parameter. To use traditional Microsoft swprintf, set _CRT_NON_CONFORMING_SWPRINTFS.
-                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\swprintf.inl(85) : 参见“swprintf”的声明
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/dllmain.h(678): error C2664: “HANDLE CreateFileW(LPCWSTR,DWORD,DWORD,LPSECURITY_ATTRIBUTES,DWORD,DWORD,HANDLE)”: 无法将参数 1 从“char *”转换为“LPCWSTR”
-                 与指向的类型无关；转换要求 reinterpret_cast、C 样式转换或函数样式转换
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/dllmain.h(697): error C2664: “BOOL BuildCommDCBW(LPCWSTR,LPDCB)”: 无法将参数 1 从“char [100]”转换为“LPCWSTR”
-                 与指向的类型无关；转换要求 reinterpret_cast、C 样式转换或函数样式转换
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(67): warning C4244: “=”: 从“float”转换到“uchar”，可能丢失数据
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(155): error C2664: “void OutputDebugStringW(LPCWSTR)”: 无法将参数 1 从“const char [95]”转换为“LPCWSTR”
-                 与指向的类型无关；转换要求 reinterpret_cast、C 样式转换或函数样式转换
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(186): error C2664: “void OutputDebugStringW(LPCWSTR)”: 无法将参数 1 从“const char [108]”转换为“LPCWSTR”
-                 与指向的类型无关；转换要求 reinterpret_cast、C 样式转换或函数样式转换
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(286): error C2664: “void OutputDebugStringW(LPCWSTR)”: 无法将参数 1 从“const char [95]”转换为“LPCWSTR”
-                 与指向的类型无关；转换要求 reinterpret_cast、C 样式转换或函数样式转换
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(327): warning C4244: “=”: 从“float”转换到“int”，可能丢失数据
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(328): warning C4244: “=”: 从“float”转换到“int”，可能丢失数据
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(561): warning C4305: “=”: 从“double”到“float”截断
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(562): warning C4305: “=”: 从“double”到“float”截断
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(565): warning C4305: “=”: 从“double”到“float”截断
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(566): warning C4305: “=”: 从“double”到“float”截断
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(567): warning C4305: “=”: 从“double”到“float”截断
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(570): warning C4305: “=”: 从“double”到“float”截断
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(571): warning C4305: “=”: 从“double”到“float”截断
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(667): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(674): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(681): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(688): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(695): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(702): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(709): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(716): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(723): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(730): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(940): warning C4018: “<”: 有符号/无符号不匹配
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1039): warning C4018: “<”: 有符号/无符号不匹配
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1041): warning C4018: “<”: 有符号/无符号不匹配
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1394): warning C4018: “<”: 有符号/无符号不匹配
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1418): warning C4018: “<”: 有符号/无符号不匹配
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1452): error C2664: “HFONT CreateFontW(int,int,int,int,int,DWORD,DWORD,DWORD,DWORD,DWORD,DWORD,DWORD,DWORD,LPCWSTR)”: 无法将参数 14 从“char [12]”转换为“LPCWSTR”
-                 与指向的类型无关；转换要求 reinterpret_cast、C 样式转换或函数样式转换
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1476): warning C4244: “参数”: 从“int”转换到“GLfloat”，可能丢失数据
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1477): warning C4244: “参数”: 从“int”转换到“GLfloat”，可能丢失数据
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1505): warning C4244: “参数”: 从“int”转换到“GLfloat”，可能丢失数据
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1947): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1948): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(1949): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(2068): warning C4018: “<”: 有符号/无符号不匹配
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(2075): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(2076): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(2077): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(2079): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(2080): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(2081): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(2083): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(2084): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(2085): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(2133): warning C4800: “BOOL”: 将值强制为布尔值“true”或“false”(性能警告)
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(2621): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(2622): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(2623): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(2634): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(2635): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(2636): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(2642): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(2643): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src/Declae.h(2644): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\Function.h(20): warning C4018: “<”: 有符号/无符号不匹配
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\Function.h(107): warning C4551: 缺少参数列表的函数调用
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\Function.h(369): warning C4804: “>”: 在操作中使用类型“bool”不安全
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\Function.h(446): warning C4018: “<”: 有符号/无符号不匹配
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\Function.h(457): warning C4244: “初始化”: 从“double”转换到“float”，可能丢失数据
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\Function.h(458): warning C4244: “初始化”: 从“double”转换到“float”，可能丢失数据
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\Function.h(524): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\Function.h(546): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\Function.h(636): warning C4804: “>”: 在操作中使用类型“bool”不安全
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\Function.h(1010): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
-     1>main.cpp(47): warning C4305: “参数”: 从“double”到“float”截断
-     1>main.cpp(48): warning C4305: “参数”: 从“double”到“float”截断
-     1>main.cpp(49): warning C4305: “参数”: 从“double”到“float”截断
-     1>main.cpp(67): warning C4018: “<”: 有符号/无符号不匹配
-         textfile.cpp
-         Mutex_Linux.cpp
-         Mutex_Win32.cpp
-         Semaphore_Linux.cpp
-         Semaphore_Win32.cpp
-         Socket.cpp
-         Thread_Linux.cpp
-         Thread_Win32.cpp
-         正在生成代码...
-     1>c:\opencv300\opencv\build\include\opencv2\core\cvstd.hpp(592): warning C4793: “cv::String::String”: 编译为本机的函数:
-         	托管代码中发现一个不受支持的内部函数
-     1>c:\opencv300\opencv\build\include\opencv2\core\mat.inl.hpp(381): warning C4793: “cv::Mat::Mat”: 编译为本机的函数:
-         	托管代码中发现一个不受支持的内部函数
-     1>c:\opencv300\opencv\build\include\opencv2\core\mat.inl.hpp(1703): warning C4793: “cv::SparseMat::addref”: 编译为本机的函数:
-         	托管代码中发现一个不受支持的内部函数
-     1>c:\opencv300\opencv\build\include\opencv2\core\mat.inl.hpp(3304): warning C4793: “cv::UMat::addref”: 编译为本机的函数:
-         	托管代码中发现一个不受支持的内部函数
-     1>c:\opencv300\opencv\build\include\opencv2\core\ptr.inl.hpp(67): warning C4793: “cv::detail::PtrOwner::incRef”: 编译为本机的函数:
-         	托管代码中发现一个不受支持的内部函数
-     1>c:\opencv300\opencv\build\include\opencv2\core\ptr.inl.hpp(72): warning C4793: “cv::detail::PtrOwner::decRef”: 编译为本机的函数:
-         	托管代码中发现一个不受支持的内部函数
-     1>已完成生成项目“D:\USER\Documents\Visual Studio 2013\Projects\5-Aixs Dispenser\5-Aixs Dispenser\5-Aixs Dispenser.vcxproj”(Build 个目标)的操作 - 失败。
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"D:\USER\Desktop\bullet3-master\bullet3-master\src" /IC:\OpenCV300\opencv\build\include /IC:\OpenCV300\opencv\build\include\opencv /IC:\OpenCV300\opencv\build\include\opencv2 /I"C:\Program Files\Microsoft SDKs\Kinect\v2.0_1409\\inc" /I"C:\PCL 1.8.0 2013\3rdParty\Eigen\eigen3" /IC:\portaudio\include /I"D:\USER\Documents\Visual Studio 2013\Projects\Bullet3\src" /I"D:\USER\Documents\Visual Studio 2013\Projects\5-Aixs Dispenser\5-Aixs Dispenser\src" /AI"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0" /AI"C:\Program Files (x86)\Windows Kits\8.1\References\CommonConfiguration\Neutral" /Zi /clr /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _CRT_SECURE_NO_WARNINGS /D _CRT_NON_CONFORMING_SWPRINTFS /D _MBCS /EHa /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /TP /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\mscorlib.dll" /analyze- /errorReport:prompt /clr:nostdlib src\BulletOpenGLApplication.cpp
+         BulletOpenGLApplication.cpp
+     1>d:\user\desktop\bullet3-master\bullet3-master\src\LinearMath/btIDebugDraw.h(169): warning C4305: “参数”: 从“double”到“const btScalar”截断
+     1>d:\user\desktop\bullet3-master\bullet3-master\src\LinearMath/btIDebugDraw.h(170): warning C4305: “参数”: 从“double”到“const btScalar”截断
+     1>d:\user\desktop\bullet3-master\bullet3-master\src\LinearMath/btIDebugDraw.h(171): warning C4305: “参数”: 从“double”到“const btScalar”截断
+     1>src\BulletOpenGLApplication.cpp(34): warning C4244: “初始化”: 从“unsigned __int64”转换到“float”，可能丢失数据
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src\bulletopenglapplication.cpp(68): warning C4793: “BulletOpenGLApplication::DrawBox”: 编译为本机的函数:
+         	托管代码中不支持对齐数据类型
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src\bulletopenglapplication.cpp(68): warning C4793: “BulletOpenGLApplication::DrawBox”: 编译为本机的函数:
+         	托管代码中不支持对齐数据类型
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src\bulletopenglapplication.cpp(68): warning C4793: “BulletOpenGLApplication::DrawBox”: 编译为本机的函数:
+         	托管代码中不支持对齐数据类型
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src\bulletopenglapplication.cpp(68): warning C4793: “BulletOpenGLApplication::DrawBox”: 编译为本机的函数:
+         	托管代码中不支持对齐数据类型
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src\bulletopenglapplication.cpp(68): warning C4793: “BulletOpenGLApplication::DrawBox”: 编译为本机的函数:
+         	托管代码中不支持对齐数据类型
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src\bulletopenglapplication.cpp(68): warning C4793: “BulletOpenGLApplication::DrawBox”: 编译为本机的函数:
+         	托管代码中不支持对齐数据类型
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src\bulletopenglapplication.cpp(68): warning C4793: “BulletOpenGLApplication::DrawBox”: 编译为本机的函数:
+         	托管代码中不支持对齐数据类型
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src\bulletopenglapplication.cpp(68): warning C4793: “BulletOpenGLApplication::DrawBox”: 编译为本机的函数:
+         	托管代码中不支持对齐数据类型
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src\bulletopenglapplication.cpp(106): warning C4793: “BulletOpenGLApplication::DrawBox”: 编译为本机的函数:
+         	托管代码中不支持对齐数据类型
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src\bulletopenglapplication.cpp(107): warning C4793: “BulletOpenGLApplication::DrawBox”: 编译为本机的函数:
+         	托管代码中不支持对齐数据类型
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src\bulletopenglapplication.cpp(123): warning C4793: “BulletOpenGLApplication::DrawBox”: 编译为本机的函数:
+         	托管代码中不支持对齐数据类型
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src\bulletopenglapplication.cpp(135): warning C4793: “BulletOpenGLApplication::RenderBulletScene”: 编译为本机的函数:
+         	托管代码中不支持对齐数据类型
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src\openglmotionstate.h(20): warning C4793: “OpenGLMotionState::GetWorldTransform”: 编译为本机的函数:
+         	托管代码中不支持对齐数据类型
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\USER\Documents\Visual Studio 2013\Projects\5-Aixs Dispenser\Debug\5-Aixs Dispenser.exe" /INCREMENTAL /NOLOGO /LIBPATH:"C:\Program Files\Microsoft SDKs\Kinect\v2.0_1409\\Lib\x86" /LIBPATH:C:\OpenCV300\opencv\build\x86\vc12\lib /LIBPATH:C:\portaudio\lib glut32.lib opencv_ts300d.lib opencv_world300d.lib kinect20.lib portaudio_x86.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\USER\Documents\Visual Studio 2013\Projects\5-Aixs Dispenser\Debug\5-Aixs Dispenser.pdb" /ASSEMBLYDEBUG /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /FIXED:NO /NXCOMPAT /MACHINE:X86 "Debug\5-Aixs Dispenser.res"
+         Debug\glm.obj
+         Debug\main.obj
+         Debug\BasicDemo.obj
+         Debug\BulletOpenGLApplication.obj
+         "Debug\.NETFramework,Version=v4.0.AssemblyAttributes.obj"
+         D:\USER\Desktop\Bullet3\lib\Debug\BulletCollision_Debug.lib
+         D:\USER\Desktop\Bullet3\lib\Debug\BulletDynamics_Debug.lib
+         D:\USER\Desktop\Bullet3\lib\Debug\LinearMath_Debug.lib
+     1>opencv_ts300d.lib(ts.obj) : warning LNK4099: 未找到 PDB“opencv_ts300d.pdb”(使用“opencv_ts300d.lib(ts.obj)”或在“D:\USER\Documents\Visual Studio 2013\Projects\5-Aixs Dispenser\Debug\opencv_ts300d.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>opencv_ts300d.lib(ts_gtest.obj) : warning LNK4099: 未找到 PDB“opencv_ts300d.pdb”(使用“opencv_ts300d.lib(ts_gtest.obj)”或在“D:\USER\Documents\Visual Studio 2013\Projects\5-Aixs Dispenser\Debug\opencv_ts300d.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>opencv_ts300d.lib(ts_perf.obj) : warning LNK4099: 未找到 PDB“opencv_ts300d.pdb”(使用“opencv_ts300d.lib(ts_perf.obj)”或在“D:\USER\Documents\Visual Studio 2013\Projects\5-Aixs Dispenser\Debug\opencv_ts300d.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>opencv_ts300d.lib(opencv_ts_pch.obj) : warning LNK4099: 未找到 PDB“opencv_ts300d.pdb”(使用“opencv_ts300d.lib(opencv_ts_pch.obj)”或在“D:\USER\Documents\Visual Studio 2013\Projects\5-Aixs Dispenser\Debug\opencv_ts300d.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+         5-Aixs Dispenser.vcxproj -> D:\USER\Documents\Visual Studio 2013\Projects\5-Aixs Dispenser\Debug\5-Aixs Dispenser.exe
+     1>已完成生成项目“D:\USER\Documents\Visual Studio 2013\Projects\5-Aixs Dispenser\5-Aixs Dispenser\5-Aixs Dispenser.vcxproj”(Build 个目标)的操作。
 
-生成失败。
+生成成功。
 
-已用时间 00:00:08.34
+已用时间 00:00:02.72

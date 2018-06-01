@@ -1,40 +1,26 @@
-﻿生成启动时间为 2018/5/23 17:15:16。
+﻿生成启动时间为 2018/5/31 10:59:59。
      1>项目“D:\USER\Documents\Visual Studio 2013\Projects\5-Aixs Dispenser\OpenGL-Test\OpenGL-Test.vcxproj”在节点 2 上(Build 个目标)。
      1>ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt main.cpp
          main.cpp
      1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\opengl-test\gjk_epa.hpp(119): warning C4244: “初始化”: 从“double”转换到“float”，可能丢失数据
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\opengl-test\main.cpp(157): warning C4305: “=”: 从“double”到“GLfloat”截断
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\opengl-test\main.cpp(158): warning C4305: “=”: 从“double”到“GLfloat”截断
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\opengl-test\main.cpp(160): warning C4018: “<”: 有符号/无符号不匹配
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\opengl-test\main.cpp(185): warning C4018: “<”: 有符号/无符号不匹配
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\opengl-test\main.cpp(187): warning C4244: “=”: 从“double”转换到“GLfloat”，可能丢失数据
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\opengl-test\main.cpp(188): warning C4244: “=”: 从“double”转换到“GLfloat”，可能丢失数据
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\opengl-test\main.cpp(189): warning C4244: “=”: 从“double”转换到“GLfloat”，可能丢失数据
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\opengl-test\main.cpp(310): warning C4305: “=”: 从“double”到“GLfloat”截断
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\opengl-test\main.cpp(311): warning C4305: “=”: 从“double”到“GLfloat”截断
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\opengl-test\main.cpp(313): warning C4018: “<”: 有符号/无符号不匹配
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\opengl-test\main.cpp(338): warning C4018: “<”: 有符号/无符号不匹配
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\opengl-test\main.cpp(340): warning C4244: “=”: 从“double”转换到“GLfloat”，可能丢失数据
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\opengl-test\main.cpp(341): warning C4244: “=”: 从“double”转换到“GLfloat”，可能丢失数据
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\opengl-test\main.cpp(342): warning C4244: “=”: 从“double”转换到“GLfloat”，可能丢失数据
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\opengl-test\main.cpp(463): warning C4305: “初始化”: 从“double”到“float”截断
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\opengl-test\main.cpp(494): warning C4244: “参数”: 从“float”转换到“GLsizei”，可能丢失数据
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\opengl-test\main.cpp(528): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\opengl-test\main.cpp(533): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\opengl-test\main.cpp(537): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\opengl-test\main.cpp(538): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\opengl-test\main.cpp(569): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\opengl-test\main.cpp(570): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\opengl-test\main.cpp(579): warning C4244: “初始化”: 从“double”转换到“float”，可能丢失数据
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\opengl-test\main.cpp(580): warning C4244: “初始化”: 从“double”转换到“float”，可能丢失数据
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\opengl-test\main.cpp(606): warning C4244: “初始化”: 从“double”转换到“float”，可能丢失数据
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\opengl-test\main.cpp(607): warning C4244: “初始化”: 从“double”转换到“float”，可能丢失数据
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\opengl-test\main.cpp(638): warning C4305: “参数”: 从“double”到“float”截断
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\opengl-test\main.cpp(641): warning C4305: “参数”: 从“double”到“float”截断
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\opengl-test\main.cpp(644): warning C4305: “参数”: 从“double”到“float”截断
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\opengl-test\main.cpp(647): warning C4305: “参数”: 从“double”到“float”截断
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\opengl-test\main.cpp(660): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\opengl-test\main.cpp(141): warning C4305: “初始化”: 从“double”到“float”截断
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\opengl-test\main.cpp(172): warning C4244: “参数”: 从“float”转换到“GLsizei”，可能丢失数据
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\opengl-test\main.cpp(206): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\opengl-test\main.cpp(211): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\opengl-test\main.cpp(215): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\opengl-test\main.cpp(216): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\opengl-test\main.cpp(247): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\opengl-test\main.cpp(248): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\opengl-test\main.cpp(257): warning C4244: “初始化”: 从“double”转换到“float”，可能丢失数据
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\opengl-test\main.cpp(258): warning C4244: “初始化”: 从“double”转换到“float”，可能丢失数据
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\opengl-test\main.cpp(284): warning C4244: “初始化”: 从“double”转换到“float”，可能丢失数据
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\opengl-test\main.cpp(285): warning C4244: “初始化”: 从“double”转换到“float”，可能丢失数据
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\opengl-test\main.cpp(316): warning C4305: “参数”: 从“double”到“float”截断
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\opengl-test\main.cpp(319): warning C4305: “参数”: 从“double”到“float”截断
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\opengl-test\main.cpp(322): warning C4305: “参数”: 从“double”到“float”截断
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\opengl-test\main.cpp(325): warning C4305: “参数”: 从“double”到“float”截断
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\opengl-test\main.cpp(338): warning C4244: “参数”: 从“float”转换到“int”，可能丢失数据
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\USER\Documents\Visual Studio 2013\Projects\5-Aixs Dispenser\Debug\OpenGL-Test.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\USER\Documents\Visual Studio 2013\Projects\5-Aixs Dispenser\Debug\OpenGL-Test.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\USER\Documents\Visual Studio 2013\Projects\5-Aixs Dispenser\Debug\OpenGL-Test.lib" /MACHINE:X86 Debug\glm.obj
          Debug\main.obj
@@ -43,4 +29,4 @@
 
 生成成功。
 
-已用时间 00:00:01.18
+已用时间 00:00:01.32

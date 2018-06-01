@@ -558,9 +558,9 @@ void ROICameraSPStorage()
 //模型换了之后没影响
 void GLInit()
 {
-	Intersect.X = 0.3221273277841458;
-	Intersect.Y = -0.1384631684450974;
-	Intersect.Z = -1;
+	IntersectPoint.X = 0.3221273277841458;
+	IntersectPoint.Y = -0.1384631684450974;
+	IntersectPoint.Z = -1;
 
 	ObjPosi.x = -0.311;
 	ObjPosi.y = 0.195;
@@ -572,20 +572,26 @@ void GLInit()
 
 	DeviaDueToY = new CameraSpacePoint[1];
 	DeviaDueToY->X = DeviaDueToY->Y = DeviaDueToY->Z = 0;
-	GLfloat  whiteLight[] = { 0.45f, 0.45f, 0.45f, 1.0f };
-	GLfloat  sourceLight[] = { 0.25f, 0.25f, 0.25f, 1.0f };
-	GLfloat	 lightPos[] = { -50.f, 25.0f, 250.0f, 0.0f };
+	GLfloat  whiteLight[] = { 0.2f, 0.2f, 0.2f, 1.0f };//dark grey
+	GLfloat  sourceLight[] = { 1.0f, 1.0f, 1.0f, 1.0f };//white
+	GLfloat specular[] = { 1.0f, 1.0f, 1.0f, 1.0f }; // white
+	GLfloat	 lightPos[] = { 5.0f, 10.0f, 1.0f, 0.0f };
 
 	glEnable(GL_DEPTH_TEST);
 	glFrontFace(GL_CCW);
 	glEnable(GL_CULL_FACE);
-	glEnable(GL_LIGHTING);
+	
 	glLightModelfv(GL_LIGHT_MODEL_AMBIENT, whiteLight);
 	glLightfv(GL_LIGHT0, GL_AMBIENT, sourceLight);
-	glLightfv(GL_LIGHT0, GL_DIFFUSE, sourceLight);
+	glLightfv(GL_LIGHT0, GL_DIFFUSE, specular);
 	glLightfv(GL_LIGHT0, GL_POSITION, lightPos);
+
+	glEnable(GL_LIGHTING);
 	glEnable(GL_LIGHT0);
 	glEnable(GL_COLOR_MATERIAL);
+
+	glShadeModel(GL_SMOOTH);
+
 	glColorMaterial(GL_FRONT, GL_AMBIENT_AND_DIFFUSE);
 	glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
 	glGenTextures(1, &textureid);
@@ -870,8 +876,6 @@ void Background()
 }
 void SceneWithBackground()
 {
-	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
 	glViewport(0, 0, iWidthColor, iHeightColor);
@@ -920,7 +924,6 @@ void SceneWithoutBackground()
 	nearDist = 0.01f / tan((kFovY / 2.0) * CV_PI / 180.0);
 	farDist = 50;
 	aspect = (double)iWidthColor / iHeightColor;
-	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
 	gluPerspective(kFovY, aspect, nearDist, farDist);
@@ -2034,7 +2037,7 @@ void ARFunc_FindProj()//换了模型之后有影响
 	glPushMatrix();
 	glLoadIdentity();
 	glTranslatef(ObjPosi.x, ObjPosi.y, ObjPosi.z);
-	glTranslatef(Intersect.X, Intersect.Y, Intersect.Z);
+	glTranslatef(IntersectPoint.X, IntersectPoint.Y, IntersectPoint.Z);
 
 	glMultMatrixf(M_Cubic);
 	glGetFloatv(GL_MODELVIEW_MATRIX, TransM_AR);
@@ -2147,7 +2150,7 @@ void DrawCubic()//换了模型之后有影响
 	glTranslatef(ObjPosi.x, ObjPosi.y, ObjPosi.z);
 	/*Interact: the center red point of three-Axis dispenser's
 	 *0 translate value*/
-	glTranslatef(Intersect.X, Intersect.Y, Intersect.Z);
+	glTranslatef(IntersectPoint.X, IntersectPoint.Y, IntersectPoint.Z);
 	glRotatef(90, 1, 0, 0);
 	glMultMatrixf(M_Cubic);
 
@@ -2391,6 +2394,7 @@ void ShowImage()
 	//cout << "-----------------------ShowImage--------------------" << endl;
 	//不是opencv编译的问题，在这里如果关闭集显的话不能debug：没找到原因，应该是opencv 3.0的bug
 	imshow("ROI Map", ROI);
+	
 }
 
 #pragma endregion Kinect Function

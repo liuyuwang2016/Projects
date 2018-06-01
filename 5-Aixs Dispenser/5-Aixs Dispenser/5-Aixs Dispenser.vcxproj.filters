@@ -25,20 +25,17 @@
     <Filter Include="声音提醒">
       <UniqueIdentifier>{e764e432-dadc-4061-bf79-2ffc0a26e806}</UniqueIdentifier>
     </Filter>
-    <Filter Include="osapi">
-      <UniqueIdentifier>{f1e85edc-94e4-4bf8-9d76-3f1eb8a7dac9}</UniqueIdentifier>
-    </Filter>
     <Filter Include="旋转相机">
       <UniqueIdentifier>{3916269c-dea0-46ea-9d67-d8d408747f63}</UniqueIdentifier>
     </Filter>
-    <Filter Include="3D Math">
-      <UniqueIdentifier>{0144bcc8-9878-4a7c-8e6c-e4b05075090f}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Model Import">
-      <UniqueIdentifier>{1ae0ad9b-7fa6-4fad-aa67-24dc8c80e6f0}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Shader">
       <UniqueIdentifier>{1e9cfeb5-2a66-4b72-ba81-9a1996db1db9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Bullet头文件">
+      <UniqueIdentifier>{d7382ffa-53ee-4ce2-a162-81d5fd0011cd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Bullet资源文件">
+      <UniqueIdentifier>{a02862ba-0e7a-443d-be22-420749034184}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -48,47 +45,11 @@
     <ClCompile Include="main.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="osapi\Mutex_Linux.cpp">
-      <Filter>osapi</Filter>
+    <ClCompile Include="src\BasicDemo.cpp">
+      <Filter>Bullet资源文件</Filter>
     </ClCompile>
-    <ClCompile Include="osapi\Mutex_Win32.cpp">
-      <Filter>osapi</Filter>
-    </ClCompile>
-    <ClCompile Include="osapi\Semaphore_Linux.cpp">
-      <Filter>osapi</Filter>
-    </ClCompile>
-    <ClCompile Include="osapi\Semaphore_Win32.cpp">
-      <Filter>osapi</Filter>
-    </ClCompile>
-    <ClCompile Include="osapi\Socket.cpp">
-      <Filter>osapi</Filter>
-    </ClCompile>
-    <ClCompile Include="osapi\Thread_Linux.cpp">
-      <Filter>osapi</Filter>
-    </ClCompile>
-    <ClCompile Include="osapi\Thread_Win32.cpp">
-      <Filter>osapi</Filter>
-    </ClCompile>
-    <ClCompile Include="3D Math\EulerAngle.cpp">
-      <Filter>3D Math</Filter>
-    </ClCompile>
-    <ClCompile Include="3D Math\MathUtil.cpp">
-      <Filter>3D Math</Filter>
-    </ClCompile>
-    <ClCompile Include="3D Math\Matrix4x3.cpp">
-      <Filter>3D Math</Filter>
-    </ClCompile>
-    <ClCompile Include="3D Math\Quaternion.cpp">
-      <Filter>3D Math</Filter>
-    </ClCompile>
-    <ClCompile Include="3D Math\RotationMatrix.cpp">
-      <Filter>3D Math</Filter>
-    </ClCompile>
-    <ClCompile Include="3D Math\Vector3M.cpp">
-      <Filter>3D Math</Filter>
-    </ClCompile>
-    <ClCompile Include="Model Import\textfile.cpp">
-      <Filter>Model Import</Filter>
+    <ClCompile Include="src\BulletOpenGLApplication.cpp">
+      <Filter>Bullet资源文件</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -113,24 +74,6 @@
     <ClInclude Include="src\Scene.h">
       <Filter>Header必须</Filter>
     </ClInclude>
-    <ClInclude Include="osapi\Mutex.h">
-      <Filter>osapi</Filter>
-    </ClInclude>
-    <ClInclude Include="osapi\osapi.h">
-      <Filter>osapi</Filter>
-    </ClInclude>
-    <ClInclude Include="osapi\Semaphore.h">
-      <Filter>osapi</Filter>
-    </ClInclude>
-    <ClInclude Include="osapi\Socket.h">
-      <Filter>osapi</Filter>
-    </ClInclude>
-    <ClInclude Include="osapi\Thread.h">
-      <Filter>osapi</Filter>
-    </ClInclude>
-    <ClInclude Include="src\RealScene.h">
-      <Filter>Header必须</Filter>
-    </ClInclude>
     <ClInclude Include="src\OpenGLCamera.h">
       <Filter>旋转相机</Filter>
     </ClInclude>
@@ -146,32 +89,20 @@
     <ClInclude Include="resource3.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="3D Math\3DMath.h">
-      <Filter>3D Math</Filter>
+    <ClInclude Include="src\RealScene.h">
+      <Filter>Header必须</Filter>
     </ClInclude>
-    <ClInclude Include="3D Math\AABB.h">
-      <Filter>3D Math</Filter>
+    <ClInclude Include="src\BasicDemo.h">
+      <Filter>Bullet头文件</Filter>
     </ClInclude>
-    <ClInclude Include="3D Math\EulerAngle.hpp">
-      <Filter>3D Math</Filter>
+    <ClInclude Include="src\BulletOpenGLApplication.h">
+      <Filter>Bullet头文件</Filter>
     </ClInclude>
-    <ClInclude Include="3D Math\MathUtil.h">
-      <Filter>3D Math</Filter>
+    <ClInclude Include="src\FreeGLUTCallbacks.h">
+      <Filter>Bullet头文件</Filter>
     </ClInclude>
-    <ClInclude Include="3D Math\Matrix4x3.hpp">
-      <Filter>3D Math</Filter>
-    </ClInclude>
-    <ClInclude Include="3D Math\Quaternion.hpp">
-      <Filter>3D Math</Filter>
-    </ClInclude>
-    <ClInclude Include="3D Math\RotationMatrix.hpp">
-      <Filter>3D Math</Filter>
-    </ClInclude>
-    <ClInclude Include="3D Math\Vector3M.hpp">
-      <Filter>3D Math</Filter>
-    </ClInclude>
-    <ClInclude Include="Model Import\textfile.h">
-      <Filter>Model Import</Filter>
+    <ClInclude Include="src\OpenGLMotionState.h">
+      <Filter>Bullet头文件</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
