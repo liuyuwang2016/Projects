@@ -233,7 +233,7 @@ unsigned int*	pIndex = nullptr;
 unsigned int	uTriangles = 0;
 void GLInit(void);
 void SpecialKeys(int key, int x, int y);
-void Keyboard(unsigned char key, int x, int y);
+void DispenserKeyboard(unsigned char key, int x, int y);
 void timer(int value);					//OpenGL Time Func
 void DrawProbeTip(void);
 void RenderScene(void);					//OpenGL Render Func

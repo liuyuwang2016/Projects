@@ -3,9 +3,7 @@
 #include "src/Scene.h"
 #include "src/M232.h"
 
-
 #pragma region Function
-
 #pragma region OpenCV&ROI Function 
 //将传入的点的坐标从Kinect的坐标转换到机器的坐标
 void ROITrans(CameraSpacePoint* Data, int DataNum, GLfloat* TransM, CameraSpacePoint* Result)
@@ -572,10 +570,11 @@ void GLInit()
 
 	DeviaDueToY = new CameraSpacePoint[1];
 	DeviaDueToY->X = DeviaDueToY->Y = DeviaDueToY->Z = 0;
-	GLfloat  whiteLight[] = { 0.2f, 0.2f, 0.2f, 1.0f };//dark grey
-	GLfloat  sourceLight[] = { 1.0f, 1.0f, 1.0f, 1.0f };//white
+
+	GLfloat  whiteLight[] = { 0.45f, 0.45f, 0.45f, 1.0f };//dark grey
+	GLfloat  sourceLight[] = { 0.25f, 0.25f, 0.25f, 1.0f };//white
 	GLfloat specular[] = { 1.0f, 1.0f, 1.0f, 1.0f }; // white
-	GLfloat	 lightPos[] = { 5.0f, 10.0f, 1.0f, 0.0f };
+	GLfloat	 lightPos[] = { -50.f, 25.0f, 250.0f, 0.0f };
 
 	glEnable(GL_DEPTH_TEST);
 	glFrontFace(GL_CCW);
@@ -599,7 +598,7 @@ void GLInit()
 	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, iWidthColor, iHeightColor, 0, GL_RGBA, GL_UNSIGNED_BYTE, pBufferColor);
 }
 
-void Keyboard(unsigned char key, int x, int y)
+void DispenserKeyboard(unsigned char key, int x, int y)
 {
 	float fSpeed = 0.005f;
 	if (key == VK_ESCAPE)
@@ -616,13 +615,13 @@ void Keyboard(unsigned char key, int x, int y)
 		g_Camera.MoveForward(fSpeed);
 		std::cout << "Move Forward plus = " << fSpeed << endl;
 	}
-	else if (key == 'f' || key == 'F')
-	{
-		Finish_Without_Update = TRUE;
-		printf("%f fps\n", g_fps(RenderScene, 100));
-		std::cout << "FPS_RS = " << FPS_RS << endl;
-		Finish_Without_Update = FALSE;
-	}
+	//else if (key == 'f' || key == 'F')
+	//{
+	//	Finish_Without_Update = TRUE;
+	//	printf("%f fps\n", g_fps(RenderScene, 100));
+	//	std::cout << "FPS_RS = " << FPS_RS << endl;
+	//	Finish_Without_Update = FALSE;
+	//}
 	else if (key == 'a' || key == 'A')
 	{
 		g_Camera.MoveSide(-fSpeed);
@@ -674,7 +673,7 @@ void Keyboard(unsigned char key, int x, int y)
 		Mt_XMove(Mt_x);
 		std::cout << "Mt_x = " << Mt_x << endl;
 	}
-	else if (key == 'f' || key == 'F')//控制X--
+	else if (key == 'f' || key == 'F')//控制X--//两个F
 	{
 		md->x -= Mt_speed;
 		Mt_x = md->x;
@@ -695,7 +694,7 @@ void Keyboard(unsigned char key, int x, int y)
 		Mt_YMove(Mt_y);
 		std::cout << "Mt_y = " << Mt_y << endl;
 	}
-	else if (key == 'g' || key == 'G')//控制Z++
+	else if (key == 'y' || key == 'Y')//控制Z++//两个G
 	{
 		md->z += Mt_speed;
 		Mt_z = md->z;

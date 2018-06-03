@@ -13,6 +13,16 @@
 // include our custom Motion State object
 #include "OpenGLMotionState.h"
 
+#include "GameObject.h"
+#include <vector>
+
+
+// debug模式渲染
+#include "DebugDrawer.h"
+
+// 在空间中保存多个物体，使用STL Vector容器
+typedef std::vector<GameObject*> GameObjects;
+
 class BulletOpenGLApplication {
 public:
 	BulletOpenGLApplication();
@@ -40,9 +50,15 @@ public:
 	virtual void ShutDownPhysics(){};
 
 	//drawing functions
-	void DrawBox(btScalar* transform, const btVector3 &halfSize, const btVector3 &color = btVector3(1.0f, 1.0f, 1.0f));
-	
+	void DrawBox(const btVector3 &halfSize);
+	void DrawShape(btScalar* transform, const btCollisionShape* pShape, const btVector3 &color);
 
+	// object functions
+	GameObject* CreateGameObject(btCollisionShape* pShape,
+		const float &mass,
+		const btVector3 &color = btVector3(1.0f, 1.0f, 1.0f),
+		const btVector3 &initialPosition = btVector3(0.0f, 0.0f, 0.0f),
+		const btQuaternion &initialRotation = btQuaternion(0, 0, 1, 1));
 protected:
 	 //core Bullet components Bullet的核心元素
 	btBroadphaseInterface* m_pBroadphase;
@@ -55,6 +71,11 @@ protected:
 
 	// a simple clock for counting time
 	btClock m_clock;
+	// an array of our game objects
+	GameObjects m_objects;
+
+	// debug renderer
+	DebugDrawer* m_pDebugDrawer;
 };
 
 

@@ -18,6 +18,4 @@ public:
 
 	void CreateObjects();
 };
-
-
 #endif //BULLETOPENGL_BASICDEMO_H

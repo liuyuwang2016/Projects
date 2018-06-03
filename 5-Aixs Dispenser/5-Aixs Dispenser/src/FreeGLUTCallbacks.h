@@ -33,8 +33,8 @@ static void IdleCallback() {
 
 
 static void KeyboardCallback(unsigned char key, int x, int y) {
-	//g_pApp->Keyboard(key, x, y);
-	Keyboard(key, x, y);
+	g_pApp->Keyboard(key, x, y);
+	DispenserKeyboard(key, x, y);
 }
 
 static void SpecialCallback(int key, int x, int y) {
@@ -89,7 +89,9 @@ int glutmain(int argc, char **argv, int width, int height, const char* title, Bu
 	g_Camera.vUpper = Vector3(-0.000199958, 0.99968, -0.019995);
 	// perform custom initialization our of application
 	/*g_pApp->Initialize();*/
-
+	/*g_Camera.vPosition = Vector3(10, 5, 0);
+	g_Camera.vCenter = Vector3(0, 0, 0);
+	g_Camera.vUpper = Vector3(0, 1, 0);*/
 	// give our static
 	glutDisplayFunc(DisplayCallback);
 	glutIdleFunc(IdleCallback);
