@@ -296,18 +296,23 @@ void DrawProbeTip()
 		/*
 		 * 此处进行了颜色追踪的误差测定和范围测定，具体见颜色追踪误差测定和范围文档
 		 */
-		//float sum_X, sum_Y, sum_Z;
-		//for (int i = 0; i < ROIDepthCount; i++)
-		//{
-		//	sum_X += ROICameraSP[i].X;
-		//	sum_Y += ROICameraSP[i].Y;
-		//	sum_Z += ROICameraSP[i].Z;
-		//}
-		//sum_X = sum_X / ROIDepthCount;
-		//sum_Y = sum_Y / ROIDepthCount;
-		//sum_Z = sum_Z / ROIDepthCount;
-		//float distance = sqrt(abs(sum_X)*abs(sum_X) + abs(sum_Y)*abs(sum_Y) + abs(sum_Z)*abs(sum_Z));
-		//cout << ROIDepthCount << ", " << distance * 100  << endl;
+		/*float sum_X = 0, sum_Y = 0, sum_Z = 0;
+		for (int i = 0; i < ROIDepthCount; i++)
+		{
+		sum_X += ROICameraSP[i].X;
+		sum_Y += ROICameraSP[i].Y;
+		sum_Z += ROICameraSP[i].Z;
+		}
+		sum_X = sum_X / ROIDepthCount;
+		sum_Y = sum_Y / ROIDepthCount;
+		sum_Z = sum_Z / ROIDepthCount;
+
+		cout << "X = " << sum_X << endl;
+		cout << "Y = " << sum_Y << endl;
+		cout << "Z = " << sum_Z << endl;
+
+		float distance = sqrt(abs(sum_X)*abs(sum_X) + abs(sum_Y)*abs(sum_Y) + abs(sum_Z)*abs(sum_Z));
+		cout << ROIDepthCount << ", " << distance * 100 << endl;*/
 	}
 }
 /*

@@ -17,7 +17,7 @@ public:
 	GameObject(btCollisionShape* pShape, float mass, const btVector3 &color, const btVector3 &initialPosition = btVector3(0, 0, 0), const btQuaternion &initialRotation = btQuaternion(0, 0, 1, 1));
 	~GameObject();
 
-	// accessors
+	// accessors ´æÈ¡Æ÷
 	btCollisionShape* GetShape() { return m_pShape; }
 
 	btRigidBody* GetRigidBody() { return m_pBody; }

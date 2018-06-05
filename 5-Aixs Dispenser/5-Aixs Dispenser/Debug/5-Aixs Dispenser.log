@@ -1,16 +1,19 @@
-﻿生成启动时间为 2018/6/4 17:38:55。
+﻿生成启动时间为 2018/6/5 21:47:31。
      1>项目“D:\USER\Documents\Visual Studio 2013\Projects\5-Aixs Dispenser\5-Aixs Dispenser\5-Aixs Dispenser.vcxproj”在节点 2 上(Build 个目标)。
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"D:\USER\Desktop\bullet3-master\bullet3-master\src" /IC:\OpenCV300\opencv\build\include /IC:\OpenCV300\opencv\build\include\opencv /IC:\OpenCV300\opencv\build\include\opencv2 /I"C:\Program Files\Microsoft SDKs\Kinect\v2.0_1409\\inc" /I"C:\PCL 1.8.0 2013\3rdParty\Eigen\eigen3" /IC:\portaudio\include /I"D:\USER\Documents\Visual Studio 2013\Projects\Bullet3\src" /I"D:\USER\Documents\Visual Studio 2013\Projects\5-Aixs Dispenser\5-Aixs Dispenser\src" /AI"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0" /AI"C:\Program Files (x86)\Windows Kits\8.1\References\CommonConfiguration\Neutral" /Zi /clr /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _CRT_SECURE_NO_WARNINGS /D _CRT_NON_CONFORMING_SWPRINTFS /D _MBCS /EHa /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /TP /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\mscorlib.dll" /analyze- /errorReport:prompt /clr:nostdlib src\DebugDrawer.cpp
-         DebugDrawer.cpp
-     1>D:\USER\Desktop\bullet3-master\bullet3-master\src\LinearMath/btIDebugDraw.h(169): warning C4305: “参数”: 从“double”到“const btScalar”截断
-     1>D:\USER\Desktop\bullet3-master\bullet3-master\src\LinearMath/btIDebugDraw.h(170): warning C4305: “参数”: 从“double”到“const btScalar”截断
-     1>D:\USER\Desktop\bullet3-master\bullet3-master\src\LinearMath/btIDebugDraw.h(171): warning C4305: “参数”: 从“double”到“const btScalar”截断
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src\debugdrawer.cpp(26): warning C4793: “DebugDrawer::drawContactPoint”: 编译为本机的函数:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"D:\USER\Desktop\bullet3-master\bullet3-master\src" /IC:\OpenCV300\opencv\build\include /IC:\OpenCV300\opencv\build\include\opencv /IC:\OpenCV300\opencv\build\include\opencv2 /I"C:\Program Files\Microsoft SDKs\Kinect\v2.0_1409\\inc" /I"C:\PCL 1.8.0 2013\3rdParty\Eigen\eigen3" /IC:\portaudio\include /I"D:\USER\Documents\Visual Studio 2013\Projects\Bullet3\src" /I"D:\USER\Documents\Visual Studio 2013\Projects\5-Aixs Dispenser\5-Aixs Dispenser\src" /AI"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0" /AI"C:\Program Files (x86)\Windows Kits\8.1\References\CommonConfiguration\Neutral" /Zi /clr /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _CRT_SECURE_NO_WARNINGS /D _CRT_NON_CONFORMING_SWPRINTFS /D _MBCS /EHa /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /TP /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\mscorlib.dll" /analyze- /errorReport:prompt /clr:nostdlib src\BasicDemo.cpp
+         BasicDemo.cpp
+     1>d:\user\desktop\bullet3-master\bullet3-master\src\LinearMath/btIDebugDraw.h(169): warning C4305: “参数”: 从“double”到“const btScalar”截断
+     1>d:\user\desktop\bullet3-master\bullet3-master\src\LinearMath/btIDebugDraw.h(170): warning C4305: “参数”: 从“double”到“const btScalar”截断
+     1>d:\user\desktop\bullet3-master\bullet3-master\src\LinearMath/btIDebugDraw.h(171): warning C4305: “参数”: 从“double”到“const btScalar”截断
+     1>src\BasicDemo.cpp(32): warning C4305: “参数”: 从“double”到“const btScalar”截断
+     1>src\BasicDemo.cpp(35): warning C4305: “参数”: 从“double”到“const btScalar”截断
+     1>src\BasicDemo.cpp(38): warning C4305: “参数”: 从“double”到“const btScalar”截断
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src\basicdemo.cpp(32): warning C4793: “BasicDemo::CreateObjects”: 编译为本机的函数:
          	托管代码中不支持对齐数据类型
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src\debugdrawer.cpp(27): warning C4793: “DebugDrawer::drawContactPoint”: 编译为本机的函数:
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src\basicdemo.cpp(35): warning C4793: “BasicDemo::CreateObjects”: 编译为本机的函数:
          	托管代码中不支持对齐数据类型
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src\debugdrawer.cpp(29): warning C4793: “DebugDrawer::drawContactPoint”: 编译为本机的函数:
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\src\basicdemo.cpp(38): warning C4793: “BasicDemo::CreateObjects”: 编译为本机的函数:
          	托管代码中不支持对齐数据类型
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\USER\Documents\Visual Studio 2013\Projects\5-Aixs Dispenser\Debug\5-Aixs Dispenser.exe" /INCREMENTAL /NOLOGO /LIBPATH:"C:\Program Files\Microsoft SDKs\Kinect\v2.0_1409\\Lib\x86" /LIBPATH:C:\OpenCV300\opencv\build\x86\vc12\lib /LIBPATH:C:\portaudio\lib glut32.lib opencv_ts300d.lib opencv_world300d.lib kinect20.lib portaudio_x86.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\USER\Documents\Visual Studio 2013\Projects\5-Aixs Dispenser\Debug\5-Aixs Dispenser.pdb" /ASSEMBLYDEBUG /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /FIXED:NO /NXCOMPAT /MACHINE:X86 "Debug\5-Aixs Dispenser.res"
@@ -19,6 +22,7 @@
          Debug\BasicDemo.obj
          Debug\BulletOpenGLApplication.obj
          Debug\DebugDrawer.obj
+         Debug\EmptyDemo.obj
          Debug\GameObject.obj
          "Debug\.NETFramework,Version=v4.0.AssemblyAttributes.obj"
          D:\USER\Desktop\Bullet3\lib\Debug\BulletCollision_Debug.lib
@@ -33,4 +37,4 @@
 
 生成成功。
 
-已用时间 00:00:03.70
+已用时间 00:00:02.90

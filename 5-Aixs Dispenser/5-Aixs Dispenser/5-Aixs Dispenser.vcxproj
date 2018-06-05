@@ -154,6 +154,7 @@
     <ClCompile Include="src\BasicDemo.cpp" />
     <ClCompile Include="src\BulletOpenGLApplication.cpp" />
     <ClCompile Include="src\DebugDrawer.cpp" />
+    <ClCompile Include="src\EmptyDemo.cpp" />
     <ClCompile Include="src\GameObject.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -167,6 +168,7 @@
     <ClInclude Include="src\DebugDrawer.h" />
     <ClInclude Include="src\Declae.h" />
     <ClInclude Include="src\dllmain.h" />
+    <ClInclude Include="src\EmptyDemo.h" />
     <ClInclude Include="src\FreeGLUTCallbacks.h" />
     <ClInclude Include="src\GameObject.h" />
     <ClInclude Include="src\glm.h" />

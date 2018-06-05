@@ -16,12 +16,17 @@
 #include "GameObject.h"
 #include <vector>
 
-
 // debug模式渲染
 #include "DebugDrawer.h"
 
 // 在空间中保存多个物体，使用STL Vector容器
 typedef std::vector<GameObject*> GameObjects;
+
+// struct to store our raycasting results
+struct RayResult {
+	btRigidBody* pBody;
+	btVector3 hitPoint;
+};
 
 class BulletOpenGLApplication {
 public:
@@ -59,13 +64,30 @@ public:
 		const btVector3 &color = btVector3(1.0f, 1.0f, 1.0f),
 		const btVector3 &initialPosition = btVector3(0.0f, 0.0f, 0.0f),
 		const btQuaternion &initialRotation = btQuaternion(0, 0, 1, 1));
+
+	void ShootBox(const btVector3 &direction);
+	void DestroyGameObject(btRigidBody* pBody);
+
+	// picking functions
+	btVector3 GetPickingRay(int x, int y);
+	bool Raycast(const btVector3 &startPosition, const btVector3 &direction, RayResult &output);
 protected:
+	btVector3 m_cameraPosition; // the camera's current position
+	btVector3 m_cameraTarget;	 // the camera's lookAt target
+	btVector3 m_upVector; // keeps the camera rotated correctly
+	float m_nearPlane; // minimum distance the camera will render
+	float m_farPlane; // farthest distance the camera will render
+	
+	int m_screenWidth;
+	int m_screenHeight;
+	
 	 //core Bullet components Bullet的核心元素
 	btBroadphaseInterface* m_pBroadphase;
 	btCollisionConfiguration* m_pCollisionConfiguration;
 	btCollisionDispatcher* m_pDispatcher;
 	btConstraintSolver* m_pSolver;
 	btDynamicsWorld* m_pWorld;
+
 	// our custom motion state
 	OpenGLMotionState* m_pMotionState;
 
@@ -76,6 +98,11 @@ protected:
 
 	// debug renderer
 	DebugDrawer* m_pDebugDrawer;
+
+	// constraint variables
+	btRigidBody* m_pPickedBody;				// the body we picked up
+	btTypedConstraint*  m_pPickConstraint;	// the constraint the body is attached to
+	btScalar m_oldPickingDist;
 };
 
 

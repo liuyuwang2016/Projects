@@ -57,6 +57,9 @@
     <ClCompile Include="src\DebugDrawer.cpp">
       <Filter>Bullet资源文件</Filter>
     </ClCompile>
+    <ClCompile Include="src\EmptyDemo.cpp">
+      <Filter>Bullet资源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Declae.h">
@@ -114,6 +117,9 @@
       <Filter>Bullet头文件</Filter>
     </ClInclude>
     <ClInclude Include="src\DebugDrawer.h">
+      <Filter>Bullet头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\EmptyDemo.h">
       <Filter>Bullet头文件</Filter>
     </ClInclude>
   </ItemGroup>

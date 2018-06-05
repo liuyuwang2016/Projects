@@ -14,6 +14,40 @@ static BulletOpenGLApplication* g_pApp;
 // Various static functions that will be handed to FreeGLUT to be called
 // during various events (our callbacks). Each calls an equivalent function
 // in our (global) application object.
+static void KeyboardCallback(unsigned char key, int x, int y) {
+	g_pApp->Keyboard(key, x, y);
+	DispenserKeyboard(key, x, y);
+}
+
+static void KeyboardUpCallback(unsigned char key, int x, int y) {
+	//g_pApp->KeyboardUp(key, x, y);
+}
+
+static void SpecialCallback(int key, int x, int y) {
+	//g_pApp->Special(key, x, y);
+	SpecialKeys(key, x, y);
+}
+
+static void SpecialUpCallback(int key, int x, int y) {
+	//g_pApp->SpecialUp(key, x, y);
+}
+
+static void ReshapeCallback(int w, int h) {
+	g_pApp->Reshape(w, h);
+}
+
+static void IdleCallback() {
+	KinectUpdate();
+}
+
+static void MouseCallBack(int button, int state, int x, int y) {
+	g_pApp->Mouse(button, state, x, y);
+}
+
+static void MotionCallback(int x, int y) {
+	//g_pApp->Motion(x, y);
+}
+
 static void DisplayCallback(void) {
 	//g_pApp->Display();
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
@@ -24,40 +58,6 @@ static void DisplayCallback(void) {
 	else
 		glutSwapBuffers();
 	FPS_RS++;
-}
-
-static void IdleCallback() {
-	
-	KinectUpdate();
-}
-
-
-static void KeyboardCallback(unsigned char key, int x, int y) {
-	g_pApp->Keyboard(key, x, y);
-	DispenserKeyboard(key, x, y);
-}
-
-static void SpecialCallback(int key, int x, int y) {
-	//g_pApp->Special(key, x, y);
-	SpecialKeys(key, x, y);
-}
-
-static void KeyboardUpCallback(unsigned char key, int x, int y) {
-	//g_pApp->KeyboardUp(key, x, y);
-}
-
-static void SpecialUpCallback(int key, int x, int y) {
-	//g_pApp->SpecialUp(key, x, y);
-}
-static void ReshapeCallback(int w, int h) {
-	//g_pApp->Reshape(w, h);
-}
-
-static void MouseCallback(int button, int state, int x, int y) {
-	//g_pApp->Mouse(button, state, x, y);
-}
-static void MotionCallback(int x, int y) {
-	//g_pApp->Motion(x, y);
 }
 
 // our custom-built 'main' function, which accepts a reference to a
@@ -88,22 +88,20 @@ int glutmain(int argc, char **argv, int width, int height, const char* title, Bu
 	g_Camera.vCenter = Vector3(-0.0494023, 0.0210018, 1.08971);
 	g_Camera.vUpper = Vector3(-0.000199958, 0.99968, -0.019995);
 	// perform custom initialization our of application
-	/*g_pApp->Initialize();*/
-	/*g_Camera.vPosition = Vector3(10, 5, 0);
-	g_Camera.vCenter = Vector3(0, 0, 0);
-	g_Camera.vUpper = Vector3(0, 1, 0);*/
+	
 	// give our static
+	
 	glutDisplayFunc(DisplayCallback);
 	glutIdleFunc(IdleCallback);
 	glutKeyboardFunc(KeyboardCallback);
 	glutSpecialFunc(SpecialCallback);
 
-	//glutKeyboardUpFunc(KeyboardUpCallback);
-	//glutSpecialUpFunc(SpecialUpCallback);
-	//glutReshapeFunc(ReshapeCallback);
-	//glutMouseFunc(MouseCallback);
-	//glutPassiveMotionFunc(MotionCallback);
-	//glutMotionFunc(MotionCallback);
+	glutKeyboardUpFunc(KeyboardUpCallback);
+	glutSpecialUpFunc(SpecialUpCallback);
+	glutReshapeFunc(ReshapeCallback);
+	glutMouseFunc(MouseCallBack);
+	glutPassiveMotionFunc(MotionCallback);
+	glutMotionFunc(MotionCallback);
 	
 	//setShaders();
 	loadOBJModel();

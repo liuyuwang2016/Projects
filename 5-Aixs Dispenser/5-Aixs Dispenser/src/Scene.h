@@ -236,6 +236,14 @@ void SpecialKeys(int key, int x, int y);
 void DispenserKeyboard(unsigned char key, int x, int y);
 void timer(int value);					//OpenGL Time Func
 void DrawProbeTip(void);
+struct position
+{
+	float x;
+	float y;
+	float z;
+	float distance;
+};
+position* ROIPos(float x, float y, float z);
 void RenderScene(void);					//OpenGL Render Func
 bool BG_IS_OPEN = TRUE;					//Flag for BG
 void SceneWithBackground(void);			//Background Func

@@ -154,17 +154,6 @@ public:
 		gluLookAt(vPosition.v[0], vPosition.v[1], vPosition.v[2],
 			vCenter.v[0], vCenter.v[1], vCenter.v[2],
 			vUpper.v[0], vUpper.v[1], vUpper.v[2]);
-		//cout << "--------------·Ö½çÏß-------------" << endl;
-		//cout << "vPosition.v[0] = " << vPosition.v[0] << endl
-		//	 << "vPosition.v[1] = " << vPosition.v[1] << endl
-		//	 << "vPosition.v[2] = " << vPosition.v[2] << endl
-		//	 << "vCenter.v[0] = " << vCenter.v[0] << endl
-		//	 << "vCenter.v[1] = " << vCenter.v[1] << endl
-		//	 << "vCenter.v[2] = " << vCenter.v[2] << endl
-		//	 << "vUpper.v[0] = " << vUpper.v[0] << endl
-		//	 << "vUpper.v[1] = " << vUpper.v[1] << endl
-		//	 << "vUpper.v[2] = " << vUpper.v[2] << endl;
-		//cout << "--------------End-------------" << endl;
 	}
 
 	void MoveSide(float fDistance)

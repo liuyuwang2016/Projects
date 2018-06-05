@@ -3,8 +3,16 @@
 //
 
 #include "BulletOpenGLApplication.h"
+// Some constants for 3D math and the camera speed
+#define RADIANS_PER_DEGREE 0.01745329f
+#define CAMERA_STEP_SIZE 5.0f
 
 BulletOpenGLApplication::BulletOpenGLApplication() :
+		m_cameraPosition(-0.064403, 0.000998867, 0.0897838),
+		m_cameraTarget(-0.0494023, 0.0210018, 1.08971),
+		m_upVector(-0.000199958, 0.99968, -0.019995),
+		m_nearPlane(0.01f),
+		m_farPlane(50.0f),
 		m_pBroadphase(nullptr),
 		m_pCollisionConfiguration(nullptr),
 		m_pDispatcher(nullptr),
@@ -12,10 +20,12 @@ BulletOpenGLApplication::BulletOpenGLApplication() :
 		m_pWorld(nullptr)
 {
 }
+
 BulletOpenGLApplication::~BulletOpenGLApplication()
 {
 	ShutDownPhysics();
 }
+
 void BulletOpenGLApplication::Initialize()
 {
 	InitializePhysics();
@@ -38,12 +48,32 @@ void BulletOpenGLApplication::Keyboard(unsigned char key, int x, int y)
 		// toggle AABB debug drawing
 		m_pDebugDrawer->ToggleDebugFlag(btIDebugDraw::DBG_DrawAabb);
 		break;
+	case 'd':
+		// create a temp object to store the raycast result
+		RayResult result;
+		// perform the raycast
+		if (!Raycast(m_cameraPosition, GetPickingRay(x, y), result))
+			return; // return if the test failed
+		// destroy the corresponding game object
+		DestroyGameObject(result.pBody);
+		break;
 	}
 }
+
 void BulletOpenGLApplication::KeyboardUp(unsigned char key, int x, int y) {}
+
 void BulletOpenGLApplication::Special(int key, int x, int y) {}
+
 void BulletOpenGLApplication::SpecialUp(int key, int x, int y) {}
-void BulletOpenGLApplication::Reshape(int w, int h) {}
+
+void BulletOpenGLApplication::Reshape(int w, int h)
+{
+	// grab the screen width/height
+	m_screenWidth = w;
+	m_screenHeight = h;
+	// set the viewport
+	glViewport(0, 0, w, h);
+}
 
 void BulletOpenGLApplication::Idle()
 {
@@ -56,9 +86,45 @@ void BulletOpenGLApplication::Idle()
 	RenderBulletScene();
 }
 
-void BulletOpenGLApplication::Mouse(int button, int state, int x, int y) {}
+void BulletOpenGLApplication::Mouse(int button, int state, int x, int y)
+{
+	switch (button)
+	{
+	case 1://middle mouse button
+		{
+			if (state == 0)//pressed down
+			{
+				//shooting a box
+				ShootBox(GetPickingRay(x, y));
+			}
+			break;
+		}
+	}
+}
+
 void BulletOpenGLApplication::PassiveMotion(int x, int y) {}
-void BulletOpenGLApplication::Motion(int x, int y) {}
+
+void BulletOpenGLApplication::Motion(int x, int y)
+{
+	// did we pick a body with the LMB?
+	if (m_pPickedBody) {
+		btGeneric6DofConstraint* pickCon = static_cast<btGeneric6DofConstraint*>(m_pPickConstraint);
+		if (!pickCon)
+			return;
+
+		// use another picking ray to get the target direction
+		btVector3 dir = GetPickingRay(x, y) - m_cameraPosition;
+		dir.normalize();
+
+		// use the same distance as when we originally picked the object
+		dir *= m_oldPickingDist;
+		btVector3 newPivot = m_cameraPosition + dir;
+
+		// set the position of the constraint
+		pickCon->getFrameOffsetA().setOrigin(newPivot);
+	}
+}
+
 void BulletOpenGLApplication::Display() {}
 
 void BulletOpenGLApplication::DrawBox(const btVector3 &halfSize)
@@ -130,7 +196,6 @@ void BulletOpenGLApplication::DrawBox(const btVector3 &halfSize)
 	glEnd();
 }
 
-
 void BulletOpenGLApplication::RenderBulletScene()
 {
 	// create an array of 16 floats (representing a 4x4 matrix)
@@ -139,7 +204,6 @@ void BulletOpenGLApplication::RenderBulletScene()
 	for (GameObjects::iterator i = m_objects.begin(); i != m_objects.end(); ++i) {
 		// get the object from the iterator
 		GameObject* pObj = *i;
-		glTranslatef(0, -5, 10);
 		// read the transform
 		pObj->GetTransform(transform);
 
@@ -151,7 +215,6 @@ void BulletOpenGLApplication::RenderBulletScene()
 	// our DebugDrawer class to do the rendering for us
 	m_pWorld->debugDrawWorld();
 }
-
 
 void BulletOpenGLApplication::UpdateBulletScene(float dt)
 {
@@ -208,3 +271,112 @@ GameObject* BulletOpenGLApplication::CreateGameObject(btCollisionShape* pShape, 
 	}
 	return pObject;
 }
+
+btVector3 BulletOpenGLApplication::GetPickingRay(int x, int y) {
+	// calculate the field-of-view
+	float tanFov = 1.0f / m_nearPlane;
+	float fov = btScalar(2.0) * btAtan(tanFov);
+
+	// get a ray pointing forward from the
+	// camera and extend it to the far plane
+	btVector3 rayFrom = m_cameraPosition;
+	btVector3 rayForward = (m_cameraTarget - m_cameraPosition);
+	rayForward.normalize();
+	rayForward *= m_farPlane;
+
+	// find the horizontal and vertical vectors
+	// relative to the current camera view
+	btVector3 ver = m_upVector;
+	btVector3 hor = rayForward.cross(ver);
+	hor.normalize();
+	ver = hor.cross(rayForward);
+	ver.normalize();
+	hor *= 2.f * m_farPlane * tanFov;
+	ver *= 2.f * m_farPlane * tanFov;
+
+	// calculate the aspect ratio
+	btScalar aspect = m_screenWidth / (btScalar)m_screenHeight;
+
+	// adjust the forward-ray based on
+	// the X/Y coordinates that were clicked
+	hor *= aspect;
+	btVector3 rayToCenter = rayFrom + rayForward;
+	btVector3 dHor = hor * 1.f / float(m_screenWidth);
+	btVector3 dVert = ver * 1.f / float(m_screenHeight);
+	btVector3 rayTo = rayToCenter - 0.5f * hor + 0.5f * ver;
+	
+	rayTo += btScalar(x) * dHor;
+	rayTo -= btScalar(y) * dVert;
+
+	// return the final result
+	return rayTo;
+}
+
+void BulletOpenGLApplication::ShootBox(const btVector3 &direction) {
+	// create a new box object
+	GameObject* pObject = CreateGameObject(new btBoxShape(btVector3(1, 1, 1)), 1, btVector3(0.4f, 0.f, 0.4f), m_cameraPosition);
+
+	// calculate the velocity
+	btVector3 velocity = direction;
+	velocity.normalize();
+	velocity *= 25.0f;
+
+	// set the linear velocity of the box
+	pObject->GetRigidBody()->setLinearVelocity(velocity);
+}
+
+bool BulletOpenGLApplication::Raycast(const btVector3 &startPosition, const btVector3 &direction, RayResult &output) {
+	if (!m_pWorld)
+		return false;
+
+	// get the picking ray from where we clicked
+	btVector3 rayTo = direction;
+	btVector3 rayFrom = m_cameraPosition;
+
+	// create our raycast callback object
+	btCollisionWorld::ClosestRayResultCallback rayCallback(rayFrom, rayTo);
+
+	// perform the raycast
+	m_pWorld->rayTest(rayFrom, rayTo, rayCallback);
+
+	// did we hit something?
+	if (rayCallback.hasHit())
+	{
+		// if so, get the rigid body we hit
+		btRigidBody* pBody = (btRigidBody*)btRigidBody::upcast(rayCallback.m_collisionObject);
+		if (!pBody)
+			return false;
+
+		// prevent us from picking objects
+		// like the ground plane
+		if (pBody->isStaticObject() || pBody->isKinematicObject())
+			return false;
+
+		// set the result data
+		output.pBody = pBody;
+		output.hitPoint = rayCallback.m_hitPointWorld;
+		return true;
+	}
+
+	// we didn't hit anything
+	return false;
+}
+
+void BulletOpenGLApplication::DestroyGameObject(btRigidBody* pBody) {
+	// we need to search through the objects in order to 
+	// find the corresponding iterator (can only erase from 
+	// an std::vector by passing an iterator)
+	for (GameObjects::iterator iter = m_objects.begin(); iter != m_objects.end(); ++iter) {
+		if ((*iter)->GetRigidBody() == pBody) {
+			GameObject* pObject = *iter;
+			// remove the rigid body from the world
+			m_pWorld->removeRigidBody(pObject->GetRigidBody());
+			// erase the object from the list
+			m_objects.erase(iter);
+			// delete the object from memory
+			delete pObject;
+			// done
+			return;
+		}
+	}
+} 

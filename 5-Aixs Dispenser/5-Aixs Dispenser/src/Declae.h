@@ -913,7 +913,6 @@ void SceneWithBackground()
 	//glEnable(GL_DEPTH_TEST);
 	g_Camera.SetCamera();
 
-	//glTranslatef(0.055f, -0.015f, 0.0f);
 }
 
 void SceneWithoutBackground()
@@ -927,9 +926,7 @@ void SceneWithoutBackground()
 	glLoadIdentity();
 	gluPerspective(kFovY, aspect, nearDist, farDist);
 	//glEnable(GL_DEPTH_TEST);
-
 	g_Camera.SetCamera();
-	//glTranslatef(0.055f, -0.015f, 0.0f);
 }
 
 void DrawPointCloud()
