@@ -736,7 +736,7 @@ void DispenserKeyboard(unsigned char key, int x, int y)
 		Mt_VMove(Mt_v);
 		std::cout << "Mt_v = " << Mt_v << endl;
 	}
-	else if (key == 'C' || 'c')
+	else if (key == 'C' || key == 'c')
 	{
 		Thread^ threadMt_Calib = gcnew::Thread(gcnew::ThreadStart(Mt_Calib_Move));
 		threadMt_Calib->Name = "threadMt_Calib";
