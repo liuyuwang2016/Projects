@@ -1,3 +1,5 @@
+#ifndef FUNCTION_H
+#define FUNCTION_H
 #include "src/Declae.h"
 #pragma region loadConfigFile
 void loadConfigFile()
@@ -292,6 +294,20 @@ void DrawProbeTip()
 		
 		glEnd();
 		glPopMatrix();
+		float sum_X = 0, sum_Y = 0, sum_Z = 0;
+		for (int i = 0; i < ROIDepthCount; i++)
+		{
+			sum_X += ROICameraSP[i].X;
+			sum_Y += ROICameraSP[i].Y;
+			sum_Z += ROICameraSP[i].Z;
+		}
+		sum_X = sum_X / ROIDepthCount;
+		sum_Y = sum_Y / ROIDepthCount;
+		sum_Z = sum_Z / ROIDepthCount;
+
+		tipModel->x = sum_X;
+		tipModel->y = sum_Y;
+		tipModel->z = sum_Z;
 		//在这里计算了抓取到的笔尖点的位置到相机中心位置的距离，单位厘米。
 		/*
 		 * 此处进行了颜色追踪的误差测定和范围测定，具体见颜色追踪误差测定和范围文档
@@ -1024,3 +1040,5 @@ void RenderScene()
 	
 }
 #pragma endregion RenderScene
+
+#endif

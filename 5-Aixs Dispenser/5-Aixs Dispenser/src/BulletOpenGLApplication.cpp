@@ -3,6 +3,7 @@
 //
 
 #include "BulletOpenGLApplication.h"
+
 // Some constants for 3D math and the camera speed
 #define RADIANS_PER_DEGREE 0.01745329f
 #define CAMERA_STEP_SIZE 5.0f

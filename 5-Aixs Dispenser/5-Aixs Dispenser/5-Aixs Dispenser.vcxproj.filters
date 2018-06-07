@@ -98,9 +98,6 @@
     <ClInclude Include="resource3.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="src\RealScene.h">
-      <Filter>Header必须</Filter>
-    </ClInclude>
     <ClInclude Include="src\BasicDemo.h">
       <Filter>Bullet头文件</Filter>
     </ClInclude>
@@ -121,6 +118,9 @@
     </ClInclude>
     <ClInclude Include="src\EmptyDemo.h">
       <Filter>Bullet头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RealScene.h">
+      <Filter>Header必须</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

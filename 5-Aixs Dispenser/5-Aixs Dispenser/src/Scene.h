@@ -15,7 +15,6 @@
 #include <opencv2/video/tracking.hpp>
 /*--------------Kinect-------------*/
 #include <Kinect.h>
-#include "src/RealScene.h"
 /*--------------OpenGL-------------*/
 #include <windows.h>   
 #include <gl/Gl.h>
@@ -40,6 +39,7 @@
 //#include "osapi/Thread.h"
 /*----------矩阵运算库Eigen------------*/
 #include <Eigen/Dense>
+#include "src/RealScene.h"
 
 using namespace std;
 using namespace cv;
@@ -184,6 +184,19 @@ struct MyEllipse
 
 MyEllipse ellipse_ROI;
 #pragma endregion OpenCV&ROI Initial
+
+#pragma region BULLET Physics
+//在这里抓取笔尖点的x,y,z的值，并在之后的Bullet内部将x,y,z给予到探针尖端虚拟物体，使得虚拟物体可以跟着探针移动
+struct modelPosition
+{
+	float x;
+	float y;
+	float z;
+	float angle;
+};
+
+modelPosition* tipModel;
+#pragma endregion BULLET Physics
 
 #pragma region Kinect Initial
 /*---------------------------------*/

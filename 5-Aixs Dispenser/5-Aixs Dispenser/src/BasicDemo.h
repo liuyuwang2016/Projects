@@ -4,7 +4,6 @@
 
 #ifndef BULLETOPENGL_BASICDEMO_H
 #define BULLETOPENGL_BASICDEMO_H
-
 #include "BulletOpenGLApplication.h"
 
 #pragma managed (push,off)

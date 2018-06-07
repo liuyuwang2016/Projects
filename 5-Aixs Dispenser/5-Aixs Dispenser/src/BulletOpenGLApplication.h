@@ -18,6 +18,7 @@
 
 // debug模式渲染
 #include "DebugDrawer.h"
+#include "Scene.h"
 
 // 在空间中保存多个物体，使用STL Vector容器
 typedef std::vector<GameObject*> GameObjects;

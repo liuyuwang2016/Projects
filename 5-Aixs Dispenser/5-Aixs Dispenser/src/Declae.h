@@ -1,5 +1,7 @@
 //http://blog.csdn.net/arag2009/article/details/78393052 opencv+opengl
 
+#ifndef DECLAE_H
+#define DECLAE_H
 #include "src/Scene.h"
 #include "src/M232.h"
 
@@ -226,7 +228,7 @@ void FindROI()
 	{
 		ROICenterColorS_Old.x = ROICenterColorS_New.x = 0;
 		ROICenterColorS_Old.y = ROICenterColorS_New.y = 0;
-		Draw3DLine();
+		//Draw3DLine();
 	}
 }
 
@@ -2384,6 +2386,7 @@ void ShowImage()
 		int thickness = 2;
 		rectangle(ROI, ROI_p1, ROI_p2, Scalar(0, 255, 0), thickness);
 		/*when the code make sure that the ROI Rec has been done. Use FindROI to do color tracking*/
+		//在这里的Camshift是用来调用Camshift的方法，而FindROI是用来进行颜色追踪
 		FindROI();
 		//CameraShift();
 	}
@@ -2733,3 +2736,5 @@ void Texture()
 #pragma endregion Load OBJ Function
 
 #pragma endregion Function
+
+#endif 
