@@ -1,6 +1,6 @@
-#ifndef FUNCTION_H
-#define FUNCTION_H
-#include "src/Declae.h"
+#ifndef _FUNCTION_H_
+#define _FUNCTION_H_
+#include "Declae.h"
 #pragma region loadConfigFile
 void loadConfigFile()
 {
@@ -291,7 +291,10 @@ void DrawProbeTip()
 			glVertex3f(ROICameraSP[i].X, ROICameraSP[i].Y, ROICameraSP[i].Z);
 		}
 		//cout << "抓取到的像素点有 " << ROIDepthCount << "个~" << endl;
-		
+		//在这里计算了抓取到的笔尖点的位置到相机中心位置的距离，单位米。
+		/*
+		* 此处进行了颜色追踪的误差测定和范围测定，具体见颜色追踪误差测定和范围文档
+		*/
 		glEnd();
 		glPopMatrix();
 		float sum_X = 0, sum_Y = 0, sum_Z = 0;
@@ -305,30 +308,19 @@ void DrawProbeTip()
 		sum_Y = sum_Y / ROIDepthCount;
 		sum_Z = sum_Z / ROIDepthCount;
 
-		tipModel->x = sum_X;
-		tipModel->y = sum_Y;
-		tipModel->z = sum_Z;
-		//在这里计算了抓取到的笔尖点的位置到相机中心位置的距离，单位厘米。
-		/*
-		 * 此处进行了颜色追踪的误差测定和范围测定，具体见颜色追踪误差测定和范围文档
-		 */
-		/*float sum_X = 0, sum_Y = 0, sum_Z = 0;
-		for (int i = 0; i < ROIDepthCount; i++)
+		tipModel.x = sum_X;
+		tipModel.y = sum_Y;
+		tipModel.z = sum_Z;
+
+		tipModel.distance = sqrt(abs(sum_X)*abs(sum_X) + abs(sum_Y)*abs(sum_Y) + abs(sum_Z)*abs(sum_Z));
+		ofstream out("position.txt");
+		if (out.is_open())
 		{
-		sum_X += ROICameraSP[i].X;
-		sum_Y += ROICameraSP[i].Y;
-		sum_Z += ROICameraSP[i].Z;
+			out << sum_X << endl;
+			out << sum_Y << endl;
+			out << sum_Z << endl;
+			out.close();
 		}
-		sum_X = sum_X / ROIDepthCount;
-		sum_Y = sum_Y / ROIDepthCount;
-		sum_Z = sum_Z / ROIDepthCount;
-
-		cout << "X = " << sum_X << endl;
-		cout << "Y = " << sum_Y << endl;
-		cout << "Z = " << sum_Z << endl;
-
-		float distance = sqrt(abs(sum_X)*abs(sum_X) + abs(sum_Y)*abs(sum_Y) + abs(sum_Z)*abs(sum_Z));
-		cout << ROIDepthCount << ", " << distance * 100 << endl;*/
 	}
 }
 /*

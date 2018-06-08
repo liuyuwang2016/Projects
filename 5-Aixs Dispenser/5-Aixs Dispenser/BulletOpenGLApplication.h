@@ -1,7 +1,3 @@
-//
-// Created by AICDG on 2017/8/8.
-//
-
 #ifndef BULLETOPENGL_BULLETOPENGLAPPLICATION_H
 #define BULLETOPENGL_BULLETOPENGLAPPLICATION_H
 
@@ -18,7 +14,6 @@
 
 // debug模式渲染
 #include "DebugDrawer.h"
-#include "Scene.h"
 
 // 在空间中保存多个物体，使用STL Vector容器
 typedef std::vector<GameObject*> GameObjects;

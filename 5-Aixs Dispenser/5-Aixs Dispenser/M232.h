@@ -1,7 +1,7 @@
 #ifndef _M232_H
 #define _M232_H
 /*--------------M232---------------*/
-#include "src/dllmain.h"
+#include "dllmain.h"
 #using <System.dll>
 
 /*------------M232 need using------------*/

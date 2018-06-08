@@ -1,7 +1,3 @@
-//
-// Created by Yvan on 2018/5/31.
-//
-
 #ifndef BULLETOPENGL_FREEGLUTCALLBACKS_H
 #define BULLETOPENGL_FREEGLUTCALLBACKS_H
 

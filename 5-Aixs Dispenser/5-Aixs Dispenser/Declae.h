@@ -1,9 +1,9 @@
 //http://blog.csdn.net/arag2009/article/details/78393052 opencv+opengl
 
-#ifndef DECLAE_H
-#define DECLAE_H
-#include "src/Scene.h"
-#include "src/M232.h"
+#ifndef _DECLAE_H_
+#define _DECLAE_H_
+#include "Scene.h"
+#include "M232.h"
 
 #pragma region Function
 #pragma region OpenCV&ROI Function 
@@ -234,7 +234,7 @@ void FindROI()
 
 void LoadCamShiftPicture()
 {
-	Mat loadImage = imread("src/purple.JPG", CV_LOAD_IMAGE_COLOR);
+	Mat loadImage = imread("purple.JPG", CV_LOAD_IMAGE_COLOR);
 	cvtColor(loadImage, hsv, COLOR_BGR2HSV);
 	int _vmin = vmin, _vmax = vmax;
 	inRange(hsv, Scalar(0, smin, MIN(_vmin, _vmax)),
@@ -1002,7 +1002,7 @@ static void onMouse3D(int event, int x, int y, int, void*)
 			Scalar(UpDifference, UpDifference, UpDifference), flags);
 	}
 	imshow("2D Extraction", dst);
-	imwrite("src/planeExtract.jpg", dst);
+	imwrite("planeExtract.jpg", dst);
 	cout << area << " 个像素被重绘\n";
 }
 
@@ -1048,9 +1048,9 @@ void Draw3DLine()
 	}
 	//imshow("2D Contour", drawing);
 	//waitKey(0);
-	imwrite("src/drawing.jpg", drawing);
+	imwrite("drawing.jpg", drawing);
 	//在这里不能够直接读取drawing的值，因为drawing是视频而不是图片，而floodfill只能读取图片，而且是RGB图片
-	g_srcImage = imread("src/drawing.jpg", 1);
+	g_srcImage = imread("drawing.jpg", 1);
 	g_srcImage.copyTo(g_dstImage);
 	cvtColor(g_srcImage, g_grayImage, COLOR_BGR2GRAY);
 	g_maskImage.create(g_srcImage.rows + 2, g_srcImage.cols + 2, CV_8UC1);
@@ -1300,7 +1300,7 @@ void Draw3DPlane()
 {
 	//颜色转换       http://blog.csdn.net/jianjian1992/article/details/51274834
 	//OpenCV像素操作 https://www.kancloud.cn/digest/usingopencv/145307
-	Mat d_srcImage = imread("src/planeExtract.jpg", 1);
+	Mat d_srcImage = imread("planeExtract.jpg", 1);
 	Mat d_dstImage;
 	Mat color_gray;
 
@@ -1310,7 +1310,7 @@ void Draw3DPlane()
 
 	filteredBlue(d_srcImage, color_gray, d_dstImage);
 
-	imwrite("src/2d_plane_recognition.jpg", d_dstImage);
+	imwrite("2d_plane_recognition.jpg", d_dstImage);
 
 	int rows = d_dstImage.rows;
 	int cols = d_dstImage.cols;

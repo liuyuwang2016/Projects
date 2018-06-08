@@ -1,5 +1,5 @@
-#ifndef SCENE_H
-#define SCENE_H
+#ifndef _SCENE_H_
+#define _SCENE_H_
 /*--------------Standard-------------*/
 #include <iostream>
 #include <fstream>
@@ -19,10 +19,10 @@
 #include <windows.h>   
 #include <gl/Gl.h>
 #include <gl/glu.h>
-#pragma once
+
 #include <GL/freeglut.h>
 
-#include "src/OpenGLCamera.h"
+#include "OpenGLCamera.h"
 //#include <gl/glut.h>
 //将库文件链接到文件中
 #pragma comment(lib,"opengl32.lib")
@@ -32,14 +32,14 @@
 /*-------------LoadOBJ-------------*/
 #include "glm.h"
 /*------------PortAduio-------------*/
-#include "src/portaudio.h"
+#include "portaudio.h"
 /*----------输出最大最小值-----------*/
 #include <algorithm>
 ///*--------使用工作线程控制移动--------*/
 //#include "osapi/Thread.h"
 /*----------矩阵运算库Eigen------------*/
 #include <Eigen/Dense>
-#include "src/RealScene.h"
+#include "RealScene.h"
 
 using namespace std;
 using namespace cv;
@@ -193,9 +193,10 @@ struct modelPosition
 	float y;
 	float z;
 	float angle;
+	float distance;
 };
 
-modelPosition* tipModel;
+modelPosition tipModel;
 #pragma endregion BULLET Physics
 
 #pragma region Kinect Initial

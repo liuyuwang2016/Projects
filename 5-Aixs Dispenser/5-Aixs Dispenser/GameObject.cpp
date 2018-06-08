@@ -1,7 +1,3 @@
-//
-// Created by AICDG on 2017/8/9.
-//
-
 #include "GameObject.h"
 
 GameObject::GameObject(btCollisionShape* pShape, float mass, const btVector3 &color, const btVector3 &initialPosition, const btQuaternion &initialRotation) {

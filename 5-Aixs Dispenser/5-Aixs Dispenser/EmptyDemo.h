@@ -1,7 +1,3 @@
-//
-// Created by AICDG on 2017/8/9.
-//
-
 #ifndef BULLETOPENGL_EMPTYDEMO_H
 #define BULLETOPENGL_EMPTYDEMO_H
 

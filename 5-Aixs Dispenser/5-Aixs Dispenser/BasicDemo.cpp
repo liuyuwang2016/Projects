@@ -1,7 +1,3 @@
-//
-// Created by AICDG on 2017/8/9.
-//
-
 #include "BasicDemo.h"
 
 void BasicDemo::InitializePhysics() {
@@ -28,13 +24,22 @@ void BasicDemo::ShutDownPhysics() {
 }
 
 void BasicDemo::CreateObjects() {
+	
 	// create a ground plane
-	//CreateGameObject(new btBoxShape(btVector3(0.01, 0.15, 0.2)), 0, btVector3(0.2f, 0.6f, 0.6f), btVector3(0.0124319, -0.124894, 0.780611)/*, btQuaternion(btVector3(1,0,0),-5)*/);
+	CreateGameObject(new btBoxShape(btVector3(0.01, 0.15, 0.2)), 0, btVector3(0.2f, 0.6f, 0.6f), btVector3(0.0124319, -0.124894, 0.780611)/*, btQuaternion(btVector3(1,0,0),-5)*/);
 
-	CreateGameObject(new btBoxShape(btVector3(0.02, 0.08, 0.08)), 0, btVector3(1.0f, 0.2f, 0.2f), btVector3(tipModel->x, tipModel->y, tipModel->z));
+    //CreateGameObject(new btBoxShape(btVector3(0.02, 0.08, 0.08)), 0, btVector3(1.0f, 0.2f, 0.2f), btVector3(tipModel.x, tipModel.y, tipModel.z));
+	
 	// create our original red box
-	CreateGameObject(new btBoxShape(btVector3(0.02, 0.08, 0.08)), 0, btVector3(1.0f, 0.2f, 0.2f), btVector3(0.0124319, -0.124894, 0.780611));
+	CreateGameObject(new btBoxShape(btVector3(0.01, 0.02, 0.02)), 0, btVector3(1.0f, 0.2f, 0.2f), btVector3(0.0124319, -0.124894, 0.780611));
 	
 	// create a second box
 	//CreateGameObject(new btBoxShape(btVector3(0.01, 0.01, 0.01)), 0, btVector3(0.0f, 0.2f, 0.8f), btVector3(0.0124319, -0.124894, 0.780611));
+}
+
+void BasicDemo::ReadBuffer()
+{
+	char buffer[256];
+	ifstream in("position.txt");
+
 }

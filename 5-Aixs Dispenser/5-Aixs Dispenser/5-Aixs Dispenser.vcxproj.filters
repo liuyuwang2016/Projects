@@ -39,53 +39,29 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="glm.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="main.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="src\BasicDemo.cpp">
+    <ClCompile Include="BasicDemo.cpp">
       <Filter>Bullet资源文件</Filter>
     </ClCompile>
-    <ClCompile Include="src\BulletOpenGLApplication.cpp">
+    <ClCompile Include="BulletOpenGLApplication.cpp">
       <Filter>Bullet资源文件</Filter>
     </ClCompile>
-    <ClCompile Include="src\GameObject.cpp">
+    <ClCompile Include="DebugDrawer.cpp">
       <Filter>Bullet资源文件</Filter>
     </ClCompile>
-    <ClCompile Include="src\DebugDrawer.cpp">
+    <ClCompile Include="EmptyDemo.cpp">
       <Filter>Bullet资源文件</Filter>
     </ClCompile>
-    <ClCompile Include="src\EmptyDemo.cpp">
+    <ClCompile Include="GameObject.cpp">
       <Filter>Bullet资源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="glm.cpp">
+      <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\Declae.h">
-      <Filter>Header必须</Filter>
-    </ClInclude>
-    <ClInclude Include="Function.h">
-      <Filter>Header必须</Filter>
-    </ClInclude>
-    <ClInclude Include="src\M232.h">
-      <Filter>点胶机</Filter>
-    </ClInclude>
-    <ClInclude Include="src\glm.h">
-      <Filter>三维模型</Filter>
-    </ClInclude>
-    <ClInclude Include="src\dllmain.h">
-      <Filter>点胶机</Filter>
-    </ClInclude>
-    <ClInclude Include="src\portaudio.h">
-      <Filter>声音提醒</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Scene.h">
-      <Filter>Header必须</Filter>
-    </ClInclude>
-    <ClInclude Include="src\OpenGLCamera.h">
-      <Filter>旋转相机</Filter>
-    </ClInclude>
     <ClInclude Include="resource.h">
       <Filter>头文件</Filter>
     </ClInclude>
@@ -98,29 +74,53 @@
     <ClInclude Include="resource3.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="src\BasicDemo.h">
+    <ClInclude Include="BasicDemo.h">
       <Filter>Bullet头文件</Filter>
     </ClInclude>
-    <ClInclude Include="src\BulletOpenGLApplication.h">
+    <ClInclude Include="BulletOpenGLApplication.h">
       <Filter>Bullet头文件</Filter>
     </ClInclude>
-    <ClInclude Include="src\FreeGLUTCallbacks.h">
+    <ClInclude Include="DebugDrawer.h">
       <Filter>Bullet头文件</Filter>
     </ClInclude>
-    <ClInclude Include="src\OpenGLMotionState.h">
+    <ClInclude Include="EmptyDemo.h">
       <Filter>Bullet头文件</Filter>
     </ClInclude>
-    <ClInclude Include="src\GameObject.h">
+    <ClInclude Include="FreeGLUTCallbacks.h">
       <Filter>Bullet头文件</Filter>
     </ClInclude>
-    <ClInclude Include="src\DebugDrawer.h">
+    <ClInclude Include="GameObject.h">
       <Filter>Bullet头文件</Filter>
     </ClInclude>
-    <ClInclude Include="src\EmptyDemo.h">
+    <ClInclude Include="OpenGLMotionState.h">
       <Filter>Bullet头文件</Filter>
     </ClInclude>
-    <ClInclude Include="src\RealScene.h">
+    <ClInclude Include="Declae.h">
       <Filter>Header必须</Filter>
+    </ClInclude>
+    <ClInclude Include="Function.h">
+      <Filter>Header必须</Filter>
+    </ClInclude>
+    <ClInclude Include="RealScene.h">
+      <Filter>Header必须</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene.h">
+      <Filter>Header必须</Filter>
+    </ClInclude>
+    <ClInclude Include="dllmain.h">
+      <Filter>点胶机</Filter>
+    </ClInclude>
+    <ClInclude Include="M232.h">
+      <Filter>点胶机</Filter>
+    </ClInclude>
+    <ClInclude Include="glm.h">
+      <Filter>三维模型</Filter>
+    </ClInclude>
+    <ClInclude Include="portaudio.h">
+      <Filter>声音提醒</Filter>
+    </ClInclude>
+    <ClInclude Include="OpenGLCamera.h">
+      <Filter>旋转相机</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

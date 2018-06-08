@@ -1,7 +1,3 @@
-//
-// Created by AICDG on 2017/8/8.
-//
-
 #include "BulletOpenGLApplication.h"
 
 // Some constants for 3D math and the camera speed
