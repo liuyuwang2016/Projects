@@ -41,6 +41,7 @@
 #include <Eigen/Dense>
 #include "RealScene.h"
 
+
 using namespace std;
 using namespace cv;
 void showHelpText();
@@ -196,7 +197,7 @@ struct modelPosition
 	float distance;
 };
 
-modelPosition tipModel;
+struct modelPosition tipModel;
 #pragma endregion BULLET Physics
 
 #pragma region Kinect Initial
