@@ -279,6 +279,28 @@ void RenderSceneBackground()
 	}
 }
 
+modelPosition Model()
+{
+	float sum_X = 0, sum_Y = 0, sum_Z = 0;
+	for (int i = 0; i < ROIDepthCount; i++)
+	{
+		sum_X += ROICameraSP[i].X;
+		sum_Y += ROICameraSP[i].Y;
+		sum_Z += ROICameraSP[i].Z;
+	}
+	sum_X = sum_X / ROIDepthCount;
+	sum_Y = sum_Y / ROIDepthCount;
+	sum_Z = sum_Z / ROIDepthCount;
+
+	tipModel.x = sum_X;
+	tipModel.y = sum_Y;
+	tipModel.z = sum_Z;
+
+	tipModel.distance = sqrt(abs(sum_X)*abs(sum_X) + abs(sum_Y)*abs(sum_Y) + abs(sum_Z)*abs(sum_Z));
+	
+	return tipModel;
+}
+
 void DrawProbeTip()
 {
 	if (ROIDepthCount != 0)
@@ -299,23 +321,8 @@ void DrawProbeTip()
 		*/
 		glEnd();
 		glPopMatrix();
-
-		float sum_X = 0, sum_Y = 0, sum_Z = 0;
-		for (int i = 0; i < ROIDepthCount; i++)
-		{
-			sum_X += ROICameraSP[i].X;
-			sum_Y += ROICameraSP[i].Y;
-			sum_Z += ROICameraSP[i].Z;
-		}
-		sum_X = sum_X / ROIDepthCount;
-		sum_Y = sum_Y / ROIDepthCount;
-		sum_Z = sum_Z / ROIDepthCount;
-
-		tipModel.x = sum_X;
-		tipModel.y = sum_Y;
-		tipModel.z = sum_Z;
-
-		tipModel.distance = sqrt(abs(sum_X)*abs(sum_X) + abs(sum_Y)*abs(sum_Y) + abs(sum_Z)*abs(sum_Z));
+		Model();
+		
 
 		//在这里是把x,y,z存到position.txt这个文件里面去
 		//ofstream out("position.txt");

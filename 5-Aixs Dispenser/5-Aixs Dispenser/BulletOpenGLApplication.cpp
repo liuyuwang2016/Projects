@@ -197,7 +197,7 @@ void BulletOpenGLApplication::RenderBulletScene()
 {
 	// create an array of 16 floats (representing a 4x4 matrix)
 	btScalar transform[16];
-	// iterate through all of the objects in our world
+	// 在这里遍历我们的虚拟世界中的所有虚拟物体
 	for (GameObjects::iterator i = m_objects.begin(); i != m_objects.end(); ++i) {
 		// get the object from the iterator
 		GameObject* pObj = *i;

@@ -1,4 +1,4 @@
-﻿生成启动时间为 2018/6/9 20:34:16。
+﻿生成启动时间为 2018/6/10 17:27:17。
      1>项目“D:\USER\Documents\Visual Studio 2013\Projects\5-Aixs Dispenser\5-Aixs Dispenser\5-Aixs Dispenser.vcxproj”在节点 2 上(Build 个目标)。
      1>ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"D:\USER\Desktop\bullet3-master\bullet3-master\src" /IC:\OpenCV300\opencv\build\include /IC:\OpenCV300\opencv\build\include\opencv /IC:\OpenCV300\opencv\build\include\opencv2 /I"C:\Program Files\Microsoft SDKs\Kinect\v2.0_1409\\inc" /I"C:\PCL 1.8.0 2013\3rdParty\Eigen\eigen3" /IC:\portaudio\include /I"D:\USER\Documents\Visual Studio 2013\Projects\Bullet3\src" /I"D:\USER\Documents\Visual Studio 2013\Projects\5-Aixs Dispenser\5-Aixs Dispenser\src" /AI"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0" /AI"C:\Program Files (x86)\Windows Kits\8.1\References\CommonConfiguration\Neutral" /Zi /clr /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _CRT_SECURE_NO_WARNINGS /D _CRT_NON_CONFORMING_SWPRINTFS /D _MBCS /EHa /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /TP /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\mscorlib.dll" /analyze- /errorReport:prompt /clr:nostdlib main.cpp
@@ -68,19 +68,18 @@
      1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\Declae.h(2647): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
      1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\Function.h(24): warning C4018: “<”: 有符号/无符号不匹配
      1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\Function.h(64): warning C4551: 缺少参数列表的函数调用
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\Function.h(340): warning C4804: “>”: 在操作中使用类型“bool”不安全
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\Function.h(417): warning C4018: “<”: 有符号/无符号不匹配
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\Function.h(428): warning C4244: “初始化”: 从“double”转换到“float”，可能丢失数据
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\Function.h(429): warning C4244: “初始化”: 从“double”转换到“float”，可能丢失数据
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\Function.h(495): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\Function.h(517): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\Function.h(607): warning C4804: “>”: 在操作中使用类型“bool”不安全
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\Function.h(981): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\FreeGLUTCallbacks.h(12): warning C4305: “参数”: 从“double”到“const btScalar”截断
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\FreeGLUTCallbacks.h(15): warning C4305: “参数”: 从“double”到“const btScalar”截断
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\FreeGLUTCallbacks.h(97): warning C4305: “参数”: 从“double”到“float”截断
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\FreeGLUTCallbacks.h(98): warning C4305: “参数”: 从“double”到“float”截断
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\FreeGLUTCallbacks.h(99): warning C4305: “参数”: 从“double”到“float”截断
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\Function.h(347): warning C4804: “>”: 在操作中使用类型“bool”不安全
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\Function.h(424): warning C4018: “<”: 有符号/无符号不匹配
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\Function.h(435): warning C4244: “初始化”: 从“double”转换到“float”，可能丢失数据
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\Function.h(436): warning C4244: “初始化”: 从“double”转换到“float”，可能丢失数据
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\Function.h(502): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\Function.h(524): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\Function.h(614): warning C4804: “>”: 在操作中使用类型“bool”不安全
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\Function.h(988): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\FreeGLUTCallbacks.h(39): warning C4305: “参数”: 从“double”到“const btScalar”截断
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\FreeGLUTCallbacks.h(87): warning C4305: “参数”: 从“double”到“float”截断
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\FreeGLUTCallbacks.h(88): warning C4305: “参数”: 从“double”到“float”截断
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\FreeGLUTCallbacks.h(89): warning C4305: “参数”: 从“double”到“float”截断
      1>c:\opencv300\opencv\build\include\opencv2\core\cvstd.hpp(592): warning C4793: “cv::String::String”: 编译为本机的函数:
          	托管代码中发现一个不受支持的内部函数
      1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\declae.h(1441): warning C4793: “glPrintf”: 编译为本机的函数:
@@ -91,10 +90,6 @@
          	托管代码中发现一个不受支持的内部函数
      1>c:\opencv300\opencv\build\include\opencv2\core\mat.inl.hpp(381): warning C4793: “cv::Mat::Mat”: 编译为本机的函数:
          	托管代码中发现一个不受支持的内部函数
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\freeglutcallbacks.h(12): warning C4793: “BasicDemo::CreateObjects”: 编译为本机的函数:
-         	托管代码中不支持对齐数据类型
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\freeglutcallbacks.h(15): warning C4793: “BasicDemo::CreateObjects”: 编译为本机的函数:
-         	托管代码中不支持对齐数据类型
      1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\declae.h(2318): warning C4715: “KinectInit”: 不是所有的控件路径都返回值
      1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\main.cpp(38): warning C4793: “main”: 编译为本机的函数:
          	托管代码中不支持对齐数据类型
@@ -185,6 +180,8 @@
      1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\selfcwisebinaryop.h(122): warning C4793: “Eigen::SelfCwiseBinaryOp<Eigen::internal::scalar_quotient_op<double,double>,Eigen::Block<Eigen::Block<Eigen::Block<Eigen::Map<Eigen::Matrix<double,-1,-1,0,-1,-1>,0,Eigen::Stride<0,0> >,-1,-1,0>,-1,1,1>,-1,1,0>,Eigen::CwiseNullaryOp<Eigen::internal::scalar_constant_op<double>,Eigen::Matrix<double,-1,1,0,-1,1> > >::copyPacket<Eigen::CwiseNullaryOp<Eigen::internal::scalar_constant_op<double>,Eigen::Matrix<double,-1,1,0,-1,1> >,1,0>”: 编译为本机的函数:
          	托管代码中不支持对齐数据类型
      1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\selfcwisebinaryop.h(122): warning C4793: “Eigen::SelfCwiseBinaryOp<Eigen::internal::scalar_difference_op<double>,Eigen::Block<Eigen::Block<Eigen::Block<Eigen::Map<Eigen::Matrix<double,-1,-1,0,-1,-1>,0,Eigen::Stride<0,0> >,-1,-1,0>,-1,-1,0>,-1,1,1>,Eigen::CwiseUnaryOp<Eigen::internal::scalar_multiple_op<double>,Eigen::Block<Eigen::Block<Eigen::Block<Eigen::Map<Eigen::Matrix<double,-1,-1,0,-1,-1>,0,Eigen::Stride<0,0> >,-1,-1,0>,-1,1,1>,-1,1,0> const > >::copyPacket<Eigen::CwiseUnaryOp<Eigen::internal::scalar_multiple_op<double>,Eigen::Block<Eigen::Block<Eigen::Block<Eigen::Map<Eigen::Matrix<double,-1,-1,0,-1,-1>,0,Eigen::Stride<0,0> >,-1,-1,0>,-1,1,1>,-1,1,0> const >,1,0>”: 编译为本机的函数:
+         	托管代码中不支持对齐数据类型
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\freeglutcallbacks.h(39): warning C4793: “`anonymous namespace'::IdleCallback”: 编译为本机的函数:
          	托管代码中不支持对齐数据类型
      1>D:\USER\Documents\Visual Studio 2013\Projects\5-Aixs Dispenser\5-Aixs Dispenser\main.cpp : warning C4793: “BasicDemo::BasicDemo”: 编译为本机的函数:
          	托管代码中不支持对齐数据类型
@@ -319,4 +316,4 @@
 
 生成成功。
 
-已用时间 00:00:05.84
+已用时间 00:00:06.19

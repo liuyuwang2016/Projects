@@ -245,7 +245,7 @@ glmDirName(char* path)
 
 /* glmReadMTL: read a wavefront material library file
 *
-* model - properly initialized GLMmodel structure
+* model - properly inid GLMmodel structure
 * name  - name of the material library
 */
 static GLvoid

@@ -15,7 +15,6 @@
 
 using namespace std;
 
-
 class BasicDemo : public BulletOpenGLApplication {
 public:
 	virtual void InitializePhysics() override;
