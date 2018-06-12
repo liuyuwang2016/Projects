@@ -1,10 +1,3 @@
-/*
-* gjk_epa.hpp
-*
-*  Created on: 19 §æ§Ö§Ó§â. 2018 §Ô.
-*      Author: werqa
-*/
-
 #ifndef GJK_EPA_HPP_
 #define GJK_EPA_HPP_
 

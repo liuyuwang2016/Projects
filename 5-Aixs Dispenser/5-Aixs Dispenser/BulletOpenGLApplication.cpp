@@ -201,9 +201,8 @@ void BulletOpenGLApplication::RenderBulletScene()
 	for (GameObjects::iterator i = m_objects.begin(); i != m_objects.end(); ++i) {
 		// get the object from the iterator
 		GameObject* pObj = *i;
-		// read the transform
+		// 在这里读取每个GameObject的transform矩阵，决定要把GameObject渲染到哪个地方
 		pObj->GetTransform(transform);
-
 		// get data from the object and draw it
 		DrawShape(transform, pObj->GetShape(), pObj->GetColor());
 	}
@@ -257,7 +256,7 @@ void BulletOpenGLApplication::DrawShape(btScalar* transform, const btCollisionSh
 GameObject* BulletOpenGLApplication::CreateGameObject(btCollisionShape* pShape, const float &mass, const btVector3 &color, const btVector3 &initialPosition, const btQuaternion &initialRotation) {
 	// create a new game object
 	GameObject* pObject = new GameObject(pShape, mass, color, initialPosition, initialRotation);
-
+	
 	// push it to the back of the list
 	m_objects.push_back(pObject);
 

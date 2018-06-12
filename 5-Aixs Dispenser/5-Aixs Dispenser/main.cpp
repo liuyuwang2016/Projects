@@ -18,7 +18,9 @@
 //     =====`-.____`.___ \_____/___.-`___.-'=====
 //                       `=---='
 //     ~~~~~~~~~~~~~佛祖保佑，永无Bug~~~~~~~~~~~~~
-
+//#define _CRTDBG_MAP_ALLOC //检查内存泄漏
+//#include <crtdbg.h>
+//#include <vld.h>
 #include "BasicDemo.h"
 #include "EmptyDemo.h"
 //主要的内容都在这个里面，可以检索

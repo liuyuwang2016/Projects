@@ -189,7 +189,7 @@ void FindROI()
 			uchar IsRed = 0;
 			/*input & output value, OpenCV matrix input & output value function*/
 			OutputValue(ROI_YCrCb, i, j, 1, &IsRed);
-
+			//cout << "IsRed = " << static_cast<unsigned>(IsRed) << endl;
 			//threshold = 150 for fluorescent pink
 			//threshold = 170 for red
 			if (IsRed > 155)
@@ -208,9 +208,11 @@ void FindROI()
 				ROICenterColorS_New.x += ROIPixel[ROIcount].x;
 				ROICenterColorS_New.y += ROIPixel[ROIcount].y;
 				ROIcount++;
+				//cout << ROIcount << endl;
 			}
 		}
 	}
+	cout << ROIcount << endl;
 	//imshow("ROI", ROI_Image);
 	/*If we got the color we want, do this*/
 	if (ROIcount > 3)
@@ -228,7 +230,7 @@ void FindROI()
 	{
 		ROICenterColorS_Old.x = ROICenterColorS_New.x = 0;
 		ROICenterColorS_Old.y = ROICenterColorS_New.y = 0;
-		//Draw3DLine();
+		Draw3DLine();
 	}
 }
 
@@ -363,9 +365,11 @@ void CameraShift()
 
 void CameraSpaceROI()
 {
-	if (ROICameraSP != nullptr)
+	if (ROICameraSP != nullptr && PlaneSP != nullptr)
 	{
 		delete[] ROICameraSP;
+		delete[] PlaneSP;
+		PlaneSP = nullptr;
 		ROICameraSP = nullptr;
 	}
 	ROIDepthCount = 0;
@@ -385,6 +389,7 @@ void CameraSpaceROI()
 			ROIDepthCount++;
 		}
 	}
+		
 	CameraSpacePoint* Temp = new CameraSpacePoint[ROIDepthCount];
 	int indx1 = 0;
 	for (int i = 0; i < ROIcount; i++)
@@ -2344,19 +2349,28 @@ void KinectUpdate()
 		pDFrameDepth = nullptr;
 	}
 #pragma region Remap ColorImg
-	map_x.create(mColorImg.size(), CV_32FC1);
-	map_y.create(mColorImg.size(), CV_32FC1);
+	//这部分的Remapper会使得后面debug出现一些问题
+	//map_x.create(mColorImg.size(), CV_32FC1);
+	//map_y.create(mColorImg.size(), CV_32FC1);
 
-	for (int j = 0; j < mColorImg.rows; j++)
-	{
-		for (int i = 0; i < mColorImg.cols; i++)
-		{
-			map_x.at<float>(j, i) = static_cast<float>(mColorImg.cols - i);
-			map_y.at<float>(j, i) = static_cast<float>(j);
-		}
-	}
-	//成功remap。重映射将Kinect抓取的彩色图案反转
-	remap(mColorImg, mColorImg, map_x, map_y, INTER_LINEAR, BORDER_CONSTANT, cv::Scalar(0, 0, 0));
+	//for (int j = 0; j < mColorImg.rows; j++)
+	//{
+	//	for (int i = 0; i < mColorImg.cols; i++)
+	//	{
+	//		map_x.at<float>(j, i) = static_cast<float>(mColorImg.cols - i);
+	//		map_y.at<float>(j, i) = static_cast<float>(j);
+	//	}
+	//}
+	//////成功remap。重映射将Kinect抓取的彩色图案反转
+	//remap(mColorImg, mColorImg, map_x, map_y, INTER_LINEAR, BORDER_CONSTANT, cv::Scalar(0, 0, 0));
+	//for (int i = 0; i < iHeightColor; i++){ // 1080 down
+	//	for (int j = 0; j < iWidthColor; j++){ // 1920 right
+	//		//memcpy(img, pColorBuffer, sizeof(BYTE) * 3 * window_height*window_width);
+	//		img[(1079 - i) * iWidthColor + j].r = pBufferColor[4 * (i * iWidthColor + j)];
+	//		img[(1079 - i) * iWidthColor + j].g = pBufferColor[4 * (i * iWidthColor + j) + 1];
+	//		img[(1079 - i) * iWidthColor + j].b = pBufferColor[4 * (i * iWidthColor + j) + 2];
+	//	}
+	//}
 #pragma endregion Remap ColorImg
 
 	/*--------------Mapper Function (Point Cloud)-------------*/

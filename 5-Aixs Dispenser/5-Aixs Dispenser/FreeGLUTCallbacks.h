@@ -3,10 +3,12 @@
 
 #include "Function.h"
 #include "BulletOpenGLApplication.h"
+GameObject* m_modelObject;
+int modelCount = 0;
 
 //// global pointer to our application object
 static BulletOpenGLApplication* g_pApp;
-
+void loadTipModel(float model_x, float model_y, float model_z);
 // Various static functions that will be handed to FreeGLUT to be called
 // during various events (our callbacks). Each calls an equivalent function
 // in our (global) application object.
@@ -34,10 +36,22 @@ static void ReshapeCallback(int w, int h) {
 
 static void IdleCallback() {
 	KinectUpdate();
-	if (ROIDepthCount != 0)
-	{
-		GameObject* pObject = g_pApp->CreateGameObject(new btBoxShape(btVector3(0.01, 0.01, 0.01)), 0, btVector3(0.4f, 0.0f, 0.4f), btVector3(tipModel.x, tipModel.y, tipModel.z));
-	}
+	/*
+	 * 这个是可以抓到位置并且画上虚拟物体的function，但是在这里画上的虚拟物体不可以跟着移动，而是会随着移动产生多个虚拟物体，
+	 * 其原因为createGameObject只是创造出了一个虚拟物体，然而虚拟物体在bullet内部的移动方式为给固定的虚拟物体传入transform的矩阵
+	 * 而且因为此处在freeglut的mainloop当中，因此每循环一次就会产生一个虚拟物体，解决方法为使用constraints控制物体的移动，见bullet书第五章
+	 * 或者先在外部生成一个物体，而在此处只是不断改变此物体的transform的值（失败）
+	 */
+	
+	//if (ROIDepthCount != 0 && modelCount <= 1)
+	//{
+	//	m_modelObject = g_pApp->CreateGameObject(new btBoxShape(btVector3(0.01, 0.02, 0.02)), 0, btVector3(0.0f, 0.2f, 0.2f), btVector3(tipModel.x, tipModel.y, tipModel.z));
+	//	modelCount++;
+	//}
+	//if (ROIDepthCount != 0)
+	//{
+	//	loadTipModel(tipModel.x, tipModel.y, tipModel.z);
+	//}
 }
 
 static void MouseCallBack(int button, int state, int x, int y) {
@@ -60,13 +74,25 @@ static void DisplayCallback(void) {
 	FPS_RS++;
 }
 
+void loadTipModel(float model_x, float model_y, float model_z)
+{
+	btVector3 model = btVector3(model_x, model_y, model_z);
+
+	//g_pApp->DestroyGameObject(pObject->GetRigidBody());
+	btTransform modelTransform;
+	modelTransform.setOrigin(model);
+	m_modelObject->GetRigidBody()->getMotionState()->setWorldTransform(modelTransform);
+}
+
+
 // our custom-built 'main' function, which accepts a reference to a
 // BulletOpenGLApplication object.
 int glutmain(int argc, char **argv, int width, int height, const char* title, BulletOpenGLApplication* pApp)
 {
-    // store the application object so we can
-	// access it globally
 	g_pApp = pApp;
+	// store the application object so we can
+	// access it globally
+
 	init();
 	// initialize the window
 	glutInit(&argc, argv);
@@ -81,16 +107,16 @@ int glutmain(int argc, char **argv, int width, int height, const char* title, Bu
 	glutFullScreen();
 	glEnable(GL_DEPTH_TEST);
 	glDisable(GL_LIGHTING);
-	
+
 	//glutSetOption (GLUT_ACTION_ON_WINDOW_CLOSE, GLUT_ACTION_GLUTMAINLOOP_RETURNS);
 	/*--------------default camera--------------*/
 	g_Camera.vPosition = Vector3(-0.064403, 0.000998867, 0.0897838);
 	g_Camera.vCenter = Vector3(-0.0494023, 0.0210018, 1.08971);
 	g_Camera.vUpper = Vector3(-0.000199958, 0.99968, -0.019995);
 	// perform custom initialization our of application
-	
+
 	// give our static
-	
+
 	glutDisplayFunc(DisplayCallback);
 	glutIdleFunc(IdleCallback);
 	glutKeyboardFunc(KeyboardCallback);
@@ -102,7 +128,8 @@ int glutmain(int argc, char **argv, int width, int height, const char* title, Bu
 	glutMouseFunc(MouseCallBack);
 	glutPassiveMotionFunc(MotionCallback);
 	glutMotionFunc(MotionCallback);
-	
+
+
 	//setShaders();
 	loadOBJModel();
 	Texture();
@@ -118,6 +145,8 @@ int glutmain(int argc, char **argv, int width, int height, const char* title, Bu
 	// hand application control over to the FreeGLUT library.
 	// This function remains in a while-loop until the
 	// application is exited.
+	////检查内存泄漏
+	//_CrtDumpMemoryLeaks();
 	glutMainLoop();
 	return 0;
 }

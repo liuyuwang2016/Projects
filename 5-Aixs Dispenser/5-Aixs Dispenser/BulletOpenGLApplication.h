@@ -11,12 +11,19 @@
 
 #include "GameObject.h"
 #include <vector>
+#include <set>
+#include <iterator>
+#include <algorithm>
 
 // debug模式渲染
 #include "DebugDrawer.h"
 
 // 在空间中保存多个物体，使用STL Vector容器
 typedef std::vector<GameObject*> GameObjects;
+
+//convenient typedefs for collison events
+typedef std::pair<const btRigidBody*, const btRigidBody*> CollisionPair;
+typedef std::set<CollisionPair> CollisionPairs;
 
 // struct to store our raycasting results
 struct RayResult {

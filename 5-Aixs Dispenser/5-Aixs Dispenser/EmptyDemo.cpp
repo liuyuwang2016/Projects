@@ -20,3 +20,4 @@ void EmptyDemo::ShutDownPhysics() {
 	delete m_pDispatcher;
 	delete m_pCollisionConfiguration;
 }
+ 

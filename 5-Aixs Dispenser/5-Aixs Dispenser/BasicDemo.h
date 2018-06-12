@@ -23,9 +23,5 @@ public:
 	void CreateObjects();
 	void ReadBuffer();
 
-	float x;
-	float y;
-	float z;
-	float angle;
 };
 #endif //BULLETOPENGL_BASICDEMO_H
