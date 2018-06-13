@@ -74,12 +74,13 @@ public:
 	// picking functions
 	btVector3 GetPickingRay(int x, int y);
 	bool Raycast(const btVector3 &startPosition, const btVector3 &direction, RayResult &output);
-protected:
+public:
 	btVector3 m_cameraPosition; // the camera's current position
 	btVector3 m_cameraTarget;	 // the camera's lookAt target
 	btVector3 m_upVector; // keeps the camera rotated correctly
 
 	btVector3 m_modelPosition;//跟随移动的model的位置
+
 	float m_nearPlane; // minimum distance the camera will render
 	float m_farPlane; // farthest distance the camera will render
 	

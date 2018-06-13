@@ -5,7 +5,7 @@
 #include "BulletOpenGLApplication.h"
 GameObject* m_modelObject;
 int modelCount = 0;
-
+bool create = false;
 //// global pointer to our application object
 static BulletOpenGLApplication* g_pApp;
 void loadTipModel(float model_x, float model_y, float model_z);
@@ -13,7 +13,7 @@ void loadTipModel(float model_x, float model_y, float model_z);
 // during various events (our callbacks). Each calls an equivalent function
 // in our (global) application object.
 static void KeyboardCallback(unsigned char key, int x, int y) {
-	g_pApp->Keyboard(key, x, y);
+	//g_pApp->Keyboard(key, x, y);
 	DispenserKeyboard(key, x, y);
 }
 
@@ -35,6 +35,7 @@ static void ReshapeCallback(int w, int h) {
 }
 
 static void IdleCallback() {
+
 	KinectUpdate();
 	/*
 	 * 这个是可以抓到位置并且画上虚拟物体的function，但是在这里画上的虚拟物体不可以跟着移动，而是会随着移动产生多个虚拟物体，
@@ -43,15 +44,43 @@ static void IdleCallback() {
 	 * 或者先在外部生成一个物体，而在此处只是不断改变此物体的transform的值（失败）
 	 */
 	
-	//if (ROIDepthCount != 0 && modelCount <= 1)
-	//{
-	//	m_modelObject = g_pApp->CreateGameObject(new btBoxShape(btVector3(0.01, 0.02, 0.02)), 0, btVector3(0.0f, 0.2f, 0.2f), btVector3(tipModel.x, tipModel.y, tipModel.z));
-	//	modelCount++;
-	//}
-	//if (ROIDepthCount != 0)
-	//{
-	//	loadTipModel(tipModel.x, tipModel.y, tipModel.z);
-	//}
+	if (ROIDepthCount != 0 && modelCount <= 1)
+	{
+		m_modelObject = g_pApp->CreateGameObject(new btBoxShape(btVector3(0.01, 0.02, 0.02)), 0, btVector3(0.0f, 0.2f, 0.2f), btVector3(0, 0, 0));
+		if (modelCount == 1)
+		{
+			create = true;
+			m_modelObject->GetRigidBody()->clearForces();
+			m_modelObject->GetRigidBody()->setLinearVelocity(btVector3(0, 0, 0));
+			m_modelObject->GetRigidBody()->setAngularVelocity(btVector3(0, 0, 0));
+		}
+		modelCount++;
+	}
+	if (ROIDepthCount != 0 && create == true)
+	{
+		/*m_modelObject->GetRigidBody()->setCollisionFlags(m_modelObject->GetRigidBody()->getCollisionFlags() | btCollisionObject::CF_KINEMATIC_OBJECT);
+		m_modelObject->GetRigidBody()->setActivationState(DISABLE_DEACTIVATION);*/
+		//在这里可以检测到tipModel的值可以一直传递进来，关键是怎样使用这个值指导虚拟物体跟随移动
+		/*cout << "tipModel.x = " << tipModel.x << endl;
+		cout << "tipModel.y = " << tipModel.y << endl;
+		cout << "tipModel.z = " << tipModel.z << endl;*/
+		/*
+		 *这一段代码可以让虚拟物体跟随笔尖移动，但是虚拟物体会震动，而且震动幅度偏大
+		btVector3 model = btVector3(tipModel.x, tipModel.y, tipModel.z);
+		btTransform modelTransform = m_modelObject->GetRigidBody()->getWorldTransform();
+		modelTransform.setOrigin(model);
+		m_modelObject->GetRigidBody()->setCenterOfMassTransform(modelTransform);
+		*/
+		
+		//
+		btVector3 model = btVector3(tipModel.x, tipModel.y, tipModel.z);
+
+		btTransform modelTransform = m_modelObject->GetRigidBody()->getWorldTransform();
+		modelTransform.setOrigin(model);
+		m_modelObject->GetRigidBody()->setCenterOfMassTransform(modelTransform);
+		
+	}
+
 }
 
 static void MouseCallBack(int button, int state, int x, int y) {

@@ -212,7 +212,7 @@ void FindROI()
 			}
 		}
 	}
-	cout << ROIcount << endl;
+	//cout << ROIcount << endl;
 	//imshow("ROI", ROI_Image);
 	/*If we got the color we want, do this*/
 	if (ROIcount > 3)
@@ -236,6 +236,7 @@ void FindROI()
 
 void LoadCamShiftPicture()
 {
+	//在这里是选取了紫色来抓取，可以任意替换想要抓取的颜色
 	Mat loadImage = imread("purple.JPG", CV_LOAD_IMAGE_COLOR);
 	cvtColor(loadImage, hsv, COLOR_BGR2HSV);
 	int _vmin = vmin, _vmax = vmax;
@@ -268,7 +269,7 @@ void LoadCamShiftPicture()
 	for (int i = 0; i < hsize; i++)
 	{
 		int val = saturate_cast<int>(hist.at<float>(i)*histimg.rows / 255);//at函数为返回一个指定数组元素的参考值
-		//在一幅输入图像上画一个简单抽的矩形，指定左上角和右下角，并定义颜色，大小，线型等
+		//在一幅输入图像上画一个简单的矩形，指定左上角和右下角，并定义颜色，大小，线型等
 		rectangle(histimg, Point(i*binW, histimg.rows),
 			Point((i + 1)*binW, histimg.rows - val),
 			Scalar(buf.at<Vec3b>(i)), -1, 8);
@@ -365,11 +366,9 @@ void CameraShift()
 
 void CameraSpaceROI()
 {
-	if (ROICameraSP != nullptr && PlaneSP != nullptr)
+	if (ROICameraSP != nullptr)
 	{
 		delete[] ROICameraSP;
-		delete[] PlaneSP;
-		PlaneSP = nullptr;
 		ROICameraSP = nullptr;
 	}
 	ROIDepthCount = 0;
@@ -384,7 +383,7 @@ void CameraSpaceROI()
 		//在之前对ROI区域的像素做处理，在这里拿到每个像素的index，然后筛选出没有Z值的像素
 		int index1 = ROIPixel[i].x + ROIPixel[i].y * iWidthColor;
 		//numeric_limits<float>::infinity()无穷大
-		if (pCSPoints[index1].Z != -1 * numeric_limits<float>::infinity())
+		if (pCSPoints[index1].Z != numeric_limits<float>::infinity())
 		{
 			ROIDepthCount++;
 		}
@@ -395,7 +394,7 @@ void CameraSpaceROI()
 	for (int i = 0; i < ROIcount; i++)
 	{
 		int indx2 = (iWidthColor - ROIPixel[i].x) + ROIPixel[i].y * iWidthColor;
-		if (pCSPoints[indx2].Z != -1 * numeric_limits<float>::infinity())
+		if (pCSPoints[indx2].Z != numeric_limits<float>::infinity())
 		{
 			Temp[indx1].X = pCSPoints[indx2].X;
 			Temp[indx1].Y = pCSPoints[indx2].Y;
@@ -438,36 +437,49 @@ void CameraSpaceROI()
 	//Mismatch did not occur
 	if (IndexLim == 0)
 	{
-		ROICameraSP = new CameraSpacePoint[ROIDepthCount];
-		for (int i = 0; i < ROIDepthCount; i++)
+		try
 		{
-			//ROICameraSP的坐标是相对于Kinect的坐标
-			ROICameraSP[i].X = Temp[i].X;
-			ROICameraSP[i].Y = Temp[i].Y;
-			ROICameraSP[i].Z = Temp[i].Z;
+			ROICameraSP = new CameraSpacePoint[ROIDepthCount];
+			for (int i = 0; i < ROIDepthCount; i++)
+			{
+				//ROICameraSP的坐标是相对于Kinect的坐标
+				ROICameraSP[i].X = Temp[i].X;
+				ROICameraSP[i].Y = Temp[i].Y;
+				ROICameraSP[i].Z = Temp[i].Z;
 
-			ROICenterCameraS.x += ROICameraSP[i].X;
-			ROICenterCameraS.y += ROICameraSP[i].Y;
-			ROICenterCameraS.z += ROICameraSP[i].Z;
+				ROICenterCameraS.x += ROICameraSP[i].X;
+				ROICenterCameraS.y += ROICameraSP[i].Y;
+				ROICenterCameraS.z += ROICameraSP[i].Z;
+			}
+		} catch (CameraSpacePoint* ROICameraSP)
+		{
+			cerr << "异常" << endl;
 		}
+		
 	}
 	//Mismatch occur
 	else
 	{
-		ROICameraSP = new CameraSpacePoint[IndexLim];
-		for (int i = 0; i < IndexLim; i++)
+		try
 		{
-			ROICameraSP[i].X = Temp[i].X;
-			ROICameraSP[i].Y = Temp[i].Y;
-			ROICameraSP[i].Z = Temp[i].Z;
+			ROICameraSP = new CameraSpacePoint[IndexLim];
+			for (int i = 0; i < IndexLim; i++)
+			{
+				ROICameraSP[i].X = Temp[i].X;
+				ROICameraSP[i].Y = Temp[i].Y;
+				ROICameraSP[i].Z = Temp[i].Z;
 
-			ROICenterCameraS.x += ROICameraSP[i].X;
-			ROICenterCameraS.y += ROICameraSP[i].Y;
-			ROICenterCameraS.z += ROICameraSP[i].Z;
+				ROICenterCameraS.x += ROICameraSP[i].X;
+				ROICenterCameraS.y += ROICameraSP[i].Y;
+				ROICenterCameraS.z += ROICameraSP[i].Z;
+			}
+			ROIDepthCount = IndexLim;
+		}catch (CameraSpacePoint* ROICameraSP)
+		{
+			cerr << "异常" << endl;
 		}
-		ROIDepthCount = IndexLim;
 	}
-	delete[] Temp;
+	
 	/*------------------------------------------------------------------*/
 	if (ROIDepthCount > 0)
 	{
@@ -481,6 +493,8 @@ void CameraSpaceROI()
 		ROICenterCameraS.y = 0;
 		ROICenterCameraS.z = 0;
 	}
+	delete[] Temp;
+	Temp = nullptr;
 }
 
 void MoveROI()
@@ -1343,7 +1357,7 @@ void Draw3DPlane()
 	{
 		int index3 = PlanePixel[i].x + PlanePixel[i].y * iWidthColor;
 		//cout << "PlanePixel[i].x = " << PlanePixel[i].x << endl;
-		if (pCSPoints[index3].Z != -1 * numeric_limits<float>::infinity())
+		if (pCSPoints[index3].Z != numeric_limits<float>::infinity())
 		{
 			PlaneDepthCount++;
 		}
@@ -1355,7 +1369,7 @@ void Draw3DPlane()
 	{
 		int index4 = (iWidthColor - PlanePixel[i].x) + PlanePixel[i].y * iWidthColor;
 		//cout << "PlanePixel[i].x = " << PlanePixel[i].x << endl;
-		if (pCSPoints[index4].Z != -1 * numeric_limits<float>::infinity())
+		if (pCSPoints[index4].Z != numeric_limits<float>::infinity())
 		{
 			PlaneSP[indexP].X = pCSPoints[index4].X;
 			PlaneSP[indexP].Y = pCSPoints[index4].Y;
@@ -2350,19 +2364,19 @@ void KinectUpdate()
 	}
 #pragma region Remap ColorImg
 	//这部分的Remapper会使得后面debug出现一些问题
-	//map_x.create(mColorImg.size(), CV_32FC1);
-	//map_y.create(mColorImg.size(), CV_32FC1);
+	map_x.create(mColorImg.size(), CV_32FC1);
+	map_y.create(mColorImg.size(), CV_32FC1);
 
-	//for (int j = 0; j < mColorImg.rows; j++)
-	//{
-	//	for (int i = 0; i < mColorImg.cols; i++)
-	//	{
-	//		map_x.at<float>(j, i) = static_cast<float>(mColorImg.cols - i);
-	//		map_y.at<float>(j, i) = static_cast<float>(j);
-	//	}
-	//}
+	for (int j = 0; j < mColorImg.rows; j++)
+	{
+		for (int i = 0; i < mColorImg.cols; i++)
+		{
+			map_x.at<float>(j, i) = static_cast<float>(mColorImg.cols - i);
+			map_y.at<float>(j, i) = static_cast<float>(j);
+		}
+	}
 	//////成功remap。重映射将Kinect抓取的彩色图案反转
-	//remap(mColorImg, mColorImg, map_x, map_y, INTER_LINEAR, BORDER_CONSTANT, cv::Scalar(0, 0, 0));
+	remap(mColorImg, mColorImg, map_x, map_y, INTER_LINEAR, BORDER_CONSTANT, cv::Scalar(0, 0, 0));
 	//for (int i = 0; i < iHeightColor; i++){ // 1080 down
 	//	for (int j = 0; j < iWidthColor; j++){ // 1920 right
 	//		//memcpy(img, pColorBuffer, sizeof(BYTE) * 3 * window_height*window_width);
@@ -2375,9 +2389,6 @@ void KinectUpdate()
 
 	/*--------------Mapper Function (Point Cloud)-------------*/
 	Mapper->MapColorFrameToCameraSpace(depthPointCount, pBufferDepth, colorPointCount, pCSPoints);
-
-	/*--------------Call Window Function-------------*/
-	/*show image can have a color frame to you*/
 	ShowImage();
 }
 

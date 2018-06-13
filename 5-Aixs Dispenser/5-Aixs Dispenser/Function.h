@@ -1056,6 +1056,8 @@ void RenderScene()
 	ChangeLineColor();
 	ROI_IS_COLLIDE = FALSE;
 	//Coordinate();
+	/*--------------Call Window Function-------------*/
+	/*show image can have a color frame to you*/
 	
 }
 #pragma endregion RenderScene
