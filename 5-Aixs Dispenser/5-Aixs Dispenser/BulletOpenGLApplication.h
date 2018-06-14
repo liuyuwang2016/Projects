@@ -4,6 +4,9 @@
 #include <GL/freeglut.h>
 #pragma managed (push,off)
 #include <BulletDynamics/Dynamics/btDynamicsWorld.h>
+// includes for convex hulls
+#include <BulletCollision/CollisionShapes/btConvexPolyhedron.h>
+#include <BulletCollision/CollisionShapes/btShapeHull.h>
 #pragma managed (pop)
 
 // include our custom Motion State object
@@ -59,6 +62,9 @@ public:
 
 	//drawing functions
 	void DrawBox(const btVector3 &halfSize);
+	void DrawSphere(const btScalar &radius);
+	void DrawCylinder(const btScalar &radius, const btScalar &halfHeight);
+	void DrawConvexHull(const btCollisionShape* shape);
 	void DrawShape(btScalar* transform, const btCollisionShape* pShape, const btVector3 &color);
 
 	// object functions
@@ -70,10 +76,23 @@ public:
 
 	void ShootBox(const btVector3 &direction);
 	void DestroyGameObject(btRigidBody* pBody);
-
-	// picking functions
+	//是为了用搜索树搜索空间中存在的虚拟物体，然后进行碰撞侦测
+	GameObject* FindGameObject(btRigidBody* pBody);
+	
+	// picking functions 光线追踪
 	btVector3 GetPickingRay(int x, int y);
 	bool Raycast(const btVector3 &startPosition, const btVector3 &direction, RayResult &output);
+
+	// constraint functions
+	void CreatePickingConstraint(int x, int y);
+	void RemovePickingConstraint();
+
+
+	// collision event functions
+	void CheckForCollisionEvents();
+	virtual void CollisionEvent(btRigidBody* pBody0, btRigidBody * pBody1);
+	virtual void SeparationEvent(btRigidBody * pBody0, btRigidBody * pBody1);
+
 public:
 	btVector3 m_cameraPosition; // the camera's current position
 	btVector3 m_cameraTarget;	 // the camera's lookAt target
@@ -87,7 +106,7 @@ public:
 	int m_screenWidth;
 	int m_screenHeight;
 	
-	 //core Bullet components Bullet的核心元素
+	// Bullet 的核心元素
 	btBroadphaseInterface* m_pBroadphase;
 	btCollisionConfiguration* m_pCollisionConfiguration;
 	btCollisionDispatcher* m_pDispatcher;
@@ -109,6 +128,9 @@ public:
 	btRigidBody* m_pPickedBody;				// the body we picked up
 	btTypedConstraint*  m_pPickConstraint;	// the constraint the body is attached to
 	btScalar m_oldPickingDist;
+
+	//碰撞事件
+	CollisionPairs m_pairsLastUpdate;
 };
 
 

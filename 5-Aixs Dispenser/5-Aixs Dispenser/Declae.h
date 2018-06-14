@@ -230,7 +230,7 @@ void FindROI()
 	{
 		ROICenterColorS_Old.x = ROICenterColorS_New.x = 0;
 		ROICenterColorS_Old.y = ROICenterColorS_New.y = 0;
-		Draw3DLine();
+		//Draw3DLine();
 	}
 }
 
@@ -382,119 +382,125 @@ void CameraSpaceROI()
 	{
 		//在之前对ROI区域的像素做处理，在这里拿到每个像素的index，然后筛选出没有Z值的像素
 		int index1 = ROIPixel[i].x + ROIPixel[i].y * iWidthColor;
-		//numeric_limits<float>::infinity()无穷大
-		if (pCSPoints[index1].Z != numeric_limits<float>::infinity())
+		//-1 * numeric_limits<float>::infinity()无穷大
+		//cout << "pCSPoints["<<index1 << "].Z = " << pCSPoints[index1].Z << endl;
+		if (pCSPoints[index1].Z != -1 * numeric_limits<float>::infinity())
 		{
 			ROIDepthCount++;
 		}
 	}
-		
-	CameraSpacePoint* Temp = new CameraSpacePoint[ROIDepthCount];
-	int indx1 = 0;
-	for (int i = 0; i < ROIcount; i++)
-	{
-		int indx2 = (iWidthColor - ROIPixel[i].x) + ROIPixel[i].y * iWidthColor;
-		if (pCSPoints[indx2].Z != numeric_limits<float>::infinity())
-		{
-			Temp[indx1].X = pCSPoints[indx2].X;
-			Temp[indx1].Y = pCSPoints[indx2].Y;
-			Temp[indx1].Z = pCSPoints[indx2].Z;
-			indx1++;
-		}
-	}
-	/*---------------------------------Bubble sort---------------------------------*/
-	for (int i = ROIDepthCount - 1; i > 0; --i)
-	{
-		for (int j = 0; j < i; ++j)
-		{
-			if (Temp[j].Z < Temp[j + 1].Z)
-			{
-				CameraSpacePoint temp;
-				temp.X = Temp[j].X;
-				temp.Y = Temp[j].Y;
-				temp.Z = Temp[j].Z;
 
-				Temp[j].X = Temp[j + 1].X;
-				Temp[j].Y = Temp[j + 1].Y;
-				Temp[j].Z = Temp[j + 1].Z;
+	/*cout << "ROIcount = " << ROIcount << endl;
+	cout << "ROIDepthCount = " << ROIDepthCount << endl;*/
 
-				Temp[j + 1].X = temp.X;
-				Temp[j + 1].Y = temp.Y;
-				Temp[j + 1].Z = temp.Z;
-			}
-		}
-	}
-	//Set int threshold and filtering
-	int IndexLim = 0;
-	for (int i = 0; i < ROIDepthCount; i++)
+	if (ROIDepthCount == 0)
 	{
-		if (Temp[i].Z < Temp[0].Z*1.02)
-		{
-			IndexLim = i;
-			break;
-		}
-	}
-	//Mismatch did not occur
-	if (IndexLim == 0)
-	{
-		try
-		{
-			ROICameraSP = new CameraSpacePoint[ROIDepthCount];
-			for (int i = 0; i < ROIDepthCount; i++)
-			{
-				//ROICameraSP的坐标是相对于Kinect的坐标
-				ROICameraSP[i].X = Temp[i].X;
-				ROICameraSP[i].Y = Temp[i].Y;
-				ROICameraSP[i].Z = Temp[i].Z;
-
-				ROICenterCameraS.x += ROICameraSP[i].X;
-				ROICenterCameraS.y += ROICameraSP[i].Y;
-				ROICenterCameraS.z += ROICameraSP[i].Z;
-			}
-		} catch (CameraSpacePoint* ROICameraSP)
-		{
-			cerr << "异常" << endl;
-		}
-		
-	}
-	//Mismatch occur
-	else
-	{
-		try
-		{
-			ROICameraSP = new CameraSpacePoint[IndexLim];
-			for (int i = 0; i < IndexLim; i++)
-			{
-				ROICameraSP[i].X = Temp[i].X;
-				ROICameraSP[i].Y = Temp[i].Y;
-				ROICameraSP[i].Z = Temp[i].Z;
-
-				ROICenterCameraS.x += ROICameraSP[i].X;
-				ROICenterCameraS.y += ROICameraSP[i].Y;
-				ROICenterCameraS.z += ROICameraSP[i].Z;
-			}
-			ROIDepthCount = IndexLim;
-		}catch (CameraSpacePoint* ROICameraSP)
-		{
-			cerr << "异常" << endl;
-		}
-	}
-	
-	/*------------------------------------------------------------------*/
-	if (ROIDepthCount > 0)
-	{
-		ROICenterCameraS.x = ROICenterCameraS.x / ROIDepthCount;
-		ROICenterCameraS.y = ROICenterCameraS.y / ROIDepthCount;
-		ROICenterCameraS.z = ROICenterCameraS.z / ROIDepthCount;
-	}
-	else if (ROIDepthCount == 0)
-	{
+		cout << "出现问题，没有抓到ROIDepthCount" << endl;
 		ROICenterCameraS.x = 0;
 		ROICenterCameraS.y = 0;
 		ROICenterCameraS.z = 0;
 	}
-	delete[] Temp;
-	Temp = nullptr;
+	else if (ROIDepthCount > 0)
+	{
+		CameraSpacePoint* Temp = new CameraSpacePoint[ROIDepthCount];
+		int indx1 = 0;
+		for (int i = 0; i < ROIDepthCount; i++)
+		{
+			int indx2 = (iWidthColor - ROIPixel[i].x) + ROIPixel[i].y * iWidthColor;
+			if (pCSPoints[indx2].Z != -1 * numeric_limits<float>::infinity())
+			{
+				Temp[indx1].X = pCSPoints[indx2].X;
+				Temp[indx1].Y = pCSPoints[indx2].Y;
+				Temp[indx1].Z = pCSPoints[indx2].Z;
+				indx1++;
+			}
+		}
+		/*---------------------------------Bubble sort---------------------------------*/
+		for (int i = ROIDepthCount - 1; i > 0; --i)
+		{
+			for (int j = 0; j < i; ++j)
+			{
+				if (Temp[j].Z < Temp[j + 1].Z)
+				{
+					CameraSpacePoint temp;
+					temp.X = Temp[j].X;
+					temp.Y = Temp[j].Y;
+					temp.Z = Temp[j].Z;
+
+					Temp[j].X = Temp[j + 1].X;
+					Temp[j].Y = Temp[j + 1].Y;
+					Temp[j].Z = Temp[j + 1].Z;
+
+					Temp[j + 1].X = temp.X;
+					Temp[j + 1].Y = temp.Y;
+					Temp[j + 1].Z = temp.Z;
+				}
+			}
+		}
+		//Set int threshold and filtering
+		int IndexLim = 0;
+		for (int i = 0; i < ROIDepthCount; i++)
+		{
+			if (Temp[i].Z < Temp[0].Z*1.02)
+			{
+				IndexLim = i;
+				break;
+			}
+		}
+		//Mismatch did not occur
+		if (IndexLim == 0)
+		{
+			try
+			{
+				ROICameraSP = new CameraSpacePoint[ROIDepthCount];
+				for (int i = 0; i < ROIDepthCount; i++)
+				{
+					//ROICameraSP的坐标是相对于Kinect的坐标
+					ROICameraSP[i].X = Temp[i].X;
+					ROICameraSP[i].Y = Temp[i].Y;
+					ROICameraSP[i].Z = Temp[i].Z;
+
+					ROICenterCameraS.x += ROICameraSP[i].X;
+					ROICenterCameraS.y += ROICameraSP[i].Y;
+					ROICenterCameraS.z += ROICameraSP[i].Z;
+				}
+			}
+			catch (CameraSpacePoint* ROICameraSP)
+			{
+				cerr << "异常" << endl;
+			}
+
+		}
+		//Mismatch occur
+		else
+		{
+			try
+			{
+				ROICameraSP = new CameraSpacePoint[IndexLim];
+				for (int i = 0; i < IndexLim; i++)
+				{
+					ROICameraSP[i].X = Temp[i].X;
+					ROICameraSP[i].Y = Temp[i].Y;
+					ROICameraSP[i].Z = Temp[i].Z;
+
+					ROICenterCameraS.x += ROICameraSP[i].X;
+					ROICenterCameraS.y += ROICameraSP[i].Y;
+					ROICenterCameraS.z += ROICameraSP[i].Z;
+				}
+				ROIDepthCount = IndexLim;
+			}
+			catch (CameraSpacePoint* ROICameraSP)
+			{
+				cerr << "异常" << endl;
+			}
+		}
+		delete[] Temp;
+		Temp = nullptr;
+
+		ROICenterCameraS.x = ROICenterCameraS.x / ROIDepthCount;
+		ROICenterCameraS.y = ROICenterCameraS.y / ROIDepthCount;
+		ROICenterCameraS.z = ROICenterCameraS.z / ROIDepthCount;
+	}
 }
 
 void MoveROI()

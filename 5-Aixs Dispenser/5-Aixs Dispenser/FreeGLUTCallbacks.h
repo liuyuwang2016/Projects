@@ -46,7 +46,21 @@ static void IdleCallback() {
 	
 	if (ROIDepthCount != 0 && modelCount <= 1)
 	{
-		m_modelObject = g_pApp->CreateGameObject(new btBoxShape(btVector3(0.01, 0.02, 0.02)), 0, btVector3(0.0f, 0.2f, 0.2f), btVector3(0, 0, 0));
+		// 建立一个正四面体作为笔尖上的物体
+		btVector3 points[5] = {
+			btVector3(-0.01, 0.02, 0.02),
+			btVector3(-0.01, 0.02, -0.02),
+			btVector3(-0.01, -0.02, 0.02),
+			btVector3(-0.01, -0.02, -0.02),
+			btVector3(0.02, 0, 0)
+		};
+		// 创建我们笔尖的凸体 convex hull
+		btConvexHullShape* pShape = new btConvexHullShape(&points[0].getX(), 5);
+		// 初始化 the object as a polyhedron
+		pShape->initializePolyhedralFeatures();
+
+		m_modelObject = g_pApp->CreateGameObject(pShape, 0, btVector3(1.0f, 1.0f, 1.0f), btVector3(tipModel.x, tipModel.y, tipModel.z));
+
 		if (modelCount == 1)
 		{
 			create = true;
@@ -58,26 +72,25 @@ static void IdleCallback() {
 	}
 	if (ROIDepthCount != 0 && create == true)
 	{
-		/*m_modelObject->GetRigidBody()->setCollisionFlags(m_modelObject->GetRigidBody()->getCollisionFlags() | btCollisionObject::CF_KINEMATIC_OBJECT);
-		m_modelObject->GetRigidBody()->setActivationState(DISABLE_DEACTIVATION);*/
 		//在这里可以检测到tipModel的值可以一直传递进来，关键是怎样使用这个值指导虚拟物体跟随移动
-		/*cout << "tipModel.x = " << tipModel.x << endl;
-		cout << "tipModel.y = " << tipModel.y << endl;
-		cout << "tipModel.z = " << tipModel.z << endl;*/
-		/*
-		 *这一段代码可以让虚拟物体跟随笔尖移动，但是虚拟物体会震动，而且震动幅度偏大
-		btVector3 model = btVector3(tipModel.x, tipModel.y, tipModel.z);
-		btTransform modelTransform = m_modelObject->GetRigidBody()->getWorldTransform();
-		modelTransform.setOrigin(model);
-		m_modelObject->GetRigidBody()->setCenterOfMassTransform(modelTransform);
-		*/
-		
-		//
-		btVector3 model = btVector3(tipModel.x, tipModel.y, tipModel.z);
+		//设置必须要大于某个值的时候才能传进来
+		if ((abs(tipModel.x) - 1e-3) > 0)
+		{
+			/*cout << "-------------*****-------------" << endl;
+			cout << "tipModel.x = " << tipModel.x << endl;
+			cout << "tipModel.y = " << tipModel.y << endl;
+			cout << "tipModel.z = " << tipModel.z << endl;*/
+			/*
+			*这一段代码可以让虚拟物体跟随笔尖移动，但是虚拟物体会震动，而且震动幅度偏大
+			**/
+			btVector3 model = btVector3(tipModel.x, tipModel.y, tipModel.z);
 
-		btTransform modelTransform = m_modelObject->GetRigidBody()->getWorldTransform();
-		modelTransform.setOrigin(model);
-		m_modelObject->GetRigidBody()->setCenterOfMassTransform(modelTransform);
+			btTransform modelTransform;
+			modelTransform.setIdentity();
+			modelTransform.setOrigin(model);
+			m_modelObject->GetRigidBody()->setWorldTransform(modelTransform);
+			m_modelObject->GetRigidBody()->getMotionState()->setWorldTransform(modelTransform);
+		}
 		
 	}
 

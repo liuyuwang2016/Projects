@@ -279,28 +279,6 @@ void RenderSceneBackground()
 	}
 }
 
-modelPosition Model()
-{
-	float sum_X = 0, sum_Y = 0, sum_Z = 0;
-	for (int i = 0; i < ROIDepthCount; i++)
-	{
-		sum_X += ROICameraSP[i].X;
-		sum_Y += ROICameraSP[i].Y;
-		sum_Z += ROICameraSP[i].Z;
-	}
-	sum_X = sum_X / ROIDepthCount;
-	sum_Y = sum_Y / ROIDepthCount;
-	sum_Z = sum_Z / ROIDepthCount;
-
-	tipModel.x = sum_X;
-	tipModel.y = sum_Y;
-	tipModel.z = sum_Z;
-
-	tipModel.distance = sqrt(abs(sum_X)*abs(sum_X) + abs(sum_Y)*abs(sum_Y) + abs(sum_Z)*abs(sum_Z));
-	
-	return tipModel;
-}
-
 void DrawProbeTip()
 {
 	if (ROIDepthCount != 0)
@@ -321,24 +299,31 @@ void DrawProbeTip()
 		*/
 		glEnd();
 		glPopMatrix();
-		//Model();
+		
 		float sum_X = 0, sum_Y = 0, sum_Z = 0;
+		int realCount = 0;
 		for (int i = 0; i < ROIDepthCount; i++)
 		{
-			sum_X += ROICameraSP[i].X;
-			sum_Y += ROICameraSP[i].Y;
-			sum_Z += ROICameraSP[i].Z;
+			if (ROICameraSP[i].X != 0 && ROICameraSP[i].Y != 0 && ROICameraSP[i].Z != 0)
+			{
+				sum_X += ROICameraSP[i].X * 1000;
+				sum_Y += ROICameraSP[i].Y * 1000;
+				sum_Z += ROICameraSP[i].Z * 1000;
+				realCount++;
+			}
 		}
-		sum_X = sum_X / ROIDepthCount;
-		sum_Y = sum_Y / ROIDepthCount;
-		sum_Z = sum_Z / ROIDepthCount;
+
+		sum_X = sum_X / realCount;
+		sum_Y = sum_Y / realCount;
+		sum_Z = sum_Z / realCount;
 
 		tipModel.x = sum_X;
 		tipModel.y = sum_Y;
 		tipModel.z = sum_Z;
 
 		tipModel.distance = sqrt(abs(sum_X)*abs(sum_X) + abs(sum_Y)*abs(sum_Y) + abs(sum_Z)*abs(sum_Z));
-
+		
+		
 		//在这里是把x,y,z存到position.txt这个文件里面去
 		//ofstream out("position.txt");
 		//if (out.is_open())
@@ -349,6 +334,14 @@ void DrawProbeTip()
 		//	out.close();
 		//}
 	}
+	//这里是测试Kinect自身数据的稳定程度，求X,Y,Z值的差距
+
+	//ofstream pos;
+	//pos.open("position.txt",ios::app);
+	//pos << "X = " << tipModel.x << endl;
+	//pos << "Y = " << tipModel.y << endl;
+	//pos << "Z = " << tipModel.z << endl;
+	//pos << "Distance = " << tipModel.distance << endl;
 }
 /*
  * #1 刚开始不成功的原因是在这里的时候抓取平面的方程式在kinectUpdate中，但是画的在renderscene当中，因此需要先把点用其他的存下来
