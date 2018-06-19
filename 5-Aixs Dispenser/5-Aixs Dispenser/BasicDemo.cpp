@@ -28,7 +28,7 @@ void BasicDemo::CreateObjects() {
 
 
 	// create our original red box
-	CreateGameObject(new btBoxShape(btVector3(0.01, 0.02, 0.02)), 0, btVector3(1.0f, 0.2f, 0.2f), btVector3(0.0124319, -0.124894, 0.780611));
+	CreateGameObject(new btBoxShape(btVector3(0.03, 0.1, 0.1)), 0, btVector3(1.0f, 0.2f, 0.2f), btVector3(0.0124319, -0.124894, 0.780611));
 
 	// create a second box
 	//CreateGameObject(new btBoxShape(btVector3(0.01, 0.01, 0.01)), 0, btVector3(0.0f, 0.2f, 0.8f), btVector3(0.0124319, -0.124894, 0.780611));

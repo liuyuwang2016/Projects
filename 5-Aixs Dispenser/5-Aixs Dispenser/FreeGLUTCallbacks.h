@@ -76,13 +76,7 @@ static void IdleCallback() {
 		//设置必须要大于某个值的时候才能传进来
 		if ((abs(tipModel.x) - 1e-3) > 0)
 		{
-			/*cout << "-------------*****-------------" << endl;
-			cout << "tipModel.x = " << tipModel.x << endl;
-			cout << "tipModel.y = " << tipModel.y << endl;
-			cout << "tipModel.z = " << tipModel.z << endl;*/
-			/*
-			*这一段代码可以让虚拟物体跟随笔尖移动，但是虚拟物体会震动，而且震动幅度偏大
-			**/
+			
 			btVector3 model = btVector3(tipModel.x, tipModel.y, tipModel.z);
 
 			btTransform modelTransform;

@@ -301,21 +301,17 @@ void DrawProbeTip()
 		glPopMatrix();
 		
 		float sum_X = 0, sum_Y = 0, sum_Z = 0;
-		int realCount = 0;
+
 		for (int i = 0; i < ROIDepthCount; i++)
 		{
-			if (ROICameraSP[i].X != 0 && ROICameraSP[i].Y != 0 && ROICameraSP[i].Z != 0)
-			{
-				sum_X += ROICameraSP[i].X * 1000;
-				sum_Y += ROICameraSP[i].Y * 1000;
-				sum_Z += ROICameraSP[i].Z * 1000;
-				realCount++;
-			}
+			sum_X += ROICameraSP[i].X;
+			sum_Y += ROICameraSP[i].Y;
+			sum_Z += ROICameraSP[i].Z;
 		}
 
-		sum_X = sum_X / realCount;
-		sum_Y = sum_Y / realCount;
-		sum_Z = sum_Z / realCount;
+		sum_X = sum_X / ROIDepthCount;
+		sum_Y = sum_Y / ROIDepthCount;
+		sum_Z = sum_Z / ROIDepthCount;
 
 		tipModel.x = sum_X;
 		tipModel.y = sum_Y;
