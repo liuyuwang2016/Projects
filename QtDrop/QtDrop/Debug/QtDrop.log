@@ -1,0 +1,16 @@
+﻿生成启动时间为 2018/6/22 22:17:32。
+     1>项目“d:\USER\documents\visual studio 2013\Projects\QtDrop\QtDrop\QtDrop.vcxproj”在节点 2 上(Build 个目标)。
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I.\GeneratedFiles /I. /IC:\Qt\Qt5.6.0\5.6\msvc2013\include /I.\GeneratedFiles\Debug /IC:\Qt\Qt5.6.0\5.6\msvc2013\include\QtCore /IC:\Qt\Qt5.6.0\5.6\msvc2013\include\QtGui /IC:\Qt\Qt5.6.0\5.6\msvc2013\include\QtWidgets /I"C:\Program Files (x86)\Visual Leak Detector\include" /Zi /nologo /W1 /WX- /Od /Oy- /D UNICODE /D WIN32 /D WIN64 /D QT_DLL /D QT_CORE_LIB /D QT_GUI_LIB /D QT_WIDGETS_LIB /Gm- /EHsc /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt qtdrop.cpp
+         qtdrop.cpp
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"d:\USER\documents\visual studio 2013\Projects\QtDrop\Win32\Debug\\QtDrop.exe" /NOLOGO /LIBPATH:C:\Qt\Qt5.6.0\5.6\msvc2013\lib /LIBPATH:"C:\Program Files (x86)\Visual Leak Detector\lib\Win32" qtmaind.lib Qt5Cored.lib Qt5Guid.lib Qt5Widgetsd.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"d:\USER\documents\visual studio 2013\Projects\QtDrop\Win32\Debug\QtDrop.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"d:\USER\documents\visual studio 2013\Projects\QtDrop\Win32\Debug\QtDrop.lib" /MACHINE:X86 /SAFESEH Debug\moc_qtdrop.obj
+         Debug\qrc_qtdrop.obj
+         Debug\main.obj
+         Debug\qtdrop.obj
+         QtDrop.vcxproj -> d:\USER\documents\visual studio 2013\Projects\QtDrop\Win32\Debug\QtDrop.exe
+     1>已完成生成项目“d:\USER\documents\visual studio 2013\Projects\QtDrop\QtDrop\QtDrop.vcxproj”(Build 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:02.07
