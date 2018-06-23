@@ -11,9 +11,7 @@ class QtDrop : public QMainWindow
 public:
 	QtDrop(QWidget *parent = 0);
 	~QtDrop();
-private:
-	void dragEnterEvent(QDragEnterEvent *event);
-	void dropEvent(QDropEvent *event);
+
 private:
 	Ui::QtDropClass ui;
 };

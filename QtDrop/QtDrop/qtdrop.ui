@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
  <class>QtDropClass</class>
  <widget class="QMainWindow" name="QtDropClass">
@@ -14,17 +14,14 @@
    <string>QtDrop</string>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <widget class="QLabel" name="m_label">
+   <widget class="MyListWidget" name="listWidget">
     <property name="geometry">
      <rect>
-      <x>90</x>
-      <y>40</y>
-      <width>421</width>
-      <height>21</height>
+      <x>35</x>
+      <y>21</y>
+      <width>531</width>
+      <height>321</height>
      </rect>
-    </property>
-    <property name="text">
-     <string>TextLabel</string>
     </property>
    </widget>
   </widget>
@@ -49,6 +46,13 @@
   <widget class="QStatusBar" name="statusBar"/>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>MyListWidget</class>
+   <extends>QListWidget</extends>
+   <header>MyListWidget.h</header>
+  </customwidget>
+ </customwidgets>
  <resources>
   <include location="qtdrop.qrc"/>
  </resources>

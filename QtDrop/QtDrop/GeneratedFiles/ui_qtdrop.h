@@ -14,12 +14,12 @@
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
 #include <QtWidgets/QHeaderView>
-#include <QtWidgets/QLabel>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QToolBar>
 #include <QtWidgets/QWidget>
+#include "MyListWidget.h"
 
 QT_BEGIN_NAMESPACE
 
@@ -27,7 +27,7 @@ class Ui_QtDropClass
 {
 public:
     QWidget *centralWidget;
-    QLabel *m_label;
+    MyListWidget *listWidget;
     QMenuBar *menuBar;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
@@ -39,9 +39,9 @@ public:
         QtDropClass->resize(600, 400);
         centralWidget = new QWidget(QtDropClass);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
-        m_label = new QLabel(centralWidget);
-        m_label->setObjectName(QStringLiteral("m_label"));
-        m_label->setGeometry(QRect(90, 40, 421, 21));
+        listWidget = new MyListWidget(centralWidget);
+        listWidget->setObjectName(QStringLiteral("listWidget"));
+        listWidget->setGeometry(QRect(35, 21, 531, 321));
         QtDropClass->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(QtDropClass);
         menuBar->setObjectName(QStringLiteral("menuBar"));
@@ -62,7 +62,6 @@ public:
     void retranslateUi(QMainWindow *QtDropClass)
     {
         QtDropClass->setWindowTitle(QApplication::translate("QtDropClass", "QtDrop", 0));
-        m_label->setText(QApplication::translate("QtDropClass", "TextLabel", 0));
     } // retranslateUi
 
 };
