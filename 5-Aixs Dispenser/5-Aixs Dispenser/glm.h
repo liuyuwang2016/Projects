@@ -1,17 +1,3 @@
-/*
-glm.h
-Nate Robins, 1997, 2000
-nate@pobox.com, http://www.pobox.com/~nate
-
-Wavefront OBJ model file format reader/writer/manipulator.
-
-Includes routines for generating smooth normals with
-preservation of edges, welding redundant vertices & texture
-coordinate generation (spheremap and planar projections) + more.
-
-*/
-
-
 #include <GL/freeglut.h>
 
 
