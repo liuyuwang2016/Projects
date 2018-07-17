@@ -6,26 +6,30 @@
 GameObject* m_modelObject;
 int modelCount = 0;
 bool create = false;
-//// global pointer to our application object
+
+// 一个指向我们的虚拟物体专案的指针 
 static BulletOpenGLApplication* g_pApp;
+
 void loadTipModel(float model_x, float model_y, float model_z);
-// Various static functions that will be handed to FreeGLUT to be called
+
+// 这些静态的函数相当于串口，these Various static functions that will be handed to FreeGLUT to be called
 // during various events (our callbacks). Each calls an equivalent function
 // in our (global) application object.
 static void KeyboardCallback(unsigned char key, int x, int y) {
 	//g_pApp->Keyboard(key, x, y);
+	//调用原来专案的 keyboard 
 	DispenserKeyboard(key, x, y);
 }
-
+/*没有使用*/
 static void KeyboardUpCallback(unsigned char key, int x, int y) {
 	//g_pApp->KeyboardUp(key, x, y);
 }
-
+/*调用原来专案的SpecialKeys*/
 static void SpecialCallback(int key, int x, int y) {
 	//g_pApp->Special(key, x, y);
 	SpecialKeys(key, x, y);
 }
-
+/*没有使用*/
 static void SpecialUpCallback(int key, int x, int y) {
 	//g_pApp->SpecialUp(key, x, y);
 }
@@ -101,7 +105,7 @@ static void MotionCallback(int x, int y) {
 static void DisplayCallback(void) {
 	//g_pApp->Display();
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-	RenderScene();
+	RenderScene();//原来的REenderScene内容
 	g_pApp->Idle();
 	if (Finish_Without_Update)
 		glFinish();
@@ -165,7 +169,6 @@ int glutmain(int argc, char **argv, int width, int height, const char* title, Bu
 	glutPassiveMotionFunc(MotionCallback);
 	glutMotionFunc(MotionCallback);
 
-
 	//setShaders();
 	loadOBJModel();
 	Texture();
@@ -181,7 +184,9 @@ int glutmain(int argc, char **argv, int width, int height, const char* title, Bu
 	// hand application control over to the FreeGLUT library.
 	// This function remains in a while-loop until the
 	// application is exited.
-	////检查内存泄漏
+
+
+	//检查内存泄漏
 	//_CrtDumpMemoryLeaks();
 	glutMainLoop();
 	return 0;

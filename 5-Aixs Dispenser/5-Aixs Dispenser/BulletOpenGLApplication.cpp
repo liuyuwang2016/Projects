@@ -26,7 +26,7 @@ BulletOpenGLApplication::~BulletOpenGLApplication()
 void BulletOpenGLApplication::Initialize()
 {
 	InitializePhysics();
-	// create the debug drawer
+	// 创建 debug drawer
 	m_pDebugDrawer = new DebugDrawer();
 	// set the initial debug level to 0
 	m_pDebugDrawer->setDebugMode(0);
@@ -46,12 +46,12 @@ void BulletOpenGLApplication::Keyboard(unsigned char key, int x, int y)
 		m_pDebugDrawer->ToggleDebugFlag(btIDebugDraw::DBG_DrawAabb);
 		break;
 	case 'd':
-		// create a temp object to store the raycast result
+		// 存储光线追踪的结果
 		RayResult result;
-		// perform the raycast
+		// 实现光线追踪
 		if (!Raycast(m_cameraPosition, GetPickingRay(x, y), result))
 			return; // return if the test failed
-		// destroy the corresponding game object
+		// 销毁触碰到的虚拟物体
 		DestroyGameObject(result.pBody);
 		break;
 	}
@@ -87,11 +87,11 @@ void BulletOpenGLApplication::Mouse(int button, int state, int x, int y)
 {
 	switch (button)
 	{
-	case 1://middle mouse button
+	case 1://中间的滚轮
 	{
-		if (state == 0)//pressed down
+		if (state == 0)//按下
 		{
-			//shooting a box
+			// 射出一个小盒子
 			ShootBox(GetPickingRay(x, y));
 		}
 		break;
@@ -103,21 +103,17 @@ void BulletOpenGLApplication::PassiveMotion(int x, int y) {}
 
 void BulletOpenGLApplication::Motion(int x, int y)
 {
-	// did we pick a body with the LMB?
 	if (m_pPickedBody) {
 		btGeneric6DofConstraint* pickCon = static_cast<btGeneric6DofConstraint*>(m_pPickConstraint);
 		if (!pickCon)
 			return;
 
-		// use another picking ray to get the target direction
 		btVector3 dir = GetPickingRay(x, y) - m_cameraPosition;
 		dir.normalize();
 
-		// use the same distance as when we originally picked the object
 		dir *= m_oldPickingDist;
 		btVector3 newPivot = m_cameraPosition + dir;
 
-		// set the position of the constraint
 		pickCon->getFrameOffsetA().setOrigin(newPivot);
 	}
 }
@@ -130,7 +126,7 @@ void BulletOpenGLApplication::DrawBox(const btVector3 &halfSize)
 	float halfHeight = halfSize.y();
 	float halfDepth = halfSize.z();
 
-	// create the vertex positions
+	// 创建 Box 的 vertex 顶点
 	btVector3 vertices[8] = {
 		btVector3(halfWidth, halfHeight, halfDepth),
 		btVector3(-halfWidth, halfHeight, halfDepth),
@@ -141,9 +137,8 @@ void BulletOpenGLApplication::DrawBox(const btVector3 &halfSize)
 		btVector3(halfWidth, -halfHeight, -halfDepth),
 		btVector3(-halfWidth, -halfHeight, -halfDepth) };
 
-	// create the indexes for each triangle, using the
-	// vertices above. Make it static so we don't waste 
-	// processing time recreating it over and over again
+	// 对每个三角形创建 Indexs
+
 	static int indices[36] = {
 		0, 1, 2,
 		3, 2, 1,
@@ -158,38 +153,26 @@ void BulletOpenGLApplication::DrawBox(const btVector3 &halfSize)
 		7, 2, 3,
 		7, 6, 2 };
 
-	// start processing vertices as triangles
+	// freeglut 渲染
 	glBegin(GL_TRIANGLES);
 
-	// increment the loop by 3 each time since we create a
-	// triangle with 3 vertices at a time.
 
 	for (int i = 0; i < 36; i += 3) {
-		// get the three vertices for the triangle based
-		// on the index values set above
-		// use const references so we don't copy the object
-		// (a good rule of thumb is to never allocate/deallocate
-		// memory during *every* render/update call. This should 
-		// only happen sporadically)
 		const btVector3 &vert1 = vertices[indices[i]];
 		const btVector3 &vert2 = vertices[indices[i + 1]];
 		const btVector3 &vert3 = vertices[indices[i + 2]];
 
-		// create a normal that is perpendicular to the
-		// face (use the cross product)
 		btVector3 normal = (vert3 - vert1).cross(vert2 - vert1);
 		normal.normalize();
 
-		// set the normal for the subsequent vertices
 		glNormal3f(normal.getX(), normal.getY(), normal.getZ());
 
-		// create the vertices
 		glVertex3f(vert1.x(), vert1.y(), vert1.z());
 		glVertex3f(vert2.x(), vert2.y(), vert2.z());
 		glVertex3f(vert3.x(), vert3.y(), vert3.z());
 	}
 
-	// stop processing vertices
+	// 停止渲染-
 	glEnd();
 }
 
@@ -203,7 +186,7 @@ void BulletOpenGLApplication::RenderBulletScene()
 		GameObject* pObj = *i;
 		// 在这里读取每个GameObject的transform矩阵，决定要把GameObject渲染到哪个地方
 		pObj->GetTransform(transform);
-		// get data from the object and draw it
+		// 从物体中拿到资讯
 		DrawShape(transform, pObj->GetShape(), pObj->GetColor());
 	}
 	// after rendering all game objects, perform debug rendering
@@ -225,7 +208,7 @@ void BulletOpenGLApplication::UpdateBulletScene(float dt)
 }
 
 void BulletOpenGLApplication::DrawShape(btScalar* transform, const btCollisionShape* pShape, const btVector3 &color) {
-	// set the color
+	// 设置颜色
 	glColor3f(color.x(), color.y(), color.z());
 
 	// push the matrix stack
@@ -247,11 +230,11 @@ void BulletOpenGLApplication::DrawShape(btScalar* transform, const btCollisionSh
 	}
 	case SPHERE_SHAPE_PROXYTYPE:
 	{
-		//假定形状是一个球型，那就转化它
+		// 假定形状是一个球型，那就转化它
 		const btSphereShape* sphere = static_cast<const btSphereShape*>(pShape);
-		//从形状拿到球体的大小
+		// 从形状拿到球体的大小
 		float radius = sphere->getMargin();
-		//将球体画出来
+		// 将球体画出来
 		DrawSphere(radius);
 		break;
 	}

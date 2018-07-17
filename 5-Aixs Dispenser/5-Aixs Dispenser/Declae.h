@@ -1,4 +1,3 @@
-//http://blog.csdn.net/arag2009/article/details/78393052 opencv+opengl
 
 #ifndef _DECLAE_H_
 #define _DECLAE_H_
@@ -7,7 +6,7 @@
 
 #pragma region Function
 #pragma region OpenCV&ROI Function 
-//将传入的点的坐标从Kinect的坐标转换到机器的坐标
+// 将传入的点的坐标从 Kinect 的坐标转换到机器的坐标
 void ROITrans(CameraSpacePoint* Data, int DataNum, GLfloat* TransM, CameraSpacePoint* Result)
 {
 	for (int i = 0; i < DataNum; i++)
@@ -32,7 +31,7 @@ void ROITrans(CameraSpacePoint* Data, int DataNum, GLfloat* TransM, CameraSpaceP
 	}
 }
 
-//模型换了之后没影响
+// 模型换了之后没影响
 void ROITrans(float* Data, int DataNum, GLfloat* TransM, float* Result)
 {
 	for (int i = 0; i < DataNum; i++)
@@ -56,7 +55,7 @@ void ROITrans(float* Data, int DataNum, GLfloat* TransM, float* Result)
 		Result[3 * i + 2] = m[14] / m[15];
 	}
 }
-/*對於opencv裡面的Mat數據進行重新讀取//模型换了之后没影响*/
+/* 對於 opencv 裡面的Mat數據進行重新讀取, 模型换了之后没影响 */
 void InputValue(Mat M, int DataType, int Row, int Col, int Chan, float Data)
 {
 	int Steps = M.cols*M.channels();
@@ -72,7 +71,7 @@ void InputValue(Mat M, int DataType, int Row, int Col, int Chan, float Data)
 		*(srcData + Row*Steps + Col*Channels + Chan) = Data;
 	}
 }
-/*對於opencv中mat類進行輸出//模型换了之后没影响*/
+/* 對於 opencv 中 mat 類進行輸出 模型换了之后没影响 */
 void OutputValue(Mat M, int Row, int Col, int Chan, uchar* Data)
 {
 	int Steps = M.cols*M.channels();
@@ -98,7 +97,7 @@ void OutputValue(Mat M, int Row, int Col, int Chan, float* Data)
 void onMouseROI(int event, int x, int y, int flags, void* param)
 {
 	int thickness = 2;
-	//Push
+	// Push
 	switch (event)
 	{
 	case EVENT_LBUTTONDOWN:
@@ -107,8 +106,8 @@ void onMouseROI(int event, int x, int y, int flags, void* param)
 		selectObject = 1;
 		ROI_rect.x = x;
 		ROI_rect.y = y;
-		ROI_S1 = TRUE;//意思是左键按下但是右键还没
-		//ROI_S2 = FALSE;
+		ROI_S1 = TRUE;// 意思是左键按下但是右键还没
+		// ROI_S2 = FALSE;
 		break;
 	case EVENT_LBUTTONUP:
 		selectObject = 0;
@@ -127,7 +126,7 @@ void onMouseROI(int event, int x, int y, int flags, void* param)
 		selection.width = abs(x - origin.x);
 		selection.height = abs(y - origin.y);
 
-		// & 运算符被cv::Rect重载
+		// &运算符被 cv::Rect 重载
 		// 表示两个区域交集，主要目的是为了处理当鼠标在选择区域时移除画面外
 		selection &= cv::Rect(0, 0, ROI.cols, ROI.rows);
 	}

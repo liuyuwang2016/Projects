@@ -1,7 +1,6 @@
 #ifndef _FUNCTION_H_
 #define _FUNCTION_H_
 #include "Declae.h"
-/*-----------Bullet Physics-----------*/
 
 #pragma region loadConfigFile
 void loadConfigFile()
@@ -47,7 +46,7 @@ void loadConfigFile()
 #pragma region Init
 void init()
 {
-	KinectInit();
+	KinectInit();     //Kinect 
 	GLInit();         //OpenGL
 	InitPortAudio();  //audio
 	MtInit();         //dispenser machine
@@ -65,7 +64,7 @@ void SpecialKeys(int key, int x, int y)
 	{
 		ROICameraSPStorage();
 	}
-	//Press F4 to enable or disable transparent mode 按F4转换透明度
+	//Press F4 to enable or disable transparent mode 按F4 转换透明度
 	else if (key == GLUT_KEY_F4)
 	{
 		if (Cubic_IS_BLEND)
