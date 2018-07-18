@@ -1,4 +1,4 @@
-﻿生成启动时间为 2018/6/29 21:23:59。
+﻿生成启动时间为 2018/7/17 22:43:06。
      1>项目“D:\USER\Documents\Visual Studio 2013\Projects\KinectOpenCV\KinectOpenCV\KinectOpenCV.vcxproj”在节点 2 上(Build 个目标)。
      1>ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /IC:\OpenCV300\opencv\build\include\opencv2 /IC:\OpenCV300\opencv\build\include\opencv /IC:\OpenCV300\opencv\build\include /I"C:\Program Files\Microsoft SDKs\Kinect\v2.0_1409\\inc" /IC:\OpenCV300\opencv\build\include /I"C:\Program Files (x86)\Visual Leak Detector\include" /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Source.cpp
@@ -6,8 +6,6 @@
      1>c:\opencv300\opencv\build\include\opencv2\core\mat.hpp(1965): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
      1>c:\opencv300\opencv\build\include\opencv2\core\persistence.hpp : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
      1>c:\opencv300\opencv\build\include\opencv2\core\utility.hpp : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
-     1>d:\user\documents\visual studio 2013\projects\kinectopencv\kinectopencv\source.cpp(296): warning C4018: “<”: 有符号/无符号不匹配
-     1>d:\user\documents\visual studio 2013\projects\kinectopencv\kinectopencv\source.cpp(191): warning C4101: “m_pBodyFrameReader”: 未引用的局部变量
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\USER\Documents\Visual Studio 2013\Projects\KinectOpenCV\Debug\KinectOpenCV.exe" /INCREMENTAL /NOLOGO /LIBPATH:C:\OpenCV300\opencv\build\x86\vc12\lib\Debug /LIBPATH:"C:\Program Files\Microsoft SDKs\Kinect\v2.0_1409\\Lib\x86" /LIBPATH:C:\OpenCV300\opencv\build\x86\vc12\lib /LIBPATH:"C:\Program Files (x86)\Visual Leak Detector\lib\Win32" opencv_world300d.lib opencv_ts300d.lib kinect20.lib opencv_ts300d.lib opencv_world300d.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\USER\Documents\Visual Studio 2013\Projects\KinectOpenCV\Debug\KinectOpenCV.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\USER\Documents\Visual Studio 2013\Projects\KinectOpenCV\Debug\KinectOpenCV.lib" /MACHINE:X86 Debug\Source.obj
          KinectOpenCV.vcxproj -> D:\USER\Documents\Visual Studio 2013\Projects\KinectOpenCV\Debug\KinectOpenCV.exe
@@ -15,4 +13,4 @@
 
 生成成功。
 
-已用时间 00:00:04.24
+已用时间 00:00:02.73
