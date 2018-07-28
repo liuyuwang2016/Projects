@@ -74,6 +74,10 @@ static void IdleCallback() {
 		}
 		modelCount++;
 	}
+	if (ROIDepthCount == 0 && create == true)
+	{
+		m_modelObject->SetColor(btVector3(0.2, 1.0, 1.0));
+	}
 	if (ROIDepthCount != 0 && create == true)
 	{
 		//在这里可以检测到tipModel的值可以一直传递进来，关键是怎样使用这个值指导虚拟物体跟随移动

@@ -1,165 +1,326 @@
-﻿生成启动时间为 2018/6/19 21:34:25。
+﻿生成启动时间为 2018/7/28 11:30:49。
      1>项目“D:\USER\Documents\Visual Studio 2013\Projects\5-Aixs Dispenser\5-Aixs Dispenser\5-Aixs Dispenser.vcxproj”在节点 2 上(Build 个目标)。
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"D:\USER\Desktop\bullet3-master\bullet3-master\src" /IC:\OpenCV300\opencv\build\include /IC:\OpenCV300\opencv\build\include\opencv /IC:\OpenCV300\opencv\build\include\opencv2 /I"C:\Program Files\Microsoft SDKs\Kinect\v2.0_1409\\inc" /I"C:\PCL 1.8.0 2013\3rdParty\Eigen\eigen3" /IC:\portaudio\include /I"D:\USER\Documents\Visual Studio 2013\Projects\Bullet3\src" /I"D:\USER\Documents\Visual Studio 2013\Projects\5-Aixs Dispenser\5-Aixs Dispenser\src" /I"C:\Program Files (x86)\Visual Leak Detector\include" /AI"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0" /AI"C:\Program Files (x86)\Windows Kits\8.1\References\CommonConfiguration\Neutral" /Zi /clr /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _CRT_SECURE_NO_WARNINGS /D _CRT_NON_CONFORMING_SWPRINTFS /D _MBCS /EHa /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /TP /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\mscorlib.dll" /analyze- /errorReport:prompt /clr:nostdlib BulletOpenGLApplication.cpp
-         BulletOpenGLApplication.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"D:\USER\Desktop\bullet3-master\bullet3-master\src" /IC:\OpenCV300\opencv\build\include /IC:\OpenCV300\opencv\build\include\opencv /IC:\OpenCV300\opencv\build\include\opencv2 /I"C:\Program Files\Microsoft SDKs\Kinect\v2.0_1409\\inc" /I"C:\PCL 1.8.0 2013\3rdParty\Eigen\eigen3" /IC:\portaudio\include /I"D:\USER\Documents\Visual Studio 2013\Projects\Bullet3\src" /I"D:\USER\Documents\Visual Studio 2013\Projects\5-Aixs Dispenser\5-Aixs Dispenser\src" /I"C:\Program Files (x86)\Visual Leak Detector\include" /AI"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0" /AI"C:\Program Files (x86)\Windows Kits\8.1\References\CommonConfiguration\Neutral" /Zi /clr /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _CRT_SECURE_NO_WARNINGS /D _CRT_NON_CONFORMING_SWPRINTFS /D _MBCS /EHa /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /TP /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\mscorlib.dll" /analyze- /errorReport:prompt /clr:nostdlib main.cpp
+         main.cpp
      1>d:\user\desktop\bullet3-master\bullet3-master\src\LinearMath/btIDebugDraw.h(169): warning C4305: “参数”: 从“double”到“const btScalar”截断
      1>d:\user\desktop\bullet3-master\bullet3-master\src\LinearMath/btIDebugDraw.h(170): warning C4305: “参数”: 从“double”到“const btScalar”截断
      1>d:\user\desktop\bullet3-master\bullet3-master\src\LinearMath/btIDebugDraw.h(171): warning C4305: “参数”: 从“double”到“const btScalar”截断
-     1>BulletOpenGLApplication.cpp(18): warning C4305: “参数”: 从“double”到“const btScalar”截断
-     1>BulletOpenGLApplication.cpp(78): warning C4244: “初始化”: 从“unsigned __int64”转换到“float”，可能丢失数据
-     1>BulletOpenGLApplication.cpp(287): warning C4316: “GameObject”: 在堆上分配的对象可能不是对齐 16
-     1>BulletOpenGLApplication.cpp(574): warning C4305: “参数”: 从“double”到“const btScalar”截断
-     1>BulletOpenGLApplication.cpp(575): warning C4305: “参数”: 从“double”到“const btScalar”截断
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\bulletopenglapplication.cpp(95): warning C4793: “BulletOpenGLApplication::Mouse”: 编译为本机的函数:
+     1>C:\OpenCV300\opencv\build\include\opencv2/core/mat.hpp(1965): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+     1>C:\OpenCV300\opencv\build\include\opencv2/core/persistence.hpp : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+     1>C:\OpenCV300\opencv\build\include\opencv2/core/utility.hpp : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\Scene.h(270): warning C4305: “初始化”: 从“double”到“float”截断
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\Scene.h(294): warning C4305: “初始化”: 从“double”到“float”截断
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\Scene.h(299): warning C4305: “初始化”: 从“double”到“float”截断
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\Scene.h(492): warning C4244: “=”: 从“float”转换到“int”，可能丢失数据
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\Declae.h(66): warning C4244: “=”: 从“float”转换到“uchar”，可能丢失数据
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\Declae.h(329): warning C4244: “=”: 从“float”转换到“int”，可能丢失数据
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\Declae.h(330): warning C4244: “=”: 从“float”转换到“int”，可能丢失数据
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\Declae.h(467): warning C4101: “ROICameraSP”: 未引用的局部变量
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\Declae.h(491): warning C4101: “ROICameraSP”: 未引用的局部变量
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\Declae.h(585): warning C4305: “=”: 从“double”到“float”截断
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\Declae.h(586): warning C4305: “=”: 从“double”到“float”截断
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\Declae.h(589): warning C4305: “=”: 从“double”到“float”截断
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\Declae.h(590): warning C4305: “=”: 从“double”到“float”截断
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\Declae.h(591): warning C4305: “=”: 从“double”到“float”截断
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\Declae.h(594): warning C4305: “=”: 从“double”到“float”截断
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\Declae.h(595): warning C4305: “=”: 从“double”到“float”截断
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\Declae.h(698): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\Declae.h(705): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\Declae.h(712): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\Declae.h(719): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\Declae.h(726): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\Declae.h(733): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\Declae.h(740): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\Declae.h(747): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\Declae.h(754): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\Declae.h(761): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\Declae.h(965): warning C4018: “<”: 有符号/无符号不匹配
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\Declae.h(1064): warning C4018: “<”: 有符号/无符号不匹配
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\Declae.h(1066): warning C4018: “<”: 有符号/无符号不匹配
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\Declae.h(1419): warning C4018: “<”: 有符号/无符号不匹配
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\Declae.h(1443): warning C4018: “<”: 有符号/无符号不匹配
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\Declae.h(1501): warning C4244: “参数”: 从“int”转换到“GLfloat”，可能丢失数据
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\Declae.h(1502): warning C4244: “参数”: 从“int”转换到“GLfloat”，可能丢失数据
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\Declae.h(1530): warning C4244: “参数”: 从“int”转换到“GLfloat”，可能丢失数据
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\Declae.h(1579): warning C4101: “mybuffv”: 未引用的局部变量
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\Declae.h(1579): warning C4101: “mybuffu”: 未引用的局部变量
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\Declae.h(1972): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\Declae.h(1973): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\Declae.h(1974): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\Declae.h(2093): warning C4018: “<”: 有符号/无符号不匹配
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\Declae.h(2100): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\Declae.h(2101): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\Declae.h(2102): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\Declae.h(2104): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\Declae.h(2105): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\Declae.h(2106): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\Declae.h(2108): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\Declae.h(2109): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\Declae.h(2110): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\Declae.h(2158): warning C4800: “BOOL”: 将值强制为布尔值“true”或“false”(性能警告)
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\Declae.h(2654): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\Declae.h(2655): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\Declae.h(2656): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\Declae.h(2667): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\Declae.h(2668): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\Declae.h(2669): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\Declae.h(2675): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\Declae.h(2676): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\Declae.h(2677): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\Function.h(23): warning C4018: “<”: 有符号/无符号不匹配
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\Function.h(63): warning C4551: 缺少参数列表的函数调用
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\Function.h(350): warning C4804: “>”: 在操作中使用类型“bool”不安全
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\Function.h(427): warning C4018: “<”: 有符号/无符号不匹配
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\Function.h(438): warning C4244: “初始化”: 从“double”转换到“float”，可能丢失数据
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\Function.h(439): warning C4244: “初始化”: 从“double”转换到“float”，可能丢失数据
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\Function.h(505): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\Function.h(527): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\Function.h(617): warning C4804: “>”: 在操作中使用类型“bool”不安全
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\Function.h(991): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\FreeGLUTCallbacks.h(55): warning C4305: “参数”: 从“double”到“const btScalar”截断
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\FreeGLUTCallbacks.h(56): warning C4305: “参数”: 从“double”到“const btScalar”截断
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\FreeGLUTCallbacks.h(57): warning C4305: “参数”: 从“double”到“const btScalar”截断
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\FreeGLUTCallbacks.h(58): warning C4305: “参数”: 从“double”到“const btScalar”截断
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\FreeGLUTCallbacks.h(59): warning C4305: “参数”: 从“double”到“const btScalar”截断
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\FreeGLUTCallbacks.h(79): warning C4305: “参数”: 从“double”到“const btScalar”截断
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\FreeGLUTCallbacks.h(157): warning C4305: “参数”: 从“double”到“float”截断
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\FreeGLUTCallbacks.h(158): warning C4305: “参数”: 从“double”到“float”截断
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\FreeGLUTCallbacks.h(159): warning C4305: “参数”: 从“double”到“float”截断
+     1>c:\opencv300\opencv\build\include\opencv2\core\cvstd.hpp(592): warning C4793: “cv::String::String”: 编译为本机的函数:
+         	托管代码中发现一个不受支持的内部函数
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\declae.h(1465): warning C4793: “glPrintf”: 编译为本机的函数:
+         	/clr 下不支持 varargs
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\declae.h(1468): warning C4793: “glPrintf”: 编译为本机的函数:
+         	托管代码中发现一个不受支持的内部函数
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\declae.h(1470): warning C4793: “glPrintf”: 编译为本机的函数:
+         	托管代码中发现一个不受支持的内部函数
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\freeglutcallbacks.h(129): warning C4793: “loadTipModel”: 编译为本机的函数:
+         	托管代码中不支持对齐数据类型
+     1>c:\opencv300\opencv\build\include\opencv2\core\mat.inl.hpp(381): warning C4793: “cv::Mat::Mat”: 编译为本机的函数:
+         	托管代码中发现一个不受支持的内部函数
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\declae.h(2342): warning C4715: “KinectInit”: 不是所有的控件路径都返回值
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\main.cpp(40): warning C4793: “main”: 编译为本机的函数:
+         	托管代码中不支持对齐数据类型
+     1>c:\opencv300\opencv\build\include\opencv2\hal\defs.h(372): warning C4793: “`anonymous namespace'::cvRound”: 编译为本机的函数:
+         	托管代码中不支持内联本机程序集
+     1>c:\opencv300\opencv\build\include\opencv2\hal\defs.h(480): warning C4793: “`anonymous namespace'::cvRound”: 编译为本机的函数:
+         	托管代码中不支持内联本机程序集
+     1>c:\opencv300\opencv\build\include\opencv2\core\mat.inl.hpp(666): warning C4793: “cv::Mat::release”: 编译为本机的函数:
+         	托管代码中发现一个不受支持的内部函数
+     1>c:\opencv300\opencv\build\include\opencv2\core\mat.inl.hpp(1703): warning C4793: “cv::SparseMat::addref”: 编译为本机的函数:
+         	托管代码中发现一个不受支持的内部函数
+     1>c:\opencv300\opencv\build\include\opencv2\core\mat.inl.hpp(3304): warning C4793: “cv::UMat::addref”: 编译为本机的函数:
+         	托管代码中发现一个不受支持的内部函数
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\util\memory.h(931): warning C4793: “Eigen::internal::queryCacheSizes”: 编译为本机的函数:
+         	托管代码中发现一个不受支持的内部函数
+     1>c:\opencv300\opencv\build\include\opencv2\core\ptr.inl.hpp(67): warning C4793: “cv::detail::PtrOwner::incRef”: 编译为本机的函数:
+         	托管代码中发现一个不受支持的内部函数
+     1>c:\opencv300\opencv\build\include\opencv2\core\ptr.inl.hpp(72): warning C4793: “cv::detail::PtrOwner::decRef”: 编译为本机的函数:
+         	托管代码中发现一个不受支持的内部函数
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\densecoeffsbase.h(522): warning C4793: “Eigen::DenseCoeffsBase<Eigen::Block<Eigen::Block<Eigen::Map<Eigen::Matrix<double,-1,-1,0,-1,-1>,0,Eigen::Stride<0,0> >,-1,-1,0>,-1,-1,0>,1>::copyPacket<Eigen::Block<Eigen::Block<Eigen::Map<Eigen::Matrix<double,-1,-1,0,-1,-1>,0,Eigen::Stride<0,0> >,-1,-1,0>,-1,-1,0>,1,0>”: 编译为本机的函数:
          	托管代码中不支持对齐数据类型
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\bulletopenglapplication.cpp(113): warning C4793: “BulletOpenGLApplication::Motion”: 编译为本机的函数:
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\products\generalblockpanelkernel.h(1148): warning C4793: “Eigen::internal::gemm_pack_lhs<double,int,4,2,0,0,0>::operator()”: 编译为本机的函数:
          	托管代码中不支持对齐数据类型
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\bulletopenglapplication.cpp(114): warning C4793: “BulletOpenGLApplication::Motion”: 编译为本机的函数:
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\products\generalblockpanelkernel.h(1149): warning C4793: “Eigen::internal::gemm_pack_lhs<double,int,4,2,0,0,0>::operator()”: 编译为本机的函数:
          	托管代码中不支持对齐数据类型
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\bulletopenglapplication.cpp(117): warning C4793: “BulletOpenGLApplication::Motion”: 编译为本机的函数:
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\products\generalblockpanelkernel.h(1150): warning C4793: “Eigen::internal::gemm_pack_lhs<double,int,4,2,0,0,0>::operator()”: 编译为本机的函数:
          	托管代码中不支持对齐数据类型
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\bulletopenglapplication.cpp(123): warning C4793: “BulletOpenGLApplication::Motion”: 编译为本机的函数:
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\products\generalblockpanelkernel.h(1151): warning C4793: “Eigen::internal::gemm_pack_lhs<double,int,4,2,0,0,0>::operator()”: 编译为本机的函数:
          	托管代码中不支持对齐数据类型
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\bulletopenglapplication.cpp(142): warning C4793: “BulletOpenGLApplication::DrawBox”: 编译为本机的函数:
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\products\generalblockpanelkernel.h(1198): warning C4793: “Eigen::internal::gemm_pack_lhs<double,int,4,2,0,0,0>::operator()”: 编译为本机的函数:
          	托管代码中不支持对齐数据类型
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\bulletopenglapplication.cpp(142): warning C4793: “BulletOpenGLApplication::DrawBox”: 编译为本机的函数:
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\products\generalblockpanelkernel.h(758): warning C4793: “Eigen::internal::gebp_kernel<double,double,int,4,2,0,0>::operator()”: 编译为本机的函数:
          	托管代码中不支持对齐数据类型
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\bulletopenglapplication.cpp(142): warning C4793: “BulletOpenGLApplication::DrawBox”: 编译为本机的函数:
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\products\generalblockpanelkernel.h(760): warning C4793: “Eigen::internal::gebp_kernel<double,double,int,4,2,0,0>::operator()”: 编译为本机的函数:
          	托管代码中不支持对齐数据类型
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\bulletopenglapplication.cpp(142): warning C4793: “BulletOpenGLApplication::DrawBox”: 编译为本机的函数:
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\products\generalblockpanelkernel.h(761): warning C4793: “Eigen::internal::gebp_kernel<double,double,int,4,2,0,0>::operator()”: 编译为本机的函数:
          	托管代码中不支持对齐数据类型
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\bulletopenglapplication.cpp(142): warning C4793: “BulletOpenGLApplication::DrawBox”: 编译为本机的函数:
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\products\generalblockpanelkernel.h(762): warning C4793: “Eigen::internal::gebp_kernel<double,double,int,4,2,0,0>::operator()”: 编译为本机的函数:
          	托管代码中不支持对齐数据类型
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\bulletopenglapplication.cpp(142): warning C4793: “BulletOpenGLApplication::DrawBox”: 编译为本机的函数:
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\products\generalblockpanelkernel.h(763): warning C4793: “Eigen::internal::gebp_kernel<double,double,int,4,2,0,0>::operator()”: 编译为本机的函数:
          	托管代码中不支持对齐数据类型
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\bulletopenglapplication.cpp(142): warning C4793: “BulletOpenGLApplication::DrawBox”: 编译为本机的函数:
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\products\generalblockpanelkernel.h(764): warning C4793: “Eigen::internal::gebp_kernel<double,double,int,4,2,0,0>::operator()”: 编译为本机的函数:
          	托管代码中不支持对齐数据类型
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\bulletopenglapplication.cpp(142): warning C4793: “BulletOpenGLApplication::DrawBox”: 编译为本机的函数:
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\products\generalblockpanelkernel.h(765): warning C4793: “Eigen::internal::gebp_kernel<double,double,int,4,2,0,0>::operator()”: 编译为本机的函数:
          	托管代码中不支持对齐数据类型
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\bulletopenglapplication.cpp(180): warning C4793: “BulletOpenGLApplication::DrawBox”: 编译为本机的函数:
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\products\generalblockpanelkernel.h(766): warning C4793: “Eigen::internal::gebp_kernel<double,double,int,4,2,0,0>::operator()”: 编译为本机的函数:
          	托管代码中不支持对齐数据类型
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\bulletopenglapplication.cpp(181): warning C4793: “BulletOpenGLApplication::DrawBox”: 编译为本机的函数:
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\products\generalblockpanelkernel.h(769): warning C4793: “Eigen::internal::gebp_kernel<double,double,int,4,2,0,0>::operator()”: 编译为本机的函数:
          	托管代码中不支持对齐数据类型
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\bulletopenglapplication.cpp(194): warning C4793: “BulletOpenGLApplication::DrawBox”: 编译为本机的函数:
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\products\generalblockpanelkernel.h(790): warning C4793: “Eigen::internal::gebp_kernel<double,double,int,4,2,0,0>::operator()”: 编译为本机的函数:
          	托管代码中不支持对齐数据类型
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\bulletopenglapplication.cpp(307): warning C4793: “BulletOpenGLApplication::GetPickingRay”: 编译为本机的函数:
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\products\generalblockpanelkernel.h(792): warning C4793: “Eigen::internal::gebp_kernel<double,double,int,4,2,0,0>::operator()”: 编译为本机的函数:
          	托管代码中不支持对齐数据类型
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\bulletopenglapplication.cpp(309): warning C4793: “BulletOpenGLApplication::GetPickingRay”: 编译为本机的函数:
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\products\generalblockpanelkernel.h(793): warning C4793: “Eigen::internal::gebp_kernel<double,double,int,4,2,0,0>::operator()”: 编译为本机的函数:
          	托管代码中不支持对齐数据类型
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\bulletopenglapplication.cpp(310): warning C4793: “BulletOpenGLApplication::GetPickingRay”: 编译为本机的函数:
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\products\generalblockpanelkernel.h(794): warning C4793: “Eigen::internal::gebp_kernel<double,double,int,4,2,0,0>::operator()”: 编译为本机的函数:
          	托管代码中不支持对齐数据类型
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\bulletopenglapplication.cpp(314): warning C4793: “BulletOpenGLApplication::GetPickingRay”: 编译为本机的函数:
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\products\generalblockpanelkernel.h(797): warning C4793: “Eigen::internal::gebp_kernel<double,double,int,4,2,0,0>::operator()”: 编译为本机的函数:
          	托管代码中不支持对齐数据类型
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\bulletopenglapplication.cpp(316): warning C4793: “BulletOpenGLApplication::GetPickingRay”: 编译为本机的函数:
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\products\generalblockpanelkernel.h(936): warning C4793: “Eigen::internal::gebp_kernel<double,double,int,4,2,0,0>::operator()”: 编译为本机的函数:
          	托管代码中不支持对齐数据类型
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\bulletopenglapplication.cpp(317): warning C4793: “BulletOpenGLApplication::GetPickingRay”: 编译为本机的函数:
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\products\generalblockpanelkernel.h(943): warning C4793: “Eigen::internal::gebp_kernel<double,double,int,4,2,0,0>::operator()”: 编译为本机的函数:
          	托管代码中不支持对齐数据类型
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\bulletopenglapplication.cpp(318): warning C4793: “BulletOpenGLApplication::GetPickingRay”: 编译为本机的函数:
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\products\generalblockpanelkernel.h(944): warning C4793: “Eigen::internal::gebp_kernel<double,double,int,4,2,0,0>::operator()”: 编译为本机的函数:
          	托管代码中不支持对齐数据类型
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\bulletopenglapplication.cpp(319): warning C4793: “BulletOpenGLApplication::GetPickingRay”: 编译为本机的函数:
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\products\generalblockpanelkernel.h(945): warning C4793: “Eigen::internal::gebp_kernel<double,double,int,4,2,0,0>::operator()”: 编译为本机的函数:
          	托管代码中不支持对齐数据类型
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\bulletopenglapplication.cpp(320): warning C4793: “BulletOpenGLApplication::GetPickingRay”: 编译为本机的函数:
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\products\generalblockpanelkernel.h(946): warning C4793: “Eigen::internal::gebp_kernel<double,double,int,4,2,0,0>::operator()”: 编译为本机的函数:
          	托管代码中不支持对齐数据类型
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\bulletopenglapplication.cpp(327): warning C4793: “BulletOpenGLApplication::GetPickingRay”: 编译为本机的函数:
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\products\generalblockpanelkernel.h(1041): warning C4793: “Eigen::internal::gebp_kernel<double,double,int,4,2,0,0>::operator()”: 编译为本机的函数:
          	托管代码中不支持对齐数据类型
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\bulletopenglapplication.cpp(329): warning C4793: “BulletOpenGLApplication::GetPickingRay”: 编译为本机的函数:
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\products\generalblockpanelkernel.h(1045): warning C4793: “Eigen::internal::gebp_kernel<double,double,int,4,2,0,0>::operator()”: 编译为本机的函数:
          	托管代码中不支持对齐数据类型
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\bulletopenglapplication.cpp(330): warning C4793: “BulletOpenGLApplication::GetPickingRay”: 编译为本机的函数:
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\products\generalblockpanelkernel.h(1046): warning C4793: “Eigen::internal::gebp_kernel<double,double,int,4,2,0,0>::operator()”: 编译为本机的函数:
          	托管代码中不支持对齐数据类型
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\bulletopenglapplication.cpp(331): warning C4793: “BulletOpenGLApplication::GetPickingRay”: 编译为本机的函数:
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\products\generalblockpanelkernel.h(1075): warning C4793: “Eigen::internal::gebp_kernel<double,double,int,4,2,0,0>::operator()”: 编译为本机的函数:
          	托管代码中不支持对齐数据类型
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\bulletopenglapplication.cpp(333): warning C4793: “BulletOpenGLApplication::GetPickingRay”: 编译为本机的函数:
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\products\generalblockpanelkernel.h(1076): warning C4793: “Eigen::internal::gebp_kernel<double,double,int,4,2,0,0>::operator()”: 编译为本机的函数:
          	托管代码中不支持对齐数据类型
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\bulletopenglapplication.cpp(334): warning C4793: “BulletOpenGLApplication::GetPickingRay”: 编译为本机的函数:
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\products\generalblockpanelkernel.h(1098): warning C4793: “Eigen::internal::gebp_kernel<double,double,int,4,2,0,0>::operator()”: 编译为本机的函数:
          	托管代码中不支持对齐数据类型
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\bulletopenglapplication.cpp(337): warning C4793: “BulletOpenGLApplication::GetPickingRay”: 编译为本机的函数:
+     1>c:\opencv300\opencv\build\include\opencv2\core\mat.inl.hpp(565): warning C4793: “cv::Mat::operator=”: 编译为本机的函数:
+         	托管代码中发现一个不受支持的内部函数
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\densecoeffsbase.h(538): warning C4793: “Eigen::DenseCoeffsBase<Eigen::Matrix<double,-1,-1,0,-1,-1>,1>::copyPacket<Eigen::CwiseNullaryOp<Eigen::internal::scalar_constant_op<double>,Eigen::Matrix<double,-1,-1,0,-1,-1> >,1,0>”: 编译为本机的函数:
          	托管代码中不支持对齐数据类型
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\bulletopenglapplication.cpp(338): warning C4793: “BulletOpenGLApplication::GetPickingRay”: 编译为本机的函数:
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\densecoeffsbase.h(538): warning C4793: “Eigen::DenseCoeffsBase<Eigen::Matrix<double,-1,-1,0,-1,-1>,1>::copyPacket<Eigen::Matrix<double,-1,-1,0,-1,-1>,1,1>”: 编译为本机的函数:
          	托管代码中不支持对齐数据类型
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\bulletopenglapplication.cpp(358): warning C4793: “BulletOpenGLApplication::Raycast”: 编译为本机的函数:
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\selfcwisebinaryop.h(122): warning C4793: “Eigen::SelfCwiseBinaryOp<Eigen::internal::scalar_quotient_op<double,double>,Eigen::Block<Eigen::Block<Eigen::Block<Eigen::Map<Eigen::Matrix<double,-1,-1,0,-1,-1>,0,Eigen::Stride<0,0> >,-1,-1,0>,-1,1,1>,-1,1,0>,Eigen::CwiseNullaryOp<Eigen::internal::scalar_constant_op<double>,Eigen::Matrix<double,-1,1,0,-1,1> > >::copyPacket<Eigen::CwiseNullaryOp<Eigen::internal::scalar_constant_op<double>,Eigen::Matrix<double,-1,1,0,-1,1> >,1,0>”: 编译为本机的函数:
          	托管代码中不支持对齐数据类型
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\bulletopenglapplication.cpp(359): warning C4793: “BulletOpenGLApplication::Raycast”: 编译为本机的函数:
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\selfcwisebinaryop.h(122): warning C4793: “Eigen::SelfCwiseBinaryOp<Eigen::internal::scalar_difference_op<double>,Eigen::Block<Eigen::Block<Eigen::Block<Eigen::Map<Eigen::Matrix<double,-1,-1,0,-1,-1>,0,Eigen::Stride<0,0> >,-1,-1,0>,-1,-1,0>,-1,1,1>,Eigen::CwiseUnaryOp<Eigen::internal::scalar_multiple_op<double>,Eigen::Block<Eigen::Block<Eigen::Block<Eigen::Map<Eigen::Matrix<double,-1,-1,0,-1,-1>,0,Eigen::Stride<0,0> >,-1,-1,0>,-1,1,1>,-1,1,0> const > >::copyPacket<Eigen::CwiseUnaryOp<Eigen::internal::scalar_multiple_op<double>,Eigen::Block<Eigen::Block<Eigen::Block<Eigen::Map<Eigen::Matrix<double,-1,-1,0,-1,-1>,0,Eigen::Stride<0,0> >,-1,-1,0>,-1,1,1>,-1,1,0> const >,1,0>”: 编译为本机的函数:
          	托管代码中不支持对齐数据类型
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\bulletopenglapplication.cpp(382): warning C4793: “BulletOpenGLApplication::Raycast”: 编译为本机的函数:
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\freeglutcallbacks.h(60): warning C4793: “`anonymous namespace'::IdleCallback”: 编译为本机的函数:
          	托管代码中不支持对齐数据类型
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\bulletopenglapplication.cpp(388): warning C4793: “BulletOpenGLApplication::Raycast”: 编译为本机的函数:
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\freeglutcallbacks.h(60): warning C4793: “`anonymous namespace'::IdleCallback”: 编译为本机的函数:
          	托管代码中不支持对齐数据类型
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\bulletopenglapplication.cpp(620): warning C4793: “BulletOpenGLApplication::DrawSphere”: 编译为本机的函数:
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\freeglutcallbacks.h(60): warning C4793: “`anonymous namespace'::IdleCallback”: 编译为本机的函数:
          	托管代码中不支持对齐数据类型
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\bulletopenglapplication.cpp(626): warning C4793: “BulletOpenGLApplication::DrawSphere”: 编译为本机的函数:
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\freeglutcallbacks.h(60): warning C4793: “`anonymous namespace'::IdleCallback”: 编译为本机的函数:
          	托管代码中不支持对齐数据类型
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\bulletopenglapplication.cpp(627): warning C4793: “BulletOpenGLApplication::DrawSphere”: 编译为本机的函数:
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\freeglutcallbacks.h(60): warning C4793: “`anonymous namespace'::IdleCallback”: 编译为本机的函数:
          	托管代码中不支持对齐数据类型
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\bulletopenglapplication.cpp(636): warning C4793: “BulletOpenGLApplication::DrawSphere”: 编译为本机的函数:
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\freeglutcallbacks.h(66): warning C4793: “`anonymous namespace'::IdleCallback”: 编译为本机的函数:
          	托管代码中不支持对齐数据类型
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\bulletopenglapplication.cpp(680): warning C4793: “BulletOpenGLApplication::DrawConvexHull”: 编译为本机的函数:
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\freeglutcallbacks.h(72): warning C4793: “`anonymous namespace'::IdleCallback”: 编译为本机的函数:
          	托管代码中不支持对齐数据类型
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\bulletopenglapplication.cpp(681): warning C4793: “BulletOpenGLApplication::DrawConvexHull”: 编译为本机的函数:
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\freeglutcallbacks.h(73): warning C4793: “`anonymous namespace'::IdleCallback”: 编译为本机的函数:
          	托管代码中不支持对齐数据类型
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\bulletopenglapplication.cpp(682): warning C4793: “BulletOpenGLApplication::DrawConvexHull”: 编译为本机的函数:
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\freeglutcallbacks.h(79): warning C4793: “`anonymous namespace'::IdleCallback”: 编译为本机的函数:
          	托管代码中不支持对齐数据类型
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\bulletopenglapplication.cpp(684): warning C4793: “BulletOpenGLApplication::DrawConvexHull”: 编译为本机的函数:
+     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\freeglutcallbacks.h(99): warning C4793: “`anonymous namespace'::IdleCallback”: 编译为本机的函数:
          	托管代码中不支持对齐数据类型
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\bulletopenglapplication.cpp(685): warning C4793: “BulletOpenGLApplication::DrawConvexHull”: 编译为本机的函数:
+     1>D:\USER\Documents\Visual Studio 2013\Projects\5-Aixs Dispenser\5-Aixs Dispenser\main.cpp : warning C4793: “BasicDemo::BasicDemo”: 编译为本机的函数:
          	托管代码中不支持对齐数据类型
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\bulletopenglapplication.cpp(696): warning C4793: “BulletOpenGLApplication::DrawConvexHull”: 编译为本机的函数:
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\util\memory.h(911): warning C4793: “Eigen::internal::queryCacheSizes_amd”: 编译为本机的函数:
+         	托管代码中发现一个不受支持的内部函数
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\util\memory.h(914): warning C4793: “Eigen::internal::queryCacheSizes_amd”: 编译为本机的函数:
+         	托管代码中发现一个不受支持的内部函数
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\util\memory.h(795): warning C4793: “Eigen::internal::queryCacheSizes_intel_direct”: 编译为本机的函数:
+         	托管代码中发现一个不受支持的内部函数
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\util\memory.h(824): warning C4793: “Eigen::internal::queryCacheSizes_intel_codes”: 编译为本机的函数:
+         	托管代码中发现一个不受支持的内部函数
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\mapbase.h(116): warning C4793: “Eigen::MapBase<Eigen::Block<Eigen::Block<Eigen::Map<Eigen::Matrix<double,-1,-1,0,-1,-1>,0,Eigen::Stride<0,0> >,-1,-1,0>,-1,-1,0>,0>::packet<0>”: 编译为本机的函数:
          	托管代码中不支持对齐数据类型
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\bulletopenglapplication.cpp(264): warning C4793: “BulletOpenGLApplication::DrawShape”: 编译为本机的函数:
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\arch\sse\packetmath.h(274): warning C4793: “Eigen::internal::pstore<double,__m128d>”: 编译为本机的函数:
+         	托管代码中发现一个不受支持的内部函数
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\arch\sse\packetmath.h(274): warning C4793: “Eigen::internal::pstore<double,__m128d>”: 编译为本机的函数:
          	托管代码中不支持对齐数据类型
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\bulletopenglapplication.cpp(283): warning C4793: “BulletOpenGLApplication::DrawShape”: 编译为本机的函数:
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\arch\sse\packetmath.h(279): warning C4793: “Eigen::internal::pstoreu<double,__m128d>”: 编译为本机的函数:
+         	托管代码中发现一个不受支持的内部函数
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\arch\sse\packetmath.h(279): warning C4793: “Eigen::internal::pstoreu<double,__m128d>”: 编译为本机的函数:
          	托管代码中不支持对齐数据类型
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\bulletopenglapplication.cpp(416): warning C4793: “BulletOpenGLApplication::CreatePickingConstraint”: 编译为本机的函数:
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\arch\sse\packetmath.h(280): warning C4793: “Eigen::internal::pstoreu<double,__m128d>”: 编译为本机的函数:
+         	托管代码中发现一个不受支持的内部函数
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\arch\sse\packetmath.h(280): warning C4793: “Eigen::internal::pstoreu<double,__m128d>”: 编译为本机的函数:
          	托管代码中不支持对齐数据类型
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\bulletopenglapplication.cpp(426): warning C4793: “BulletOpenGLApplication::CreatePickingConstraint”: 编译为本机的函数:
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\arch\sse\packetmath.h(251): warning C4793: “Eigen::internal::ploadu<__m128d>”: 编译为本机的函数:
+         	托管代码中发现一个不受支持的内部函数
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\arch\sse\packetmath.h(251): warning C4793: “Eigen::internal::ploadu<__m128d>”: 编译为本机的函数:
          	托管代码中不支持对齐数据类型
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\bulletopenglapplication.cpp(437): warning C4793: “BulletOpenGLApplication::CreatePickingConstraint”: 编译为本机的函数:
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\arch\sse\packetmath.h(299): warning C4793: “Eigen::internal::prefetch<double>”: 编译为本机的函数:
+         	托管代码中发现一个不受支持的内部函数
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\products\generalblockpanelkernel.h(187): warning C4793: “Eigen::internal::gebp_traits<double,double,0,0>::initAcc”: 编译为本机的函数:
          	托管代码中不支持对齐数据类型
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\bulletopenglapplication.cpp(438): warning C4793: “BulletOpenGLApplication::CreatePickingConstraint”: 编译为本机的函数:
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\products\generalblockpanelkernel.h(203): warning C4793: “Eigen::internal::gebp_traits<double,double,0,0>::loadLhs”: 编译为本机的函数:
          	托管代码中不支持对齐数据类型
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\bulletopenglapplication.cpp(466): warning C4793: “BulletOpenGLApplication::CreatePickingConstraint”: 编译为本机的函数:
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\products\generalblockpanelkernel.h(198): warning C4793: “Eigen::internal::gebp_traits<double,double,0,0>::loadRhs”: 编译为本机的函数:
          	托管代码中不支持对齐数据类型
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\bulletopenglapplication.cpp(467): warning C4793: “BulletOpenGLApplication::CreatePickingConstraint”: 编译为本机的函数:
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\products\generalblockpanelkernel.h(208): warning C4793: “Eigen::internal::gebp_traits<double,double,0,0>::madd”: 编译为本机的函数:
          	托管代码中不支持对齐数据类型
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\bulletopenglapplication.cpp(207): warning C4793: “BulletOpenGLApplication::RenderBulletScene”: 编译为本机的函数:
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\products\generalblockpanelkernel.h(208): warning C4793: “Eigen::internal::gebp_traits<double,double,0,0>::madd”: 编译为本机的函数:
          	托管代码中不支持对齐数据类型
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\bulletopenglapplication.cpp(560): warning C4793: “BulletOpenGLApplication::CollisionEvent”: 编译为本机的函数:
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\products\generalblockpanelkernel.h(208): warning C4793: “Eigen::internal::gebp_traits<double,double,0,0>::madd”: 编译为本机的函数:
          	托管代码中不支持对齐数据类型
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\bulletopenglapplication.cpp(561): warning C4793: “BulletOpenGLApplication::CollisionEvent”: 编译为本机的函数:
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\arch\sse\packetmath.h(114): warning C4793: “Eigen::internal::pset1<__m128d>”: 编译为本机的函数:
+         	托管代码中发现一个不受支持的内部函数
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\arch\sse\packetmath.h(114): warning C4793: “Eigen::internal::pset1<__m128d>”: 编译为本机的函数:
          	托管代码中不支持对齐数据类型
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\bulletopenglapplication.cpp(574): warning C4793: “BulletOpenGLApplication::SeparationEvent”: 编译为本机的函数:
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\products\generalblockpanelkernel.h(213): warning C4793: “Eigen::internal::gebp_traits<double,double,0,0>::acc”: 编译为本机的函数:
          	托管代码中不支持对齐数据类型
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\bulletopenglapplication.cpp(575): warning C4793: “BulletOpenGLApplication::SeparationEvent”: 编译为本机的函数:
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\arch\sse\packetmath.h(294): warning C4793: “Eigen::internal::pstore1<__m128d>”: 编译为本机的函数:
+         	托管代码中发现一个不受支持的内部函数
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\arch\sse\packetmath.h(294): warning C4793: “Eigen::internal::pstore1<__m128d>”: 编译为本机的函数:
          	托管代码中不支持对齐数据类型
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\bulletopenglapplication.cpp(52): warning C4793: “BulletOpenGLApplication::Keyboard”: 编译为本机的函数:
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\arch\sse\packetmath.h(295): warning C4793: “Eigen::internal::pstore1<__m128d>”: 编译为本机的函数:
+         	托管代码中发现一个不受支持的内部函数
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\arch\sse\packetmath.h(295): warning C4793: “Eigen::internal::pstore1<__m128d>”: 编译为本机的函数:
          	托管代码中不支持对齐数据类型
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\bulletopenglapplication.cpp(58): warning C4793: “BulletOpenGLApplication::Keyboard”: 编译为本机的函数:
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\arch\sse\packetmath.h(296): warning C4793: “Eigen::internal::pstore1<__m128d>”: 编译为本机的函数:
          	托管代码中不支持对齐数据类型
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\bulletopenglapplication.cpp(342): warning C4793: “BulletOpenGLApplication::ShootBox”: 编译为本机的函数:
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\cwisenullaryop.h(88): warning C4793: “Eigen::CwiseNullaryOp<Eigen::internal::scalar_constant_op<double>,Eigen::Matrix<double,-1,-1,0,-1,-1> >::packet<0>”: 编译为本机的函数:
          	托管代码中不支持对齐数据类型
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\bulletopenglapplication.cpp(345): warning C4793: “BulletOpenGLApplication::ShootBox”: 编译为本机的函数:
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\plainobjectbase.h(191): warning C4793: “Eigen::PlainObjectBase<Eigen::Matrix<double,-1,-1,0,-1,-1> >::packet<1>”: 编译为本机的函数:
          	托管代码中不支持对齐数据类型
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\bulletopenglapplication.cpp(346): warning C4793: “BulletOpenGLApplication::ShootBox”: 编译为本机的函数:
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\cwisenullaryop.h(88): warning C4793: “Eigen::CwiseNullaryOp<Eigen::internal::scalar_constant_op<double>,Eigen::Matrix<double,-1,1,0,-1,1> >::packet<0>”: 编译为本机的函数:
          	托管代码中不支持对齐数据类型
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\bulletopenglapplication.cpp(347): warning C4793: “BulletOpenGLApplication::ShootBox”: 编译为本机的函数:
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\mapbase.h(123): warning C4793: “Eigen::MapBase<Eigen::Block<Eigen::Block<Eigen::Block<Eigen::Map<Eigen::Matrix<double,-1,-1,0,-1,-1>,0,Eigen::Stride<0,0> >,-1,-1,0>,-1,1,1>,-1,1,0>,0>::packet<1>”: 编译为本机的函数:
          	托管代码中不支持对齐数据类型
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\bulletopenglapplication.cpp(351): warning C4793: “BulletOpenGLApplication::ShootBox”: 编译为本机的函数:
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\functors.h(217): warning C4793: “Eigen::internal::scalar_quotient_op<double,double>::packetOp<__m128d>”: 编译为本机的函数:
          	托管代码中不支持对齐数据类型
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\bulletopenglapplication.cpp(18): warning C4793: “BulletOpenGLApplication::BulletOpenGLApplication”: 编译为本机的函数:
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\cwiseunaryop.h(120): warning C4793: “Eigen::CwiseUnaryOpImpl<Eigen::internal::scalar_multiple_op<double>,Eigen::Block<Eigen::Block<Eigen::Block<Eigen::Map<Eigen::Matrix<double,-1,-1,0,-1,-1>,0,Eigen::Stride<0,0> >,-1,-1,0>,-1,1,1>,-1,1,0> const ,Eigen::Dense>::packet<0>”: 编译为本机的函数:
          	托管代码中不支持对齐数据类型
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\bulletopenglapplication.cpp(18): warning C4793: “BulletOpenGLApplication::BulletOpenGLApplication”: 编译为本机的函数:
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\mapbase.h(123): warning C4793: “Eigen::MapBase<Eigen::Block<Eigen::Block<Eigen::Block<Eigen::Map<Eigen::Matrix<double,-1,-1,0,-1,-1>,0,Eigen::Stride<0,0> >,-1,-1,0>,-1,-1,0>,-1,1,1>,0>::packet<1>”: 编译为本机的函数:
          	托管代码中不支持对齐数据类型
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\bulletopenglapplication.cpp(18): warning C4793: “BulletOpenGLApplication::BulletOpenGLApplication”: 编译为本机的函数:
-         	托管代码中不支持对齐数据类型
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\bulletopenglapplication.cpp(18): warning C4793: “BulletOpenGLApplication::BulletOpenGLApplication”: 编译为本机的函数:
-         	托管代码中不支持对齐数据类型
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\openglmotionstate.h(17): warning C4793: “OpenGLMotionState::GetWorldTransform”: 编译为本机的函数:
-         	托管代码中不支持对齐数据类型
-     1>D:\USER\Documents\Visual Studio 2013\Projects\5-Aixs Dispenser\5-Aixs Dispenser\BulletOpenGLApplication.cpp : warning C4793: “RayResult::RayResult”: 编译为本机的函数:
-         	托管代码中不支持对齐数据类型
-     1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\gameobject.h(28): warning C4793: “GameObject::GetColor”: 编译为本机的函数:
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\functors.h(192): warning C4793: “Eigen::internal::scalar_difference_op<double>::packetOp<__m128d>”: 编译为本机的函数:
          	托管代码中不支持对齐数据类型
      1>d:\user\documents\visual studio 2013\projects\5-aixs dispenser\5-aixs dispenser\gameobject.h(30): warning C4793: “GameObject::SetColor”: 编译为本机的函数:
+         	托管代码中不支持对齐数据类型
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\genericpacketmath.h(290): warning C4793: “Eigen::internal::ploadt<__m128d,0>”: 编译为本机的函数:
+         	托管代码中不支持对齐数据类型
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\genericpacketmath.h(292): warning C4793: “Eigen::internal::ploadt<__m128d,0>”: 编译为本机的函数:
+         	托管代码中不支持对齐数据类型
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\arch\sse\packetmath.h(220): warning C4793: “Eigen::internal::pload<__m128d>”: 编译为本机的函数:
+         	托管代码中发现一个不受支持的内部函数
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\arch\sse\packetmath.h(220): warning C4793: “Eigen::internal::pload<__m128d>”: 编译为本机的函数:
+         	托管代码中不支持对齐数据类型
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\arch\sse\packetmath.h(150): warning C4793: “Eigen::internal::pmul<__m128d>”: 编译为本机的函数:
+         	托管代码中发现一个不受支持的内部函数
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\arch\sse\packetmath.h(150): warning C4793: “Eigen::internal::pmul<__m128d>”: 编译为本机的函数:
+         	托管代码中不支持对齐数据类型
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\arch\sse\packetmath.h(123): warning C4793: “Eigen::internal::padd<__m128d>”: 编译为本机的函数:
+         	托管代码中发现一个不受支持的内部函数
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\arch\sse\packetmath.h(123): warning C4793: “Eigen::internal::padd<__m128d>”: 编译为本机的函数:
+         	托管代码中不支持对齐数据类型
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\genericpacketmath.h(282): warning C4793: “Eigen::internal::pmadd<__m128d>”: 编译为本机的函数:
+         	托管代码中不支持对齐数据类型
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\functors.h(563): warning C4793: “Eigen::internal::scalar_constant_op<double>::packetOp<int>”: 编译为本机的函数:
+         	托管代码中不支持对齐数据类型
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\genericpacketmath.h(290): warning C4793: “Eigen::internal::ploadt<__m128d,1>”: 编译为本机的函数:
+         	托管代码中不支持对齐数据类型
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\genericpacketmath.h(292): warning C4793: “Eigen::internal::ploadt<__m128d,1>”: 编译为本机的函数:
+         	托管代码中不支持对齐数据类型
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\arch\sse\packetmath.h(168): warning C4793: “Eigen::internal::pdiv<__m128d>”: 编译为本机的函数:
+         	托管代码中发现一个不受支持的内部函数
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\arch\sse\packetmath.h(168): warning C4793: “Eigen::internal::pdiv<__m128d>”: 编译为本机的函数:
+         	托管代码中不支持对齐数据类型
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\mapbase.h(123): warning C4793: “Eigen::MapBase<Eigen::Block<Eigen::Block<Eigen::Block<Eigen::Map<Eigen::Matrix<double,-1,-1,0,-1,-1>,0,Eigen::Stride<0,0> >,-1,-1,0>,-1,1,1>,-1,1,0>,0>::packet<0>”: 编译为本机的函数:
+         	托管代码中不支持对齐数据类型
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\functors.h(511): warning C4793: “Eigen::internal::scalar_multiple_op<double>::packetOp”: 编译为本机的函数:
+         	托管代码中不支持对齐数据类型
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\arch\sse\packetmath.h(127): warning C4793: “Eigen::internal::psub<__m128d>”: 编译为本机的函数:
+         	托管代码中发现一个不受支持的内部函数
+     1>c:\pcl 1.8.0 2013\3rdparty\eigen\eigen3\eigen\src\core\arch\sse\packetmath.h(127): warning C4793: “Eigen::internal::psub<__m128d>”: 编译为本机的函数:
          	托管代码中不支持对齐数据类型
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\USER\Documents\Visual Studio 2013\Projects\5-Aixs Dispenser\Debug\5-Aixs Dispenser.exe" /INCREMENTAL /NOLOGO /LIBPATH:"C:\Program Files\Microsoft SDKs\Kinect\v2.0_1409\\Lib\x86" /LIBPATH:C:\OpenCV300\opencv\build\x86\vc12\lib /LIBPATH:C:\portaudio\lib /LIBPATH:"C:\Program Files (x86)\Visual Leak Detector\lib\Win32" glut32.lib opencv_ts300d.lib opencv_world300d.lib kinect20.lib portaudio_x86.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\USER\Documents\Visual Studio 2013\Projects\5-Aixs Dispenser\Debug\5-Aixs Dispenser.pdb" /ASSEMBLYDEBUG /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /FIXED:NO /NXCOMPAT /MACHINE:X86 /FORCE:MULTIPLE "Debug\5-Aixs Dispenser.res"
@@ -185,4 +346,4 @@
 
 生成成功。
 
-已用时间 00:00:04.94
+已用时间 00:00:06.16

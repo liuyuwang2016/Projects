@@ -24,5 +24,6 @@ public:
 	void CreateObjects();
 	void ReadBuffer();
 
+
 };
 #endif //BULLETOPENGL_BASICDEMO_H
